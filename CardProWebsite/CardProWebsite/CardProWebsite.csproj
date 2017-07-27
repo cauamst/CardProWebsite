@@ -95,8 +95,11 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Global.asax" />
+    <Content Include="src\app.component.html" />
+    <Content Include="src\modules\app\login\login.component.html" />
     <Content Include="src\modules\app\products\products.html" />
     <Content Include="Web.config" />
+    <Content Include="src\modules\app\directives\alert.component.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -115,10 +118,21 @@
     <Content Include="src\app.css" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="src\app.config.ts" />
     <TypeScriptCompile Include="src\main.module.ts" />
     <TypeScriptCompile Include="src\app.component.ts" />
     <TypeScriptCompile Include="src\app.component.spec.ts" />
     <TypeScriptCompile Include="src\modules\app\app.module.ts" />
+    <TypeScriptCompile Include="src\modules\app\app.routing.ts" />
+    <TypeScriptCompile Include="src\modules\app\directives\alert.component.ts" />
+    <TypeScriptCompile Include="src\modules\app\guard\auth.guard.ts" />
+    <TypeScriptCompile Include="src\modules\app\helpers\cardProHttp.ts" />
+    <TypeScriptCompile Include="src\modules\app\login\login.component.ts" />
+    <TypeScriptCompile Include="src\modules\app\models\Card.ts" />
+    <TypeScriptCompile Include="src\modules\app\models\user.ts" />
+    <TypeScriptCompile Include="src\modules\app\services\alert.service.ts" />
+    <TypeScriptCompile Include="src\modules\app\services\authentication.service.ts" />
+    <TypeScriptCompile Include="src\modules\app\services\card.service.ts" />
     <TypeScriptCompile Include="src\shared\footer.ts" />
     <TypeScriptCompile Include="src\shared\header.ts" />
     <TypeScriptCompile Include="src\shared\utils.ts" />

@@ -1,5 +1,6 @@
 ﻿import { Component } from '@angular/core';
-
+import { Card } from '../models/Card';
+import { CardService } from '../services/card.service';
 @Component({
     selector: 'products', 
     templateUrl:'products.html',
@@ -7,8 +8,16 @@
 })
 export class ProductsComponent {
     heading: string;
-
-    constructor() {
+    cards: Card[];
+    constructor(private cardService: CardService) {
         this.heading = "Products";
     }
+    ngOnInit() {
+        this.loadCards();
+    }
+
+    private loadCards() {
+        this.cardService.getAll().subscribe(cards => { this.cards = cards });
+    }
+
 }

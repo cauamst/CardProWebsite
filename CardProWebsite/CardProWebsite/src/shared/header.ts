@@ -1,6 +1,6 @@
 ﻿import { Component, Injectable, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { routes } from '../modules/app/app.module';
+import { routes } from '../modules/app/app.routing';
 
 @Component({
     selector: 'app-header',
@@ -28,7 +28,7 @@ import { routes } from '../modules/app/app.module';
 })
 export class HeaderComponent {
     title = 'CardProWebsite';
-    routes = routes.filter((val) => val.path != '');
+    routes = routes.filter((val) => val.path != '' && val.path != 'login' );
 
     constructor(private route: ActivatedRoute, private router: Router) {}
 
