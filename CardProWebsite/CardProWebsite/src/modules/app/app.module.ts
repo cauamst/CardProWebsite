@@ -12,8 +12,7 @@ import { AlertService } from './services/alert.service';
 import { AuthenticationService } from './services/authentication.service';
 import { CardService } from './services/card.service';
 import { LoginComponent } from './login/login.component';
-
-
+import { CardProHttpProvider } from './helpers/cardProHttp';
 
 @NgModule({
     declarations: [
@@ -28,6 +27,7 @@ import { LoginComponent } from './login/login.component';
         AlertService,
         AuthenticationService,
         CardService,
+        CardProHttpProvider
     ],
     imports: [
         BrowserModule,

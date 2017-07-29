@@ -1,15 +1,14 @@
 ﻿import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
-
 import { Card } from '../models/card';
-import { CardProHttp } from '../helpers/cardProHttp';
+import { appConfig } from '../../../app.config';
 
 @Injectable()
 export class CardService {
-    constructor(private http: CardProHttp) { }
+    constructor(private http: Http) { }
 
     getAll() {
-        return this.http.get('/cards').map((response: Response) => response.json());
+        return this.http.get(appConfig.getCardsUrl).map((response: Response) => response.json());
     }
 
 }

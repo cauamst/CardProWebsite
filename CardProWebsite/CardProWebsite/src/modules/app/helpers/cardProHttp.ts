@@ -17,11 +17,11 @@ export class CardProHttp extends Http {
         return super.get(appConfig.apiUrl + url, this.addJwt(options)).catch(this.handleError);
     }
 
-    post(url: string, body: string, options?: RequestOptionsArgs): Observable<Response> {
+    post(url: string, body: any, options?: RequestOptionsArgs): Observable<Response> {
         return super.post(appConfig.apiUrl + url, body, this.addJwt(options)).catch(this.handleError);
     }
 
-    put(url: string, body: string, options?: RequestOptionsArgs): Observable<Response> {
+    put(url: string, body: any, options?: RequestOptionsArgs): Observable<Response> {
         return super.put(appConfig.apiUrl + url, body, this.addJwt(options)).catch(this.handleError);
     }
 
@@ -60,7 +60,7 @@ export function CardProHttpFactory(xhrBackend: XHRBackend, requestOptions: Reque
     return new CardProHttp(xhrBackend, requestOptions);
 }
 
-export let customHttpProvider = {
+export let CardProHttpProvider = {
     provide: Http,
     useFactory: CardProHttpFactory,
     deps: [XHRBackend, RequestOptions]
