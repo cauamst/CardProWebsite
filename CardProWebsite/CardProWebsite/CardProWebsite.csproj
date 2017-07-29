@@ -128,6 +128,8 @@
     <TypeScriptCompile Include="src\modules\app\guard\auth.guard.ts" />
     <TypeScriptCompile Include="src\modules\app\helpers\cardProHttp.ts" />
     <TypeScriptCompile Include="src\modules\app\login\login.component.ts" />
+    <TypeScriptCompile Include="src\modules\app\models\DtoWrapper.ts" />
+    <TypeScriptCompile Include="src\modules\app\models\CardType.ts" />
     <TypeScriptCompile Include="src\modules\app\models\Card.ts" />
     <TypeScriptCompile Include="src\modules\app\models\user.ts" />
     <TypeScriptCompile Include="src\modules\app\services\alert.service.ts" />

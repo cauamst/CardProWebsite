@@ -39,8 +39,8 @@ export class CardProHttp extends Http {
         // add authorization header with jwt token
         
         let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        if (currentUser && currentUser.token) {
-            options.headers.append('Authorization', 'Bearer ' + currentUser.token);
+        if (currentUser && currentUser.BearerToken) {
+            options.headers.append('Authorization', 'Bearer ' + currentUser.BearerToken);
         }
 
         return options;

@@ -17,7 +17,10 @@ export class ProductsComponent {
     }
 
     private loadCards() {
-        this.cardService.getAll().subscribe(cards => { this.cards = cards });
+        this.cardService.getCards(0, 5).subscribe(cards => {
+            console.log(cards);
+            this.cards = cards
+        });
     }
 
 }

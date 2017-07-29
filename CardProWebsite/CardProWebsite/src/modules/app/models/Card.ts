@@ -1,6 +1,7 @@
-﻿export class Card {
+﻿import { CardType } from './CardType';
+
+export class Card {
     Id: string;
     Name: string;
-    Type: string;
-    ImageUrl: string;
+    Type: CardType;
 }
