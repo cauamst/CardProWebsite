@@ -21,6 +21,6 @@ export class AuthenticationService {
     }
 
     logout() {
-        localStorage.removeItem('currentUser');
+        return this.http.get(appConfig.logoutUrl).map((response: Response) => response);
     }
 }
