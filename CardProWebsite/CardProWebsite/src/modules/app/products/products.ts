@@ -11,6 +11,7 @@ import { appConfig } from '../../../app.config';
 })
 
 export class ProductsComponent {
+    sampleUrl: string;
     heading: string;
     cards: Card[];
     private total: number;
@@ -23,6 +24,7 @@ export class ProductsComponent {
         this.heading = "Products";
         this.currentIndex = 0;
         this.cards = [];
+        this.sampleUrl = require("../../../assets/img/credit-card-sample.png");
     }
 
     ngOnInit() {

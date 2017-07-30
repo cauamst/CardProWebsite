@@ -9,3 +9,15 @@ div {
 a {
     color: lighten($link-color, 10%);
 }
+
+.card-pro-square.mdl-card {
+    width: 320px;
+    height: 320px;
+}
+
+.card-pro-square > .mdl-card__title {
+    color: #fff;
+    background-image: url(dist/img/credit-card-sample.png);
+    background-size: 100% 176px;
+    height: 176px;
+}
