@@ -1,6 +1,7 @@
 ﻿<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-    <h2>Login</h2>
-    <div class="mdl-card mdl-cell mdl-cell--12-col">
+    
+    <div class="mdl-card mdl-cell mdl-cell--6-col">
+        <h2>Login</h2>
         <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
                 <input class="mdl-textfield__input" type="text" #username="ngModel" id="username" required name="username" [(ngModel)]="model.username">
@@ -18,5 +19,9 @@
                 <div id="p2" *ngIf="loading" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
             </div>
         </form>
+    </div>
+    <div class="mdl-card mdl-cell mdl-cell--6-col">
+        <h2>Or use  your google account</h2>
+        <div id="googleBtn" #googleBtn></div>
     </div>
 </section>

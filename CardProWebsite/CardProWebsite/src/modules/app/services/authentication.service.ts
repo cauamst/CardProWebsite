@@ -20,6 +20,18 @@ export class AuthenticationService {
             });
     }
 
+    oAuthLogin(url: string, accessToken: string) {
+        return this.http.post(url, { AccessToken: accessToken })
+            .map((response: Response) => {
+                console.log(response);
+                let user = response.json();
+                if (user && user.BearerToken) {
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                }
+                return user;
+            });
+    }
+
     logout() {
         return this.http.get(appConfig.logoutUrl).map((response: Response) => response);
     }
