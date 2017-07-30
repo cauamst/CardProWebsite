@@ -20,7 +20,7 @@ export class ProductsComponent {
     private readonly numberOfResults: number = appConfig.numberOfResults;
 
     constructor(private cardService: CardService, private zone: NgZone,
-        @Inject(DOCUMENT) private document: Document,) {
+        @Inject(DOCUMENT) private document: Document) {
         this.heading = "Products";
         this.currentIndex = 0;
         this.cards = [];

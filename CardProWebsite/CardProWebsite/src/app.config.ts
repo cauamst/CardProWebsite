@@ -8,4 +8,7 @@
     minimumHeight: 300, //px to top
     numberOfResults: 5, //for every loading time
     lazyLoadDelayTime: 200, //in miliseconds
+
+    // to top
+    minimumDistance: 500 // bottomOfScroll/scrollHeight
 };
