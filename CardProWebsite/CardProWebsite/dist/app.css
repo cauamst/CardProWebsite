@@ -6302,4 +6302,7 @@ html, body {
 .mdl-demo .mdl-menu__container {
   z-index: 99; }
 
+.mdl-layout__container {
+  height: auto !important; }
+
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY3NzIiwic291cmNlUm9vdCI6IiJ9*/

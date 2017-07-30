@@ -15,7 +15,7 @@ export class CardService {
         console.log(dtoWrapper);
         return this.http.post(appConfig.getCardsUrl, dtoWrapper)
             .map((response: Response) => response.json())
-            .map((dto: DtoWrapper<Card>) => dto.Results);
+            .map((dto: DtoWrapper<Card>) => dto);
     }
 
 }

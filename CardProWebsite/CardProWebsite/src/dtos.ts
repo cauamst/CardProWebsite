@@ -1,11 +1,10 @@
 /* Options:
-Date: 2017-01-01 12:00:00
-Version: 4
+Date: 2017-07-30 16:11:19
+Version: 4.512
 Tip: To override a DTO option, remove "//" prefix before updating
-BaseUrl: http://localhost:56109/
+BaseUrl: http://localhost:56109
 
 //GlobalNamespace: 
-ExportAsTypes: True
 //MakePropertiesOptional: True
 //AddServiceStackTypes: True
 //AddResponseStatus: False
@@ -17,10 +16,18 @@ ExportAsTypes: True
 */
 
 
-export interface IReturn<T> {
+export interface IReturnVoid
+{
+    createResponse() : void;
 }
 
-export class HelloResponse {
+export interface IReturn<T>
+{
+    createResponse() : T;
+}
+
+export class HelloResponse
+{
     result: string;
 }
 
