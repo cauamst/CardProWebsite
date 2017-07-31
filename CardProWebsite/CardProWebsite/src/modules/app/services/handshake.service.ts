@@ -11,11 +11,10 @@ export class HandShakeService {
 
     private doHandShake() {
        
-        let aesKey = CryptoJS.AES.encrypt("Message", "Key").toString();
-        console.log('aesKey: ', aesKey);
-        
+        let aesKey = CryptoJS.AES.encrypt("Message", "Key");
+        console.log(aesKey);
         let key = new NodeRSA(HandShakeConfig.publicKey);
-        var encryptedKey = key.encrypt(aesKey, 'base64');
+        var encryptedKey = key.encrypt(aesKey.toString(), 'base64');
         console.log('encryptedKey: ', encryptedKey);
 
         let handShakeDto = new HandShake();
@@ -30,8 +29,10 @@ export class HandShakeService {
     }
 
     private doChallenge(challenge, secret): boolean{
+        console.log("challenge: " + challenge);
+        console.log("secret: " + secret);
         let decrypted = CryptoJS.AES.decrypt(challenge, secret);
-        console.log("doChallenge - decrypted: " + decrypted);
+        console.log("doChallenge - decrypted: " + CryptoJS.enc.Utf8.stringify(decrypted));
         console.log("challenge is: " + decrypted == secret);
         return decrypted == secret;
     }
