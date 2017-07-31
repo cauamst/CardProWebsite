@@ -18,4 +18,9 @@ export class CardService {
             .map((dto: DtoWrapper<Card>) => dto);
     }
 
+    registerCard(data: object) {
+        return this.http.post(appConfig.registerCard, { Data: data })
+            .map((response: Response) => response.json());
+    }
+
 }
