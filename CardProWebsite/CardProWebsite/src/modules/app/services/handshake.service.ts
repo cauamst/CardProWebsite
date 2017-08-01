@@ -10,8 +10,9 @@ export class HandShakeService {
     constructor(private http: Http) { }
 
     private doHandShake() {
-       
-        let aesKey = CryptoJS.AES.encrypt("Message", "Key").toString();
+        var salt = CryptoJS.lib.WordArray.random(128 / 8);
+        //var key256Bits = CryptoJS.PBKDF2("Secret Passphrase", salt, { keySize: 256/32 });
+        let aesKey = CryptoJS.PBKDF2("Secret Passphrase", salt, { keySize: 256 / 32 }).toString();
         let key = new NodeRSA(HandShakeConfig.publicKey);
         var encryptedKey = key.encrypt(aesKey, 'base64');
         console.log('encryptedKey: ', encryptedKey);
@@ -27,7 +28,7 @@ export class HandShakeService {
                     : { "key": dto.Key, "aesKey": aesKey });
     }
 
-    private doChallenge(challenge, secret): boolean{
+    private doChallenge(challenge, secret): boolean {
         console.log("challenge: " + challenge);
         console.log("secret: " + secret);
         let decrypted = CryptoJS.AES.decrypt(challenge, secret.toString());
@@ -39,7 +40,7 @@ export class HandShakeService {
     handShake(data: object) {
         return this.doHandShake().map((obj) => {
             if (obj) {
-                var encryptedData = CryptoJS.AES.encrypt(JSON.stringify(data), obj.aesKey, { padding: CryptoJS.pad.Pkcs7 }).toString();
+                var encryptedData = CryptoJS.AES.encrypt(JSON.stringify(data), obj.aesKey).ciphertext;
                 var wordArray = CryptoJS.enc.Utf8.parse(encryptedData);
                 var base64Data = CryptoJS.enc.Base64.stringify(wordArray);
                 console.log("base64Data: " + base64Data);
@@ -47,7 +48,7 @@ export class HandShakeService {
             }
             return null
         }
-            
+
         );
     }
 }
