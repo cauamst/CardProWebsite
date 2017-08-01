@@ -11,10 +11,9 @@ export class HandShakeService {
 
     private doHandShake() {
        
-        let aesKey = CryptoJS.AES.encrypt("Message", "Key");
-        console.log(aesKey);
+        let aesKey = CryptoJS.AES.encrypt("Message", "Key").toString();
         let key = new NodeRSA(HandShakeConfig.publicKey);
-        var encryptedKey = key.encrypt(aesKey.toString(), 'base64');
+        var encryptedKey = key.encrypt(aesKey, 'base64');
         console.log('encryptedKey: ', encryptedKey);
 
         let handShakeDto = new HandShake();
@@ -24,24 +23,31 @@ export class HandShakeService {
             .map((response: Response) => response.json())
             .map((dto: HandShake) =>
                 this.doChallenge(dto.Challenge, aesKey)
-                    ? aesKey
-                    : null);
+                    ? { "key": dto.Key, "aesKey": aesKey }
+                    : { "key": dto.Key, "aesKey": aesKey });
     }
 
     private doChallenge(challenge, secret): boolean{
         console.log("challenge: " + challenge);
         console.log("secret: " + secret);
-        let decrypted = CryptoJS.AES.decrypt(challenge, secret);
-        console.log("doChallenge - decrypted: " + CryptoJS.enc.Utf8.stringify(decrypted));
+        let decrypted = CryptoJS.AES.decrypt(challenge, secret.toString());
+        console.log("doChallenge - decrypted: " + decrypted);
         console.log("challenge is: " + decrypted == secret);
         return decrypted == secret;
     }
 
     handShake(data: object) {
-        return this.doHandShake().map((aesKey) => 
-            aesKey
-            ? CryptoJS.AES.encrypt(JSON.stringify(data), aesKey)
-            : null
+        return this.doHandShake().map((obj) => {
+            if (obj) {
+                var encryptedData = CryptoJS.AES.encrypt(JSON.stringify(data), obj.aesKey, { padding: CryptoJS.pad.Pkcs7 }).toString();
+                var wordArray = CryptoJS.enc.Utf8.parse(encryptedData);
+                var base64Data = CryptoJS.enc.Base64.stringify(wordArray);
+                console.log("base64Data: " + base64Data);
+                return { "ssId": obj.key, "data": base64Data };
+            }
+            return null
+        }
+            
         );
     }
 }

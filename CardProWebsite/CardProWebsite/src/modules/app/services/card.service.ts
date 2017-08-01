@@ -1,5 +1,5 @@
 ﻿import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { Http, Headers, RequestOptions, Response, RequestOptionsArgs } from '@angular/http';
 import { Card } from '../models/card';
 import { DtoWrapper } from '../models/DtoWrapper';
 import { appConfig } from '../../../app.config';
@@ -18,8 +18,11 @@ export class CardService {
             .map((dto: DtoWrapper<Card>) => dto);
     }
 
-    registerCard(data: object) {
-        return this.http.post(appConfig.registerCard, { Data: data })
+    registerCard(ssId: string, data: object) {
+        let headers = new Headers();
+        headers.append('X-ss-id', ssId);
+        let opts: RequestOptionsArgs = { headers: headers };
+        return this.http.post(appConfig.registerCard, { Data: data }, opts)
             .map((response: Response) => response.json());
     }
 

@@ -33,9 +33,9 @@ export class CardRegistrationComponent implements OnInit {
         event.preventDefault();
         console.log("model: " + this.model);
         this.handshakeService.handShake(this.model)
-            .subscribe((encryptedData) => {
-                if (encryptedData) {
-                    this.cardService.registerCard(encryptedData)
+            .subscribe((obj) => {
+                if (obj) {
+                    this.cardService.registerCard(obj.ssId, obj.data)
                         .subscribe((res) => {
                             console.log("response: " + res);
                         })
