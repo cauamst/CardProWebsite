@@ -1,0 +1,27 @@
+﻿<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+
+    <div class="mdl-card mdl-cell mdl-cell--12-col">
+        <h2>{{heading}}</h2>
+        <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{ 'has-error': f.submitted && !name.valid }">
+                <input class="mdl-textfield__input" type="text" #name="ngModel" id="name" required name="name" [(ngModel)]="model.name">
+                <label class="mdl-textfield__label" for="name">Name</label>
+                <div *ngIf="f.submitted && !name.valid" class="help-block">Name is required</div>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+                <input class="mdl-textfield__input" type="text" #email="ngModel" id="email" required name="email" [(ngModel)]="model.email">
+                <label class="mdl-textfield__label" for="email">Email</label>
+                <span *ngIf="f.submitted && !email.valid" class="mdl-textfield__error">Email is required</span>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{ 'has-error': f.submitted && !phoneNumber.valid }">
+                <input class="mdl-textfield__input" type="text" #phoneNumber="ngModel" id="phoneNumber" required name="phoneNumber" [(ngModel)]="model.phoneNumber">
+                <label class="mdl-textfield__label" for="phoneNumber">Phone Number</label>
+                <span *ngIf="f.submitted && !phoneNumber.valid" class="mdl-textfield__error">Phone Number is required</span>
+            </div>
+            <div>
+                <button [disabled]="loading" class="mdl-button mdl-js-button mdl-button--raised" (click)="register($event)">Register</button>
+                <div id="p2" *ngIf="loading" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+            </div>
+        </form>
+    </div>
+</section>

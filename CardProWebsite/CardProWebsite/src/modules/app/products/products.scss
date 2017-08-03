@@ -1,0 +1,23 @@
+$dark-background: #512da8;
+$link-color: #ff4081;
+
+div {
+    background: darken($dark-background, 10%);
+    color: #fff;
+}
+
+a {
+    color: lighten($link-color, 10%);
+}
+
+.card-pro-square.mdl-card {
+    width: 320px;
+    height: 320px;
+}
+
+.card-pro-square > .mdl-card__title {
+    color: #fff;
+    background-image: url(dist/img/credit-card-sample.png);
+    background-size: 100% 176px;
+    height: 176px;
+}
