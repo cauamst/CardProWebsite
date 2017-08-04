@@ -40,7 +40,7 @@ export class HandShakeService {
             });
 
         CryptoUtils
-            .encrypt(base64PageKey, superKey)
+            .encrypt(CryptoUtils.toBufferFromBase64(base64PageKey), superKey)
             .subscribe((encryptedContent) => {
                 console.log("jwe encrypted key:" + encryptedContent);
                 encryptedPageKey = encryptedContent;
@@ -70,10 +70,11 @@ export class HandShakeService {
     handShake(data: object) {
         return this.doHandShake().map((obj) => {
             if (obj) {
-                var encryptedData = CryptoUtils.encrypt(JSON.stringify(data), obj.aesKey);
+                let base64Data = CryptoUtils.toBase64(JSON.stringify(data));
+                let encryptedData = CryptoUtils.encrypt(CryptoUtils.toBufferFromBase64(base64Data), obj.aesKey);
                 return { "ssId": obj.key, "data": encryptedData };
             }
-            return null
+            return null 
         });
     }
 }
