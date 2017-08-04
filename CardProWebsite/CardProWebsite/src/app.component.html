@@ -1,6 +1,7 @@
 ﻿<div mdl class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <app-header></app-header>
     <main class="mdl-layout__content">
+        <app-carousel></app-carousel>
         <div class="mdl-layout__tab-panel is-active" id="overview">
             <router-outlet></router-outlet>
         </div>
@@ -8,7 +9,6 @@
             <img [src]="logoUrl" />
             <a [href]="url">Learn about this Angular4 VS.NET template</a>
         </h4>
-        <app-carousel></app-carousel>
         <app-footer></app-footer>
         <to-top></to-top>
     </main>

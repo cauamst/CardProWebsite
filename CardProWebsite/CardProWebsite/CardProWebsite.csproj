@@ -107,6 +107,8 @@
     <Content Include="src\modules\app\login\login.component.html" />
     <Content Include="src\modules\app\products\products.html" />
     <Content Include="src\modules\app\toTop\toTop.html" />
+    <Content Include="src\shared\header.css" />
+    <Content Include="src\shared\header.html" />
     <Content Include="Web.config" />
     <Content Include="src\modules\app\directives\alert.component.html" />
     <Content Include="src\modules\app\toTop\toTop.css" />
@@ -137,6 +139,7 @@
     <TypeScriptCompile Include="src\modules\app\carousel\carousel.ts" />
     <TypeScriptCompile Include="src\modules\app\directives\alert.component.ts" />
     <TypeScriptCompile Include="src\modules\app\guard\auth.guard.ts" />
+    <TypeScriptCompile Include="src\modules\app\helpers\cryptoUtils.ts" />
     <TypeScriptCompile Include="src\modules\app\helpers\cardProHttp.ts" />
     <TypeScriptCompile Include="src\modules\app\login\login.component.ts" />
     <TypeScriptCompile Include="src\modules\app\models\DtoWrapper.ts" />
