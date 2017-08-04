@@ -33,7 +33,7 @@ export class CryptoUtils {
         return jose.util.base64url.encode(input, "utf8");
     }
 
-    public static randomKeyBuffer(size: number)  {
+    public static randomKeyBuffer(size: number)   {
         return jose.util.randomBytes(size);
     }
 }
