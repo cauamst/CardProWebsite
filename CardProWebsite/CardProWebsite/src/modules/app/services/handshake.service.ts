@@ -8,6 +8,17 @@ import { CryptoUtils } from '../helpers/cryptoUtils';
 export class HandShakeService {
     constructor(private http: Http, private crypto: CryptoUtils) { }
 
+    handShake(data: object) {
+        return this.doHandShake().map((obj) => {
+            if (obj) {
+                let base64Data = CryptoUtils.toBase64(JSON.stringify(data));
+                let encryptedData = CryptoUtils.encrypt(CryptoUtils.toBufferFromBase64(base64Data), obj.aesKey);
+                return { "ssId": obj.key, "data": encryptedData };
+            }
+            return null
+        });
+    }
+
     private doHandShake() {
         let pageKey: string;
         let base64PageKey: string;
@@ -18,9 +29,10 @@ export class HandShakeService {
             alg: 'A256GCM',
             use: 'enc'
         };
-        CryptoUtils
-            .generateKey("EC", 256, props)
-            .subscribe((aesKey) => {
+
+        return CryptoUtils
+            .generateKey("EC", "P-256", props)
+            .flatMap((aesKey) => {
                 var serializedKey = JSON.stringify(aesKey);
                 var base64Key : string = CryptoUtils.toBase64(serializedKey);
 
@@ -30,31 +42,28 @@ export class HandShakeService {
 
                 pageKey = aesKey;
                 base64PageKey = base64Key;
-            });
-
-        CryptoUtils
-            .importKey(HandShakeConfig.publicKey)
-            .subscribe((rsaKey) => {
+                return CryptoUtils
+                    .importKey(HandShakeConfig.publicKey);
+            })
+            .flatMap((rsaKey) => {
                 console.log("superKey: " + rsaKey);
-                superKey = rsaKey
-            });
-
-        CryptoUtils
-            .encrypt(CryptoUtils.toBufferFromBase64(base64PageKey), superKey)
-            .subscribe((encryptedContent) => {
+                superKey = rsaKey;
+                return CryptoUtils
+                    .encrypt(CryptoUtils.toBufferFromBase64(base64PageKey), superKey);
+            })
+            .flatMap((encryptedContent) => {
                 console.log("jwe encrypted key:" + encryptedContent);
                 encryptedPageKey = encryptedContent;
+                let handShakeDto = new HandShake();
+                handShakeDto.Key = CryptoUtils.toBase64(encryptedPageKey);
+
+                return this.http.post(HandShakeConfig.handshakeUrl, handShakeDto)
+                    .map((response: Response) => response.json())
+                    .map((dto: HandShake) =>
+                        this.doChallenge(dto.Challenge, pageKey, base64PageKey)
+                            ? { "key": dto.Key, "aesKey": pageKey }
+                            : null);
             });
-
-        let handShakeDto = new HandShake();
-        handShakeDto.Key = encryptedPageKey;
-
-        return this.http.post(HandShakeConfig.handshakeUrl, handShakeDto)
-            .map((response: Response) => response.json())
-            .map((dto: HandShake) =>
-                this.doChallenge(dto.Challenge, pageKey, base64PageKey)
-                    ? { "key": dto.Key, "aesKey": pageKey }
-                    : null);
     }
 
     private doChallenge(challenge, secretKey, base64PageKey): boolean {
@@ -65,16 +74,5 @@ export class HandShakeService {
         console.log("base64PageKey : " + base64PageKey);
         console.log("base64Key: " + base64Key);
         return base64PageKey == base64Key;
-    }
-
-    handShake(data: object) {
-        return this.doHandShake().map((obj) => {
-            if (obj) {
-                let base64Data = CryptoUtils.toBase64(JSON.stringify(data));
-                let encryptedData = CryptoUtils.encrypt(CryptoUtils.toBufferFromBase64(base64Data), obj.aesKey);
-                return { "ssId": obj.key, "data": encryptedData };
-            }
-            return null 
-        });
     }
 }

@@ -6,16 +6,16 @@ export class CryptoUtils {
     constructor() { }
 
     public static importKey(input: string): Observable<any>  {
-        return jose.JWK.asKey(input, "pem");
+        return Observable.fromPromise(jose.JWK.asKey(input, "pem"));
     }
 
-    public static generateKey(keyType: string, keyLength: number, properties: any): Observable<any> {
+    public static generateKey(keyType: string, keyLength: any, properties: any): Observable<any> {
         let keystore = jose.JWK.createKeyStore();
         return Observable.fromPromise(keystore.generate(keyType, keyLength, properties));
     }
 
     public static encrypt(input, key): Observable<any> {
-        return Observable.fromPromise(jose.JWE.createEncrypt(key).
+        return Observable.fromPromise(jose.JWE.createEncrypt({ format: 'compact' }, key).
             update(input).
             final());
     }
