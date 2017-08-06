@@ -5,8 +5,8 @@ import jose = require('node-jose');
 export class CryptoUtils {
     constructor() { }
 
-    public static importKey(input: string): Observable<any>  {
-        return Observable.fromPromise(jose.JWK.asKey(input, "pem"));
+    public static importKey(input: any, format: string): Observable<any>  {
+        return Observable.fromPromise(jose.JWK.asKey(input, format));
     }
 
     public static generateKey(keyType: string, keyLength: any, properties: any): Observable<any> {
@@ -33,7 +33,19 @@ export class CryptoUtils {
         return jose.util.base64url.encode(input, "utf8");
     }
 
+    public static toBase64FromBuffer(input: any) {
+        return jose.util.base64url.encode(input);
+    }
+
     public static randomKeyBuffer(size: number)   {
         return jose.util.randomBytes(size);
+    }
+
+    public static AesGcmDecrypt(key, cipherText): Observable<any>   {
+        return Observable.fromPromise(jose.JWA.decrypt("A256GCMKW", key, cipherText));
+    }
+
+    public static AesGcmEncrypt(key, plainText): Observable<any>  {
+        return Observable.fromPromise(jose.JWA.encrypt("A256GCMKW", key, plainText));
     }
 }
