@@ -1,0 +1,56 @@
+﻿.demo-card-square.mdl-card {
+    margin: 1rem;
+    position: relative;
+}
+
+    .demo-card-square.mdl-card:hover {
+        box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
+    }
+
+.demo-card-square > .mdl-card__title {
+    color: #fff;
+    background: url('https://tfirdaus.github.io/mdl/images/laptop.jpg');
+}
+
+.demo-card-square > .mdl-card__accent {
+    background: #ff9800;
+}
+
+.body {
+    padding: 20px;
+    background: #fafafa;
+    position: relative;
+}
+.mdl-layout__content {
+    display:grid !important;
+}
+.background-antiquewhite {
+    background: antiquewhite;
+}
+
+.left {
+    float:left;
+}
+
+
+.blockqueue {
+    padding: 5px 15px;
+    border-left : 5px solid #eee;
+}
+    .blockqueue:hover {
+        border-color: aqua;
+        transition: all 0.4s ease-in-out;
+    }
+    .blockqueue small {
+        display: block;
+        font-size: 80%;
+        color: #777;
+        line-height: 1.42857143;
+    }
+
+li {
+    margin-left : 10px;
+}
+
+
+/*carousel*/

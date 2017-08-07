@@ -17,7 +17,8 @@ import { HandShakeService } from './services/handshake.service';
 import { LoginComponent } from './login/login.component';
 import { CardProHttpProvider } from './helpers/cardProHttp';
 import { CryptoUtils } from './helpers/cryptoUtils';
-
+import { Carousel } from './home/carousel';
+import { Slide } from './home/slide';
 @NgModule({
     declarations: [
         HomeComponent,
@@ -25,7 +26,9 @@ import { CryptoUtils } from './helpers/cryptoUtils';
         ProductsComponent,
         TechnologyComponent,
         LoginComponent,
-        CardRegistrationComponent
+        CardRegistrationComponent,
+        Carousel,
+        Slide
     ],
     providers: [
         AuthGuard,
@@ -34,7 +37,7 @@ import { CryptoUtils } from './helpers/cryptoUtils';
         HandShakeService,
         CardService,
         CardProHttpProvider,
-        CryptoUtils
+        CryptoUtils,
     ],
     imports: [
         BrowserModule,

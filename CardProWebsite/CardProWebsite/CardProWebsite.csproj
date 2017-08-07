@@ -94,6 +94,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="dist\img\card1.jpg" />
+    <Content Include="dist\img\card2.jpg" />
+    <Content Include="dist\img\card3.jpg" />
     <Content Include="Global.asax" />
     <Content Include="src\app.component.html" />
     <Content Include="src\assets\img\1.jpg" />
@@ -101,13 +104,18 @@
     <Content Include="src\assets\img\2.jpg" />
     <Content Include="src\assets\img\3.jpg" />
     <Content Include="src\assets\img\4.jpg" />
+    <Content Include="src\assets\img\card1.jpg" />
+    <Content Include="src\assets\img\card2.jpg" />
+    <Content Include="src\assets\img\card3.jpg" />
     <Content Include="src\assets\img\credit-card-sample.png" />
+    <Content Include="src\assets\img\imgwelcome.jpg" />
     <Content Include="src\modules\app\carousel\carousel.css" />
     <Content Include="src\modules\app\carousel\carousel.html" />
+    <Content Include="src\modules\app\home\home.css" />
+    <Content Include="src\modules\app\home\home.html" />
     <Content Include="src\modules\app\login\login.component.html" />
     <Content Include="src\modules\app\products\products.html" />
     <Content Include="src\modules\app\toTop\toTop.html" />
-    <Content Include="src\shared\header.css" />
     <Content Include="src\shared\header.html" />
     <Content Include="Web.config" />
     <Content Include="src\modules\app\directives\alert.component.html" />
@@ -141,6 +149,8 @@
     <TypeScriptCompile Include="src\modules\app\guard\auth.guard.ts" />
     <TypeScriptCompile Include="src\modules\app\helpers\cryptoUtils.ts" />
     <TypeScriptCompile Include="src\modules\app\helpers\cardProHttp.ts" />
+    <TypeScriptCompile Include="src\modules\app\home\carousel.ts" />
+    <TypeScriptCompile Include="src\modules\app\home\slide.ts" />
     <TypeScriptCompile Include="src\modules\app\login\login.component.ts" />
     <TypeScriptCompile Include="src\modules\app\models\DtoWrapper.ts" />
     <TypeScriptCompile Include="src\modules\app\models\CardType.ts" />
@@ -182,7 +192,6 @@
     <Content Include="wwwroot_build\publish\config.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="dist\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
   <PropertyGroup>

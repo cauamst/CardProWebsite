@@ -1,6 +1,14 @@
 ﻿<!-- Always shows a header, even in smaller screens. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
+        <div>
+            <div class="mdl-layout-spacer"></div>
+            <!-- topbar -->
+            <ul>
+                <li style="float:right"><a href="#Login">Ngôn ngữ</a></li>
+                <li style="float:right"><a href="#Login">Login</a></li>
+            </ul>
+        </div>
         <div class="mdl-layout__header-row">
             <!-- Title -->
             <span class="mdl-layout-title">{{title}}</span>
@@ -14,5 +22,16 @@
                 </span>
             </nav>
         </div>
-    </header>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Title</span>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                </nav>
+            </div>
+            </div>
+</header>
 </div>
