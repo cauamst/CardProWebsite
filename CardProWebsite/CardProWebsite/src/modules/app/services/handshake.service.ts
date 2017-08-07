@@ -3,76 +3,85 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { HandShake } from '../models/HandShake';
 import { appConfig, HandShakeConfig } from '../../../app.config';
 import { CryptoUtils } from '../helpers/cryptoUtils';
+import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class HandShakeService {
     constructor(private http: Http, private crypto: CryptoUtils) { }
 
     handShake(data: object) {
-        return this.doHandShake().map((obj) => {
-            if (obj) {
-                let base64Data = CryptoUtils.toBase64(JSON.stringify(data));
-                let encryptedData = CryptoUtils.encrypt(CryptoUtils.toBufferFromBase64(base64Data), obj.aesKey);
-                return { "ssId": obj.key, "data": encryptedData };
-            }
-            return null
-        });
-    }
+        let ssId;
+        let base64Data = CryptoUtils.toBase64(JSON.stringify(data));
+        console.log("data: " + JSON.stringify(data));
 
-    private doHandShake() {
-        let pageKey: string;
-        let base64PageKey: string;
-        let encryptedPageKey: string;
-        let superKey: string;
-
-        let props = {
+        let jwk = {
+            kty: 'oct',
             alg: 'A256GCM',
-            use: 'enc'
+            kid: '4cA7CcxinDmcgiCHokULDrN1ktyTo2wl',
+            use: 'enc',
+            k: CryptoUtils.toBase64("4cA7CcxinDmcgiCHokULDrN1ktyTo2wl"),
+            length: 256
         };
 
-        return CryptoUtils
-            .generateKey("EC", "P-256", props)
-            .flatMap((aesKey) => {
-                var serializedKey = JSON.stringify(aesKey);
-                var base64Key : string = CryptoUtils.toBase64(serializedKey);
-
-                console.log("aesKey: " + aesKey);
-                console.log("serializedAesKey: " + serializedKey);
-                console.log("base64AesKey: " + base64Key);
-
-                pageKey = aesKey;
-                base64PageKey = base64Key;
+        return this.doHandShake()
+            .flatMap((obj) => {
+                ssId = obj.key;
                 return CryptoUtils
-                    .importKey(HandShakeConfig.publicKey);
+                    .importKey(JSON.stringify(jwk), "json");
             })
-            .flatMap((rsaKey) => {
-                console.log("superKey: " + rsaKey);
-                superKey = rsaKey;
+            .flatMap((jwk) => {
                 return CryptoUtils
-                    .encrypt(CryptoUtils.toBufferFromBase64(base64PageKey), superKey);
+                    .encrypt(JSON.stringify(data), jwk)
             })
-            .flatMap((encryptedContent) => {
-                console.log("jwe encrypted key:" + encryptedContent);
-                encryptedPageKey = encryptedContent;
-                let handShakeDto = new HandShake();
-                handShakeDto.Key = CryptoUtils.toBase64(encryptedPageKey);
-
-                return this.http.post(HandShakeConfig.handshakeUrl, handShakeDto)
-                    .map((response: Response) => response.json())
-                    .map((dto: HandShake) =>
-                        this.doChallenge(dto.Challenge, pageKey, base64PageKey)
-                            ? { "key": dto.Key, "aesKey": pageKey }
-                            : null);
+            .map((result) => {
+                console.log("encryptedData: " + JSON.stringify(result));
+                return { "ssId": ssId, "data": result };
             });
     }
 
-    private doChallenge(challenge, secretKey, base64PageKey): boolean {
-        console.log("challenge: " + challenge);
-        console.log("secret: " + secretKey);
-        let key = CryptoUtils.decryptFromKeyStore(challenge, secretKey);
-        let base64Key: string = CryptoUtils.toBase64(JSON.stringify(key));
-        console.log("base64PageKey : " + base64PageKey);
-        console.log("base64Key: " + base64Key);
-        return base64PageKey == base64Key;
+    private doHandShake() {
+        let sharedSecret = "4cA7CcxinDmcgiCHokULDrN1ktyTo2wl";
+        let sharedSecretBase64 = CryptoUtils.toBase64(sharedSecret);
+        let jwk = {
+            kty: 'oct',
+            alg: 'dir',
+            kid: '4cA7CcxinDmcgiCHokULDrN1ktyTo2wl',
+            k: sharedSecretBase64,
+            length: 256
+        };
+        let pageJWK: any;
+
+        return CryptoUtils
+            .importKey(JSON.stringify(jwk), "json")
+            .flatMap((jwk) => {
+                pageJWK = jwk;
+                return CryptoUtils.importKey(HandShakeConfig.publicKey, "pem");
+            })
+            .flatMap((rsaKey) => {
+                let sharedSecretBuffer = CryptoUtils.toBufferFromBase64(sharedSecretBase64);
+                return CryptoUtils.encrypt(sharedSecretBuffer, rsaKey);
+            })
+            .flatMap((encryptedContent) => {
+                let handShakeDto = new HandShake();
+                handShakeDto.Key = encryptedContent;
+
+                return this.http.post(HandShakeConfig.handshakeUrl, handShakeDto)
+                    .map((response: Response) => response.json())
+                    .flatMap((dto: HandShake) => {
+                        return this.doChallenge(dto, pageJWK, sharedSecret)
+                    })
+            });
+    }
+
+    private doChallenge(dto: HandShake, secretKey, pageKey) {
+        return CryptoUtils
+            .decryptFromKeyStore(dto.Challenge, secretKey)
+            .map((result) => {
+                let decryptedKey = result.plaintext.toString();
+                if (decryptedKey !== pageKey) {
+                    throw new Error("Handshake failed");
+                }
+                return { "key": dto.Key, "pageJWK": secretKey }
+            });
     }
 }

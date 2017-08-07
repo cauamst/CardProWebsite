@@ -15,7 +15,9 @@ declare const gapi: any;
 export class CardRegistrationComponent implements OnInit {
     heading: string;
     loading: boolean;
+    responseJson: string;
     model: any = {};
+    success: boolean = false;
     constructor(
         private zone: NgZone,
         private route: ActivatedRoute,
@@ -31,13 +33,16 @@ export class CardRegistrationComponent implements OnInit {
 
     register(event) {
         event.preventDefault();
-        console.log("model: " + this.model);
+
         this.handshakeService.handShake(this.model)
             .subscribe((obj) => {
                 if (obj) {
                     this.cardService.registerCard(obj.ssId, obj.data)
                         .subscribe((res) => {
-                            console.log("response: " + res);
+                            this.zone.run(() => {
+                                this.responseJson = JSON.stringify(res);
+                                this.success = true;
+                            })
                         })
                 }
                 else {
