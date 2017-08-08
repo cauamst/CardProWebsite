@@ -3,7 +3,6 @@
 @Component({
     selector: 'app-footer',
     template: `
-        <section class="section--footer mdl-grid"></section>
         <footer class="mdl-mega-footer">
             <div class="mdl-mega-footer--middle-section">
                 <div class="mdl-mega-footer--drop-down-section">

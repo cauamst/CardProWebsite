@@ -1,4 +1,6 @@
-﻿<div class="mdl-layout__header-row background-antiquewhite">
+﻿
+<app-carousel></app-carousel>
+<div class="mdl-layout__header-row background-antiquewhite">
     <span class="mdl-layout-title">Sản phẩm</span>
     <!-- Add spacer, to align navigation to the right -->
     <div class="mdl-layout-spacer"></div>
@@ -89,7 +91,8 @@
                     <!-- Add spacer, to align navigation to the right -->
                     <div class="mdl-layout-spacer"></div>
                 </div>
-                <carousel [interval]="NextPhotoInterval" [noWrap]="noLoopSlides">
+                <img src="../../../assets/img/imgwelcome.jpg" />
+                <!--<carousel [interval]="NextPhotoInterval" [noWrap]="noLoopSlides">
                     <slide *ngFor="let slidez of slides; let slideIndex=index"
                            [active]="slidez.active">
                         <img [src]="slidez.image" style="margin:auto;">
@@ -98,7 +101,7 @@
                             <p style="background-color: transparent;color: white;">{{slidez.text}}</p>
                         </div>
                     </slide>
-                </carousel>
+                </carousel>-->
             </div>
         </div>
     </div>

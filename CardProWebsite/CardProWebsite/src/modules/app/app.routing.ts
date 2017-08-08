@@ -6,6 +6,8 @@ import { TechnologyComponent } from './technology/technology';
 import { CardRegistrationComponent } from './cardRegistration/cardRegistration.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guard/auth.guard';
+import { CreditComponent } from './register-credit/credit';
+
 export const routes: Routes = [
     {
         path: '',
@@ -15,7 +17,11 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent, data: { title: 'Home', name: 'Angular4' } },
     { path: 'products', component: ProductsComponent, data: { title: 'Products' }, canActivate: [AuthGuard] },
     { path: 'cardRegistration', component: CardRegistrationComponent, data: { title: 'Card Registration' }, canActivate: [AuthGuard] },
+    {
+       path: 'register', component: CreditComponent, data: { title: 'Credit' }
+    },
     { path: 'login', component: LoginComponent },
+    
     { path: '**', redirectTo: 'home' },
 ];
 

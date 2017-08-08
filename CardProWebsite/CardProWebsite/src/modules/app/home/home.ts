@@ -14,7 +14,7 @@ export class HomeComponent {
     //Looping or not
     private noLoopSlides: boolean = false;
     //Photos
-    private slides: Array<any> = [];
+    private slides: Array<any> = ["text", "text1", "image", require("../../../assets/img/1.jpg")];
 
     constructor(private route: ActivatedRoute) {
         this.heading = "Home";

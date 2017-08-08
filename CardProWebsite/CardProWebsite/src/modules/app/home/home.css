@@ -1,4 +1,5 @@
-﻿.demo-card-square.mdl-card {
+﻿/*css card home*/
+.demo-card-square.mdl-card {
     margin: 1rem;
     position: relative;
 }
@@ -10,11 +11,21 @@
 .demo-card-square > .mdl-card__title {
     color: #fff;
     background: url('https://tfirdaus.github.io/mdl/images/laptop.jpg');
+    padding-bottom: 150px;
 }
 
 .demo-card-square > .mdl-card__accent {
     background: #ff9800;
 }
+
+.mdl-card__supporting-text {
+    margin : 10px !important;
+    width : unset!important;
+}
+.mdl-demo .mdl-card__actions a {
+    float : right;
+}
+
 
 .body {
     padding: 20px;

@@ -115,6 +115,8 @@
     <Content Include="src\modules\app\home\home.html" />
     <Content Include="src\modules\app\login\login.component.html" />
     <Content Include="src\modules\app\products\products.html" />
+    <Content Include="src\modules\app\register-credit\credit.css" />
+    <Content Include="src\modules\app\register-credit\credit.html" />
     <Content Include="src\modules\app\toTop\toTop.html" />
     <Content Include="src\shared\header.html" />
     <Content Include="Web.config" />
@@ -157,6 +159,8 @@
     <TypeScriptCompile Include="src\modules\app\models\Card.ts" />
     <TypeScriptCompile Include="src\modules\app\models\image.interface.ts" />
     <TypeScriptCompile Include="src\modules\app\models\user.ts" />
+    <TypeScriptCompile Include="src\modules\app\register-credit\credit.ts" />
+    <TypeScriptCompile Include="src\modules\app\register-credit\forbidden-name.directive.ts" />
     <TypeScriptCompile Include="src\modules\app\services\alert.service.ts" />
     <TypeScriptCompile Include="src\modules\app\services\authentication.service.ts" />
     <TypeScriptCompile Include="src\modules\app\services\card.service.ts" />

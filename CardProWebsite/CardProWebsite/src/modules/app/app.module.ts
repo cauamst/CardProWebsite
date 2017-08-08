@@ -19,6 +19,9 @@ import { CardProHttpProvider } from './helpers/cardProHttp';
 import { CryptoUtils } from './helpers/cryptoUtils';
 import { Carousel } from './home/carousel';
 import { Slide } from './home/slide';
+import { CreditComponent } from './register-credit/credit';
+import { CarouselComponent } from './carousel/carousel';
+
 @NgModule({
     declarations: [
         HomeComponent,
@@ -28,7 +31,9 @@ import { Slide } from './home/slide';
         LoginComponent,
         CardRegistrationComponent,
         Carousel,
-        Slide
+        Slide,
+        CreditComponent,
+        CarouselComponent
     ],
     providers: [
         AuthGuard,

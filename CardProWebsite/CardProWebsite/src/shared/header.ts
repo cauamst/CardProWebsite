@@ -38,7 +38,9 @@ li a:hover:not(.active) {
 .active {
     background-color: #4CAF50;
 }
-
+.mdl-layout__header-row > * {
+            padding-left: 24px !important; 
+        }
 `]
 })
 export class HeaderComponent {

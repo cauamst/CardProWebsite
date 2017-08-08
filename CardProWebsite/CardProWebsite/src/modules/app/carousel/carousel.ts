@@ -19,6 +19,6 @@ var IMAGES: Image[] = [
     { "title": "We are covered", "url": require("../../../assets/img/1.jpg") },
     { "title": "Generation Gap", "url": require("../../../assets/img/2.jpg") },
     { "title": "Potter Me", "url": require("../../../assets/img/3.jpg") },
-    { "title": "Pre-School Kids", "url": require("../../../assets/img/4.jpg") },
+    { "title": "Pre-School Kids", "url": require("../../../assets/img/3.jpg") },
     { "title": "Young Peter Cech", "url": require("../../../assets/img/10.jpg") }	
 ];

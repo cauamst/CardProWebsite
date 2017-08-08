@@ -1,0 +1,25 @@
+﻿.mdl-textfield__input {
+    width : 250px;
+}
+.util-max-512px {
+    max-width: 512px;
+}
+
+.util-no-decoration {
+    text-decoration: none;
+}
+.solid {
+    border-left: solid 2px #808080;
+}
+.solid:hover {
+    color : #0094ff
+}
+.mg-60 {
+    margin-top: 60px;
+}
+.border-left-bottom {
+    border-bottom : 2px solid #0094ff;
+    border-left : 2px solid #0094ff;
+}
+/*form css*/
+
