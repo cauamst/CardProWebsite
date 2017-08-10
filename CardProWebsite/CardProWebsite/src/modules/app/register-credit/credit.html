@@ -1,26 +1,23 @@
-﻿<div class="mdl-card__title mdl-color--teal-500 mg-60">
-    <h2 class="mdl-card__title-text mdl-color-text--white">Register</h2>
-</div>
-<main class="mdl-layout__content">
+﻿<main class="mdl-layout__content mg-60">
     <div class="page-content container">
-        <div class="mdl-grid border-left-bottom">
-            <div class="mdl-cell mdl-cell--12-col">
-                <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet" style="float: left">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col none-margin">
+                <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell-hidden-phone" style="float: left">
                     <app-carousel></app-carousel>
-                    <input class="toggle-box" id="identifier-2" type="checkbox">
-                    <label for="identifier-2">Click here to read more about HTML!</label>
+                    <!--<input class="toggle-box" id="identifier-2" type="checkbox">
+                    <label for="identifier-2">Click here to read more about HTML!</label>-->
                     <div>
-                        <div class="inline">
+                        <!--<div class="inline">
                             <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--1-col-phone " *ngFor="let bt of button">
                                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
                                     {{bt.director}}
                                 </button>
                             </div>
-                        </div>
+                        </div>-->
                         <!-- end div inline -->
-                        <div class="mdl-cell mdl-cell--4-col">
+                        <!--<div class="mdl-cell mdl-cell--4-col">-->
                             <!-- Square card -->
-                            <div class="mdl-card mdl-shadow--2dp demo-card-square">
+                            <!--<div class="mdl-card mdl-shadow--2dp demo-card-square">
                                 <div class="mdl-card__title mdl-card--expand">
                                     <h2 class="mdl-card__title-text">Card 1</h2>
                                 </div>
@@ -32,8 +29,8 @@
                                         Action
                                     </a>
                                 </div>
-                            </div>
-                        </div>
+                            </div>-->
+                        <!--</div>-->
                     </div>
                     <input class="toggle-box" id="identifier-1" type="checkbox">
                     <label for="identifier-1">Click here to read more about HTML!</label>
@@ -53,14 +50,14 @@
                     </div>
                     <!-- table -->
                 </div>
-                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-phone mdl-cell--6-tablet" style="float: right">
+                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-phone mdl-cell--8-tablet" style="float: right">
                     <!-- REGISTER FORM -->
                     <div class="mdl-grid">
-                        <div class="mdl-card mdl-shadow--16dp util-center util-spacing-h--40px">
+                        <div class="mdl-card mdl-shadow--16dp util-center util-spacing-h--40px element-left">
                             <div class="mdl-card__title mdl-color--teal-500">
-                                <h2 class="mdl-card__title-text mdl-color-text--white">Create a New Account</h2>
+                                <h2 class="mdl-card__title-text mdl-color-text--white">Thông tin khách hàng</h2>
                             </div>
-                            <div class="mdl-card__supporting-text mdl-grid">
+                            <div class="mdl-card__supporting-text mdl-grid margin-import">
                                 <form method="POST" action="">
                                     <input type="hidden" name="action" value="register" />
 
@@ -81,10 +78,28 @@
                                     </div>
                                     <div class="mdl-cell mdl-cell--12-col send-button" align="right">
                                         <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored" type="submit">
-                                            Hoàn tất đăng kí
+                                            Hoàn tất
                                         </button>
                                     </div>
                                 </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- addition -->
+                    <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--4-col-phone mdl-cell--6-tablet" style="float: right">
+                        <div class="mdl-grid addition">
+                            <div class="mdl-card mdl-shadow--16dp util-center util-spacing-h--40px element-left">
+                                <div class="mdl-card__title mdl-color--teal-500 title-addition">
+                                    <h2 class="mdl-card__title-text mdl-color-text--white">Điều kiện</h2>
+                                </div>
+                                <div class="mdl-card__supporting-text mdl-grid margin-import">
+                                    <ul>
+                                        <li>More Information</li>
+                                        <li>More Information</li>
+                                       <li>More Information</li>
+                                       <li>More Information</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -93,5 +108,6 @@
             <!-- Material Design Lite JavaScript -->
         </div>
     </div>
+
 </main>
 <br />

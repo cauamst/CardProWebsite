@@ -9,10 +9,10 @@
             </div>
             <div class="mdl-mega-footer--bottom-section">
                 <div class="mdl-logo">
-                    More Information
+                   Sacombank
                 </div>
                 <ul class="mdl-mega-footer--link-list">
-                    <li><a href="https://github.com/ServiceStack/ServiceStackVS">ServiceStack VS.NET Templates</a></li>
+                    <li>Ngân hàng Sacombank Hội Sở - Địa chỉ 266-268 Nam Kỳ Khởi Nghĩa, Phường 8, Quận 3, Thành phố Hồ Chí Minh.</li>
                 </ul>
             </div>
         </footer>
