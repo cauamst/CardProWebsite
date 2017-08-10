@@ -118,6 +118,8 @@
     <Content Include="src\modules\app\register-credit\credit.css" />
     <Content Include="src\modules\app\register-credit\credit.html" />
     <Content Include="src\modules\app\toTop\toTop.html" />
+    <Content Include="src\modules\app\_login\login.css" />
+    <Content Include="src\modules\app\_login\login.html" />
     <Content Include="src\shared\header.html" />
     <Content Include="Web.config" />
     <Content Include="src\modules\app\directives\alert.component.html" />
@@ -165,6 +167,7 @@
     <TypeScriptCompile Include="src\modules\app\services\authentication.service.ts" />
     <TypeScriptCompile Include="src\modules\app\services\card.service.ts" />
     <TypeScriptCompile Include="src\modules\app\toTop\toTop.ts" />
+    <TypeScriptCompile Include="src\modules\app\_login\login.ts" />
     <TypeScriptCompile Include="src\shared\footer.ts" />
     <TypeScriptCompile Include="src\shared\header.ts" />
     <TypeScriptCompile Include="src\shared\utils.ts" />

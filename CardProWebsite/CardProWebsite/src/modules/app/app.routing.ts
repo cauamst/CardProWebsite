@@ -7,6 +7,7 @@ import { CardRegistrationComponent } from './cardRegistration/cardRegistration.c
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guard/auth.guard';
 import { CreditComponent } from './register-credit/credit';
+import { LoginLayoutComponent } from './_login/login';
 
 export const routes: Routes = [
     {
@@ -19,8 +20,12 @@ export const routes: Routes = [
     { path: 'cardRegistration', component: CardRegistrationComponent, data: { title: 'Card Registration' }, canActivate: [AuthGuard] },
     {
        path: 'register', component: CreditComponent, data: { title: 'Credit' }
+
     },
-    { path: 'login', component: LoginComponent },
+    {
+        path: 'Login', component: LoginLayoutComponent, data: { title: 'Login' }
+    },
+    { path: 'login', component: LoginComponent},
     
     { path: '**', redirectTo: 'home' },
 ];

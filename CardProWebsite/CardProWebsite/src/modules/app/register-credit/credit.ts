@@ -6,13 +6,17 @@ import { FormGroup } from "@angular/forms/src/forms";
 @Component({
     selector: 'credit',
     templateUrl: './credit.html',
-    styleUrls : ['./credit.css']
+    styleUrls: ['./credit.css']
 })
 export class CreditComponent implements OnInit {
 
-    powers = ['Really Smart', 'Super Flexible', 'Weather Changer'];
+    button = [
+        { director: 'Button1' },
+        { director: 'Button2' },
+        { director: 'Button3' },
+        { director: 'Button4' },
+    ];
 
-    hero = { name: 'Dr.', alterEgo: 'Dr. What', power: this.powers[0] };
     constructor() {
     }
     ngOnInit(): void {

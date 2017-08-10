@@ -39,8 +39,12 @@ li a:hover:not(.active) {
     background-color: #4CAF50;
 }
 .mdl-layout__header-row > * {
-            padding-left: 24px !important; 
+            padding-left: 24px !important;
+            
         }
+.mdl-layout{
+    position :initial;
+}
 `]
 })
 export class HeaderComponent {

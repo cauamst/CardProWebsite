@@ -21,6 +21,7 @@ import { Carousel } from './home/carousel';
 import { Slide } from './home/slide';
 import { CreditComponent } from './register-credit/credit';
 import { CarouselComponent } from './carousel/carousel';
+import { LoginLayoutComponent } from './_login/login';
 
 @NgModule({
     declarations: [
@@ -33,7 +34,8 @@ import { CarouselComponent } from './carousel/carousel';
         Carousel,
         Slide,
         CreditComponent,
-        CarouselComponent
+        CarouselComponent,
+        LoginLayoutComponent
     ],
     providers: [
         AuthGuard,
