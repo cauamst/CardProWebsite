@@ -5,7 +5,27 @@ import { routes } from '../modules/app/app.routing';
 @Component({
     selector: 'app-header',
     templateUrl: './header.html',
-    styles: [` 
+    styles: [`
+.card_pro_header {
+    background-color: transparent;
+    overflow-y: hidden;
+    border-bottom: 2px solid #eee;
+    min-height: 100px;
+}
+
+.card_pro_sub_row {
+    height: 20px;
+    padding-top: 20px;
+}
+
+.card_pro_header .card_pro_title, 
+.card_pro_header .card_pro_link,  
+.card_pro_header .card_pro_menu_btn {
+    color: #7c8082;
+}
+.card_pro_header .card_pro_link.sub_menu {
+    font-size: 11px;
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -48,9 +68,9 @@ li a:hover:not(.active) {
 `]
 })
 export class HeaderComponent {
-    title = 'Card Pro';
-    routes = routes.filter((val) => val.path != '' && val.path != 'login' );
-
+    title = 'CARD PRO';
+    routes = routes.filter((val) => val.path != '' && val.path != 'login');
+    logoUrl = require("../assets/img/Logo_Sacombank.png")
     constructor(private route: ActivatedRoute, private router: Router) {}
 
     isActive(path: string): boolean {

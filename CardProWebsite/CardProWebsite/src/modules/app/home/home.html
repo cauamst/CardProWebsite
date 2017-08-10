@@ -4,13 +4,15 @@
 <main class="mdl-layout__content">
    
     <div class="page-content container ">
-        <div class="mdl-layout__header-row background-antiquewhite">
-            <span class="mdl-layout-title">Sản phẩm</span>
-            <!-- Add spacer, to align navigation to the right -->
-            <div class="mdl-layout-spacer"></div>
-        </div>
-        <br />
+        
         <div class="mdl-grid  contentcard">
+            <div class="mdl-cell mdl-cell--12-col">
+                <div class="mdl-layout__header-row card_pro_header_row">
+                    <span class="mdl-layout-title">Sản phẩm</span>
+                    <!-- Add spacer, to align navigation to the right -->
+                    <div class="mdl-layout-spacer"></div>
+                </div>
+            </div>
             <div class="mdl-cell mdl-cell--4-col">
                 <div class="mdl-card mdl-shadow--2dp demo-card-square">
                     <div class="mdl-card__title mdl-card--expand">
@@ -59,9 +61,11 @@
                 </div>
             </div>
         </div>
+        
         <div class="mdl-grid">
+            
             <div class="mdl-cell mdl-cell--8-col">
-                <div class="mdl-layout__header-row background-antiquewhite">
+                <div class="mdl-layout__header-row card_pro_header_row">
                     <span class="mdl-layout-title">Welcome to ABC</span>
                     <!-- Add spacer, to align navigation to the right -->
                     <div class="mdl-layout-spacer"></div>
@@ -84,22 +88,17 @@
                 </div>
             </div>
             <div class="mdl-cell mdl-cell--4-col">
-                <div class="mdl-layout__header-row background-antiquewhite">
-                    <span class="mdl-layout-title">promotion</span>
+                <div class="mdl-layout__header-row card_pro_header_row">
+                    <span class="mdl-layout-title">Promotion</span>
                     <!-- Add spacer, to align navigation to the right -->
                     <div class="mdl-layout-spacer"></div>
                 </div>
-                <img src="../../../assets/img/imgwelcome.jpg" />
-                <!--<carousel [interval]="NextPhotoInterval" [noWrap]="noLoopSlides">
-                    <slide *ngFor="let slidez of slides; let slideIndex=index"
+                <carousel [interval]="NextPhotoInterval" [noWrap]="noLoopSlides">
+                    <slide *ngFor="let slidez of slides"
                            [active]="slidez.active">
                         <img [src]="slidez.image" style="margin:auto;">
-                        <div class="carousel-caption">
-                            <h3 style="background-color: transparent;color: white;">Slide {{slideIndex + 1}}</h3>
-                            <p style="background-color: transparent;color: white;">{{slidez.text}}</p>
-                        </div>
                     </slide>
-                </carousel>-->
+                </carousel>
             </div>
         </div>
     </div>

@@ -109,6 +109,7 @@
     <Content Include="src\assets\img\card3.jpg" />
     <Content Include="src\assets\img\credit-card-sample.png" />
     <Content Include="src\assets\img\imgwelcome.jpg" />
+    <Content Include="src\assets\img\Logo_Sacombank.png" />
     <Content Include="src\modules\app\carousel\carousel.css" />
     <Content Include="src\modules\app\carousel\carousel.html" />
     <Content Include="src\modules\app\home\home.css" />

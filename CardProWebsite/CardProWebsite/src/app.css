@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 html, body {
-  font-family: 'Roboto', 'Helvetica', sans-serif;
-  margin: 0;
-  padding: 0;
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 .mdl-demo .mdl-layout__header-row {
   padding-left: 40px;
@@ -238,4 +237,8 @@ html, body {
 
 .mdl-layout__container {
     height: auto !important;
+}
+
+.card_pro_main {
+    padding-top: 78px;
 }

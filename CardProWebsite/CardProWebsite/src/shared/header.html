@@ -1,32 +1,39 @@
 ﻿<!-- Always shows a header, even in smaller screens. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
+    <header class="mdl-layout__header card_pro_header">
+        <div class="mdl-layout__header-row card_pro_sub_row">
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+                <span><a href="#" class="mdl-layout__tab card_pro_link sub_menu">Languages</a></span>
+                <span><a href="#" class="mdl-layout__tab card_pro_link sub_menu">Help</a></span>
+            </nav>
+        </div>
         <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span class="mdl-layout-title">{{title}}</span>
-            <!-- Add spacer, to align navigation to the right -->
+            <span class="mdl-layout-title card_pro_title"><img src="{{logoUrl}}" width="250" height="100" /></span>
+            <!-- Add spacer, to align navigation to the right -->   
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
             <nav class="mdl-navigation mdl-layout--large-screen-only">
                 <span *ngFor="let route of routes">
-                    <a *ngIf="route.data" class="mdl-layout__tab"
+                    <a *ngIf="route.data" class="mdl-layout__tab card_pro_link"
                        routerLink="{{route.path}}" routerLinkActive="active-link">{{route.data.title}}</a>
                 </span>
             </nav>
             <!-- Right aligned menu below button -->
             <button id="demo-menu-lower-right"
-                    class="mdl-button mdl-js-button mdl-button--icon">
+                    class="mdl-button mdl-js-button mdl-button--icon card_pro_menu_btn">
                 <i class="material-icons">more_vert</i>
             </button>
         </div>
     </header>
-        <div class="mdl-layout__drawer mdl-layout--small-screen-only">
-            <span class="mdl-layout-title">Title</span>
-            <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-            </nav>
-        </div>
+    <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+        <span class="mdl-layout-title">Title</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+    </div>
 </div>

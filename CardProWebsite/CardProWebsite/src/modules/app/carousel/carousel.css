@@ -1,6 +1,7 @@
-.carousel{
-    overflow:hidden;
-    max-width: 100%;
+card_pro.carousel {
+    overflow: hidden;
+    margin-right: -8px;
+    margin-left: -8px;
 }
 .slides{
     list-style:none;

@@ -1,113 +1,82 @@
-﻿<main class="mdl-layout__content mg-60">
+﻿<main class="mdl-layout__content">
     <div class="page-content container">
         <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--12-col none-margin">
-                <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell-hidden-phone" style="float: left">
-                    <app-carousel></app-carousel>
-                    <!--<input class="toggle-box" id="identifier-2" type="checkbox">
-                    <label for="identifier-2">Click here to read more about HTML!</label>-->
-                    <div>
-                        <!--<div class="inline">
-                            <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--1-col-phone " *ngFor="let bt of button">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-                                    {{bt.director}}
+            <div class="mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">
+                <div>
+                    <carousel [interval]="NextPhotoInterval" [noWrap]="noLoopSlides">
+                        <slide *ngFor="let slidez of slides"
+                               [active]="slidez.active">
+                            <img [src]="slidez.image" style="margin:auto;">
+                        </slide>
+                    </carousel>
+                </div>
+                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                    <thead>
+                        <tr><th class="mdl-data-table__cell--non-numeric">Student</th><th>Class</th><th>Grade</th><th>Grade</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="mdl-data-table__cell--non-numeric">Mahesh Parashar</td><td>VI</td><td>A</td><td>A</td></tr>
+                        <tr><td class="mdl-data-table__cell--non-numeric">Rahul Sharma</td><td>VI</td><td>B</td><td>B</td></tr>
+                        <tr><td class="mdl-data-table__cell--non-numeric">Mohan Sood</td><td>VI</td><td>A</td><td>C</td></tr>
+                        <tr><td class="mdl-data-table__cell--non-numeric">Harry Sood</td><td>V</td><td>C</td><td>D</td></tr>
+                    </tbody>
+                </table>
+                <!-- table -->
+            </div>
+            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-phone mdl-cell--6-tablet">
+                <!-- REGISTER FORM -->
+                <div class="mdl-card mdl-shadow--16dp util-center util-spacing-h--40px element-left">
+                    <div class="mdl-card__title mdl-color--teal-500">
+                        <h2 class="mdl-card__title-text mdl-color-text--white">Thông tin khách hàng</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text mdl-grid margin-import">
+                        <form method="POST" action="">
+                            <input type="hidden" name="action" value="register" />
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
+                                <label class="mdl-textfield__label mdl-color-text--grey" for="textfield_new_username">Họ tên</label>
+                                <input class="mdl-textfield__input" type="text" id="name" name="name" pattern="^[a-z0-9_-]{3,15}$" />
+                                <span class="mdl-textfield__error">3-15 characters with only lowercase letters, digits, underscore, and hyphen</span>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
+                                <label class="mdl-textfield__label mdl-color-text--grey" for="textfield_new_phone">phone</label>
+                                <input class="mdl-textfield__input" type="text" id="phone" name="phone" pattern="^[a-z0-9_-]{3,15}$" />
+                                <span class="mdl-textfield__error">3-15 characters with only lowercase letters, digits, underscore, and hyphen</span>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
+                                <label class="mdl-textfield__label mdl-color-text--grey" for="textfield_new_address">Địa chỉ</label>
+                                <input class="mdl-textfield__input" type="text" id="address" name="address" pattern="^[a-z0-9_-]{3,15}$" />
+                                <span class="mdl-textfield__error">3-15 characters with only lowercase letters, digits, underscore, and hyphen</span>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col send-button">
+                                <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored" type="submit">
+                                    Hoàn tất
                                 </button>
                             </div>
-                        </div>-->
-                        <!-- end div inline -->
-                        <!--<div class="mdl-cell mdl-cell--4-col">-->
-                            <!-- Square card -->
-                            <!--<div class="mdl-card mdl-shadow--2dp demo-card-square">
-                                <div class="mdl-card__title mdl-card--expand">
-                                    <h2 class="mdl-card__title-text">Card 1</h2>
-                                </div>
-                                <div class="mdl-card__supporting-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
-                                </div>
-                                <div class="mdl-card__actions mdl-card--border">
-                                    <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect">
-                                        Action
-                                    </a>
-                                </div>
-                            </div>-->
-                        <!--</div>-->
+                        </form> 
                     </div>
-                    <input class="toggle-box" id="identifier-1" type="checkbox">
-                    <label for="identifier-1">Click here to read more about HTML!</label>
-                    <div>
-                        table - include data.
-                        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-                            <thead>
-                                <tr><th class="mdl-data-table__cell--non-numeric">Student</th><th>Class</th><th>Grade</th><th>Grade</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class="mdl-data-table__cell--non-numeric">Mahesh Parashar</td><td>VI</td><td>A</td><td>A</td></tr>
-                                <tr><td class="mdl-data-table__cell--non-numeric">Rahul Sharma</td><td>VI</td><td>B</td><td>B</td></tr>
-                                <tr><td class="mdl-data-table__cell--non-numeric">Mohan Sood</td><td>VI</td><td>A</td><td>C</td></tr>
-                                <tr><td class="mdl-data-table__cell--non-numeric">Harry Sood</td><td>V</td><td>C</td><td>D</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- table -->
                 </div>
-                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-phone mdl-cell--8-tablet" style="float: right">
-                    <!-- REGISTER FORM -->
-                    <div class="mdl-grid">
-                        <div class="mdl-card mdl-shadow--16dp util-center util-spacing-h--40px element-left">
-                            <div class="mdl-card__title mdl-color--teal-500">
-                                <h2 class="mdl-card__title-text mdl-color-text--white">Thông tin khách hàng</h2>
-                            </div>
-                            <div class="mdl-card__supporting-text mdl-grid margin-import">
-                                <form method="POST" action="">
-                                    <input type="hidden" name="action" value="register" />
-
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
-                                        <label class="mdl-textfield__label mdl-color-text--grey" for="textfield_new_username">Họ tên</label>
-                                        <input class="mdl-textfield__input" type="text" id="name" name="name" pattern="^[a-z0-9_-]{3,15}$" />
-                                        <span class="mdl-textfield__error">3-15 characters with only lowercase letters, digits, underscore, and hyphen</span>
-                                    </div>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
-                                        <label class="mdl-textfield__label mdl-color-text--grey" for="textfield_new_phone">phone</label>
-                                        <input class="mdl-textfield__input" type="text" id="phone" name="phone" pattern="^[a-z0-9_-]{3,15}$" />
-                                        <span class="mdl-textfield__error">3-15 characters with only lowercase letters, digits, underscore, and hyphen</span>
-                                    </div>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
-                                        <label class="mdl-textfield__label mdl-color-text--grey" for="textfield_new_address">Địa chỉ</label>
-                                        <input class="mdl-textfield__input" type="text" id="address" name="address" pattern="^[a-z0-9_-]{3,15}$" />
-                                        <span class="mdl-textfield__error">3-15 characters with only lowercase letters, digits, underscore, and hyphen</span>
-                                    </div>
-                                    <div class="mdl-cell mdl-cell--12-col send-button" align="right">
-                                        <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored" type="submit">
-                                            Hoàn tất
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
+                <!-- addition -->
+                <div class="addition">
+                    <div class="mdl-card mdl-shadow--16dp util-center util-spacing-h--40px element-left">
+                        <div class="mdl-card__title mdl-color--teal-500 title-addition">
+                            <h2 class="mdl-card__title-text mdl-color-text--white">Điều kiện</h2>
                         </div>
-                    </div>
-                    <!-- addition -->
-                    <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--4-col-phone mdl-cell--6-tablet" style="float: right">
-                        <div class="mdl-grid addition">
-                            <div class="mdl-card mdl-shadow--16dp util-center util-spacing-h--40px element-left">
-                                <div class="mdl-card__title mdl-color--teal-500 title-addition">
-                                    <h2 class="mdl-card__title-text mdl-color-text--white">Điều kiện</h2>
-                                </div>
-                                <div class="mdl-card__supporting-text mdl-grid margin-import">
-                                    <ul>
-                                        <li>More Information</li>
-                                        <li>More Information</li>
-                                       <li>More Information</li>
-                                       <li>More Information</li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="mdl-card__supporting-text mdl-grid margin-import">
+                            <ul>
+                                <li>More Information</li>
+                                <li>More Information</li>
+                                <li>More Information</li>
+                                <li>More Information</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Material Design Lite JavaScript -->
         </div>
+        <!-- Material Design Lite JavaScript -->
     </div>
+
 
 </main>
 <br />

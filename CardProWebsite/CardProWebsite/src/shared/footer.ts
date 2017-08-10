@@ -3,7 +3,7 @@
 @Component({
     selector: 'app-footer',
     template: `
-        <footer class="mdl-mega-footer">
+        <footer class="mdl-mega-footer card_pro_footer">
             <div class="mdl-mega-footer--middle-section">
                   
             </div>
@@ -16,6 +16,12 @@
                 </ul>
             </div>
         </footer>
-    `
+    `,
+    styles: [`
+        .card_pro_footer {
+            margin-top: 80px;
+         }
+
+    `]
 })
 export class FooterComponent {}
