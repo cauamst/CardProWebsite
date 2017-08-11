@@ -1,7 +1,6 @@
 ﻿import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import * as moment from 'moment';
 import { routing } from './app.routing';
 import { HomeComponent } from './home/home';
 import { HelloComponent } from './home/hello';
@@ -21,7 +20,8 @@ import { Slide } from './home/slide';
 import { CreditComponent } from './register-credit/credit';
 import { CarouselComponent } from './carousel/carousel';
 import { LoginLayoutComponent } from './_login/login';
-import {Md2Module} from 'md2';
+import { BrowserModule } from '@angular/platform-browser';
+
 @NgModule({
     declarations: [
         HomeComponent,
@@ -43,13 +43,12 @@ import {Md2Module} from 'md2';
         HandShakeService,
         CardService,
         CardProHttpProvider,
-        CryptoUtils,
+        CryptoUtils
     ],
     imports: [
         BrowserModule,
         FormsModule,
-        routing,
-        Md2Module
+        routing
     ]
 })
 export class AppModule { }

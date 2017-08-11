@@ -66,7 +66,7 @@ module.exports = {
         path: isProd ? root('wwwroot/dist') : root('dist'),
         publicPath: '/dist/',
         filename: isProd ? '[name].[chunkhash].bundle.js' : '[name].bundle.js',
-        chunkFilename: isProd ? '[name].[chunkhash].js' : '[name].js',
+        chunkFilename: isProd ? '[name].[chunkhash].js' : '[name].js'
     },
 
     devServer: {

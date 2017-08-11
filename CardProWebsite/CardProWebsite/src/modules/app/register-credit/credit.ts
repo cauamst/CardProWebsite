@@ -1,13 +1,13 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit, Input, Output  } from '@angular/core';
 import { FormControl } from "@angular/forms/forms";
 import { Validators } from "@angular/forms/src/validators";
 import { FormGroup } from "@angular/forms/src/forms";
 
-
 @Component({
     selector: 'credit',
     templateUrl: './credit.html',
-    styleUrls: ['./credit.css']
+    styleUrls: ['./credit.css'],
+    
 })
 export class CreditComponent implements OnInit {
     private NextPhotoInterval: number = 3000;
@@ -42,4 +42,7 @@ export class CreditComponent implements OnInit {
         this.slides.pop();
        
     }
+    title = "accordion";
+
+    
 }
