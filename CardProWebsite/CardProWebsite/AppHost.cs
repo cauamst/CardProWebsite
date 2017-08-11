@@ -12,7 +12,6 @@ using ServiceStack.Configuration;
 
 namespace CardProWebsite {
     public class AppHost : AppHostBase {
-        /// <summary>
         /// Base constructor requires a Name and Assembly where web service implementation is located
         /// </summary>
         public AppHost()
