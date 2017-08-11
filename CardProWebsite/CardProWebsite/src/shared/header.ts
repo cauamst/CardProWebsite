@@ -65,6 +65,10 @@ li a:hover:not(.active) {
 .mdl-layout{
     position :initial;
 }
+.is-visible {
+    position: fixed !important;
+}
+
 `]
 })
 export class HeaderComponent {

@@ -275,9 +275,6 @@
     margin-top : 5px;
 
 }
-.mdl-card__supporting-text {
-    margin : 5px !important;
-}
 #form {
     display: inline-block;
     text-align: center;
@@ -299,3 +296,5 @@
 .mdl-grid {
     width : 100%;
 }
+
+

@@ -97,7 +97,6 @@ body {
 }
 .margin-import {
     margin-top: 0px !important;
-    margin-left: 20px !important;
     width : 100%;
 }
 .element-left {
@@ -112,4 +111,11 @@ body {
 }
 .title-addition {
     padding: 5px 16px 5px 16px !important;
+}
+.size-icons {
+    font-size: 80px !important;
+    margin-top : 100px;
+}
+.send-button {
+    float : right;
 }

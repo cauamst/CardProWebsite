@@ -3,6 +3,7 @@ import { FormControl } from "@angular/forms/forms";
 import { Validators } from "@angular/forms/src/validators";
 import { FormGroup } from "@angular/forms/src/forms";
 
+
 @Component({
     selector: 'credit',
     templateUrl: './credit.html',
@@ -29,15 +30,16 @@ export class CreditComponent implements OnInit {
 
     private addNewSlide() {
         this.slides.push(
-            { image: 'http://www.angulartypescript.com/wp-content/uploads/2016/03/car1.jpg', text: 'BMW 1' },
-            { image: 'http://www.angulartypescript.com/wp-content/uploads/2016/03/car2.jpg', text: 'BMW 2' },
-            { image: 'http://www.angulartypescript.com/wp-content/uploads/2016/03/car3.jpg', text: 'BMW 3' },
-            { image: 'http://www.angulartypescript.com/wp-content/uploads/2016/03/car4.jpg', text: 'BMW 4' },
-            { image: 'http://www.angulartypescript.com/wp-content/uploads/2016/03/car5.jpg', text: 'BMW 5' },
-            { image: 'http://www.angulartypescript.com/wp-content/uploads/2016/03/car6.jpg', text: 'BMW 6' }
+            { image: require("../../../assets/img/slide1.jpg"), text: 'BMW 1' },
+            { image: require("../../../assets/img/slide2.jpg"), text: 'BMW 2' },
+            { image: require("../../../assets/img/slide3.jpg"), text: 'BMW 3' },
+            { image: require("../../../assets/img/slide4.jpg"), text: 'BMW 4' },
+            { image: require("../../../assets/img/slide5.jpg"), text: 'BMW 5' },
+            { image: require("../../../assets/img/slide1.jpg"), text: 'BMW 6' }
         );
     }
     private removeLastSlide() {
         this.slides.pop();
+       
     }
 }

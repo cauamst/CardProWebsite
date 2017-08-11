@@ -2,9 +2,9 @@
 <app-carousel></app-carousel>
 
 <main class="mdl-layout__content">
-   
+
     <div class="page-content container ">
-        
+
         <div class="mdl-grid  contentcard">
             <div class="mdl-cell mdl-cell--12-col">
                 <div class="mdl-layout__header-row card_pro_header_row">
@@ -16,7 +16,7 @@
             <div class="mdl-cell mdl-cell--4-col">
                 <div class="mdl-card mdl-shadow--2dp demo-card-square">
                     <div class="mdl-card__title mdl-card--expand">
-                        <h2 class="mdl-card__title-text">Card 1</h2>
+                        <h2 class="mdl-card__title-text"></h2>
                     </div>
                     <div class="mdl-card__supporting-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
@@ -32,7 +32,7 @@
                 <!-- Square card -->
                 <div class="mdl-card mdl-shadow--2dp demo-card-square">
                     <div class="mdl-card__title mdl-card__accent mdl-card--expand">
-                        <h2 class="mdl-card__title-text">Card 2</h2>
+                        <h2 class="mdl-card__title-text"></h2>
                     </div>
                     <div class="mdl-card__supporting-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
@@ -48,7 +48,7 @@
                 <!-- Square card -->
                 <div class="mdl-card mdl-shadow--2dp demo-card-square">
                     <div class="mdl-card__title mdl-card--expand">
-                        <h2 class="mdl-card__title-text">Card 3</h2>
+                        <h2 class="mdl-card__title-text"></h2>
                     </div>
                     <div class="mdl-card__supporting-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
@@ -61,9 +61,9 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="mdl-grid">
-            
+
             <div class="mdl-cell mdl-cell--8-col">
                 <div class="mdl-layout__header-row card_pro_header_row">
                     <span class="mdl-layout-title">Welcome to ABC</span>
@@ -96,7 +96,8 @@
                 <carousel [interval]="NextPhotoInterval" [noWrap]="noLoopSlides">
                     <slide *ngFor="let slidez of slides"
                            [active]="slidez.active">
-                        <img [src]="slidez.image" style="margin:auto;">
+                        <img [src]="slidez.image" style="margin:auto;height: 230px;
+                             width: 400px;" >
                     </slide>
                 </carousel>
             </div>

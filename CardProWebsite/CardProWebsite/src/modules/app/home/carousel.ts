@@ -13,10 +13,10 @@ export enum Direction { UNKNOWN, NEXT, PREV }
       </ol>
       <div class="carousel-inner"><ng-content></ng-content></div>
                   <a class="left carousel-control" (click)="prev()" [hidden]="!slides.length">
-                  <span class="glyphicon glyphicon-chevron-left"></span>
+                         <i class = "mdl-icon-toggle__label material-icons size-icons">chevron_left</i>
                   </a>
                   <a class="right carousel-control" (click)="next()" [hidden]="!slides.length">
-                  <span class="glyphicon glyphicon-chevron-right"></span>
+                 <i class = "mdl-icon-toggle__label material-icons size-icons">chevron_right</i>
                  </a>
     </div>
   `,
@@ -50,11 +50,10 @@ export enum Direction { UNKNOWN, NEXT, PREV }
     top: 0;
     bottom: 0;
     left: 0;
-    width: 15%;
+    width: 10%;
     font-size: 20px;
     color: #fff;
-    text-align: center;
-    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    text-shadow: rgba(25, 23, 23, 0.8);;
     background-color: rgba(0,0,0,0);
     filter: alpha(opacity=50);
     opacity: .5;
@@ -90,6 +89,10 @@ a {
         -webkit-transform: translate3d(0,0,0);
         transform: translate3d(0,0,0);
     }
+.size-icons {
+    font-size: 60px !important;
+    margin-top : 120px;
+}
 `]
 })
 export class Carousel implements OnDestroy {
@@ -110,7 +113,7 @@ export class Carousel implements OnDestroy {
     private currentInterval: any;
     private isPlaying: boolean;
     private destroyed: boolean = false;
-    private currentSlide: Slide;    
+    private currentSlide: Slide;
     private _interval: number;
 
     constructor(private zone: NgZone) {

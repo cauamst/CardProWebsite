@@ -6,7 +6,7 @@ card_pro.carousel {
 .slides{
     list-style:none;
     position:relative;
-    width:400%;
+    width:500%;
     /* Number of panes * 100% */
     overflow:hidden; 
     /* Clear floats */

@@ -110,6 +110,11 @@
     <Content Include="src\assets\img\credit-card-sample.png" />
     <Content Include="src\assets\img\imgwelcome.jpg" />
     <Content Include="src\assets\img\Logo_Sacombank.png" />
+    <Content Include="src\assets\img\slide1.jpg" />
+    <Content Include="src\assets\img\slide2.jpg" />
+    <Content Include="src\assets\img\slide3.jpg" />
+    <Content Include="src\assets\img\slide4.jpg" />
+    <Content Include="src\assets\img\slide5.jpg" />
     <Content Include="src\modules\app\carousel\carousel.css" />
     <Content Include="src\modules\app\carousel\carousel.html" />
     <Content Include="src\modules\app\home\home.css" />
