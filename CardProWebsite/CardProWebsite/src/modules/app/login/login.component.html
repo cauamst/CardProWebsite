@@ -1,0 +1,27 @@
+﻿<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+    
+    <div class="mdl-card mdl-cell mdl-cell--6-col">
+        <h2>Login</h2>
+        <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                <input class="mdl-textfield__input" type="text" #username="ngModel" id="username" required name="username" [(ngModel)]="model.username">
+                <label class="mdl-textfield__label" for="username">user name</label>
+                <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+                <input class="mdl-textfield__input" type="password" #password="ngModel" id="password" required name="password" [(ngModel)]="model.password">
+                <label class="mdl-textfield__label" for="password">password</label>
+                <span *ngIf="f.submitted && !password.valid" class="mdl-textfield__error">Password is required</span>
+            </div>
+            <div class="form-group">
+                <button [disabled]="loading" class="mdl-button mdl-js-button mdl-button--raised">Login</button>
+                <div id="p2" *ngIf="loading" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+            </div>
+        </form>
+    </div>
+    <div class="mdl-card mdl-cell mdl-cell--6-col">
+        <h2>Or use  your google account</h2>
+        <div id="googleBtn" #googleBtn></div>
+    </div>
+</section>

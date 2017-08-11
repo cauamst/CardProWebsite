@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B1E254F8-9914-4EF4-AC2F-3E8523A79D51}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CardProWebsite</RootNamespace>
+    <AssemblyName>CardProWebsite</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ServiceStack">
+      <HintPath>..\..\..\CardProHost-master\Libraries\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Client">
+      <HintPath>..\..\..\CardProHost-master\Libraries\ServiceStack.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\..\..\CardProHost-master\Libraries\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\..\..\CardProHost-master\Libraries\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\..\..\CardProHost-master\Libraries\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CardProWebsite.ServiceInterface\CardProWebsite.ServiceInterface.csproj">
+      <Project>{582dfb0f-f84d-4e43-9bca-2a5a86600b7a}</Project>
+      <Name>CardProWebsite.ServiceInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CardProWebsite.ServiceModel\CardProWebsite.ServiceModel.csproj">
+      <Project>{08bef328-ab7d-48d3-800d-48acc75c7914}</Project>
+      <Name>CardProWebsite.ServiceModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppHost.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Global.asax" />
+    <Content Include="src\app.component.html" />
+    <Content Include="src\assets\img\1.jpg" />
+    <Content Include="src\assets\img\10.jpg" />
+    <Content Include="src\assets\img\2.jpg" />
+    <Content Include="src\assets\img\3.jpg" />
+    <Content Include="src\assets\img\4.jpg" />
+    <Content Include="src\assets\img\credit-card-sample.png" />
+    <Content Include="src\modules\app\cardRegistration\cardRegistration.component.html" />
+    <Content Include="src\modules\app\cardRegistration\cardRegistration.component.ts" />
+    <Content Include="src\modules\app\carousel\carousel.css" />
+    <Content Include="src\modules\app\carousel\carousel.html" />
+    <Content Include="src\modules\app\login\login.component.html" />
+    <Content Include="src\modules\app\products\products.html" />
+    <Content Include="src\modules\app\toTop\toTop.html" />
+    <Content Include="src\shared\header.css" />
+    <Content Include="src\shared\header.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="src\modules\app\directives\alert.component.html" />
+    <Content Include="src\modules\app\toTop\toTop.css" />
+    <Content Include="src\modules\app\cardRegistration\cardRegistration.component.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\assets\img\android-desktop.png" />
+    <Content Include="src\assets\img\favicon.png" />
+    <Content Include="src\assets\img\ios-desktop.png" />
+    <Content Include="src\assets\img\logo.png" />
+    <Content Include="src\modules\app\home\hello.html" />
+    <Content Include="src\modules\app\home\hello.css" />
+    <Content Include="src\modules\app\products\products.scss" />
+    <Content Include="src\app.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app.config.ts" />
+    <TypeScriptCompile Include="src\main.module.ts" />
+    <TypeScriptCompile Include="src\app.component.ts" />
+    <TypeScriptCompile Include="src\app.component.spec.ts" />
+    <TypeScriptCompile Include="src\modules\app\app.module.ts" />
+    <TypeScriptCompile Include="src\modules\app\app.routing.ts" />
+    <TypeScriptCompile Include="src\modules\app\carousel\carousel.ts" />
+    <TypeScriptCompile Include="src\modules\app\directives\alert.component.ts" />
+    <TypeScriptCompile Include="src\modules\app\guard\auth.guard.ts" />
+    <TypeScriptCompile Include="src\modules\app\helpers\cryptoUtils.ts" />
+    <TypeScriptCompile Include="src\modules\app\helpers\cardProHttp.ts" />
+    <TypeScriptCompile Include="src\modules\app\login\login.component.ts" />
+    <TypeScriptCompile Include="src\modules\app\models\DtoWrapper.ts" />
+    <TypeScriptCompile Include="src\modules\app\models\CardType.ts" />
+    <TypeScriptCompile Include="src\modules\app\models\Card.ts" />
+    <TypeScriptCompile Include="src\modules\app\models\image.interface.ts" />
+    <TypeScriptCompile Include="src\modules\app\models\user.ts" />
+    <TypeScriptCompile Include="src\modules\app\services\alert.service.ts" />
+    <TypeScriptCompile Include="src\modules\app\services\authentication.service.ts" />
+    <TypeScriptCompile Include="src\modules\app\services\card.service.ts" />
+    <TypeScriptCompile Include="src\modules\app\toTop\toTop.ts" />
+    <TypeScriptCompile Include="src\shared\footer.ts" />
+    <TypeScriptCompile Include="src\shared\header.ts" />
+    <TypeScriptCompile Include="src\shared\utils.ts" />
+    <TypeScriptCompile Include="src\common.d.ts" />
+    <TypeScriptCompile Include="src\dtos.ts" />
+    <TypeScriptCompile Include="src\modules\app\home\hello.ts" />
+    <TypeScriptCompile Include="src\modules\app\home\home.ts" />
+    <TypeScriptCompile Include="src\modules\app\home\home.spec.ts" />
+    <TypeScriptCompile Include="src\modules\app\products\products.ts" />
+    <TypeScriptCompile Include="src\modules\app\technology\technology.ts" />
+    <TypeScriptCompile Include="src\modules\app\technology\technology.spec.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="index.html" />
+    <Content Include="index.template.ejs" />
+    <Content Include="packages.config" />
+    <Content Include="package.json" />
+    <Content Include="tsconfig.json" />
+    <Content Include="gulpfile.js" />
+    <Content Include="webpack.config.js" />
+    <Content Include="karma.conf.js" />
+    <Content Include="karma-shim.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wwwroot_build\README.txt" />
+    <Content Include="wwwroot_build\package-and-deploy.bat" />
+    <Content Include="wwwroot_build\deploy\appsettings.txt" />
+    <Content Include="wwwroot_build\publish\config.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dist\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56109</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56109/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
