@@ -10,7 +10,7 @@ namespace CardProWebsite.ServiceInterface
         public string PathInfo { get; set; }
     }
 
-    public class MyServices : Service
+    public class CardProService : Service
     {
         //Return default.html for unmatched requests so routing is handled on client
         public object Any(FallbackForClientRoutes request) =>

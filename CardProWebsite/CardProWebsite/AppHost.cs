@@ -15,7 +15,7 @@ namespace CardProWebsite {
         /// Base constructor requires a Name and Assembly where web service implementation is located
         /// </summary>
         public AppHost()
-            : base("CardProWebsite", typeof(MyServices).Assembly) {
+            : base("CardProWebsite", typeof(CardProService).Assembly) {
             var customSettings = new FileInfo(@"~/appsettings.txt".MapHostAbsolutePath());
             AppSettings = customSettings.Exists
                 ? (IAppSettings)new TextFileSettings(customSettings.FullName)
