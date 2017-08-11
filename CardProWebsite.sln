@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardProWebsite", "CardProWebsite\CardProWebsite\CardProWebsite.csproj", "{B1E254F8-9914-4EF4-AC2F-3E8523A79D51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardProWebsite.ServiceModel", "CardProWebsite\CardProWebsite.ServiceModel\CardProWebsite.ServiceModel.csproj", "{08BEF328-AB7D-48D3-800D-48ACC75C7914}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardProWebsite.ServiceInterface", "CardProWebsite\CardProWebsite.ServiceInterface\CardProWebsite.ServiceInterface.csproj", "{582DFB0F-F84D-4E43-9BCA-2A5A86600B7A}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{B1E254F8-9914-4EF4-AC2F-3E8523A79D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1E254F8-9914-4EF4-AC2F-3E8523A79D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1E254F8-9914-4EF4-AC2F-3E8523A79D51}.Release|Any CPU.Build.0 = Release|Any CPU
-		{08BEF328-AB7D-48D3-800D-48ACC75C7914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08BEF328-AB7D-48D3-800D-48ACC75C7914}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{08BEF328-AB7D-48D3-800D-48ACC75C7914}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{08BEF328-AB7D-48D3-800D-48ACC75C7914}.Release|Any CPU.Build.0 = Release|Any CPU
 		{582DFB0F-F84D-4E43-9BCA-2A5A86600B7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{582DFB0F-F84D-4E43-9BCA-2A5A86600B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{582DFB0F-F84D-4E43-9BCA-2A5A86600B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
