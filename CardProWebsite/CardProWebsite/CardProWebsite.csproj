@@ -123,6 +123,7 @@
     <Content Include="src\modules\app\products\products.html" />
     <Content Include="src\modules\app\register-credit\credit.css" />
     <Content Include="src\modules\app\register-credit\credit.html" />
+    <Content Include="src\modules\app\register-credit\credit-detail.html" />
     <Content Include="src\modules\app\toTop\toTop.html" />
     <Content Include="src\modules\app\_login\login.css" />
     <Content Include="src\modules\app\_login\login.html" />
@@ -162,11 +163,14 @@
     <TypeScriptCompile Include="src\modules\app\home\carousel.ts" />
     <TypeScriptCompile Include="src\modules\app\home\slide.ts" />
     <TypeScriptCompile Include="src\modules\app\login\login.component.ts" />
+    <TypeScriptCompile Include="src\modules\app\models\Card-Data.ts" />
     <TypeScriptCompile Include="src\modules\app\models\DtoWrapper.ts" />
     <TypeScriptCompile Include="src\modules\app\models\CardType.ts" />
     <TypeScriptCompile Include="src\modules\app\models\Card.ts" />
     <TypeScriptCompile Include="src\modules\app\models\image.interface.ts" />
+    <TypeScriptCompile Include="src\modules\app\models\interface-card.ts" />
     <TypeScriptCompile Include="src\modules\app\models\user.ts" />
+    <TypeScriptCompile Include="src\modules\app\register-credit\credit-detail.ts" />
     <TypeScriptCompile Include="src\modules\app\register-credit\credit.ts" />
     <TypeScriptCompile Include="src\modules\app\services\alert.service.ts" />
     <TypeScriptCompile Include="src\modules\app\services\authentication.service.ts" />

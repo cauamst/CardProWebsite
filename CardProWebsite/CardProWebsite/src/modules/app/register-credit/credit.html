@@ -11,18 +11,18 @@
                     </carousel>
                 </div>
                 <!-- button menu -->
-                <div class="mdl-cell mdl-cell--3-col inline"  *ngFor="let btn of button" >
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" >
-                        {{btn.director}}
-                    </button>
+                <div class="mdl-cell mdl-cell--3-col inline" *ngFor="let btn of button">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)="getCardType(btn.currentCatId)">
+                            {{btn.Type}} - {{btn.director}}
+                        </a>
                 </div>
                 <!-- card view -->
-                <div class="mdl-card mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-shadow--2dp inline" *ngFor="let ca of card" >
+                <div class="mdl-card mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-shadow--2dp inline" *ngFor="let ca of cardes">
                     <figure class="mdl-card__media">
                         <img src="{{ca.url}}" alt="" />
                     </figure>
                     <div class="mdl-card__title">
-                        <h1 class="mdl-card__title-text">Learning Web Design</h1>
+                        <h1 class="mdl-card__title-text">{{ca.Name}}</h1>
                     </div>
                     <div class="mdl-card__supporting-text mdl-card-margin ">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
@@ -36,38 +36,33 @@
             </div>
             <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-phone mdl-cell--6-tablet">
                 <!-- REGISTER FORM -->
-                <div class="mdl-card mdl-shadow--16dp util-center util-spacing-h--40px">
-                    <div class="mdl-card__title mdl-color--teal-500">
-                        <h2 class="mdl-card__title-text mdl-color-text--white">Thông tin khách hàng</h2>
+                <div class="mdl-card mdl-shadow--6dp">
+                    <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
+                        <h2 class="mdl-card__title-text">Regiser</h2>
                     </div>
-                    <div class="mdl-card__supporting-text mdl-grid">
-                        <form method="POST" action="">
-                            <input type="hidden" name="action" value="register" />
+                    <div class="mdl-card__supporting-text">
+                        <form action="#">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="name" />
+                                <label class="mdl-textfield__label" for="name">Name</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="email" />
+                                <label class="mdl-textfield__label" for="email">Email</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="phone" />
+                                <label class="mdl-textfield__label" for="phone">Phone</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="Address" />
+                                <label class="mdl-textfield__label" for="name">Address</label>
+                            </div>
 
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
-                                <label class="mdl-textfield__label mdl-color-text--grey" for="textfield_new_username">
-                                    Họ tên
-                                </label>
-
-                                <input class="mdl-textfield__input" type="text" id="name" name="name" pattern="^[a-z0-9_-]{3,15}$" />
-                                <span class="mdl-textfield__error">3-15 characters with only lowercase letters, digits, underscore, and hyphen</span>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
-                                <label class="mdl-textfield__label mdl-color-text--grey" for="textfield_new_phone">phone</label>
-                                <input class="mdl-textfield__input" type="text" id="phone" name="phone" pattern="^[a-z0-9_-]{3,15}$" />
-                                <span class="mdl-textfield__error">3-15 characters with only lowercase letters, digits, underscore, and hyphen</span>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
-                                <label class="mdl-textfield__label mdl-color-text--grey" for="textfield_new_address">Địa chỉ</label>
-                                <input class="mdl-textfield__input" type="text" id="address" name="address" pattern="^[a-z0-9_-]{3,15}$" />
-                                <span class="mdl-textfield__error">3-15 characters with only lowercase letters, digits, underscore, and hyphen</span>
-                            </div>
-                            <div class="mdl-cell mdl-cell--12-col send-button">
-                                <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored" type="submit">
-                                    Hoàn tất
-                                </button>
-                            </div>
                         </form>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Register</button>
                     </div>
                 </div>
                 <!-- addition -->
@@ -86,6 +81,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <!-- Material Design Lite JavaScript -->

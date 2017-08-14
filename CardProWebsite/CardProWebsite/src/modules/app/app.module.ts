@@ -21,6 +21,7 @@ import { CreditComponent } from './register-credit/credit';
 import { CarouselComponent } from './carousel/carousel';
 import { LoginLayoutComponent } from './_login/login';
 import { BrowserModule } from '@angular/platform-browser';
+import { CreditDetailComponent } from './register-credit/credit-detail';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import { BrowserModule } from '@angular/platform-browser';
         Slide,
         CreditComponent,
         CarouselComponent,
-        LoginLayoutComponent
+        LoginLayoutComponent,
+        CreditDetailComponent
     ],
     providers: [
         AuthGuard,
