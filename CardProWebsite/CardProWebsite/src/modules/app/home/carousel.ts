@@ -91,7 +91,7 @@ a {
     }
 .size-icons {
     font-size: 60px !important;
-    margin-top : 120px;
+    margin-top : 140px;
 }
 `]
 })

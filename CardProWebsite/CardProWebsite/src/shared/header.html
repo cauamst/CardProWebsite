@@ -23,7 +23,7 @@
         </div>
     </header>
     <div class="mdl-layout__drawer mdl-layout--small-screen-only">
-        <span class="mdl-layout-title"><img src="{{logoUrl}}" width="250" height="100" /></span>
+        <span class="mdl-layout-title"><a><img src="{{logoUrl}}" width="250" height="100" /></a></span>
         <nav class="mdl-navigation" *ngFor="let route of routes">
             <a *ngIf="route.data" class="mdl-navigation__link"  routerLink="{{route.path}}"  routerLinkActive="active-link">{{route.data.title}}</a>
         </nav>

@@ -21,6 +21,11 @@ export class CreditComponent implements OnInit {
         { director: 'Button3' },
         { director: 'Button4' },
     ];
+    card = [
+        { url: require("../../../assets/img/card1.jpg") },
+        { url: require("../../../assets/img/card2.jpg") },
+        { url: require("../../../assets/img/card3.jpg") }
+    ];
 
     constructor() {
         this.addNewSlide();

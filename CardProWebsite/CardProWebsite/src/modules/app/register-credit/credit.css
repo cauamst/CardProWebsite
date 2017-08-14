@@ -25,64 +25,7 @@
     border-right: 1px solid #0094ff;
 }
 .inline {
-    display: -webkit-box !important;
-    background-color: grey;
-}
-/*collapse css*/
-.toggle-box {
-    display: none;
-}
-
-    .toggle-box + label {
-        cursor: pointer;
-        display: block;
-        font-weight: bold;
-        line-height: 21px;
-        margin-bottom: 5px;
-    }
-
-        .toggle-box + label + div {
-            display: none;
-            margin-bottom: 10px;
-        }
-
-    .toggle-box:checked + label + div {
-        display: block;
-    }
-
-    .toggle-box + label:before {
-        background-color: #4F5150;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
-        color: #FFFFFF;
-        content: "+";
-        display: block;
-        float: left;
-        font-weight: bold;
-        height: 20px;
-        line-height: 20px;
-        margin-right: 5px;
-        text-align: center;
-        width: 20px;
-    }
-
-    .toggle-box:checked + label:before {
-        content: "\2212";
-    }
-
-body {
-    -webkit-animation: bugfix infinite 2s;
-}
-
-@-webkit-keyframes bugfix {
-    from {
-        padding: 0;
-    }
-
-    to {
-        padding: 0;
-    }
+    display: -webkit-inline-box !important;
 }
 
 
@@ -92,16 +35,12 @@ body {
     width : 100%;
 }
 .container {
-    margin-left : 40px;
-    margin-right : 40px;
+    margin-left : 60px;
 }
 .margin-import {
     margin-top: 0px !important;
+    margin-left : 10px !important;
     width : 100%;
-}
-.element-left {
-    width : 90% !important;
-    margin-left : 20px !important;
 }
 .none-margin {
     margin : 0px !important;
@@ -120,3 +59,28 @@ body {
     float : right;
 }
 
+
+/*card*/
+
+.mdl-card__media {
+    margin: 5px;
+}
+.mdl-card-margin {
+    margin: 0px 5px 10px 5px !important;
+    width: 100% !important;
+}
+
+    .mdl-card__media > img {
+        max-width: 100%;
+    }
+
+.mdl-card__actions {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+    .mdl-card__actions > .mdl-button--icon {
+        margin-right: 3px;
+        margin-left: 3px;
+    }

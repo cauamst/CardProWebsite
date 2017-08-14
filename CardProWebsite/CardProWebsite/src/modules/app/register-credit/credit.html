@@ -10,26 +10,37 @@
                         </slide>
                     </carousel>
                 </div>
-                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-                    <thead>
-                        <tr><th class="mdl-data-table__cell--non-numeric">Student</th><th>Class</th><th>Grade</th><th>Grade</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td class="mdl-data-table__cell--non-numeric">Mahesh Parashar</td><td>VI</td><td>A</td><td>A</td></tr>
-                        <tr><td class="mdl-data-table__cell--non-numeric">Rahul Sharma</td><td>VI</td><td>B</td><td>B</td></tr>
-                        <tr><td class="mdl-data-table__cell--non-numeric">Mohan Sood</td><td>VI</td><td>A</td><td>C</td></tr>
-                        <tr><td class="mdl-data-table__cell--non-numeric">Harry Sood</td><td>V</td><td>C</td><td>D</td></tr>
-                    </tbody>
-                </table>
-                <!-- table -->
+                <!-- button menu -->
+                <div class="mdl-cell mdl-cell--3-col inline"  *ngFor="let btn of button" >
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" >
+                        {{btn.director}}
+                    </button>
+                </div>
+                <!-- card view -->
+                <div class="mdl-card mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-shadow--2dp inline" *ngFor="let ca of card" >
+                    <figure class="mdl-card__media">
+                        <img src="{{ca.url}}" alt="" />
+                    </figure>
+                    <div class="mdl-card__title">
+                        <h1 class="mdl-card__title-text">Learning Web Design</h1>
+                    </div>
+                    <div class="mdl-card__supporting-text mdl-card-margin ">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Chi tiet</a>
+                        <div class="mdl-layout-spacer"></div>
+                    </div>
+                </div>
+
             </div>
             <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-phone mdl-cell--6-tablet">
                 <!-- REGISTER FORM -->
-                <div class="mdl-card mdl-shadow--16dp util-center util-spacing-h--40px element-left">
+                <div class="mdl-card mdl-shadow--16dp util-center util-spacing-h--40px">
                     <div class="mdl-card__title mdl-color--teal-500">
                         <h2 class="mdl-card__title-text mdl-color-text--white">Thông tin khách hàng</h2>
                     </div>
-                    <div class="mdl-card__supporting-text mdl-grid margin-import">
+                    <div class="mdl-card__supporting-text mdl-grid">
                         <form method="POST" action="">
                             <input type="hidden" name="action" value="register" />
 

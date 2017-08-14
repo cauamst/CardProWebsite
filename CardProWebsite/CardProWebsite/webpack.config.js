@@ -158,8 +158,7 @@ module.exports = {
                 filename: isProd ? 'vendor.[chunkhash].bundle.js' : 'vendor.bundle.js'
             }),
             new HtmlWebpackPlugin({
-                template: 'index.template.ejs',
-                filename: '../index.html',
+                template: 'index.template.ejs',                filename: '../index.html',
                 inject: true
             }),
         ]),
