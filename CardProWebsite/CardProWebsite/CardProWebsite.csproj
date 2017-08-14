@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -62,12 +63,17 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CardProWebsite.ServiceInterface\CardProWebsite.ServiceInterface.csproj">
@@ -118,8 +124,6 @@
     <Content Include="src\assets\img\favicon.png" />
     <Content Include="src\assets\img\ios-desktop.png" />
     <Content Include="src\assets\img\logo.png" />
-    <Content Include="src\modules\app\home\hello.html" />
-    <Content Include="src\modules\app\home\hello.css" />
     <Content Include="src\modules\app\products\products.scss" />
     <Content Include="src\app.css" />
   </ItemGroup>
@@ -150,7 +154,6 @@
     <TypeScriptCompile Include="src\shared\utils.ts" />
     <TypeScriptCompile Include="src\common.d.ts" />
     <TypeScriptCompile Include="src\dtos.ts" />
-    <TypeScriptCompile Include="src\modules\app\home\hello.ts" />
     <TypeScriptCompile Include="src\modules\app\home\home.ts" />
     <TypeScriptCompile Include="src\modules\app\home\home.spec.ts" />
     <TypeScriptCompile Include="src\modules\app\products\products.ts" />

@@ -1,6 +1,5 @@
 ﻿import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HelloComponent } from './hello';
 
 @Component({
     selector: 'home',
@@ -11,8 +10,6 @@ import { HelloComponent } from './hello';
             </header>
 
             <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
-
-                <hello [name]="name"></hello> 
 
                 <div class="mdl-card__actions">
                     <a href="http://docs.servicestack.net/typescript-add-servicestack-reference" class="mdl-button">More info on TypeScript ServiceStack Reference</a>

@@ -1,6 +1,5 @@
 ﻿import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home';
-import { HelloComponent } from './home/hello';
 import { ProductsComponent } from './products/products';
 import { TechnologyComponent } from './technology/technology';
 import { CardRegistrationComponent } from './cardRegistration/cardRegistration.component';

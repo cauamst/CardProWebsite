@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { routing } from './app.routing';
 import { HomeComponent } from './home/home';
 
-import { HelloComponent } from './home/hello';
 import { CardRegistrationComponent } from './cardRegistration/cardRegistration.component';
 import { ProductsComponent } from './products/products';
 import { TechnologyComponent } from './technology/technology';
@@ -21,7 +20,6 @@ import { CryptoUtils } from './helpers/cryptoUtils';
 @NgModule({
     declarations: [
         HomeComponent,
-        HelloComponent,
         ProductsComponent,
         TechnologyComponent,
         LoginComponent,

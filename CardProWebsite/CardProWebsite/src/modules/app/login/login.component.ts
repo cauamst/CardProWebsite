@@ -25,14 +25,18 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
         // reset login status
-        this.authenticationService.logout().subscribe((response) => {
-            console.log(response);
-            localStorage.removeItem("currentUser");
+		var currentUser = localStorage.getItem("currentUser");
+		this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
 
-        });
-
-        // get return url from route parameters or default to '/'
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+		if(currentUser){
+			 this.authenticationService.logout().subscribe((response) => {
+				console.log(response);
+				localStorage.removeItem("currentUser");
+			});
+		} else {
+			this.router.navigate([this.returnUrl]);
+		}
+		
     }
 
     login() {
