@@ -46,8 +46,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="ServiceStack">
-      <HintPath>..\..\..\CardProHost-master\Libraries\ServiceStack.dll</HintPath>
+    <Reference Include="ServiceStack, Version=4.5.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CardProHost-master\ServiceStack\bin\Debug\ServiceStack.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Client">
       <HintPath>..\..\..\CardProHost-master\Libraries\ServiceStack.Client.dll</HintPath>
@@ -89,6 +90,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Global.asax" />
     <Content Include="src\app.component.html" />
+    <Content Include="src\assets\css\google-fonts.css" />
+    <Content Include="src\assets\css\material-design-icons.css" />
     <Content Include="src\assets\img\1.jpg" />
     <Content Include="src\assets\img\10.jpg" />
     <Content Include="src\assets\img\2.jpg" />
@@ -110,6 +113,15 @@
     <Content Include="src\modules\app\directives\alert.component.html" />
     <Content Include="src\modules\app\toTop\toTop.css" />
     <Content Include="src\modules\app\cardRegistration\cardRegistration.component.scss" />
+    <Content Include="src\assets\fonts\roboto-bold-italic.woff2" />
+    <Content Include="src\assets\fonts\roboto-italic.woff2" />
+    <Content Include="src\assets\fonts\roboto-light.woff2" />
+    <Content Include="src\assets\fonts\roboto-medium.woff2" />
+    <Content Include="src\assets\fonts\roboto-regular.woff2" />
+    <Content Include="src\assets\fonts\roboto-thin.woff2" />
+    <Content Include="src\assets\fonts\material-design-icon.woff2" />
+    <Content Include="src\assets\fonts\roboto-bold.woff2" />
+    <Content Include="src\assets\fonts\roboto-black.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
