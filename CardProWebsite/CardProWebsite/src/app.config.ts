@@ -1,7 +1,7 @@
 ﻿export const appConfig = {
     apiUrl: process.env.API_URL,
     authenticateUrl: 'auth/credentials ',
-	toTokenUrl: 'session-to-token',
+	toTokenUrl: 'auth/session-to-token',
     googleOAuth2AuthenticateUrl: 'auth/GoogleOAuth',
     logoutUrl: 'auth/logout',
     getCardsUrl: 'cards',

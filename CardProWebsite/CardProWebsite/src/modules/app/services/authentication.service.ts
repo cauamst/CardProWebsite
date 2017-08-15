@@ -9,18 +9,22 @@ export class AuthenticationService {
     constructor(private http: Http) { }
 
     login(username: string, password: string) {
-        return this.http.post(appConfig.authenticateUrl, { Username: username, Password: password, UseTokenCookie: true })
-            .map((response: Response) => {
-				return this.toToken().map((toTokenRes: Response) => {
-					console.log(toTokenRes);
-					let user = response.json();
-					if (user && user.BearerToken) {
-						user.BearerToken = null;
-						localStorage.setItem('currentUser', JSON.stringify(user));
-					}
-					return user;
-				}); 
-            });
+		let user;
+        return this.http
+			.post(appConfig.authenticateUrl, { Username: username, Password: password, UseTokenCookie: true })
+            .flatMap((response: Response) => {
+				user = response.json();
+				return this.toToken();
+            })
+			.flatMap((response: Response) => {
+				console.log(response);
+					
+				if (user && user.BearerToken) {
+					user.BearerToken = null;
+					localStorage.setItem('currentUser', JSON.stringify(user));
+				}
+				return user;
+			});
     }
 
     logout() {
@@ -28,6 +32,6 @@ export class AuthenticationService {
     }
 
 	private toToken() {
-		return this.http.post(appConfig.toTokenUrl, {});
+		return this.http.post(appConfig.authenticateUrl, {PreserveSession: false});
 	}
 }
