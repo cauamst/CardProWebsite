@@ -22,6 +22,11 @@ import { CarouselComponent } from './carousel/carousel';
 import { LoginLayoutComponent } from './_login/login';
 import { BrowserModule } from '@angular/platform-browser';
 import { CreditDetailComponent } from './register-credit/credit-detail';
+import {TabComponent } from './register-credit/tab';
+import { TabsComponent } from './register-credit/tabs';
+
+import { DialogComponent } from './register-credit/dialog';
+
 
 @NgModule({
     declarations: [
@@ -36,7 +41,10 @@ import { CreditDetailComponent } from './register-credit/credit-detail';
         CreditComponent,
         CarouselComponent,
         LoginLayoutComponent,
-        CreditDetailComponent
+        CreditDetailComponent,
+        TabComponent,
+        TabsComponent,
+        DialogComponent
     ],
     providers: [
         AuthGuard,
@@ -46,11 +54,13 @@ import { CreditDetailComponent } from './register-credit/credit-detail';
         CardService,
         CardProHttpProvider,
         CryptoUtils
+
     ],
     imports: [
         BrowserModule,
         FormsModule,
         routing
+        
     ]
 })
 export class AppModule { }

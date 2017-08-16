@@ -33,7 +33,7 @@ export class CardService {
     
     getCard(Id: number): Promise<CARD>
     {
-        return this.getAllCard().then(cards => cards.find(CARD => CARD.Id === Id));
+        return this.getAllCard().then(card => card.find(CARD => CARD.Id === Id));
     }
     getCardType(type : number)
     {

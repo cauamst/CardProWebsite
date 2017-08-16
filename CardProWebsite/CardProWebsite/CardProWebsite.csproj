@@ -124,6 +124,8 @@
     <Content Include="src\modules\app\register-credit\credit.css" />
     <Content Include="src\modules\app\register-credit\credit.html" />
     <Content Include="src\modules\app\register-credit\credit-detail.html" />
+    <Content Include="src\modules\app\register-credit\dialog.css" />
+    <Content Include="src\modules\app\register-credit\dialog.html" />
     <Content Include="src\modules\app\toTop\toTop.html" />
     <Content Include="src\modules\app\_login\login.css" />
     <Content Include="src\modules\app\_login\login.html" />
@@ -172,6 +174,9 @@
     <TypeScriptCompile Include="src\modules\app\models\user.ts" />
     <TypeScriptCompile Include="src\modules\app\register-credit\credit-detail.ts" />
     <TypeScriptCompile Include="src\modules\app\register-credit\credit.ts" />
+    <TypeScriptCompile Include="src\modules\app\register-credit\dialog.ts" />
+    <TypeScriptCompile Include="src\modules\app\register-credit\tab.ts" />
+    <TypeScriptCompile Include="src\modules\app\register-credit\tabs.ts" />
     <TypeScriptCompile Include="src\modules\app\services\alert.service.ts" />
     <TypeScriptCompile Include="src\modules\app\services\authentication.service.ts" />
     <TypeScriptCompile Include="src\modules\app\services\card.service.ts" />

@@ -12,33 +12,47 @@
                 </div>
                 <!-- button menu -->
                 <div class="mdl-cell mdl-cell--3-col inline" *ngFor="let btn of button">
-                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)="getCardType(btn.currentCatId)">
-                            {{btn.Type}} - {{btn.director}}
-                        </a>
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)="getCardType(btn.currentCatId)">
+                        {{btn.Type}} - {{btn.director}}
+                    </a>
                 </div>
                 <!-- card view -->
-                <div class="mdl-card mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-shadow--2dp inline" *ngFor="let ca of cardes">
-                    <figure class="mdl-card__media">
-                        <img src="{{ca.url}}" alt="" />
-                    </figure>
-                    <div class="mdl-card__title">
-                        <h1 class="mdl-card__title-text">{{ca.Name}}</h1>
+                    <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-shadow--2dp inline">
+                        <div id="wrapper">
+                            <div id="slideshow">
+                                <figure class="teste">
+                                    <img src="http://placehold.it/250x100" alt="" />
+                                </figure>
+                                <figure class="teste">
+                                    <img src="http://placehold.it/250x100" alt="Profile of a Red kite" />
+                                </figure>
+                                <figure class="teste">
+                                    <img src="http://placehold.it/250x100" alt="Profile of a Red kite" />
+                                </figure>
+                                <figure class="teste">
+                                    <img src="http://placehold.it/250x100" alt="Profile of a Red kite" />
+                                </figure>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mdl-card__supporting-text mdl-card-margin ">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Chi tiet</a>
-                        <div class="mdl-layout-spacer"></div>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right" (click)="showDialog = !showDialog">So sánh thẻ</button>
+                <br />
+
+                <!-- show card benefit -->
+                <div class="mdl-benefit">
+                    <h4>Ưu điểm tiện ich</h4>
+                    <div class="mdl-content-view">
+                        <p>content tiện ích</p>
                     </div>
                 </div>
-
+                
             </div>
+
             <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-phone mdl-cell--6-tablet">
                 <!-- REGISTER FORM -->
                 <div class="mdl-card mdl-shadow--6dp">
                     <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
-                        <h2 class="mdl-card__title-text">Regiser</h2>
+                        <h3 class="mdl-card__title-text">Regiser</h3>
                     </div>
                     <div class="mdl-card__supporting-text">
                         <form action="#">
@@ -47,46 +61,117 @@
                                 <label class="mdl-textfield__label" for="name">Name</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="text" id="email" />
+                                <input class="mdl-textfield__input" type="email" id="email" />
                                 <label class="mdl-textfield__label" for="email">Email</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="text" id="phone" />
+                                <input class="mdl-textfield__input" type="number" id="phone" />
                                 <label class="mdl-textfield__label" for="phone">Phone</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield">
                                 <input class="mdl-textfield__input" type="text" id="Address" />
                                 <label class="mdl-textfield__label" for="name">Address</label>
                             </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <select class="mdl-textfield__input" id="salary" name="salary">
+                                    <option></option>
+                                    <option value="#">Mức 1</option>
+                                    <option value="#">Mức 2</option>
+                                    <option value="#">Mức 3</option>
+                                </select>
+                                <label class="mdl-textfield__label" for="salary">Mức thu nhập</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <select class="mdl-textfield__input" id="benefitCard" name="benefitCard">
+                                    <option></option>
+                                    <option value="#">Tiện ích 1 </option>
+                                    <option value="#">Tiện ích 2</option>
+                                    <option value="#">Tiện ích 3</option>
+                                    <option value="#">Tiện ích 4</option>
+                                </select>
+                                <label class="mdl-textfield__label" for="benefitCard">Chọn tiện ích</label>
+                            </div>
+                           
 
                         </form>
                     </div>
+                    <div>
+                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
+                               for="checkbox2">
+                            <input type="checkbox" id="checkbox2" class="mdl-checkbox__input">
+                            <span class="mdl-checkbox__label">Tôi đồng ý với<a> điều khoản</a></span>
+                        </label>
+                    </div>
                     <div class="mdl-card__actions mdl-card--border">
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Register</button>
+                        <div class="mdl-layout-spacer"></div>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Đăng ký</button>
+                    </div>
+                    <!-- addition -->
+                    <div class="addition">
+                        <div class="mdl-card mdl-shadow--16dp util-center util-spacing-h--40px element-left">
+                            <div class="mdl-card__title mdl-color--teal-500 title-addition">
+                                <h2 class="mdl-card__title-text mdl-color-text--white">Điều kiện đăng ký</h2>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>More Information</li>
+                                    <li>More Information</li>
+                                    <li>More Information</li>
+                                    <li>More Information</li>
+                                    <li>More Information</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- addition -->
-                <div class="addition">
-                    <div class="mdl-card mdl-shadow--16dp util-center util-spacing-h--40px element-left">
-                        <div class="mdl-card__title mdl-color--teal-500 title-addition">
-                            <h2 class="mdl-card__title-text mdl-color-text--white">Điều kiện đăng ký</h2>
-                        </div>
-                        <div class="mdl-card__supporting-text mdl-grid margin-import">
-                            <ul>
-                                <li>More Information</li>
-                                <li>More Information</li>
-                                <li>More Information</li>
-                                <li>More Information</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
         <!-- Material Design Lite JavaScript -->
     </div>
-
-
+    <!-- dialog -->
+    <app-dialog [(visible)]="showDialog">
+        <h4>So sánh thẻ</h4>
+        <!-- text select card -->
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <select class="mdl-textfield__input" id="octane" name="octane">
+                <option></option>
+                <option value="85" *ngFor="let c of cards">{{c.Id}} - {{c.Name}}</option>
+            </select>
+            <label class="mdl-textfield__label" for="octane">Chọn thẻ</label>
+        </div>
+        <!-- end -->
+        <!-- start table compare -->
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+            <thead>
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Material</th>
+                    <th>A</th>
+                    <th>Unit price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+                    <td>25</td>
+                    <td>$2.90</td>
+                </tr>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+                    <td>50</td>
+                    <td>$1.25</td>
+                </tr>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+                    <td>10</td>
+                    <td>$2.35</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-layout-spacer"></div>
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="showDialog = !showDialog">Đóng</a>
+        </div>
+    </app-dialog>
+    <!--end dialog-->
 </main>
 <br />

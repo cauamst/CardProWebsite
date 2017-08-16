@@ -3,8 +3,8 @@
 export const CARDES: CARD[] = [
     { Id: 1, Name: "Card-Data1", Type: 1, url: require("../../../assets/img/card1.jpg") },
     { Id: 2, Name: "Card-Data2", Type: 1, url: require("../../../assets/img/card2.jpg") },
-    { Id: 3, Name: "Card-Data3", Type: 1, url: require("../../../assets/img/card2.jpg") },
-    { Id: 4, Name: "Card-Data4", Type: 1, url: require("../../../assets/img/card3.jpg") },
+    { Id: 3, Name: "Card-Data3", Type: 2, url: require("../../../assets/img/card2.jpg") },
+    { Id: 4, Name: "Card-Data4", Type: 2, url: require("../../../assets/img/card3.jpg") },
     { Id: 5, Name: "Card-Data5", Type: 2, url: require("../../../assets/img/card1.jpg") },
     { Id: 6, Name: "Card-Data6", Type: 2, url: require("../../../assets/img/card2.jpg") },
     { Id: 7, Name: "Card-Data7", Type: 2, url: require("../../../assets/img/card3.jpg") },
@@ -16,6 +16,6 @@ export const CARDES: CARD[] = [
     { Id: 13, Name: "Card-Data13", Type: 4, url: require("../../../assets/img/card2.jpg") },
     { Id: 14, Name: "Card-Data14", Type: 4, url: require("../../../assets/img/card3.jpg") },
     { Id: 15, Name: "Card-Data15", Type: 1, url: require("../../../assets/img/card2.jpg") },
-    { Id: 16, Name: "Card-Data16", Type: 1, url: require("../../../assets/img/card1.jpg") },
+    { Id: 16, Name: "Card-Data16", Type: 2, url: require("../../../assets/img/card1.jpg") },
     { Id: 17, Name: "Card-Data17", Type: 2, url: require("../../../assets/img/card3.jpg") },
 ];

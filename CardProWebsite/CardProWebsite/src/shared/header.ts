@@ -68,7 +68,6 @@ li a:hover:not(.active) {
 .is-visible {
     position: fixed !important;
 }
-
 `]
 })
 export class HeaderComponent {

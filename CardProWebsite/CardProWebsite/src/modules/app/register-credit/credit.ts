@@ -7,6 +7,8 @@ import { CARDES } from '../models/Card-Data';
 import { CARD } from '../models/interface-card';
 import { ActivatedRoute } from "@angular/router";
 import { Location } from '@angular/common';
+import {TabComponent } from './tab';
+import { TabsComponent } from './tabs';
 
 @Component({
     selector: 'credit',
@@ -15,13 +17,16 @@ import { Location } from '@angular/common';
 
 })
 export class CreditComponent implements OnInit {
-        selected: number;
+    selected: boolean = false;
     //get card theo type
     cardes: CARD[];
     card: CARD;
     currentCatId: number = 1;
+    selectcard: number = 0;
     //get all card
     cards: CARD[] = [];
+    showDialog = false;
+    isOpen = false;
 
     private NextPhotoInterval: number = 3000;
     //Looping or not
@@ -29,15 +34,10 @@ export class CreditComponent implements OnInit {
     //Photos
     private slides: Array<any> = [];
     button = [
-        { currentCatId: 1, director: 'Button', Type: 1 },
-        { currentCatId: 2, director: 'Button', Type: 2 },
-        { currentCatId: 3, director: 'Button', Type: 3 },
-        { currentCatId: 4, director: 'Button', Type: 4 },
-    ];
-    vew = [
-        { url: require("../../../assets/img/card1.jpg") },
-        { url: require("../../../assets/img/card2.jpg") },
-        { url: require("../../../assets/img/card3.jpg") }
+        { currentCatId: 1, director: 'Tiện ích 1', Type: 1 },
+        { currentCatId: 2, director: 'Tiện ích 2', Type: 2 },
+        { currentCatId: 3, director: 'Tiện ích 3', Type: 3 },
+        { currentCatId: 4, director: 'Tiện ích 4', Type: 4 },
     ];
 
     constructor(
@@ -50,7 +50,7 @@ export class CreditComponent implements OnInit {
     }
     ngOnInit(): void {
         this.GetCards();
-        this.getCard(1);
+        this.getCard(this.selectcard);
         this.getCardType(this.currentCatId);
     }
 
@@ -75,29 +75,26 @@ export class CreditComponent implements OnInit {
     getCardType(type: number): void {
         this.CardService.getCardType(type).then(cardes => {
             this.cardes = cardes;
-            console.log(cardes);
         });
     }
     //get card by id for creditdetail page
     getCard(Id : number): void
     {
         this.CardService.getCard(Id).then(card => {
+
             this.card = card;
-            console.log(card);            
+
+            console.log(card);
+            console.log(this.selected);
         })
+           
     }
     //get all card table compare
     GetCards(): void {
         this.CardService.getAllCard().then(cards => {
             this.cards = cards;
-            console.log(cards);
         });
     }
-    clicked() : void
-    {
-        this.selected =  this.currentCatId;
-    }
-   
 
 
 
