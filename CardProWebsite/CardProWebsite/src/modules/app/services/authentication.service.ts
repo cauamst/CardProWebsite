@@ -9,29 +9,19 @@ export class AuthenticationService {
     constructor(private http: Http) { }
 
     login(username: string, password: string) {
-		let user;
         return this.http
 			.post(appConfig.authenticateUrl, { Username: username, Password: password, UseTokenCookie: true })
-            .flatMap((response: Response) => {
-				user = response.json();
-				return this.toToken();
-            })
-			.flatMap((response: Response) => {
-				console.log(response);
-					
+            .map((response: Response) => {
+				let user = response.json();
 				if (user && user.BearerToken) {
 					user.BearerToken = null;
 					localStorage.setItem('currentUser', JSON.stringify(user));
 				}
 				return user;
-			});
+            });
     }
 
     logout() {
         return this.http.get(appConfig.logoutUrl);
     }
-
-	private toToken() {
-		return this.http.post(appConfig.authenticateUrl, {PreserveSession: false});
-	}
 }
