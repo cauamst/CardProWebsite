@@ -18,7 +18,7 @@ export class CardProHttp extends Http {
     }
 
     post(url: string, body: any, options?: RequestOptionsArgs): Observable<Response> {
-        return super.post(appConfig.apiUrl + url, body, options).catch(this.handleError);
+        return super.post(appConfig.apiUrl + url, body, this.addCookiesToRequest(options)).catch(this.handleError);
     }
 
     put(url: string, body: any, options?: RequestOptionsArgs): Observable<Response> {
@@ -46,10 +46,16 @@ export class CardProHttp extends Http {
         return options;
     }
 
+	private addCookiesToRequest(options?: RequestOptionsArgs) : RequestOptionsArgs {
+		options = options || new RequestOptions();
+		options.withCredentials = true;
+
+		return options;
+	}
     private handleError(error: any) {
         if (error.status === 401) {
 			// TODO: remove
-            alert("login failed");
+            alert("connect to server failed");
         }
         return Observable.throw(error._body);
     }
