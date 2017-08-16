@@ -37,6 +37,11 @@ export class HomeComponent {
     private removeLastSlide() {
         this.slides.pop();
     }
+    cardhome = [
+        { id: 1, url: require("../../../assets/img/card1.jpg"),Name:'Name-Data' },
+        { id: 2, url: require("../../../assets/img/card2.jpg"),Name:'Da-taName' },
+        { id: 3, url: require("../../../assets/img/card3.jpg"),Name:'Data-Name' }
+    ];
 
 
     

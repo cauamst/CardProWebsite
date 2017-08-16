@@ -10,8 +10,7 @@
 
 .demo-card-square > .mdl-card__title {
     color: #fff;
-    background: url('https://tfirdaus.github.io/mdl/images/laptop.jpg');
-    padding-bottom: 150px;
+    margin-left: 25px;
 }
 
 .demo-card-square > .mdl-card__accent {
@@ -66,4 +65,6 @@ li {
     margin-left : 60px;
     margin-right : 60px;
 }
-
+.center-card {
+    margin-left: 40px;
+}

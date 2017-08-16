@@ -39,10 +39,10 @@
                 <br />
 
                 <!-- show card benefit -->
-                <div class="mdl-benefit">
+                <div class="mdl-benefit" *ngIf="selectcard">
                     <h4>Ưu điểm tiện ich</h4>
                     <div class="mdl-content-view">
-                        <p>content tiện ích</p>
+                        <p>{{btn.Type}}</p>
                     </div>
                 </div>
                 
@@ -96,7 +96,7 @@
                         </form>
                     </div>
                     <div>
-                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"
+                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-checkbox"
                                for="checkbox2">
                             <input type="checkbox" id="checkbox2" class="mdl-checkbox__input">
                             <span class="mdl-checkbox__label">Tôi đồng ý với<a> điều khoản</a></span>
@@ -130,43 +130,57 @@
     </div>
     <!-- dialog -->
     <app-dialog [(visible)]="showDialog">
-        <h4>So sánh thẻ</h4>
-        <!-- text select card -->
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <select class="mdl-textfield__input" id="octane" name="octane">
-                <option></option>
-                <option value="85" *ngFor="let c of cards">{{c.Id}} - {{c.Name}}</option>
-            </select>
-            <label class="mdl-textfield__label" for="octane">Chọn thẻ</label>
+
+        <input id="toggle" class="inputtoggle" type="checkbox" checked>
+        <label for="toggle" class="labeltoggle">So sánh thẻ</label>
+        <div id="expand">
+            <section>
+                <!-- chọn tiện ích -->
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <select class="mdl-textfield__input" id="octane" (ngModelChange)="getCardType($event)" [(ngModel)]="currentCatId"> >
+                        <option></option>
+                        <option [ngValue]="c.currentCatId" *ngFor="let c of button">{{c.Id}} - {{c.director}}</option>
+                    </select>
+                    <label class="mdl-textfield__label" for="octane">Chọn tiện ích</label>
+                </div>
+                <!-- chọn thẻ trong tiện ích -->
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" *ngIf="currentCatId">
+                    <select class="mdl-textfield__input" id="octane" name="octane">
+                        <option></option>
+                        <option value="85" *ngFor="let ca of cardes">{{ca.Id}} - {{ca.Name}}</option>
+                    </select>
+                    <label class="mdl-textfield__label" for="octane">Chọn thẻ</label>
+                </div>
+                <!-- start table compare -->
+                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                    <thead>
+                        <tr>
+                            <th class="mdl-data-table__cell--non-numeric">Material</th>
+                            <th>A</th>
+                            <th>Unit price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+                            <td>25</td>
+                            <td>$2.90</td>
+                        </tr>
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+                            <td>50</td>
+                            <td>$1.25</td>
+                        </tr>
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+                            <td>10</td>
+                            <td>$2.35</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </div>
-        <!-- end -->
-        <!-- start table compare -->
-        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-            <thead>
-                <tr>
-                    <th class="mdl-data-table__cell--non-numeric">Material</th>
-                    <th>A</th>
-                    <th>Unit price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
-                    <td>25</td>
-                    <td>$2.90</td>
-                </tr>
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
-                    <td>50</td>
-                    <td>$1.25</td>
-                </tr>
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
-                    <td>10</td>
-                    <td>$2.35</td>
-                </tr>
-            </tbody>
-        </table>
+        
         <div class="mdl-card__actions mdl-card--border">
             <div class="mdl-layout-spacer"></div>
             <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="showDialog = !showDialog">Đóng</a>

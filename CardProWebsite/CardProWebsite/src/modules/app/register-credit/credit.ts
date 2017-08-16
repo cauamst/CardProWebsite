@@ -21,7 +21,7 @@ export class CreditComponent implements OnInit {
     //get card theo type
     cardes: CARD[];
     card: CARD;
-    currentCatId: number = 1;
+    currentCatId :number;
     selectcard: number = 0;
     //get all card
     cards: CARD[] = [];
@@ -56,12 +56,12 @@ export class CreditComponent implements OnInit {
 
     private addNewSlide() {
         this.slides.push(
-            { image: require("../../../assets/img/slide1.jpg"), text: 'BMW 1' },
-            { image: require("../../../assets/img/slide2.jpg"), text: 'BMW 2' },
-            { image: require("../../../assets/img/slide3.jpg"), text: 'BMW 3' },
-            { image: require("../../../assets/img/slide4.jpg"), text: 'BMW 4' },
-            { image: require("../../../assets/img/slide5.jpg"), text: 'BMW 5' },
-            { image: require("../../../assets/img/slide1.jpg"), text: 'BMW 6' }
+            { image: require("../../../assets/img/slide1.jpg")},
+            { image: require("../../../assets/img/slide2.jpg")},
+            { image: require("../../../assets/img/slide3.jpg")},
+            { image: require("../../../assets/img/slide4.jpg")},
+            { image: require("../../../assets/img/slide5.jpg")},
+            { image: require("../../../assets/img/slide1.jpg")}
         );
     }
     private removeLastSlide() {
@@ -73,19 +73,18 @@ export class CreditComponent implements OnInit {
     }
     // get card by type for credit menu
     getCardType(type: number): void {
+        console.log(type);
         this.CardService.getCardType(type).then(cardes => {
             this.cardes = cardes;
+            console.log(cardes);
+            console.log(this.currentCatId);
         });
     }
     //get card by id for creditdetail page
     getCard(Id : number): void
     {
         this.CardService.getCard(Id).then(card => {
-
             this.card = card;
-
-            console.log(card);
-            console.log(this.selected);
         })
            
     }

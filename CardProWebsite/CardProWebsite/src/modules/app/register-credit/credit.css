@@ -52,6 +52,9 @@
 .addition {
     margin-top: 20px;
 }
+.margin-checkbox {
+    margin-left: 10px;
+}
 
 .title-addition {
     padding: 5px 16px 5px 16px !important;
@@ -294,4 +297,54 @@
     100% {
         left: 900px;
     }
+}
+
+
+/*toggle under page compare*/
+.inputtoggle {
+    display: none;
+    visibility: hidden;
+}
+
+.labeltoggle {
+    display: block;
+    padding: 0.5em;
+    text-align: center;
+    border-bottom: 1px solid #CCC;
+    color: #666;
+}
+
+    .labeltoggle:hover {
+        color: #000;
+    }
+
+    .labeltoggle::before {
+        font-family: Consolas, monaco, monospace;
+        font-weight: bold;
+        font-size: 15px;
+        content: "+";
+        vertical-align: text-top;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 3px;
+        background: radial-gradient(ellipse at center, #CCC 50%, transparent 50%);
+    }
+
+#expand {
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+
+section {
+    padding: 0 20px;
+}
+
+#toggle:checked ~ #expand {
+    height: 250px;
+}
+
+#toggle:checked ~ label::before {
+    content: "-";
 }
