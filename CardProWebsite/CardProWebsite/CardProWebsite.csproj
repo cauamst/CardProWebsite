@@ -102,6 +102,7 @@
     <Content Include="src\assets\img\1.jpg" />
     <Content Include="src\assets\img\10.jpg" />
     <Content Include="src\assets\img\2.jpg" />
+    <Content Include="src\assets\img\2006.jpg" />
     <Content Include="src\assets\img\3.jpg" />
     <Content Include="src\assets\img\4.jpg" />
     <Content Include="src\assets\img\card1.jpg" />
@@ -115,6 +116,7 @@
     <Content Include="src\assets\img\slide3.jpg" />
     <Content Include="src\assets\img\slide4.jpg" />
     <Content Include="src\assets\img\slide5.jpg" />
+    <Content Include="src\assets\img\tin-tuc.png" />
     <Content Include="src\modules\app\carousel\carousel.css" />
     <Content Include="src\modules\app\carousel\carousel.html" />
     <Content Include="src\modules\app\home\home.css" />
