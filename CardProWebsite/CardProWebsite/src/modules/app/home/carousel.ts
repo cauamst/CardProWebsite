@@ -1,7 +1,6 @@
 ﻿import { Component, OnDestroy, Input, NgZone } from '@angular/core';
-import { Slide } from './slide';
 import { NgFor } from '@angular/common';
-
+import { Slide } from './slide';
 export enum Direction { UNKNOWN, NEXT, PREV }
 
 @Component({

@@ -42,14 +42,14 @@ AppModule = tslib_1.__decorate([
             login_component_1.LoginComponent,
             cardRegistration_component_1.CardRegistrationComponent,
             carousel_1.Carousel,
-            slide_1.Slide,
             credit_1.CreditComponent,
             carousel_2.CarouselComponent,
             login_1.LoginLayoutComponent,
             credit_detail_1.CreditDetailComponent,
             tab_1.TabComponent,
             tabs_1.TabsComponent,
-            dialog_1.DialogComponent
+            dialog_1.DialogComponent,
+            slide_1.Slide
         ],
         providers: [
             auth_guard_1.AuthGuard,

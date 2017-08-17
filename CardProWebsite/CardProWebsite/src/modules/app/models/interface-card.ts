@@ -4,3 +4,8 @@
     url: string;
     Type: number;
 }
+export class Content {
+    title: string;
+    content: string;
+    ContentType: number;
+}

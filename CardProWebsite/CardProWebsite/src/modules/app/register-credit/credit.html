@@ -12,8 +12,8 @@
                 </div>
                 <!-- button menu -->
                 <div class="mdl-cell mdl-cell--3-col inline" *ngFor="let btn of button">
-                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)="getCardType(btn.currentCatId)">
-                        {{btn.Type}} - {{btn.director}}
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)="getContentCard(btn.ContentType)">
+                        {{btn.ContentType}} - {{btn.name}}
                     </a>
                 </div>
                 <!-- card view -->
@@ -21,16 +21,25 @@
                         <div id="wrapper">
                             <div id="slideshow">
                                 <figure class="teste">
-                                    <img src="http://placehold.it/250x100" alt="" />
+                                    <img src="http://placehold.it/250x150" alt="" />
                                 </figure>
                                 <figure class="teste">
-                                    <img src="http://placehold.it/250x100" alt="Profile of a Red kite" />
+                                    <img src="http://placehold.it/250x150" alt="" />
                                 </figure>
                                 <figure class="teste">
-                                    <img src="http://placehold.it/250x100" alt="Profile of a Red kite" />
+                                    <img src="http://placehold.it/250x150" alt="Profile of a Red kite" />
                                 </figure>
                                 <figure class="teste">
-                                    <img src="http://placehold.it/250x100" alt="Profile of a Red kite" />
+                                    <img src="http://placehold.it/250x150" alt="Profile of a Red kite" />
+                                </figure>
+                                <figure class="teste">
+                                    <img src="http://placehold.it/250x150" alt="Profile of a Red kite" />
+                                </figure>
+                                <figure class="teste">
+                                    <img src="http://placehold.it/250x150" alt="Profile of a Red kite" />
+                                </figure>
+                                <figure class="teste">
+                                    <img src="http://placehold.it/250x150" alt="Profile of a Red kite" />
                                 </figure>
                             </div>
                         </div>
@@ -39,10 +48,10 @@
                 <br />
 
                 <!-- show card benefit -->
-                <div class="mdl-benefit" *ngIf="selectcard">
-                    <h4>Ưu điểm tiện ich</h4>
-                    <div class="mdl-content-view">
-                        <p>{{btn.Type}}</p>
+                <div class="mdl-benefit">
+                    <h4>Ưu điểm tiện ích</h4>
+                    <div class="mdl-content-view"  *ngFor="let conte of contents">
+                        <p>{{conte.content}}</p>
                     </div>
                 </div>
                 
@@ -52,7 +61,7 @@
                 <!-- REGISTER FORM -->
                 <div class="mdl-card mdl-shadow--6dp">
                     <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
-                        <h3 class="mdl-card__title-text">Regiser</h3>
+                        <h3 class="mdl-card__title-text">Thông tin khách hàng</h3>
                     </div>
                     <div class="mdl-card__supporting-text">
                         <form action="#">
@@ -99,7 +108,7 @@
                         <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-checkbox"
                                for="checkbox2">
                             <input type="checkbox" id="checkbox2" class="mdl-checkbox__input">
-                            <span class="mdl-checkbox__label">Tôi đồng ý với<a> điều khoản</a></span>
+                            <span class="mdl-checkbox__label">Tôi đồng ý với<a> điều khoản và quy định</a> Sacombank</span>
                         </label>
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
@@ -139,24 +148,24 @@
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                     <select class="mdl-textfield__input" id="octane" (ngModelChange)="getCardType($event)" [(ngModel)]="currentCatId"> >
                         <option></option>
-                        <option [ngValue]="c.currentCatId" *ngFor="let c of button">{{c.Id}} - {{c.director}}</option>
+                        <option [ngValue]="c.currentCatId" *ngFor="let c of benefit">{{c.Id}} - {{c.director}}</option>
                     </select>
                     <label class="mdl-textfield__label" for="octane">Chọn tiện ích</label>
                 </div>
                 <!-- chọn thẻ trong tiện ích -->
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" *ngIf="currentCatId">
-                    <select class="mdl-textfield__input" id="octane" name="octane">
+                    <select class="mdl-textfield__input" id="octane" name="octane" (ngModelChange)="getCard($event)" [(ngModel)]="selectCardId">>
                         <option></option>
-                        <option value="85" *ngFor="let ca of cardes">{{ca.Id}} - {{ca.Name}}</option>
+                        <option *ngFor="let ca of cardes" [ngValue]="ca.Id">{{ca.Id}} - {{ca.Name}}</option>
                     </select>
                     <label class="mdl-textfield__label" for="octane">Chọn thẻ</label>
                 </div>
                 <!-- start table compare -->
-                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" *ngIf="card">
                     <thead>
                         <tr>
                             <th class="mdl-data-table__cell--non-numeric">Material</th>
-                            <th>A</th>
+                            <th>{{card.url}}</th>
                             <th>Unit price</th>
                         </tr>
                     </thead>
@@ -178,6 +187,7 @@
                         </tr>
                     </tbody>
                 </table>
+               
             </section>
         </div>
         

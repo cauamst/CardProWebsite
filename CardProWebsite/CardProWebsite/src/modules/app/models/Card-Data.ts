@@ -1,4 +1,4 @@
-﻿import { CARD } from "./interface-card";
+﻿import { CARD,Content } from "./interface-card";
 
 export const CARDES: CARD[] = [
     { Id: 1, Name: "Card-Data1", Type: 1, url: require("../../../assets/img/card1.jpg") },
@@ -15,7 +15,14 @@ export const CARDES: CARD[] = [
     { Id: 12, Name: "Card-Data12", Type: 4, url: require("../../../assets/img/card1.jpg") },
     { Id: 13, Name: "Card-Data13", Type: 4, url: require("../../../assets/img/card2.jpg") },
     { Id: 14, Name: "Card-Data14", Type: 4, url: require("../../../assets/img/card3.jpg") },
-    { Id: 15, Name: "Card-Data15", Type: 1, url: require("../../../assets/img/card2.jpg") },
+    { Id: 15, Name: "Card-Data15", Type: 1, url: require("../../../assets/img/card3.jpg") },
     { Id: 16, Name: "Card-Data16", Type: 2, url: require("../../../assets/img/card1.jpg") },
     { Id: 17, Name: "Card-Data17", Type: 2, url: require("../../../assets/img/card3.jpg") },
+];
+
+export const CONTENT: Content[] = [
+    { ContentType: 1,title: "Feature-One", content : "Content-1"},
+    { ContentType: 2,title: "Feature-Two",  content: "Content-2" },
+    { ContentType: 3, title: "Feature-Three", content: "Content-3" },
+    { ContentType: 4, title: "Feature-Four", content: "Content-4" },
 ];

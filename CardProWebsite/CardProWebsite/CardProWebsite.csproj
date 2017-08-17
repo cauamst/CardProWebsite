@@ -165,7 +165,6 @@
     <TypeScriptCompile Include="src\modules\app\helpers\cryptoUtils.ts" />
     <TypeScriptCompile Include="src\modules\app\helpers\cardProHttp.ts" />
     <TypeScriptCompile Include="src\modules\app\home\carousel.ts" />
-    <TypeScriptCompile Include="src\modules\app\home\slide.ts" />
     <TypeScriptCompile Include="src\modules\app\login\login.component.ts" />
     <TypeScriptCompile Include="src\modules\app\models\Card-Data.ts" />
     <TypeScriptCompile Include="src\modules\app\models\DtoWrapper.ts" />

@@ -16,7 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { CardProHttpProvider } from './helpers/cardProHttp';
 import { CryptoUtils } from './helpers/cryptoUtils';
 import { Carousel } from './home/carousel';
-import { Slide } from './home/slide';
+import {Slide } from './home/slide';
 import { CreditComponent } from './register-credit/credit';
 import { CarouselComponent } from './carousel/carousel';
 import { LoginLayoutComponent } from './_login/login';
@@ -37,14 +37,14 @@ import { DialogComponent } from './register-credit/dialog';
         LoginComponent,
         CardRegistrationComponent,
         Carousel,
-        Slide,
         CreditComponent,
         CarouselComponent,
         LoginLayoutComponent,
         CreditDetailComponent,
         TabComponent,
         TabsComponent,
-        DialogComponent
+        DialogComponent,
+Slide
     ],
     providers: [
         AuthGuard,

@@ -1,6 +1,7 @@
 ﻿import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HelloComponent } from './hello';
+import { Slide } from './slide';
 
 @Component({
     selector: 'home',
