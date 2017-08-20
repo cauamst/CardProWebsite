@@ -11,36 +11,31 @@
                     </carousel>
                 </div>
                 <!-- button menu -->
-                <div class="mdl-cell mdl-cell--3-col inline" *ngFor="let btn of button">
-                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)="getContentCard(btn.ContentType)">
-                        {{btn.ContentType}} - {{btn.name}}
-                    </a>
+                <div class="mdl-cell mdl-cell--3-col inline " *ngFor="let btn of button">
+                    <button id="{{btn.id}}" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button-padding" (click)="getContentCard(btn.ContentType)">
+                       {{btn.name}}
+                    </button>
+                    <div class="mdl-tooltip" for="1">
+                        Xem ưu điểm tiện ích dặm bay
+                    </div>
+                    <div class="mdl-tooltip" for="2">
+                        Xem ưu điểm tiện ích hoàn tiền
+                    </div>
+                    <div class="mdl-tooltip" for="3">
+                        Xem ưu điểm tiện ích điểm thưởng
+                    </div>
+                    <div class="mdl-tooltip" for="4">
+                        Xem ưu điểm tiện ích rút tiền mặt miễn phí
+                    </div>
                 </div>
                 <!-- card view -->
                     <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-shadow--2dp inline">
                         <div id="wrapper">
                             <div id="slideshow">
-                                <figure class="teste">
-                                    <img src="http://placehold.it/250x150" alt="" />
+                                <figure class="teste" *ngFor ="let image of CardView">
+                                    <img src="{{image.url}}" alt="" />
                                 </figure>
-                                <figure class="teste">
-                                    <img src="http://placehold.it/250x150" alt="" />
-                                </figure>
-                                <figure class="teste">
-                                    <img src="http://placehold.it/250x150" alt="Profile of a Red kite" />
-                                </figure>
-                                <figure class="teste">
-                                    <img src="http://placehold.it/250x150" alt="Profile of a Red kite" />
-                                </figure>
-                                <figure class="teste">
-                                    <img src="http://placehold.it/250x150" alt="Profile of a Red kite" />
-                                </figure>
-                                <figure class="teste">
-                                    <img src="http://placehold.it/250x150" alt="Profile of a Red kite" />
-                                </figure>
-                                <figure class="teste">
-                                    <img src="http://placehold.it/250x150" alt="Profile of a Red kite" />
-                                </figure>
+                                
                             </div>
                         </div>
                     </div>
@@ -77,9 +72,15 @@
                                 <input class="mdl-textfield__input" type="number" id="phone" />
                                 <label class="mdl-textfield__label" for="phone">Phone</label>
                             </div>
-                            <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="text" id="Address" />
-                                <label class="mdl-textfield__label" for="name">Address</label>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <select class="mdl-textfield__input" id="Address" name="Address">
+                                    <option></option>
+                                    <option value="#">Hà Nội </option>
+                                    <option value="#">Thành phố HCM</option>
+                                    <option value="#">Đà Nẵng</option>
+                                    <option value="#">Cần Thơ</option>
+                                </select>
+                                <label class="mdl-textfield__label" for="Address">Chọn thành phố</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                 <select class="mdl-textfield__input" id="salary" name="salary">
@@ -99,6 +100,11 @@
                                     <option value="#">Tiện ích 4</option>
                                 </select>
                                 <label class="mdl-textfield__label" for="benefitCard">Chọn tiện ích</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                                <label class="mdl-textfield__label" for="sample4">Number...</label>
+                                <span class="mdl-textfield__error">Input is not a number!</span>
                             </div>
                            
 

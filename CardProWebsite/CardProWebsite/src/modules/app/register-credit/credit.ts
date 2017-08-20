@@ -28,7 +28,7 @@ export class CreditComponent implements OnInit {
     cards: CARD[] = [];
     showDialog = false;
     isOpen = false;
-
+    //content - uu diem
     contents: Content[];
     currentContentType: number = 1;
 
@@ -38,16 +38,37 @@ export class CreditComponent implements OnInit {
     //Photos
     private slides: Array<any> = [];
     benefit = [
-        { currentCatId: 1, director: 'Tiện ích 1' },
-        { currentCatId: 2, director: 'Tiện ích 2' },
-        { currentCatId: 3, director: 'Tiện ích 3' },
-        { currentCatId: 4, director: 'Tiện ích 4' },
+        { currentCatId: 1, director: 'Dặm bay' },
+        { currentCatId: 2, director: 'Hoàn tiền' },
+        { currentCatId: 3, director: 'Điểm thưởng' },
+        { currentCatId: 4, director: 'Rút tiền mặt miễn phí' },
     ];
     button = [
-        { name: 'Tiện ích 1', ContentType: 1 },
-        { name: 'Tiện ích 2', ContentType: 2 },
-        { name: 'Tiện ích 3', ContentType: 3 },
-        { name: 'Tiện ích 4', ContentType: 4 },
+        { id: 1, name: 'Dặm bay', ContentType: 1, idTT: 'Xem ưu điểm tiện ích dặm bay' },
+        { id: 2, name: 'Hoàn tiền', ContentType: 2, idTT: 'Xem ưu điểm tiện ích hoàn tiền' },
+        { id: 3, name: 'Điểm thưởng', ContentType: 3, idTT: 'xem ưu điểm tiện ích điểm thưởng' },
+        { id: 4, name: 'Rút tiền mặt miễn phí', ContentType: 4, idTT: 'Xem ưu điểm tiện ích rút tiền mặt miễn phí' }
+    ];
+    buttonTooltip =
+    [
+        { id: 1, content: 'Xem ưu điểm tiện ích dặm bay' },
+        { id: 2, content: 'Xem ưu điểm tiện ích hoàn tiền' },
+        { id: 3, content: 'xem ưu điểm tiện ích điểm thưởng' },
+        { id: 4, content: 'Xem ưu điểm tiện ích rút tiền mặt miễn phí' }
+    ];
+
+    CardView = [
+        { url: require("../../../assets/img/card_credit.jpg") },
+        { url: require("../../../assets/img/card_credit1.jpg") },
+        { url: require("../../../assets/img/card_credit2.jpg") },
+        { url: require("../../../assets/img/card_credit3.jpg") },
+        { url: require("../../../assets/img/card_credit4.jpg") },
+        { url: require("../../../assets/img/card_credit5.jpg") },
+        { url: require("../../../assets/img/card_credit6.jpg") },
+        { url: require("../../../assets/img/card_credit7.jpg") },
+        { url: require("../../../assets/img/card_credit8.jpg") },
+        { url: require("../../../assets/img/card_credit9.jpg") },
+        { url: require("../../../assets/img/card_credit10.jpg") },
     ];
 
     constructor(
@@ -111,4 +132,5 @@ export class CreditComponent implements OnInit {
             })
         });
     }
+
 }

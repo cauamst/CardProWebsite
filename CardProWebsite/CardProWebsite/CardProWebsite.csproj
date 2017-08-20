@@ -108,6 +108,17 @@
     <Content Include="src\assets\img\card1.jpg" />
     <Content Include="src\assets\img\card2.jpg" />
     <Content Include="src\assets\img\card3.jpg" />
+    <Content Include="src\assets\img\card_credit.jpg" />
+    <Content Include="src\assets\img\card_credit1.jpg" />
+    <Content Include="src\assets\img\card_credit10.jpg" />
+    <Content Include="src\assets\img\card_credit2.jpg" />
+    <Content Include="src\assets\img\card_credit3.jpg" />
+    <Content Include="src\assets\img\card_credit4.jpg" />
+    <Content Include="src\assets\img\card_credit5.jpg" />
+    <Content Include="src\assets\img\card_credit6.jpg" />
+    <Content Include="src\assets\img\card_credit7.jpg" />
+    <Content Include="src\assets\img\card_credit8.jpg" />
+    <Content Include="src\assets\img\card_credit9.jpg" />
     <Content Include="src\assets\img\credit-card-sample.png" />
     <Content Include="src\assets\img\imgwelcome.jpg" />
     <Content Include="src\assets\img\Logo_Sacombank.png" />

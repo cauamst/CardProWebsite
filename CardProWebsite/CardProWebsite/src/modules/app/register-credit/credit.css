@@ -82,15 +82,19 @@
     width: 100% !important;
 }
 
-.mdl-card__media > img {
-    max-width: 100%;
+img {
+    width: 100%;
 }
+
 
 .mdl-card__actions {
     display: flex;
     box-sizing: border-box;
     align-items: center;
     margin-top: 25px;
+}
+.mdl-button-padding {
+    padding : 0px 10px !important;
 }
 
     .mdl-card__actions > .mdl-button--icon {
