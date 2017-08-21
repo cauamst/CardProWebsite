@@ -8,7 +8,6 @@ var login_component_1 = require("./login/login.component");
 var auth_guard_1 = require("./guard/auth.guard");
 var credit_1 = require("./register-credit/credit");
 var login_1 = require("./_login/login");
-var credit_detail_1 = require("./register-credit/credit-detail");
 exports.routes = [
     {
         path: '',
@@ -20,12 +19,6 @@ exports.routes = [
     { path: 'cardRegistration', component: cardRegistration_component_1.CardRegistrationComponent, data: { title: 'Card Registration' }, canActivate: [auth_guard_1.AuthGuard] },
     {
         path: 'register', component: credit_1.CreditComponent, data: { title: 'Credit' },
-        children: [
-            {
-                path: ':id',
-                component: credit_detail_1.CreditDetailComponent
-            }
-        ]
     },
     {
         path: 'Login', component: login_1.LoginLayoutComponent, data: { title: 'Login' }

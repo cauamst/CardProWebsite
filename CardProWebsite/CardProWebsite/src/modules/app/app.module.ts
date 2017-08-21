@@ -21,11 +21,11 @@ import { CreditComponent } from './register-credit/credit';
 import { CarouselComponent } from './carousel/carousel';
 import { LoginLayoutComponent } from './_login/login';
 import { BrowserModule } from '@angular/platform-browser';
-import { CreditDetailComponent } from './register-credit/credit-detail';
-import {TabComponent } from './register-credit/tab';
-import { TabsComponent } from './register-credit/tabs';
 
 import { DialogComponent } from './register-credit/dialog';
+
+import { CompareComponent } from './register-credit/compare';
+import { Accordion, AccordionGroup } from './register-credit/accordion';
 
 
 @NgModule({
@@ -40,11 +40,11 @@ import { DialogComponent } from './register-credit/dialog';
         CreditComponent,
         CarouselComponent,
         LoginLayoutComponent,
-        CreditDetailComponent,
-        TabComponent,
-        TabsComponent,
         DialogComponent,
-Slide
+        CompareComponent,
+        Slide,
+        Accordion,
+        AccordionGroup
     ],
     providers: [
         AuthGuard,

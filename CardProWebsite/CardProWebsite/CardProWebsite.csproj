@@ -108,6 +108,7 @@
     <Content Include="src\assets\img\card1.jpg" />
     <Content Include="src\assets\img\card2.jpg" />
     <Content Include="src\assets\img\card3.jpg" />
+    <Content Include="src\assets\img\CardCompare.png" />
     <Content Include="src\assets\img\card_credit.jpg" />
     <Content Include="src\assets\img\card_credit1.jpg" />
     <Content Include="src\assets\img\card_credit10.jpg" />
@@ -134,9 +135,10 @@
     <Content Include="src\modules\app\home\home.html" />
     <Content Include="src\modules\app\login\login.component.html" />
     <Content Include="src\modules\app\products\products.html" />
+    <Content Include="src\modules\app\register-credit\compare.css" />
+    <Content Include="src\modules\app\register-credit\compare.html" />
     <Content Include="src\modules\app\register-credit\credit.css" />
     <Content Include="src\modules\app\register-credit\credit.html" />
-    <Content Include="src\modules\app\register-credit\credit-detail.html" />
     <Content Include="src\modules\app\register-credit\dialog.css" />
     <Content Include="src\modules\app\register-credit\dialog.html" />
     <Content Include="src\modules\app\toTop\toTop.html" />
@@ -184,11 +186,10 @@
     <TypeScriptCompile Include="src\modules\app\models\image.interface.ts" />
     <TypeScriptCompile Include="src\modules\app\models\interface-card.ts" />
     <TypeScriptCompile Include="src\modules\app\models\user.ts" />
-    <TypeScriptCompile Include="src\modules\app\register-credit\credit-detail.ts" />
+    <TypeScriptCompile Include="src\modules\app\register-credit\accordion.ts" />
+    <TypeScriptCompile Include="src\modules\app\register-credit\compare.ts" />
     <TypeScriptCompile Include="src\modules\app\register-credit\credit.ts" />
     <TypeScriptCompile Include="src\modules\app\register-credit\dialog.ts" />
-    <TypeScriptCompile Include="src\modules\app\register-credit\tab.ts" />
-    <TypeScriptCompile Include="src\modules\app\register-credit\tabs.ts" />
     <TypeScriptCompile Include="src\modules\app\services\alert.service.ts" />
     <TypeScriptCompile Include="src\modules\app\services\authentication.service.ts" />
     <TypeScriptCompile Include="src\modules\app\services\card.service.ts" />

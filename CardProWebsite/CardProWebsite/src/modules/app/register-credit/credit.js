@@ -17,6 +17,7 @@ var CreditComponent = (function () {
         this.showDialog = false;
         this.isOpen = false;
         this.currentContentType = 1;
+        this.showCompare = true;
         this.NextPhotoInterval = 3000;
         //Looping or not
         this.noLoopSlides = true;
@@ -82,8 +83,6 @@ var CreditComponent = (function () {
         var _this = this;
         this.CardService.getCard(Id).then(function (card) {
             _this.card = card;
-            console.log(Id);
-            console.log(_this.selectCardId);
         });
     };
     //get all card table compare

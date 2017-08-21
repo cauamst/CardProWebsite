@@ -7,8 +7,6 @@ import { CARDES } from '../models/Card-Data';
 import { CARD, Content } from '../models/interface-card';
 import { ActivatedRoute } from "@angular/router";
 import { Location } from '@angular/common';
-import { TabComponent } from './tab';
-import { TabsComponent } from './tabs';
 
 @Component({
     selector: 'credit',
@@ -31,6 +29,8 @@ export class CreditComponent implements OnInit {
     //content - uu diem
     contents: Content[];
     currentContentType: number = 1;
+
+    showCompare = true;
 
     private NextPhotoInterval: number = 3000;
     //Looping or not
@@ -114,8 +114,6 @@ export class CreditComponent implements OnInit {
     getCard(Id: number): void {
         this.CardService.getCard(Id).then(card => {
             this.card = card;
-            console.log(Id);
-            console.log(this.selectCardId);
         });
     }
     //get all card table compare

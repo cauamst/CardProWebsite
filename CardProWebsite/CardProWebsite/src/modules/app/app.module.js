@@ -23,10 +23,9 @@ var credit_1 = require("./register-credit/credit");
 var carousel_2 = require("./carousel/carousel");
 var login_1 = require("./_login/login");
 var platform_browser_1 = require("@angular/platform-browser");
-var credit_detail_1 = require("./register-credit/credit-detail");
-var tab_1 = require("./register-credit/tab");
-var tabs_1 = require("./register-credit/tabs");
 var dialog_1 = require("./register-credit/dialog");
+var compare_1 = require("./register-credit/compare");
+var accordion_1 = require("./register-credit/accordion");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -45,11 +44,11 @@ AppModule = tslib_1.__decorate([
             credit_1.CreditComponent,
             carousel_2.CarouselComponent,
             login_1.LoginLayoutComponent,
-            credit_detail_1.CreditDetailComponent,
-            tab_1.TabComponent,
-            tabs_1.TabsComponent,
             dialog_1.DialogComponent,
-            slide_1.Slide
+            compare_1.CompareComponent,
+            slide_1.Slide,
+            accordion_1.Accordion,
+            accordion_1.AccordionGroup
         ],
         providers: [
             auth_guard_1.AuthGuard,
