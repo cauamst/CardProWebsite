@@ -1,4 +1,7 @@
-﻿
+﻿<div>
+    <h3>So sánh thẻ</h3>
+</div>
+
 <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--4-col-phone squre-lef inline">
     <div *ngIf="!card1;else loadingImage1">
         <a (click)="showDialog1 = !showDialog1"><img src="../../../assets/img/CardCompare.png" class="square" /></a>
@@ -29,7 +32,7 @@
         <accordion-group heading="Tiện ích vượt trội" isGroupOpen="true">
             <div>
                 <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--4-col-phone squre-left">
-                    <ul>
+                    <ul class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
                         <li>1</li>
                         <li>2</li>
                         <li>3</li>
@@ -39,7 +42,7 @@
                     </ul>
                 </div>
                 <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--4-col-phone squre-right">
-                    <ul>
+                    <ul class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
                         <li>1</li>
                         <li>1</li>
                         <li>1</li>
