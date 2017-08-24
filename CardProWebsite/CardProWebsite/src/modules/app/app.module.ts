@@ -1,6 +1,7 @@
 ﻿import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import * as moment from 'moment';
+import * as $ from 'jquery';
 import { routing } from './app.routing';
 import { HomeComponent } from './home/home';
 import { HelloComponent } from './home/hello';

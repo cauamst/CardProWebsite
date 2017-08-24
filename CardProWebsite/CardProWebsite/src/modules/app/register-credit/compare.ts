@@ -98,5 +98,6 @@ export class CompareComponent implements OnInit  {
             this.cardes2 = cardes;
         });
     }
+    
 
 }

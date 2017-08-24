@@ -8,7 +8,6 @@ import { routes } from '../modules/app/app.routing';
     styles: [`
 .card_pro_header {
     background-color: transparent;
-    overflow-y: hidden;
     border-bottom: 2px solid #eee;
     min-height: 100px;
 }

@@ -3,52 +3,48 @@
 
 <main class="mdl-layout__content">
 
-    <div class="page-content container ">
+    <div class="page-content">
         <div class="mdl-layout__header-row card_pro_header_row background-grid-section">
             <span class="mdl-layout-title">Sản phẩm</span>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
         </div>
-            <div class="mdl-grid center-card">
-                <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-card mdl-cell--4-col-phone mdl-card mdl-shadow--4dp portfolio-blog-card-compact" *ngFor="let car of cardhome">
-                    <div class="mdl-card__media">
-                        <img class="article-image" src="{{car.url}}" border="0" alt="">
-                    </div>
-                    <div class="mdl-card__title ">
-                        <h2 class="mdl-card__title-text">Loren</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent">
-                            View Updates
-                        </a>
-                    </div>
+        <div class="mdl-grid media-mdl-grid">
+            <div class="mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-card mdl-cell--4-col-phone mdl-card mdl-shadow--4dp portfolio-blog-card-compact" *ngFor="let car of cardhome">
+                <div>
+                    <img class="article-image" src="{{car.url}}" border="0" alt="">
+                </div>
+                <div class="mdl-card__title ">
+                    <h2 class="mdl-card__title-text">{{car.Name}}</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent">
+                      Đăng ký
+                    </a>
                 </div>
             </div>
+        </div>
 
         <div class="mdl-grid background-grid-section mdl-margin-row">
-            <div class="mdl-cell mdl-cell--8-col">
+            <div class="mdl-cell--8-col mdl-cell--8-col-tablet">
                 <div class="mdl-layout__header-row card_pro_header_row mdl-margin-row backgeound-image-article">
                     <span class="mdl-layout-title">Tin tức nỗi bật</span>
                     <!-- Add spacer, to align navigation to the right -->
                     <div class="mdl-layout-spacer"></div>
                 </div>
-                <div class="mdl-cell mdl-cell--4-col mdl-left">
+                <div class="mdl-cell--12-col mdl-left">
                     <img src="../../../assets/img/imgwelcome.jpg" />
-                </div>
-                <div class="mdl-cell mdl-cell--12-col mdl-right">
                     <p>Material is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals. It works on all major web browsers, tablets and phone.</p>
-                    
-                </div>
-                <div class="blockqueue">
+                    <div class="blockqueue">
                         <p>Material is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals. It works on all major web browsers, tablets and phone.</p>
                         <small> C.E.O by SAA</small>
                     </div>
-                
+                </div>
             </div>
-            <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-cell--4-col mdl-cell--8-col-tablet">
                 <div class="mdl-layout__header-row card_pro_header_row backgeound-image-gift">
                     <span class="mdl-layout-title">Thông tin khuyến mãi</span>
                     <!-- Add spacer, to align navigation to the right -->
@@ -80,7 +76,7 @@
                                 <i class="material-icons">card_giftcard</i>
                                 <span>Aaron Paul</span>
                                 <span class="mdl-list__item-text-body">
-                                    Aaron Paul played the role of Jesse in Breaking Bad. 
+                                    Aaron Paul played the role of Jesse in Breaking Bad.
                                 </span>
                             </span>
                             <span class="mdl-list__item-secondary-content">
@@ -92,7 +88,7 @@
                                 <i class="material-icons">card_giftcard</i>
                                 <span>Bob Odenkirk</span>
                                 <span class="mdl-list__item-text-body">
-                                    Bob Odinkrik played the role of Saul in Breaking Bad. 
+                                    Bob Odinkrik played the role of Saul in Breaking Bad.
                                 </span>
                             </span>
                             <span class="mdl-list__item-secondary-content">
@@ -114,10 +110,7 @@
                         <a href="#" class="mdl-button">Read our features</a>
                     </div>
                 </div>
-                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
-                    <i class="material-icons">more_vert</i>
-                </button>
-                  </section>
+            </section>
         </div>
     </div>
 </main>

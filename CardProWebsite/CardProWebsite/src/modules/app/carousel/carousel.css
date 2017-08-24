@@ -38,10 +38,10 @@ card_pro.carousel {
     text-transform: uppercase;
 }
 @keyframes carousel{
-    0%    { left:10%; }
+    0%    { left:5%; }
     10%   { left:-5%; }
-    12.5% { left:-90%; }
-    23.5% { left:-100%; }
+    12.5% { left:-100%; }
+    23.5% { left:-110%; }
     25%   { left:-190%; }
     36%   { left:-200%; }
     37.5% { left:-290%; }
@@ -58,5 +58,16 @@ card_pro.carousel {
 }
 img {
     width : 100%;
-    height:auto;
+    height: 100%;
 }
+/*@media screen and (min-width: 1200px) {
+    img {
+        height : 400px;
+        width : 100%;
+    }
+}
+@media screen and (min-width: 992px) {
+    img {
+        
+    }
+}*/

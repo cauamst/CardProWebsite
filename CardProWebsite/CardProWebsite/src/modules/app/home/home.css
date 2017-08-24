@@ -18,11 +18,12 @@
 }
 
 .mdl-card__supporting-text {
-    margin : 10px !important;
-    width : unset!important;
+    margin: 10px !important;
+    width: unset !important;
 }
+
 .mdl-demo .mdl-card__actions a {
-    float : right;
+    float: right;
 }
 
 
@@ -31,27 +32,35 @@
     background: #fafafa;
     position: relative;
 }
+
 .mdl-layout__content {
-    display:grid !important;
+    display: grid !important;
 }
+
 .background-antiquewhite {
     background: antiquewhite;
 }
+
 .background-grid-section {
     background-color: #fff;
 }
+
 .background-card {
     background-color: #fafafa;
 }
 
 .mdl-left {
-    float:left;
+    float: left;
 }
+
 .mdl-right {
-    float : right;
+    float: right;
 }
+
 .mdl-margin-row {
-    margin-bottom : 35px;
+    margin-bottom: 35px;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 
@@ -63,7 +72,7 @@
         border-color: aqua;
         transition: all 0.4s ease-in-out;
     }*/
-    /*.blockqueue small {
+/*.blockqueue small {
         display: block;
         font-size: 80%;
         color: #777;
@@ -71,8 +80,8 @@
     }*/
 
 .container {
-    margin-left : 60px;
-    margin-right : 60px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 .snippet-group .snippet-code code {
@@ -83,8 +92,9 @@
 }
 
 .mdl-demo section.section--center {
-    max-width : none !important;
+    max-width: none !important;
 }
+
 img {
     border-top-width: 0px;
     border-right-width: 0px;
@@ -95,31 +105,118 @@ img {
     border-bottom-style: solid;
     border-left-style: solid;
 }
+
 .article-image {
-    width: 100%;
+    width: 90%;
     height: auto;
+    margin: 15px;
 }
-.mdl-card__media {
-    background-color: none !important;
-}
+
 .portfolio-blog-card-compact {
-    max-width : 300px;
-    margin : 20px;
+    max-width: 280px;
+    margin: 20px;
 }
-.center-card {
-    margin-left : 100px;
-}
+
 .section--center {
-    max-width : none !important;
+    max-width: none !important;
 }
+
 .backgeound-image-article {
-    background-color : whitesmoke;
-    border-radius : 20px;
-    
-}
-.backgeound-image-gift {
     background-color: whitesmoke;
     border-radius: 20px;
 }
 
+.backgeound-image-gift {
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
+/*laptop*/
+@media screen and (min-device-width: 1200px) and (max-device-width: 2000px) and (-webkit-min-device-pixel-ratio: 1) {
+    .media-mdl-grid {
+        margin-left: 10%;
+    }
+    .mdl-layout__tab-panel is-active {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .mdl-layout__container {
+        width: 1170px;
+    }
+    .page_content {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 
+    .article-image {
+        max-width: 100%;
+        height: auto;
+        margin: 15px;
+    }
+}
+@media screen and (min-device-width: 1025) and (max-device-width: 1199px) and (-webkit-min-device-pixel-ratio: 1) {
+    .media-mdl-grid {
+        width: 980px;
+        padding-left: 20px;
+    }
+
+    .mdl-layout__container {
+        width: 992px;
+    }
+
+    .article-image {
+        max-width: 100%;
+        height: auto;
+        margin: 15px;
+    }
+}
+
+/*tablet - pro*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    .media-mdl-grid {
+        width: 980px;
+        padding-left: 20px;
+    }
+
+    .mdl-layout__container {
+        width: 992px;
+    }
+
+    .article-image {
+        max-width: 100%;
+        height: auto;
+        margin: 15px;
+    }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+    .media-mdl-grid {
+        margin-left: 5%;
+    }
+
+    .mdl-layout__container {
+        width: 750px;
+    }
+
+    .article-image {
+        max-width: 100%;
+        height: auto;
+        margin: 15px;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+    .media-mdl-grid {
+        margin-left: 5%;
+    }
+
+    .mdl-layout__container {
+        width: 750px;
+    }
+
+    .article-image {
+        max-width: 100%;
+        height: auto;
+        margin: 15px;
+    }
+}

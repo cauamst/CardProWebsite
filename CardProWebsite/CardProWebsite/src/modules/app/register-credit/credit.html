@@ -1,7 +1,8 @@
 ﻿<main class="mdl-layout__content">
     <div class="page-content container">
         <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                <div *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack"><i class="material-icons">keyboard_backspace</i></div>
                 <div *ngIf="showCompare; else loadingCompare">
                     <div>
                         <carousel [interval]="NextPhotoInterval" [noWrap]="noLoopSlides">
@@ -13,26 +14,27 @@
                     </div>
 
                     <!-- button menu -->
-
-                    <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet inline " *ngFor="let btn of button">
-                        <button id="{{btn.id}}" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button-padding" (click)="getContentCard(btn.ContentType)">
-                            {{btn.name}}
-                        </button>
-                        <div class="mdl-tooltip" for="1">
-                            Xem ưu điểm tiện ích dặm bay
-                        </div>
-                        <div class="mdl-tooltip" for="2">
-                            Xem ưu điểm tiện ích hoàn tiền
-                        </div>
-                        <div class="mdl-tooltip" for="3">
-                            Xem ưu điểm tiện ích điểm thưởng
-                        </div>
-                        <div class="mdl-tooltip" for="4">
-                            Xem ưu điểm tiện ích rút tiền mặt miễn phí
+                    <div class="mdl-row">
+                        <div class="mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--1-col-phone mdl-column" *ngFor="let btn of button">
+                            <button id="{{btn.id}}" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button-width" (click)="getContentCard(btn.ContentType)">
+                                {{btn.name}}
+                            </button>
+                            <div class="mdl-tooltip" for="1">
+                                Xem ưu điểm tiện ích dặm bay
+                            </div>
+                            <div class="mdl-tooltip" for="2">
+                                Xem ưu điểm tiện ích hoàn tiền
+                            </div>
+                            <div class="mdl-tooltip" for="3">
+                                Xem ưu điểm tiện ích điểm thưởng
+                            </div>
+                            <div class="mdl-tooltip" for="4">
+                                Xem ưu điểm tiện ích rút tiền mặt miễn phí
+                            </div>
                         </div>
                     </div>
                     <!-- card view -->
-                    <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-shadow--2dp inline">
+                    <div class="mdl-card mdl-cell--12-col mdl-cell--8-col-tablet mdl-shadow--2dp inline">
                         <div id="wrapper">
                             <div id="slideshow">
                                 <figure class="teste" *ngFor="let image of CardView">
@@ -42,21 +44,39 @@
                             </div>
                         </div>
                     </div>
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right" (click)="showCompare = !showCompare">So sánh thẻ</button>
-                    <br />
 
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right curls curl-top-left" (click)="showCompare = !showCompare; showButtonBack = !showButtonBack">So sánh thẻ</button>
+                    <div class="clearfix"></div>
                     <!-- show card benefit -->
-                    <div class="mdl-benefit">
-                        <h4>Ưu điểm tiện ích</h4>
-                        <div class="mdl-content-view" *ngFor="let conte of contents">
-                            <p>{{conte.content}}</p>
+                    <div id="container">
+                        <div id="left">
+                            <div id="Lnav">
+                                <h2 class="lvn">Ưu điểm tiện ích</h2>
+                            </div>
+                            <div id="width100PercentTest">
+                                <p>Maecenas lorem tellus, pellentesque et mattis ac, euismod sed felis. Maecenas fermentum bibendum mattis. Vivamus id vulputate eros. Quisque venenatis commodo augue nec aliquam. In euismod lorem non enim viverra pretium.</p>
+                            </div>
+
+
                         </div>
+                        <div id="right">
+                            <div id="Lnav" class="margin-left">
+                                <h2 class="lvn">Điều kiện đăng ký</h2>
+                            </div>
+                            <div class="mdl-additiona">
+                               <ul>
+                                   <li>more inf</li>
+                                   <li>more inf</li>
+                               </ul>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
                 <ng-template #loadingCompare> <compare></compare></ng-template>
             </div>
-            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone mdl-cell--8-tablet">
+            <div class="mdl-cell--4-col mdl-cell--4-col-phone mdl-cell--8-col-tablet">
                 <!-- REGISTER FORM -->
                 <div class="mdl-card mdl-shadow--6dp fullwidth">
                     <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
@@ -64,90 +84,71 @@
                     </div>
                     <div class="mdl-card__supporting-text">
                         <form action="#">
+
                             <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="text" id="name" />
-                                <label class="mdl-textfield__label" for="name">Name</label>
+                                <i class="mdl-textfield__icon material-icons">person</i>
+                                <input class="mdl-textfield__input" type="text" id="name" pattern="/^[a-zA-Z/'/-\040]+$/" maxlength="32" minlength="4" />
+                                <label class="mdl-textfield__label" for="name">Họ Tên</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="email" id="email" />
+                                <i class="mdl-textfield__icon material-icons">person</i>
+                                <input class="mdl-textfield__input" type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
                                 <label class="mdl-textfield__label" for="email">Email</label>
+                                <span class="mdl-textfield__error">Bạn chưa nhập đúng định dạng email! example@email.com</span>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="number" id="phone" />
-                                <label class="mdl-textfield__label" for="phone">Phone</label>
+                                <i class="mdl-textfield__icon material-icons">person</i>
+                                <input class="mdl-textfield__input" type="text" id="phone" pattern="(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)" maxlength="13" />
+                                <label class="mdl-textfield__label" for="phone">Số điện thoại</label>
+                                <span class="mdl-textfield__error">Chưa nhập đúng định dạng số điện thoại! ex: 0933 588295</span>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <i class="mdl-textfield__icon material-icons">person</i>
                                 <select class="mdl-textfield__input" id="Address" name="Address">
                                     <option></option>
-                                    <option value="#">Hà Nội </option>
-                                    <option value="#">Thành phố HCM</option>
-                                    <option value="#">Đà Nẵng</option>
-                                    <option value="#">Cần Thơ</option>
+                                    <option value="#" *ngFor="let ci of City">{{ci.id}} - {{ci.content}}</option>
+
                                 </select>
                                 <label class="mdl-textfield__label" for="Address">Chọn thành phố</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <i class="mdl-textfield__icon material-icons">person</i>
                                 <select class="mdl-textfield__input" id="salary" name="salary">
                                     <option></option>
-                                    <option value="#">Mức 1</option>
-                                    <option value="#">Mức 2</option>
-                                    <option value="#">Mức 3</option>
+                                    <option value="#" *ngFor="let sala of Salary">{{sala.id}} - {{sala.content}}</option>
                                 </select>
-                                <label class="mdl-textfield__label" for="salary">Mức thu nhập</label>
+                                <label class="mdl-textfield__label" for="salary">Mức thu nhập hàng tháng</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <i class="mdl-textfield__icon material-icons">person</i>
                                 <select class="mdl-textfield__input" id="benefitCard" name="benefitCard">
                                     <option></option>
-                                    <option value="#">Tiện ích 1 </option>
-                                    <option value="#">Tiện ích 2</option>
-                                    <option value="#">Tiện ích 3</option>
-                                    <option value="#">Tiện ích 4</option>
+                                    <option value="#" *ngFor="let bene of benefit">{{bene.id}} - {{bene.director}}</option>
                                 </select>
                                 <label class="mdl-textfield__label" for="benefitCard">Chọn tiện ích</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-                                <label class="mdl-textfield__label" for="sample4">Number...</label>
-                                <span class="mdl-textfield__error">Input is not a number!</span>
-                            </div>
 
+                                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="verify">
+                                <label class="mdl-textfield__label" for="verify">Nhập mã xác nhận</label>
+                                <span class="mdl-textfield__error">Mã xác nhận gồm 4 số! vd: 5120</span>
+                            </div>
+                            <div>
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-checkbox"
+                                       for="checkbox2">
+                                    <input type="checkbox" id="checkbox2" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">Tôi đồng ý với<a> điều khoản và quy định</a> Sacombank</span>
+                                </label>
+                            </div>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-register">Đăng ký</button>
+                            <div class="clearfix"></div>
 
                         </form>
                     </div>
-                    <div>
-                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-checkbox"
-                               for="checkbox2">
-                            <input type="checkbox" id="checkbox2" class="mdl-checkbox__input">
-                            <span class="mdl-checkbox__label">Tôi đồng ý với<a> điều khoản và quy định</a> Sacombank</span>
-                        </label>
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <div class="mdl-layout-spacer"></div>
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Đăng ký</button>
-                    </div>
+                </div>
 
-                </div>
-                <!-- addition -->
-                <div class="addition">
-                    <div class="mdl-card mdl-shadow--16dp util-center util-spacing-h--40px fullwidth">
-                        <div class="mdl-card__title mdl-color--teal-500 title-addition">
-                            <h2 class="mdl-card__title-text mdl-color-text--white">Điều kiện đăng ký</h2>
-                        </div>
-                        <div>
-                            <ul>
-                                <li>More Information</li>
-                                <li>More Information</li>
-                                <li>More Information</li>
-                                <li>More Information</li>
-                                <li>More Information</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-        <!-- Material Design Lite JavaScript -->
     </div>
-    
 </main>
 <br />

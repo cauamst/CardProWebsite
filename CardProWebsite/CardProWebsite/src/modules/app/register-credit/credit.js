@@ -18,16 +18,17 @@ var CreditComponent = (function () {
         this.isOpen = false;
         this.currentContentType = 1;
         this.showCompare = true;
+        this.showButtonBack = false;
         this.NextPhotoInterval = 3000;
         //Looping or not
         this.noLoopSlides = true;
         //Photos
         this.slides = [];
         this.benefit = [
-            { currentCatId: 1, director: 'Dặm bay' },
-            { currentCatId: 2, director: 'Hoàn tiền' },
-            { currentCatId: 3, director: 'Điểm thưởng' },
-            { currentCatId: 4, director: 'Rút tiền mặt miễn phí' },
+            { id: 1, director: 'Dặm bay' },
+            { id: 2, director: 'Hoàn tiền' },
+            { id: 3, director: 'Điểm thưởng' },
+            { id: 4, director: 'Rút tiền mặt miễn phí' },
         ];
         this.button = [
             { id: 1, name: 'Dặm bay', ContentType: 1, idTT: 'Xem ưu điểm tiện ích dặm bay' },
@@ -53,6 +54,16 @@ var CreditComponent = (function () {
             { url: require("../../../assets/img/card_credit8.jpg") },
             { url: require("../../../assets/img/card_credit9.jpg") },
             { url: require("../../../assets/img/card_credit10.jpg") },
+        ];
+        this.Salary = [
+            { id: 1, content: 'Thấp hơn 7 triệu' },
+            { id: 2, content: 'Từ 7 - 15 triệu' },
+            { id: 3, content: 'Trên 15 triệu' }
+        ];
+        this.City = [
+            { id: 1, content: 'Cần thơ' },
+            { id: 2, content: 'Thành phố HCM' },
+            { id: 3, content: 'Hà Nội' }
         ];
         this.addNewSlide();
     }

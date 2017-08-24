@@ -237,6 +237,10 @@ html, body {
 
 .mdl-layout__container {
     height: auto !important;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
 }
 
 .card_pro_main {

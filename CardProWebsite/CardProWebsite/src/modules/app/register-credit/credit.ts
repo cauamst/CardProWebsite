@@ -30,7 +30,9 @@ export class CreditComponent implements OnInit {
     contents: Content[];
     currentContentType: number = 1;
 
+
     showCompare = true;
+    showButtonBack = false;
 
     private NextPhotoInterval: number = 3000;
     //Looping or not
@@ -38,10 +40,10 @@ export class CreditComponent implements OnInit {
     //Photos
     private slides: Array<any> = [];
     benefit = [
-        { currentCatId: 1, director: 'Dặm bay' },
-        { currentCatId: 2, director: 'Hoàn tiền' },
-        { currentCatId: 3, director: 'Điểm thưởng' },
-        { currentCatId: 4, director: 'Rút tiền mặt miễn phí' },
+        { id: 1, director: 'Dặm bay' },
+        { id: 2, director: 'Hoàn tiền' },
+        { id: 3, director: 'Điểm thưởng' },
+        { id: 4, director: 'Rút tiền mặt miễn phí' },
     ];
     button = [
         { id: 1, name: 'Dặm bay', ContentType: 1, idTT: 'Xem ưu điểm tiện ích dặm bay' },
@@ -69,6 +71,16 @@ export class CreditComponent implements OnInit {
         { url: require("../../../assets/img/card_credit8.jpg") },
         { url: require("../../../assets/img/card_credit9.jpg") },
         { url: require("../../../assets/img/card_credit10.jpg") },
+    ];
+    Salary = [
+        { id: 1, content: 'Thấp hơn 7 triệu' },
+        { id: 2, content: 'Từ 7 - 15 triệu' },
+        { id: 3, content: 'Trên 15 triệu' }
+    ];
+    City = [
+        { id: 1, content: 'Cần thơ' },
+        { id: 2, content: 'Thành phố HCM' },
+        { id: 3, content: 'Hà Nội' }
     ];
 
     constructor(
