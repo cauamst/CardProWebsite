@@ -19,7 +19,11 @@ import { Carousel, Direction } from './carousel';
         -webkit-perspective: 1000px;
         perspective: 1000px;
     }
-
+    .carousel-item-slide {
+        width: 20%;
+        margin-left: 10px;
+        float:left;
+    }      
     .item {
         position: relative;
         display: none;
@@ -43,7 +47,7 @@ export class Slide implements OnInit, OnDestroy {
     @Input() public active: boolean;
 
     @HostBinding('class.item')
-    @HostBinding('class.carousel-item')
+    @HostBinding('class.carousel-item-slide')
     private addClass: boolean = true;
 
     constructor(private carousel: Carousel, private zone: NgZone) {

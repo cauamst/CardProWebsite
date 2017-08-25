@@ -170,6 +170,7 @@ module.exports = {
             new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
             new CopyWebpackPlugin(COPY_FILES)
         ]),
+
     ]
 };
 

@@ -3,17 +3,18 @@ card_pro.carousel {
     margin-right: -8px;
     margin-left: -8px;
 }
-.slides{
-    list-style:none;
-    position:relative;
-    width:500%;
+.slides {
+    margin-top: 20px;
+    list-style: none;
+    position: relative;
+    width: 500%;
     /* Number of panes * 100% */
-    overflow:hidden; 
+    overflow: hidden;
     /* Clear floats */
-        /* Slide effect Animations*/
-    -moz-animation:carousel 30s infinite;
-    -webkit-animation:carousel 30s infinite;
-    animation:carousel 30s infinite;
+    /* Slide effect Animations*/
+    -moz-animation: carousel 30s infinite;
+    -webkit-animation: carousel 30s infinite;
+    animation: carousel 30s infinite;
 }
 .slides > li{
     position:relative;

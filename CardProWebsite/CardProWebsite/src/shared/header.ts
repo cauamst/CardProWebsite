@@ -16,6 +16,10 @@ import { routes } from '../modules/app/app.routing';
     height: 20px;
     padding-top: 20px;
 }
+.mdl-layout{
+    overflow-y: hidden; 
+    overflow-x: hidden;
+}
 
 .card_pro_header .card_pro_title, 
 .card_pro_header .card_pro_link,  
@@ -61,11 +65,9 @@ li a:hover:not(.active) {
             padding-left: 24px !important;
             
         }
-.mdl-layout{
-    position :initial;
-}
-.is-visible {
-    position: fixed !important;
+
+.small-menu, .mdl-layout__obfuscator {
+   position: fixed; 
 }
 `]
 })

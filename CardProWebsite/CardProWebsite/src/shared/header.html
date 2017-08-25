@@ -9,11 +9,9 @@
             </nav>
         </div>
         <div class="mdl-layout__header-row">
-            <!-- Title -->
-            <span class="mdl-layout-title card_pro_title"><img src="{{logoUrl}}" width="250" height="100" /></span>
-            <!-- Add spacer, to align navigation to the right -->   
+
+            <span class="mdl-layout-title card_pro_title"><img src="{{logoUrl}}" width="300" height="100" /></span>
             <div class="mdl-layout-spacer"></div>
-            <!-- Navigation. We hide it in small screens. -->
             <nav class="mdl-navigation mdl-layout--large-screen-only">
                 <span *ngFor="let route of routes">
                     <a *ngIf="route.data" class="mdl-layout__tab card_pro_link"
@@ -21,11 +19,12 @@
                 </span>
             </nav>
         </div>
+
     </header>
-    <div class="mdl-layout__drawer mdl-layout--small-screen-only">
-        <span class="mdl-layout-title"><a><img src="{{logoUrl}}" width="250" height="100" /></a></span>
+    <div class="mdl-layout__drawer mdl-layout--small-screen-only small-menu">
         <nav class="mdl-navigation" *ngFor="let route of routes">
-            <a *ngIf="route.data" class="mdl-navigation__link"  routerLink="{{route.path}}"  routerLinkActive="active-link">{{route.data.title}}</a>
+            <a *ngIf="route.data" class="mdl-navigation__link" routerLink="{{route.path}}" routerLinkActive="active-link">{{route.data.title}}</a>
         </nav>
     </div>
+
 </div>

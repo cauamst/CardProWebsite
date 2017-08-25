@@ -2,10 +2,10 @@
     <div class="page-content container">
         <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
-                <div *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack"><i class="material-icons">keyboard_backspace</i></div>
+                <div *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack"><a href="#" class="mdl-back">Trở về</a></div>
                 <div *ngIf="showCompare; else loadingCompare">
                     <div>
-                        <carousel [interval]="NextPhotoInterval" [noWrap]="noLoopSlides">
+                        <carousel [interval]="NextPhotoInterval" [noWrap]="false">
                             <slide *ngFor="let slidez of slides"
                                    [active]="slidez.active">
                                 <img [src]="slidez.image" style="margin:auto;">
@@ -35,13 +35,24 @@
                     </div>
                     <!-- card view -->
                     <div class="mdl-card mdl-cell--12-col mdl-cell--8-col-tablet mdl-shadow--2dp inline">
-                        <div id="wrapper">
-                            <div id="slideshow">
-                                <figure class="teste" *ngFor="let image of CardView">
-                                    <img src="{{image.url}}" alt="" />
-                                </figure>
-
-                            </div>
+                        <div class="row">
+                                <ul class="card-list">
+                                    <li>
+                                        <img src="http://placehold.it/150x100" class="mdl-img" alt="Responsive image" />
+                                    </li>
+                                    <li>
+                                        <img src="http://placehold.it/150x100" class="mdl-img" alt="Responsive image" style="padding-left: 20px;" />
+                                    </li>
+                                    <li>
+                                        <img src="http://placehold.it/150x100" class="mdl-img" alt="Responsive image" style="padding-left: 40px;" />
+                                    </li>
+                                    <li>
+                                        <img src="http://placehold.it/150x100" class="mdl-img" alt="Responsive image" style="padding-left: 60px;" />
+                                    </li>
+                                    <li>
+                                        <img src="http://placehold.it/150x100" class="mdl-img" alt="Responsive image" style="padding-left: 80px;"/>
+                                    </li>
+                                </ul>
                         </div>
                     </div>
 

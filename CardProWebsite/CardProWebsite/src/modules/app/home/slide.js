@@ -38,14 +38,14 @@ tslib_1.__decorate([
 ], Slide.prototype, "active", void 0);
 tslib_1.__decorate([
     core_1.HostBinding('class.item'),
-    core_1.HostBinding('class.carousel-item'),
+    core_1.HostBinding('class.carousel-item-slide'),
     tslib_1.__metadata("design:type", Boolean)
 ], Slide.prototype, "addClass", void 0);
 Slide = tslib_1.__decorate([
     core_1.Component({
         selector: 'slide',
         template: "\n    <div [class.active]=\"active\" class=\"item text-center\">\n      <ng-content></ng-content>\n    </div>\n  ",
-        styles: ["\n        .item {\n        -webkit-transition: -webkit-transform .6s ease-in-out;\n        -o-transition: -o-transform .6s ease-in-out;\n        transition: transform .6s ease-in-out;\n        -webkit-backface-visibility: hidden;\n        backface-visibility: hidden;\n        -webkit-perspective: 1000px;\n        perspective: 1000px;\n    }\n\n    .item {\n        position: relative;\n        display: none;\n        -webkit-transition: .6s ease-in-out left;\n        -o-transition: .6s ease-in-out left;\n        transition: .6s ease-in-out left;\n    }\n    .item.active {\n            display: block;\n            left: 0;\n            -webkit-transform: translate3d(0,0,0);\n            transform: translate3d(0,0,0);\n        }\n"]
+        styles: ["\n        .item {\n        -webkit-transition: -webkit-transform .6s ease-in-out;\n        -o-transition: -o-transform .6s ease-in-out;\n        transition: transform .6s ease-in-out;\n        -webkit-backface-visibility: hidden;\n        backface-visibility: hidden;\n        -webkit-perspective: 1000px;\n        perspective: 1000px;\n    }\n    .carousel-item-slide {\n        width: 20%;\n        margin-left: 10px;\n        float:left;\n    }      \n    .item {\n        position: relative;\n        display: none;\n        -webkit-transition: .6s ease-in-out left;\n        -o-transition: .6s ease-in-out left;\n        transition: .6s ease-in-out left;\n    }\n    .item.active {\n            display: block;\n            left: 0;\n            -webkit-transform: translate3d(0,0,0);\n            transform: translate3d(0,0,0);\n        }\n"]
     }),
     tslib_1.__metadata("design:paramtypes", [carousel_1.Carousel, core_1.NgZone])
 ], Slide);

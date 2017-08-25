@@ -1,4 +1,4 @@
-﻿import { Component, OnInit, Input, Output, NgZone } from '@angular/core';
+﻿import { Component, OnInit, Input, Output, NgZone,NgModule,OnChanges } from '@angular/core';
 import { FormControl } from "@angular/forms/forms";
 import { Validators } from "@angular/forms/src/validators";
 import { FormGroup } from "@angular/forms/src/forms";
@@ -7,7 +7,7 @@ import { CARDES } from '../models/Card-Data';
 import { CARD, Content } from '../models/interface-card';
 import { ActivatedRoute } from "@angular/router";
 import { Location } from '@angular/common';
-
+declare var $: any;
 @Component({
     selector: 'credit',
     templateUrl: './credit.html',
@@ -29,7 +29,6 @@ export class CreditComponent implements OnInit {
     //content - uu diem
     contents: Content[];
     currentContentType: number = 1;
-
 
     showCompare = true;
     showButtonBack = false;
@@ -82,6 +81,7 @@ export class CreditComponent implements OnInit {
         { id: 2, content: 'Thành phố HCM' },
         { id: 3, content: 'Hà Nội' }
     ];
+  
 
     constructor(
         private CardService: CardService,
@@ -142,5 +142,8 @@ export class CreditComponent implements OnInit {
             })
         });
     }
-
+    
+   
+   
 }
+

@@ -29,6 +29,8 @@ import { CompareComponent } from './register-credit/compare';
 import { Accordion, AccordionGroup } from './register-credit/accordion';
 
 
+
+
 @NgModule({
     declarations: [
         HomeComponent,

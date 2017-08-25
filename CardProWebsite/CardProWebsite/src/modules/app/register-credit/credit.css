@@ -539,3 +539,126 @@ ul {
 .mdl-textfield.is-disabled .mdl-textfield__icon {
     color: rgba(0, 0, 0, 0.26) !important;
 }
+
+/*carousel*/
+
+.containerr {
+    width: 210px;
+    height: 140px;
+    position: relative;
+    perspective: 1000px;
+}
+
+#carousel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+    #carousel figure {
+        margin: 0;
+        display: block;
+        position: absolute;
+        width: 186px;
+        height: 116px;
+        left: 10px;
+        top: 10px;
+        border: 2px solid black;
+    }
+        #carousel figure:nth-child(1) {
+            transform: rotateY( 0deg );
+        }
+
+        #carousel figure:nth-child(2) {
+            transform: rotateY( 40deg );
+        }
+
+        #carousel figure:nth-child(3) {
+            transform: rotateY( 80deg );
+        }
+
+        #carousel figure:nth-child(4) {
+            transform: rotateY( 120deg );
+        }
+
+        #carousel figure:nth-child(5) {
+            transform: rotateY( 160deg );
+        }
+
+        #carousel figure:nth-child(6) {
+            transform: rotateY( 200deg );
+        }
+
+        #carousel figure:nth-child(7) {
+            transform: rotateY( 240deg );
+        }
+
+        #carousel figure:nth-child(8) {
+            transform: rotateY( 280deg );
+        }
+
+        #carousel figure:nth-child(9) {
+            transform: rotateY( 320deg );
+        }
+.mdl-image {
+    width : 250px;
+    height : 150px;
+}
+
+
+/*button back*/
+.mdl-back {
+    padding: 5px 20px;
+    background: orange;
+    position: relative;
+    float: right;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    margin-top : 10px
+}
+
+    .mdl-back:after {
+        content: " ";
+        border: solid transparent;
+        border-width: 0;
+        border-left-color: orange;
+        position: absolute;
+        -webkit-transition: all 1s ease;
+        left: 100%;
+        top: 50%;
+    }
+
+    .mdl-back:hover:after {
+        content: " ";
+        display: block;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(0, 0, 0, 0);
+        border-left-color: orange;
+        border-width: 25px;
+        margin-top: -25px;
+        margin-left: -10px;
+    }
+.row li {
+    width: 20%;
+    float: left;
+}
+.mdl-img {
+    border: 0 none;
+    height: auto;
+    vertical-align: middle;
+    width: unset;
+    display: inline-block;
+}
+
+.card-list {
+    list-style-type: none;
+}

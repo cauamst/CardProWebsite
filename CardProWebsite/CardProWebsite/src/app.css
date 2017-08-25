@@ -52,9 +52,6 @@ html, body {
   background-color: white;
   height: 4px;
 }
-.mdl-demo main > .mdl-layout__tab-panel {
-  padding: 8px;
-}
 .mdl-demo .mdl-card {
   height: auto;
   display: -webkit-flex;
@@ -114,16 +111,17 @@ html, body {
 .mdl-demo #features section.section--center {
   max-width: 620px;
 }
-.mdl-demo section > header{
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.mdl-demo section > header {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 .mdl-demo section > .section__play-btn {
   min-height: 200px;
@@ -245,4 +243,12 @@ html, body {
 
 .card_pro_main {
     padding-top: 78px;
+}
+
+.mdl-layout__obfuscator {
+    position: fixed;
+}
+.mdl-layout__drawer-button {
+    color: #000 !important;
+    padding-top: 20px;
 }
