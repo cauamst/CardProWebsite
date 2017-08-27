@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("material-design-lite/dist/material.deep_purple-pink.min.css");
+//import "material-design-lite/dist/material.deep_purple-pink.min.css";
 require("./app.css");
-require("material-design-lite/material.min.js");
+//import "material-design-lite/material.min.js";
 require("zone.js");
 require("reflect-metadata");
 var platform_browser_dynamic_1 = require("@angular/platform-browser-dynamic");

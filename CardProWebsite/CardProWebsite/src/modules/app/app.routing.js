@@ -14,14 +14,14 @@ exports.routes = [
         redirectTo: '/home',
         pathMatch: 'full'
     },
-    { path: 'home', component: home_1.HomeComponent, data: { title: 'Home', name: 'Angular4' } },
+    { path: 'home', component: home_1.HomeComponent, data: { title: 'Trang chủ', name: 'CardProWebsite' } },
     { path: 'products', component: products_1.ProductsComponent, data: { title: 'Products' }, canActivate: [auth_guard_1.AuthGuard] },
     { path: 'cardRegistration', component: cardRegistration_component_1.CardRegistrationComponent, data: { title: 'Card Registration' }, canActivate: [auth_guard_1.AuthGuard] },
     {
-        path: 'register', component: credit_1.CreditComponent, data: { title: 'Credit' },
+        path: 'register', component: credit_1.CreditComponent, data: { title: 'Dịch vụ thẻ' },
     },
     {
-        path: 'Login', component: login_1.LoginLayoutComponent, data: { title: 'Login' }
+        path: 'Login', component: login_1.LoginLayoutComponent, data: { title: 'Đăng nhập' }
     },
     { path: 'login', component: login_component_1.LoginComponent },
     { path: '**', redirectTo: 'home' },

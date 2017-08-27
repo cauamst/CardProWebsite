@@ -15,7 +15,6 @@ var CreditComponent = (function () {
         //get all card
         this.cards = [];
         this.showDialog = false;
-        this.isOpen = false;
         this.currentContentType = 1;
         this.showCompare = true;
         this.showButtonBack = false;
@@ -65,6 +64,19 @@ var CreditComponent = (function () {
             { id: 2, content: 'Thành phố HCM' },
             { id: 3, content: 'Hà Nội' }
         ];
+        //accordion-example
+        this.firstDisabled = false;
+        this.isOpen = false;
+        this.groups = [
+            {
+                heading: 'Dynamic 1',
+                content: 'I am dynamic!'
+            },
+            {
+                heading: 'Dynamic 2',
+                content: 'Dynamic as well'
+            }
+        ];
         this.addNewSlide();
     }
     CreditComponent.prototype.ngOnInit = function () {
@@ -111,6 +123,9 @@ var CreditComponent = (function () {
                 _this.contents = contents;
             });
         });
+    };
+    CreditComponent.prototype.removeDynamic = function () {
+        this.groups.pop();
     };
     return CreditComponent;
 }());

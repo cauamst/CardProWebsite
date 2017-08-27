@@ -15,15 +15,15 @@ export const routes: Routes = [
         redirectTo: '/home',
         pathMatch: 'full'
     },
-    { path: 'home', component: HomeComponent, data: { title: 'Home', name: 'Angular4' } },
+    { path: 'home', component: HomeComponent, data: { title: 'Trang chủ', name: 'CardProWebsite' } },
     { path: 'products', component: ProductsComponent, data: { title: 'Products' }, canActivate: [AuthGuard] },
     { path: 'cardRegistration', component: CardRegistrationComponent, data: { title: 'Card Registration' }, canActivate: [AuthGuard] },
     {
-        path: 'register', component: CreditComponent, data: { title: 'Credit' },
+        path: 'register', component: CreditComponent, data: { title: 'Dịch vụ thẻ' },
 
     },
     {
-        path: 'Login', component: LoginLayoutComponent, data: { title: 'Login' }
+        path: 'Login', component: LoginLayoutComponent, data: { title: 'Đăng nhập' }
     },
     { path: 'login', component: LoginComponent},
     

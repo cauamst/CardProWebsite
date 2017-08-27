@@ -25,7 +25,7 @@ export class CreditComponent implements OnInit {
     //get all card
     cards: CARD[] = [];
     showDialog = false;
-    isOpen = false;
+    //isOpen = false;
     //content - uu diem
     contents: Content[];
     currentContentType: number = 1;
@@ -141,6 +141,25 @@ export class CreditComponent implements OnInit {
                 this.contents = contents;
             })
         });
+    }
+
+    //accordion-example
+    firstDisabled: boolean = false;
+    isOpen: boolean = false;
+
+    groups: Array<any> = [
+        {
+            heading: 'Dynamic 1',
+            content: 'I am dynamic!'
+        },
+        {
+            heading: 'Dynamic 2',
+            content: 'Dynamic as well'
+        }
+    ];
+
+    removeDynamic() {
+        this.groups.pop();
     }
     
    

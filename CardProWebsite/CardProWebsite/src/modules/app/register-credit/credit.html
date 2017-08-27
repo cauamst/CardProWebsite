@@ -102,19 +102,19 @@
                                 <label class="mdl-textfield__label" for="name">Họ Tên</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield">
-                                <i class="mdl-textfield__icon material-icons">person</i>
+                                <i class="mdl-textfield__icon material-icons">email</i>
                                 <input class="mdl-textfield__input" type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
                                 <label class="mdl-textfield__label" for="email">Email</label>
                                 <span class="mdl-textfield__error">Bạn chưa nhập đúng định dạng email! example@email.com</span>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield">
-                                <i class="mdl-textfield__icon material-icons">person</i>
+                                <i class="mdl-textfield__icon material-icons">phone</i>
                                 <input class="mdl-textfield__input" type="text" id="phone" pattern="(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)" maxlength="13" />
                                 <label class="mdl-textfield__label" for="phone">Số điện thoại</label>
                                 <span class="mdl-textfield__error">Chưa nhập đúng định dạng số điện thoại! ex: 0933 588295</span>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <i class="mdl-textfield__icon material-icons">person</i>
+                                <i class="mdl-textfield__icon material-icons">location_city</i>
                                 <select class="mdl-textfield__input" id="Address" name="Address">
                                     <option></option>
                                     <option value="#" *ngFor="let ci of City">{{ci.id}} - {{ci.content}}</option>
@@ -131,7 +131,7 @@
                                 <label class="mdl-textfield__label" for="salary">Mức thu nhập hàng tháng</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <i class="mdl-textfield__icon material-icons">person</i>
+                                <i class="mdl-textfield__icon material-icons">credit_card</i>
                                 <select class="mdl-textfield__input" id="benefitCard" name="benefitCard">
                                     <option></option>
                                     <option value="#" *ngFor="let bene of benefit">{{bene.id}} - {{bene.director}}</option>

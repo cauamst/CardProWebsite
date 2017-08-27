@@ -1,56 +1,50 @@
 ﻿<div>
     <h4>So sánh thẻ</h4>
 </div>
-
-<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--4-col-phone squre-lef inline">
-    <div *ngIf="!card1;else loadingImage1">
-        <a (click)="showDialog1 = !showDialog1"><img src="../../../assets/img/CardCompare.png" class="square" /></a>
-    </div>
-    <ng-template #loadingImage1>
-        <div *ngIf="card1">
-            <img src="{{card1.url}}" class="card-compare" />
+<div class="mdl-grid">
+    <div class="mdl-cell--4-col mdl-cell--hide-tablet mdl-cell--hide-phone squre-lef inline"></div>
+    <div class="mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone squre-lef inline">
+        <div *ngIf="!card1;else loadingImage1">
+            <a (click)="showDialog1 = !showDialog1"><img src="../../../assets/img/CardCompare.png" class="square" /></a>
         </div>
-    </ng-template>
-    <br />
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right" (click)="showDialog1 = !showDialog1">Thêm thẻ</button>
+        <ng-template #loadingImage1>
+            <div *ngIf="card1">
+                <img src="{{card1.url}}" class="card-compare" />
+            </div>
+        </ng-template>
+        <br />
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right" (click)="showDialog1 = !showDialog1">Thêm thẻ</button>
 
-</div>
-<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--4-col-phone squre-right inline">
-    <div *ngIf="!card2;else loadingImage2">
-        <img src="../../../assets/img/CardCompare.png" class="square" />
     </div>
-    <ng-template #loadingImage2>
-        <div *ngIf="card2">
-            <img src="{{card2.url}}" class="card-compare" />
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone squre-right inline">
+        <div *ngIf="!card2;else loadingImage2">
+            <img src="../../../assets/img/CardCompare.png" class="square" />
         </div>
-    </ng-template>
-    <br />
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right" (click)="showDialog2 = !showDialog2">Thêm thẻ</button>
+        <ng-template #loadingImage2>
+            <div *ngIf="card2">
+                <img src="{{card2.url}}" class="card-compare" />
+            </div>
+        </ng-template>
+        <br />
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right" (click)="showDialog2 = !showDialog2">Thêm thẻ</button>
+    </div>
 </div>
 <accordion>
 
     <accordion-group heading="Tiện ích vượt trội" isGroupOpen="true">
-        <div>
-            <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--4-col-phone squre-left">
-                <ul class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
-                </ul>
+        <div class="mdl-grid">
+            <div class="mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                <p>this is material</p>
             </div>
-            <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--4-col-phone squre-right">
-                <ul class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                </ul>
+            <div class="mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                <p>sadas</p>
             </div>
+            <div class="mdl-layout-spacer"></div>
+            <div class="mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                <p>adsad</p>
+            </div>
+
         </div>
     </accordion-group>
 
