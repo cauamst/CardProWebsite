@@ -1,133 +1,126 @@
 ﻿
 <app-carousel></app-carousel>
 
-<main class="mdl-layout__content">
+<div class="android-more-section">
+    <a name="screens"></a>
+    <div class="android-section-title mdl-typography--display-1-color-contrast">Sản phẩm dịch vụ</div>
+    <div class="android-card-container mdl-grid">
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp" *ngFor="let card of cardhome">
+            <div class="mdl-card__media">
+                <img src="{{card.url}}">
+            </div>
+            <div class="mdl-card__title">
+                <h4 class="mdl-card__title-text">{{card.Name}}</h4>
+            </div>
 
-    <div class="page-content">
-        <div class="mdl-layout__header-row card_pro_header_row card-header-blue">
-            <i class="mdl-textfield__icon material-icons material-icons-menu">credit_card</i>
-            <span class="mdl-layout-title card-heading">Sản phẩm dịch vụ</span>
-            <!-- Add spacer, to align navigation to the right -->
-            <div class="mdl-layout-spacer"></div>
-        </div>
-        <div class="mdl-grid media-mdl-grid">
-            <div class="mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-card mdl-cell--4-col-phone mdl-card mdl-shadow--4dp portfolio-blog-card-compact" *ngFor="let car of cardhome">
-                <div>
-                    <img class="article-image box" src="{{car.url}}" border="0" alt="">
-                </div>
-                <div class="mdl-card__title ">
-                    <h2 class="mdl-card__title-text">{{car.Name}}</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent">
-                        Đăng ký
-                    </a>
-                </div>
+            <div class="mdl-card__supporting-text">
+                <span class="mdl-typography--font-light mdl-typography--subhead">{{card.content}}</span>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
+                    {{card.linkRoute}}
+                    <i class="material-icons">chevron_right</i>
+                </a>
             </div>
         </div>
-
-        <div class="mdl-grid background-grid-section mdl-margin-row">
-            <div class="mdl-cell--8-col mdl-cell--8-col-tablet">
-                <div class="mdl-layout__header-row card_pro_header_row mdl-margin-row card-header-blue card-full-width">
-                    <i class="material-icons material-icons-menu">subscriptions</i>
-                    <span class="mdl-layout-title card-heading">Tin tức nỗi bật</span>
-                    <!-- Add spacer, to align navigation to the right -->
-                    <div class="mdl-layout-spacer"></div>
-                </div>
-                <div class="mdl-cell--12-col mdl-left">
-                    <div class="mdl-img-bottom">
-                        <img src="../../../assets/img/slide1.jpg" class="imghome-card" />
-                    </div>
-                    <p>Material is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals. It works on all major web browsers, tablets and phone.</p>
-                    <div class="blockqueue">
-                        <p>Material is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals. It works on all major web browsers, tablets and phone.</p>
-                        <small> C.E.O by SAA</small>
-                    </div>
-                </div>
-            </div>
-            <div class="mdl-cell--4-col mdl-cell--8-col-tablet card-promotion">
-                <div class="mdl-layout__header-row card_pro_header_row card-header-blue card-full-width">
-                    <i class="material-icons material-icons-menu">card_giftcard</i>
-                    <span class="mdl-layout-title card-heading">Tin khuyến mãi</span>
-                    <!-- Add spacer, to align navigation to the right -->
-                    <div class="mdl-layout-spacer"></div>
-                </div>
-                <!--<carousel [interval]="NextPhotoInterval" [noWrap]="noLoopSlides">
-                    <slide *ngFor="let slidez of slides"
-                           [active]="slidez.active">
-                        <img [src]="slidez.image" style="margin:auto;height: 230px;
-                             width: 400px;">
-                    </slide>
-                </carousel>-->
-                <div class="snippet-code snippet-group">
-                    <ul class="demo-list-three mdl-list">
-                        <li class="mdl-list__item mdl-list__item--three-line">
-                            <span class="mdl-list__item-primary-content">
-                                <i class="material-icons">card_giftcard</i>
-                                <span>Bryan Cranston</span>
-                                <span class="mdl-list__item-text-body">
-                                    Bryan Cranston played the role of Walter in Breaking Bad.
-                                </span>
-                            </span>
-                            <span class="mdl-list__item-secondary-content">
-                                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
-                            </span>
-                        </li>
-                        <li class="mdl-list__item mdl-list__item--three-line">
-                            <span class="mdl-list__item-primary-content">
-                                <i class="material-icons">card_giftcard</i>
-                                <span>Bryan Cranston</span>
-                                <span class="mdl-list__item-text-body">
-                                    Bryan Cranston played the role of Walter in Breaking Bad.
-                                </span>
-                            </span>
-                            <span class="mdl-list__item-secondary-content">
-                                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
-                            </span>
-                        </li>
-                        <li class="mdl-list__item mdl-list__item--three-line">
-                            <span class="mdl-list__item-primary-content">
-                                <i class="material-icons">card_giftcard</i>
-                                <span>Aaron Paul</span>
-                                <span class="mdl-list__item-text-body">
-                                    Aaron Paul played the role of Jesse in Breaking Bad.
-                                </span>
-                            </span>
-                            <span class="mdl-list__item-secondary-content">
-                                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
-                            </span>
-                        </li>
-                        <li class="mdl-list__item mdl-list__item--three-line">
-                            <span class="mdl-list__item-primary-content">
-                                <i class="material-icons">card_giftcard</i>
-                                <span>Bob Odenkirk</span>
-                                <span class="mdl-list__item-text-body">
-                                    Bob Odinkrik played the role of Saul in Breaking Bad.
-                                </span>
-                            </span>
-                            <span class="mdl-list__item-secondary-content">
-                                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp card-margin">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-                <nav id="nav-2">
-                    <a class="link-2" href="#">Tiêu đề</a>
-                </nav>
-                <div class="mdl-card__supporting-text">
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis. Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse. Pariatur occaecat nisi laboris tempor laboris eiusmod qui id Lorem esse commodo in. Exercitation aute dolore deserunt culpa consequat elit labore incididunt elit anim.</p>
-                </div>
-                <div class="mdl-card__actions">
-                    <a href="#" class="mdl-button">Điều hướng</a>
-                </div>
-            </div>
-        </section>
     </div>
-</main>
+</div>
+<div class="android-more-section">
+    <div class="mdl-grid background-grid-section mdl-margin-row effect">
+        <div class="mdl-cell--8-col mdl-cell--8-col-tablet">
+            <div class="mdl-layout__header-row card_pro_header_row mdl-margin-row card-header-blue card-fillwidth">
+                <span class="android-section-title mdl-typography--display-1-color-contrast">Tin tức nỗi bật</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+            </div>
+            <div class="mdl-cell--12-col mdl-left">
+                <img src="../../../assets/img/slide1.jpg" class="imghome-card" />
+                <p>Material is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals. It works on all major web browsers, tablets and phone.</p>
+                <div class="blockqueue">
+                    <p>Material is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals. It works on all major web browsers, tablets and phone.</p>
+                    <small> C.E.O by SAA</small>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-cell--4-col mdl-cell--8-col-tablet">
+            <div class="mdl-layout__header-row card_pro_header_row card-header-blue card-full-width">
+                <span class="android-section-title mdl-typography--display-1-color-contrast">Thông tin khuyến mãi</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+            </div>
+            <!--<carousel [interval]="NextPhotoInterval" [noWrap]="noLoopSlides">
+                <slide *ngFor="let slidez of slides"
+                       [active]="slidez.active">
+                    <img [src]="slidez.image" style="margin:auto;height: 230px;
+                         width: 400px;">
+                </slide>
+            </carousel>-->
+            <div class="snippet-code snippet-group">
+                <ul class="demo-list-three mdl-list">
+                    <li class="mdl-list__item mdl-list__item--three-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons">card_giftcard</i>
+                            <span>Bryan Cranston</span>
+                            <span class="mdl-list__item-text-body">
+                                Bryan Cranston played the role of Walter in Breaking Bad.
+                            </span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--three-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons">card_giftcard</i>
+                            <span>Aaron Paul</span>
+                            <span class="mdl-list__item-text-body">
+                                Aaron Paul played the role of Jesse in Breaking Bad.
+                            </span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--three-line">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons">card_giftcard</i>
+                            <span>Bob Odenkirk</span>
+                            <span class="mdl-list__item-text-body">
+                                Bob Odinkrik played the role of Saul in Breaking Bad.
+                            </span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="android-wear-section">
+    <div class="android-wear-band">
+        <div class="android-wear-band-text">
+            <div class="mdl-typography--display-2 mdl-typography--font-thin">Combo tài khoản doanh nghiệp</div>
+            <p class="mdl-typography--headline mdl-typography--font-thin">
+               Sử dụng trọn gói - Lợi ích trọn đời
+            </p>
+            <p>
+                <a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" href="">
+                   Xem chi tiết&nbsp;<i class="material-icons">chevron_right</i>
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="android-customized-section">
+    <div class="android-customized-section-text">
+        <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Đón thu sang, Ngàn quà tặng</div>
+        <p class="mdl-typography--font-light">
+            Put the stuff that you care about right on your home screen: the latest news, the weather or a stream of your recent photos.
+            <br>
+            <a href="" class="android-link mdl-typography--font-light">Xem chi tiết</a>
+        </p>
+    </div>
+    <div class="android-customized-section-image"></div>
+</div>

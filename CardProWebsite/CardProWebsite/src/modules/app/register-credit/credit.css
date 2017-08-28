@@ -48,22 +48,18 @@
 
 .button-register {
     width: 100%;
-    margin-top: 40px;
-}
-
-.size-icons {
-    font-size: 80px !important;
-    margin-top: 100px;
+    margin-top: 80px;
 }
 
 .send-button {
     float: right;
 }
-
-
-/*card*/
-
-.mdl-card__media {
+.mdl-textfield__input {
+    margin-left: 10%;
+    width: 90%;
+}
+    /*card*/
+    .mdl-card__media {
     margin: 5px;
     background-color: none !important;
 }
@@ -75,11 +71,9 @@
 
 img {
     width: 100%;
+    height : 200px;
 }
 
-.fullwidth {
-    width: 100%;
-}
 
 .mdl-card__actions {
     display: flex;
@@ -115,6 +109,17 @@ img {
     border-left: 4px solid #4CAF50;
     word-wrap: break-word;
     margin-bottom: 20px;
+}
+.iconbenefit {
+    float: left;
+    padding-right: 15px;
+    width: 25px;
+    padding-top: 2px;
+}
+.textbenefit {
+    float: left;
+    width: 90%;
+    font-size : 12px;
 }
 /*css3 card view */
 #wrapper {
@@ -223,6 +228,18 @@ img {
         left: 300px;
     }
 }
+.ul {
+    list-style: outside none none;
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding: 0 10px 15px;
+}
+.note {
+    margin: 8px 20px;
+    padding-bottom: 15px;
+    font-size: 11px;
+}
+
 
 @-webkit-keyframes sliderthird {
     0% {
@@ -358,11 +375,6 @@ section {
 .clearfix {
     display: inline-block;
 }
-
-.mdl-button-width {
-    min-width: 100px;
-    width: 180px;
-}
 /* start commented backslash hack \*/
 * html .clearfix {
     height: 1%;
@@ -372,73 +384,73 @@ section {
     display: block;
 }
 /* close commented backslash hack */
-
+.padding-top-none {
+    padding-top : 0px !important;
+    margin-top : 20px
+}
 
 /*button*/
 .mdl-row {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
     border-spacing: 10px;
+    display: inline;
+    margin-right: 30px;
 }
 
 .mdl-column {
     display: table-cell;
 }
 
-
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
-    .mdl-layout__content {
-        margin-top: 7px;
-    }
-
-    .container {
-        margin-right: 5%;
-        margin-left: 5%;
-    }
-
-    .mdl-cell--8-col-desktop {
-        margin: auto;
-    }
-}
-/*ipad-pro*/
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-    .mdl-layout__content {
-        width: 980px;
-        margin-left: 20px;
-    }
-
-    .mdl-button-width {
-        min-width: 100px;
-        width: 140px;
-    }
-}
-
 #container {
-    background: #fff;
+    background: #F5F5F5;
     display: table;
-    padding-bottom : 40px;
+    padding-bottom: 40px;
+    margin-top: 20px;
 }
-
-#left, #right {
-    display: table-cell
+.mdl-checkbox__label {
+    font-size : 12px !important; 
 }
-
-#right {
-    width: 250px;
-    padding-bottom: inherit;
-    border-left: thick double #423A85;
+#size18 {
+    font-size : 18px !important;
 }
-
 #width100PercentTest {
-    margin : 20px;
+    margin: 20px;
+}
+#padding-right {
+    padding-right : 30px;
+}
+#Lnav-heading {
+    /*float: left;*/
+    margin-right: 4px;
+    font-family: Verdana, arial, helvetica, sans-serif;
+}
+
+    #Lnav-heading h2 {
+        font-size: 16px;
+        font-weight: normal;
+        color: #000;
+    }
+h2.lvn-heading:before {
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: 100%;
+    left: 0;
+}
+h2.lvn-heading {
+    font-family: verdana,arial,helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    position: relative;
+    color: #fff;
+    z-index: 1;
+    border-radius: 1px;
+    margin: 1px;
 }
 
 #Lnav {
-    width: 100%;
     /*float: left;*/
     margin-right: 4px;
-    margin-left: 10px;
     font-family: Verdana, arial, helvetica, sans-serif;
 }
 
@@ -464,9 +476,8 @@ h2.lvn {
     font-weight: normal;
     position: relative;
     color: #fff;
-    text-align: center;
+    padding-left: 20px;
     z-index: 1;
-    left: -37px;
     border-radius: 1px;
     margin: 1px;
     background: #4490c7;
@@ -491,6 +502,8 @@ ul {
     background-color: #007E9F;
     text-decoration: none;
     color: white;
+    margin-top : 20px;
+    margin-bottom : 20px;
 }
 
 .curl-top-left {
@@ -529,9 +542,6 @@ ul {
 }
 .mdl-textfield__label {
     left : 30px !important;
-}
-.mdl-textfield__input {
-    margin-left: 10%;
 }
 .mdl-textfield.is-invalid .mdl-textfield__icon {
     color: #de3226 !important;
@@ -661,4 +671,15 @@ ul {
 
 .card-list {
     list-style-type: none;
+}
+@media (min-width: 840px) {
+    .mdl-grid {
+         padding: 0px !important; 
+    }
+}
+#margin-bottom-benefit {
+    margin-bottom : 10px;
+}
+#padding-none {
+    padding-top : unset;
 }

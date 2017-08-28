@@ -23,6 +23,7 @@ export enum Direction { UNKNOWN, NEXT, PREV }
 /*carousel*/
 .carousel {
     position: relative;
+    margin-bottom: 20px;
 }
 
 .carousel-indicators {
@@ -88,9 +89,9 @@ a {
         -webkit-transform: translate3d(0,0,0);
         transform: translate3d(0,0,0);
     }
-.size-icons {
-    font-size: 60px !important;
-    margin-top : 140px;
+.mdl-icon-toggle__label{
+    font-size: 44px !important;
+    margin-top: 90px;
 }
 `]
 })

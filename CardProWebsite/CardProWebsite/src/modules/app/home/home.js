@@ -12,9 +12,10 @@ var HomeComponent = (function () {
         //Photos
         this.slides = [];
         this.cardhome = [
-            { id: 1, url: require("../../../assets/img/card1.jpg"), Name: 'Name-Data' },
-            { id: 2, url: require("../../../assets/img/card2.jpg"), Name: 'Da-taName' },
-            { id: 3, url: require("../../../assets/img/card3.jpg"), Name: 'Data-Name' }
+            { id: 1, url: require("../../../assets/img/card1.jpg"), Name: 'Thẻ tín dụng', content: 'Tận hưởng cuộc sống thú vị và ngập tràn ưu đãi với thẻ tín dụng Sacombank - nguồn tài chính dự phòng thiết yếu cho mọi nhu cầu chi tiêu, mua sắm', linkRoute: 'Đăng ký' },
+            { id: 2, url: require("../../../assets/img/card2.jpg"), Name: 'Thẻ thanh toán', content: 'Hơn cả tiền mặt, thẻ thanh toán Sacombank là phương tiện tài chính hiện đại được liên kết với tài khoản tiền gửi thanh toán của bạn để thực hiện nhiều chức năng: rút tiền, thanh toán, giao dịch trực tuyến...', linkRoute: 'Đăng ký' },
+            { id: 3, url: require("../../../assets/img/card3.jpg"), Name: 'Thẻ in hình', content: 'Thỏa sức sáng tạo chiếc thẻ độc đáo của riêng bạn và lưu giữ mọi khoảnh khắc tuyệt vời', linkRoute: 'Đăng ký' },
+            { id: 4, url: require("../../../assets/img/card_credit.jpg"), Name: 'Giới thiệu bạn bè', content: 'Thêm bạn - Thêm vui', linkRoute: 'Xem chi tiết' },
         ];
         this.heading = "Home";
         this.addNewSlide();

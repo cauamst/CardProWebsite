@@ -138,7 +138,12 @@
     <Content Include="src\assets\img\card_credit7.jpg" />
     <Content Include="src\assets\img\card_credit8.jpg" />
     <Content Include="src\assets\img\card_credit9.jpg" />
+    <Content Include="src\assets\img\ChungChiTienGui1600x530px_1.jpg" />
+    <Content Include="src\assets\img\ComboDoanhNGhiep-1600x530px.jpg" />
     <Content Include="src\assets\img\credit-card-sample.png" />
+    <Content Include="src\assets\img\CTKM-Contactless1600x530.jpg" />
+    <Content Include="src\assets\img\DichVuKieuHoi1600x530px.jpg" />
+    <Content Include="src\assets\img\DonThuSangNganQuaTang1600x530.jpg" />
     <Content Include="src\assets\img\imgwelcome.jpg" />
     <Content Include="src\assets\img\left-arrow.png" />
     <Content Include="src\assets\img\logo-ngan-hang-sacombank.png" />
@@ -151,6 +156,7 @@
     <Content Include="src\assets\img\slide4.jpg" />
     <Content Include="src\assets\img\slide5.jpg" />
     <Content Include="src\assets\img\tin-tuc.png" />
+    <Content Include="src\assets\img\Top40ThuongHIeu2017_1600x530.jpg" />
     <Content Include="src\assets\js\material.min.js" />
     <Content Include="src\modules\app\carousel\carousel.css" />
     <Content Include="src\modules\app\carousel\carousel.html" />

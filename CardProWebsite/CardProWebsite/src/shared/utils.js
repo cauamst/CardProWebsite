@@ -7,9 +7,9 @@ exports.client = new servicestack_client_1.JsonServiceClient(global.BaseUrl || '
 var MDL = (function () {
     function MDL() {
     }
-    MDL.prototype.ngAfterViewInit = function () {
-        if (typeof componentHandler !== "undefined") {
-            componentHandler.upgradeDom();
+    MDL.prototype.ngAfterViewChecked = function () {
+        if (componentHandler) {
+            componentHandler.upgradeAllRegistered();
         }
     };
     return MDL;

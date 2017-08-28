@@ -45,10 +45,10 @@ export class CreditComponent implements OnInit {
         { id: 4, director: 'Rút tiền mặt miễn phí' },
     ];
     button = [
-        { id: 1, name: 'Dặm bay', ContentType: 1, idTT: 'Xem ưu điểm tiện ích dặm bay' },
-        { id: 2, name: 'Hoàn tiền', ContentType: 2, idTT: 'Xem ưu điểm tiện ích hoàn tiền' },
-        { id: 3, name: 'Điểm thưởng', ContentType: 3, idTT: 'xem ưu điểm tiện ích điểm thưởng' },
-        { id: 4, name: 'Rút tiền mặt miễn phí', ContentType: 4, idTT: 'Xem ưu điểm tiện ích rút tiền mặt miễn phí' }
+        { id: 1, name: 'Dặm bay', ContentType: 1, idTT: 'Xem ưu điểm tiện ích dặm bay', option : 1 },
+        { id: 2, name: 'Hoàn tiền', ContentType: 2, idTT: 'Xem ưu điểm tiện ích hoàn tiền', option: 2 },
+        { id: 3, name: 'Điểm thưởng', ContentType: 3, idTT: 'xem ưu điểm tiện ích điểm thưởng', option: 3 },
+        { id: 4, name: 'Rút tiền mặt miễn phí', ContentType: 4, idTT: 'Xem ưu điểm tiện ích rút tiền mặt miễn phí', option: 4 }
     ];
     buttonTooltip =
     [
@@ -101,12 +101,12 @@ export class CreditComponent implements OnInit {
 
     private addNewSlide() {
         this.slides.push(
-            { image: require("../../../assets/img/slide1.jpg") },
-            { image: require("../../../assets/img/slide2.jpg") },
-            { image: require("../../../assets/img/slide3.jpg") },
-            { image: require("../../../assets/img/slide4.jpg") },
-            { image: require("../../../assets/img/slide5.jpg") },
-            { image: require("../../../assets/img/slide1.jpg") }
+            { image: require("../../../assets/img/ChungChiTienGui1600x530px_1.jpg") },
+            { image: require("../../../assets/img/ComboDoanhNGhiep-1600x530px.jpg") },
+            { image: require("../../../assets/img/CTKM-Contactless1600x530.jpg") },
+            { image: require("../../../assets/img/DichVuKieuHoi1600x530px.jpg") },
+            { image: require("../../../assets/img/DonThuSangNganQuaTang1600x530.jpg") },
+            { image: require("../../../assets/img/Top40ThuongHIeu2017_1600x530.jpg") }
         );
     }
     private removeLastSlide() {

@@ -12,9 +12,9 @@
     overflow: hidden;
 }
 .card-compare {
-    height: 150px;
+    height: 100px;
     overflow: hidden;
-    width :250px;
+    width :150px;
 }
 .squre-left {
     float : left;

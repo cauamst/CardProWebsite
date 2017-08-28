@@ -1,165 +1,167 @@
-﻿<main class="mdl-layout__content">
-    <div class="page-content container">
-        <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
-                <div *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack"><a href="#" class="mdl-back">Trở về</a></div>
-                <div *ngIf="showCompare; else loadingCompare">
-                    <div>
-                        <carousel [interval]="NextPhotoInterval" [noWrap]="false">
-                            <slide *ngFor="let slidez of slides"
-                                   [active]="slidez.active">
-                                <img [src]="slidez.image" style="margin:auto;">
-                            </slide>
-                        </carousel>
-                    </div>
-
-                    <!-- button menu -->
-                    <div class="mdl-row">
-                        <div class="mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--1-col-phone mdl-column" *ngFor="let btn of button">
-                            <button id="{{btn.id}}" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button-width" (click)="getContentCard(btn.ContentType)">
-                                {{btn.name}}
-                            </button>
-                            <div class="mdl-tooltip" for="1">
-                                Xem ưu điểm tiện ích dặm bay
-                            </div>
-                            <div class="mdl-tooltip" for="2">
-                                Xem ưu điểm tiện ích hoàn tiền
-                            </div>
-                            <div class="mdl-tooltip" for="3">
-                                Xem ưu điểm tiện ích điểm thưởng
-                            </div>
-                            <div class="mdl-tooltip" for="4">
-                                Xem ưu điểm tiện ích rút tiền mặt miễn phí
-                            </div>
+﻿<div class="android-more-section padding-top-none">
+    <div id="Lnav-heading" >
+        <h2 class="lvn-heading">ĐƠN ĐĂNG KÝ THẺ TÍN DỤNG SACBOMBANK</h2>
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" id="padding-right">
+            <div *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack"><a href="#" class="mdl-back">Trở về</a></div>
+            <div *ngIf="showCompare; else loadingCompare">
+                <div>
+                    <carousel [interval]="NextPhotoInterval" [noWrap]="false">
+                        <slide *ngFor="let slidez of slides"
+                               [active]="slidez.active">
+                            <img [src]="slidez.image" style="margin:auto;">
+                        </slide>
+                    </carousel>
+                </div>
+                <div class="iconbenefit" id="padding-none"><i class="material-icons">list</i></div>
+                <div class="textbenefit" id="margin-bottom-benefit">Chọn để xem tiện ích thẻ tín dụng:</div>
+                <!-- button menu -->
+                <div class="mdl-row"  *ngFor="let btn of button">
+                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" 
+                           for="{{btn.option}}">
+                        <input type="radio" id="{{btn.id}}" name="gender"
+                               class="mdl-radio__button">
+                        <span class="mdl-radio__label">{{btn.name}}</span>
+                    </label>
+                    <!--<div class="mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--1-col-phone mdl-column" *ngFor="let btn of button">
+                        <button id="{{btn.id}}" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)="getContentCard(btn.ContentType)">
+                            {{btn.name}}
+                        </button>
+                        <div class="mdl-tooltip" for="1">
+                            Xem ưu điểm tiện ích dặm bay
                         </div>
-                    </div>
-                    <!-- card view -->
-                    <div class="mdl-card mdl-cell--12-col mdl-cell--8-col-tablet mdl-shadow--2dp inline">
-                        <div class="row">
-                                <ul class="card-list">
-                                    <li>
-                                        <img src="http://placehold.it/150x100" class="mdl-img" alt="Responsive image" />
-                                    </li>
-                                    <li>
-                                        <img src="http://placehold.it/150x100" class="mdl-img" alt="Responsive image" style="padding-left: 20px;" />
-                                    </li>
-                                    <li>
-                                        <img src="http://placehold.it/150x100" class="mdl-img" alt="Responsive image" style="padding-left: 40px;" />
-                                    </li>
-                                    <li>
-                                        <img src="http://placehold.it/150x100" class="mdl-img" alt="Responsive image" style="padding-left: 60px;" />
-                                    </li>
-                                    <li>
-                                        <img src="http://placehold.it/150x100" class="mdl-img" alt="Responsive image" style="padding-left: 80px;"/>
-                                    </li>
-                                </ul>
+                        <div class="mdl-tooltip" for="2">
+                            Xem ưu điểm tiện ích hoàn tiền
                         </div>
-                    </div>
-
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right curls curl-top-left" (click)="showCompare = !showCompare; showButtonBack = !showButtonBack">So sánh thẻ</button>
-                    <div class="clearfix"></div>
-                    <!-- show card benefit -->
-                    <div id="container">
-                        <div id="left">
-                            <div id="Lnav">
-                                <h2 class="lvn">Ưu điểm tiện ích</h2>
-                            </div>
-                            <div id="width100PercentTest">
-                                <p>Maecenas lorem tellus, pellentesque et mattis ac, euismod sed felis. Maecenas fermentum bibendum mattis. Vivamus id vulputate eros. Quisque venenatis commodo augue nec aliquam. In euismod lorem non enim viverra pretium.</p>
-                            </div>
-
-
+                        <div class="mdl-tooltip" for="3">
+                            Xem ưu điểm tiện ích điểm thưởng
                         </div>
-                        <div id="right">
-                            <div id="Lnav" class="margin-left">
-                                <h2 class="lvn">Điều kiện đăng ký</h2>
-                            </div>
-                            <div class="mdl-additiona">
-                               <ul>
-                                   <li>more inf</li>
-                                   <li>more inf</li>
-                               </ul>
-                            </div>
+                        <div class="mdl-tooltip" for="4">
+                            Xem ưu điểm tiện ích rút tiền mặt miễn phí
                         </div>
-
-                    </div>
+                    </div>-->
                 </div>
 
-                <ng-template #loadingCompare> <compare></compare></ng-template>
-            </div>
-            <div class="mdl-cell--4-col mdl-cell--4-col-phone mdl-cell--8-col-tablet">
-                <!-- REGISTER FORM -->
-                <div class="mdl-card mdl-shadow--6dp fullwidth">
-                    <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
-                        <h3 class="mdl-card__title-text">Thông tin khách hàng</h3>
+                <!-- show card benefit -->
+                <div id="container">
+                    <div id="left">
+                        <div id="Lnav">
+                            <h2 class="lvn">Ưu điểm tiện ích</h2>
+                        </div>
+
+                        <div id="width100PercentTest">
+
+                            <ul class="ul">
+                                <li>
+                                    <div class="iconbenefit"><i class="material-icons">card_giftcard</i></div>
+                                    <div class="textbenefit">Maecenas lorem tellus, pellentesque et mattis ac, euismod sed felis. Maecenas fermentum bibendum mattis. Vivamus id vulputate eros. Quisque venenatis commodo augue nec aliquam. In euismod lorem non enim viverra pretium.</div>
+                                </li>
+                                <li>
+                                    <div class="iconbenefit"><i class="material-icons">airplanemode_active</i></div>
+                                    <div class="textbenefit">Maecenas lorem tellus, pellentesque et mattis ac, euismod sed felis. Maecenas fermentum bibendum mattis. Vivamus id vulputate eros. Quisque venenatis commodo augue nec aliquam. In euismod lorem non enim viverra pretium.</div>
+                                </li>
+                                <li>
+                                    <div class="iconbenefit"><i class="mdl-textfield__icon material-icons">person</i></div>
+                                    <div class="textbenefit">Maecenas lorem tellus, pellentesque et mattis ac, euismod sed felis. Maecenas fermentum bibendum mattis. Vivamus id vulputate eros. Quisque venenatis commodo augue nec aliquam. In euismod lorem non enim viverra pretium.</div>
+                                </li>
+                                <li>
+                                    <div class="iconbenefit"><i class="material-icons">assignment</i></div>
+                                    <div class="textbenefit">Maecenas lorem tellus, pellentesque et mattis ac, euismod sed felis. Maecenas fermentum bibendum mattis. Vivamus id vulputate eros. Quisque venenatis commodo augue nec aliquam. In euismod lorem non enim viverra pretium.</div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="mdl-card__supporting-text">
-                        <form action="#">
-
-                            <div class="mdl-textfield mdl-js-textfield">
-                                <i class="mdl-textfield__icon material-icons">person</i>
-                                <input class="mdl-textfield__input" type="text" id="name" pattern="/^[a-zA-Z/'/-\040]+$/" maxlength="32" minlength="4" />
-                                <label class="mdl-textfield__label" for="name">Họ Tên</label>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield">
-                                <i class="mdl-textfield__icon material-icons">email</i>
-                                <input class="mdl-textfield__input" type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
-                                <label class="mdl-textfield__label" for="email">Email</label>
-                                <span class="mdl-textfield__error">Bạn chưa nhập đúng định dạng email! example@email.com</span>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield">
-                                <i class="mdl-textfield__icon material-icons">phone</i>
-                                <input class="mdl-textfield__input" type="text" id="phone" pattern="(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)" maxlength="13" />
-                                <label class="mdl-textfield__label" for="phone">Số điện thoại</label>
-                                <span class="mdl-textfield__error">Chưa nhập đúng định dạng số điện thoại! ex: 0933 588295</span>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <i class="mdl-textfield__icon material-icons">location_city</i>
-                                <select class="mdl-textfield__input" id="Address" name="Address">
-                                    <option></option>
-                                    <option value="#" *ngFor="let ci of City">{{ci.id}} - {{ci.content}}</option>
-
-                                </select>
-                                <label class="mdl-textfield__label" for="Address">Chọn thành phố</label>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <i class="mdl-textfield__icon material-icons">person</i>
-                                <select class="mdl-textfield__input" id="salary" name="salary">
-                                    <option></option>
-                                    <option value="#" *ngFor="let sala of Salary">{{sala.id}} - {{sala.content}}</option>
-                                </select>
-                                <label class="mdl-textfield__label" for="salary">Mức thu nhập hàng tháng</label>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <i class="mdl-textfield__icon material-icons">credit_card</i>
-                                <select class="mdl-textfield__input" id="benefitCard" name="benefitCard">
-                                    <option></option>
-                                    <option value="#" *ngFor="let bene of benefit">{{bene.id}} - {{bene.director}}</option>
-                                </select>
-                                <label class="mdl-textfield__label" for="benefitCard">Chọn tiện ích</label>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-
-                                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="verify">
-                                <label class="mdl-textfield__label" for="verify">Nhập mã xác nhận</label>
-                                <span class="mdl-textfield__error">Mã xác nhận gồm 4 số! vd: 5120</span>
-                            </div>
-                            <div>
-                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-checkbox"
-                                       for="checkbox2">
-                                    <input type="checkbox" id="checkbox2" class="mdl-checkbox__input">
-                                    <span class="mdl-checkbox__label">Tôi đồng ý với<a> điều khoản và quy định</a> Sacombank</span>
-                                </label>
-                            </div>
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-register">Đăng ký</button>
-                            <div class="clearfix"></div>
-
-                        </form>
+                    <div id="Lnav">
+                        <h2 class="lvn">Điều kiện đăng ký</h2>
                     </div>
+                    <div class="mdl-additiona">
+                        <ul>
+                            <li>Trên 21 tuổi</li>
+                            <li>Thu nhập hàng tháng từ 8 triệu VND trở lên</li>
+                            <li>Nhận lương qua tài khoản ngân hàng</li>
+                            <li><a>Điều khoản và Điều kiện áp dụng.</a></li>
+                        </ul>
+                    </div>
+
                 </div>
-
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored curls curl-top-left" (click)="showCompare = !showCompare; showButtonBack = !showButtonBack">So sánh thẻ</button>
             </div>
+
+            <ng-template #loadingCompare> <compare></compare></ng-template>
+        </div>
+        <div class="mdl-cell--4-col mdl-cell--4-col-phone mdl-cell--8-col-tablet">
+            <!-- REGISTER FORM -->
+            <div class="mdl-shadow--6dp">
+                <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
+                    <i class="material-icons">mode_edit</i>
+                    <h3 class="mdl-card__title-text" id="size18">&nbsp; Thông tin khách hàng</h3>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <form action="#">
+                        <p>Hãy điền đầy đủ thông tin của bạn bên dưới và chúng tôi sẽ gọi lại để hỗ trợ bạn đăng ký.</p>
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <i class="mdl-textfield__icon material-icons">person</i>
+                            <input class="mdl-textfield__input" type="text" id="name" pattern="/^[a-zA-Z/'/-\040]+$/" maxlength="32" minlength="4" />
+                            <label class="mdl-textfield__label" for="name">Họ Tên</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <i class="mdl-textfield__icon material-icons">email</i>
+                            <input class="mdl-textfield__input" type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
+                            <label class="mdl-textfield__label" for="email">Email</label>
+                            <span class="mdl-textfield__error">Bạn chưa nhập đúng định dạng email! example@email.com</span>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <i class="mdl-textfield__icon material-icons">phone</i>
+                            <input class="mdl-textfield__input" type="text" id="phone" pattern="(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)" maxlength="13" />
+                            <label class="mdl-textfield__label" for="phone">Số điện thoại</label>
+                            <span class="mdl-textfield__error">Chưa nhập đúng định dạng số điện thoại! ex: 0933 588295</span>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <i class="mdl-textfield__icon material-icons">location_city</i>
+                            <select class="mdl-textfield__input" id="Address" name="Address">
+                                <option></option>
+                                <option value="#" *ngFor="let ci of City">{{ci.id}} - {{ci.content}}</option>
+
+                            </select>
+                            <label class="mdl-textfield__label" for="Address">Chọn thành phố</label>
+                        </div>
+                        <!--<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <i class="mdl-textfield__icon material-icons">person</i>
+                            <select class="mdl-textfield__input" id="salary" name="salary">
+                                <option></option>
+                                <option value="#" *ngFor="let sala of Salary">{{sala.id}} - {{sala.content}}</option>
+                            </select>
+                            <label class="mdl-textfield__label" for="salary">Mức thu nhập hàng tháng</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <i class="mdl-textfield__icon material-icons">credit_card</i>
+                            <select class="mdl-textfield__input" id="benefitCard" name="benefitCard">
+                                <option></option>
+                                <option value="#" *ngFor="let bene of benefit">{{bene.id}} - {{bene.director}}</option>
+                            </select>
+                            <label class="mdl-textfield__label" for="benefitCard">Chọn tiện ích</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="verify">
+                            <label class="mdl-textfield__label" for="verify">Nhập mã xác nhận</label>
+                            <span class="mdl-textfield__error">Mã xác nhận gồm 4 số! vd: 5120</span>
+                        </div>-->
+                        <div>
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-checkbox"
+                                   for="checkbox2">
+                                <input type="checkbox" id="checkbox2" class="mdl-checkbox__input">
+                                <span class="mdl-checkbox__label">Tôi đồng ý rằng Sacombank có thể sử dụng thông tin trên đây để liên hệ với tôi nhằm giới thiệu những sản phẩm, dịch vụ và chương trình khuyến mãi của Sacombank từ nay trở về sau.</span>
+                            </label>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-register">Đăng ký</button>
+                    </form>
+                </div>
+            </div>
+            <div class="note"><strong>Lưu ý: </strong>Các thông tin của Quý khách sẽ không được sử dụng cho các mục đích khác ngoài những mục đích được nêu trên hoặc chia sẻ với bên thứ 3 ngoại trừ Sacombank.</div>
         </div>
     </div>
-</main>
-<br />
+</div>    

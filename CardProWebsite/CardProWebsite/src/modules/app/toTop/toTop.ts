@@ -16,7 +16,7 @@ export class ToTopComponent {
     @HostListener('window:scroll', [])
     public onWindowScroll() {
         let scrollPosition = this.document.body.scrollTop;
-
+        
         if (scrollPosition >= appConfig.minimumDistance) {
             if (!this.display) {
                 this.zone.run(() => this.display = true);

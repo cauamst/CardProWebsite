@@ -62,8 +62,8 @@ a img{
 
 
 .android-logo-image {
-  height: 28px;
-  width: 140px;
+  height: 30px;
+  width: 160px;
 }
 
 
@@ -302,9 +302,9 @@ a img{
 
 .android-wear-section {
   position: relative;
-  background: url('/src/assets/images/wear.png') center top no-repeat;
-  background-size: cover;
-  height: 800px;
+  background: url('/src/assets/img/ComboDoanhNGhiep-1600x530px.jpg') center top no-repeat;
+  /*background-size: cover;*/
+  height: 650px;
 }
 
 .android-wear-band {
@@ -373,9 +373,9 @@ a img{
   }
 
 .android-customized-section-image {
-  background: url('../images/devices.jpg') center top no-repeat;
+  background: url('../img/DonThuSangNganQuaTang1600x530.jpg') center top no-repeat;
   background-size: cover;
-  height: 400px;
+  height: 500px;
 }
 
 .android-more-section {
