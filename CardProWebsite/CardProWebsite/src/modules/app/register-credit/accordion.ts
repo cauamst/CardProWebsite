@@ -1,18 +1,22 @@
-﻿import { Component, Input, OnDestroy } from '@angular/core';
+﻿import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'accordion',
     template: `
-  <ng-content></ng-content>
+     <ng-content></ng-content>
           `,
     host: {
         'class': 'panel-group'
     }
 })
 export class Accordion {
+    private onlyOneOpen: boolean;
     groups: Array<AccordionGroup> = [];
 
-    closeOthers(openGroup: AccordionGroup): void {
+    closeOthers(openGroup): void {
+        if (!this.onlyOneOpen) {
+            return;
+        }
         this.groups.forEach((group: AccordionGroup) => {
             if (group !== openGroup) {
                 group.isOpen = false;
@@ -27,7 +31,7 @@ export class Accordion {
                 <div class="panel panel-default" [ngClass]="{'panel-open': isOpen}">
                   <div class="panel-heading" (click)="toggleOpen($event)">
                     <h4 class="panel-title">
-                      <a href tabindex="0"><span>{{heading}}</span></a>
+                      <p href tabindex="0">{{heading}}</p>
                     </h4>
                   </div>
                   <div class="panel-collapse" [hidden]="!isOpen">
@@ -38,7 +42,16 @@ export class Accordion {
                 </div>
           `,
     styles: [`
-.panel-heading{
+a {
+    color: rgba(0,0,0,.87) !important;
+    font-size: 20px;
+}
+.panel-default
+{
+    border-bottom: solid 1px #ececec;
+    margin-bottom: 5px
+}
+.panel-title{
     text-transform: uppercase;
     font-weight: 600;
     background: #ececec;
@@ -46,33 +59,30 @@ export class Accordion {
     padding-left: 15px;
     cursor: pointer;
 }
-`] 
-    
+
+`]
+
 
 })
-export class AccordionGroup implements OnDestroy {
+export class AccordionGroup {
     private _isOpen: boolean = false;
 
     @Input() heading: string;
+    constructor(private accordion: Accordion) {
+    }
 
+    public get isOpen(): boolean {
+        return this._isOpen;
+    }
     @Input()
-    set isOpen(value: boolean) {
+    public set isOpen(value: boolean) {
         this._isOpen = value;
         if (value) {
             this.accordion.closeOthers(this);
         }
     }
 
-    get isOpen() {
-        return this._isOpen;
-    }
-
-    constructor(private accordion: Accordion) { }
-
-    ngOnDestroy() {
-    }
-
-    toggleOpen(event: MouseEvent): void {
+    toggleOpen(event) {
         event.preventDefault();
         this.isOpen = !this.isOpen;
     }

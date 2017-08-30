@@ -1,10 +1,7 @@
 ﻿<div class="android-more-section padding-top-none">
-    <div id="Lnav-heading" >
-        <h2 class="lvn-heading">ĐƠN ĐĂNG KÝ THẺ TÍN DỤNG SACBOMBANK</h2>
-    </div>
     <div class="mdl-grid">
-        <div class="mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" id="padding-right">
-            <div *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack"><a href="#" class="mdl-back">Trở về</a></div>
+        <div class="mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" style="margin:auto">
+
             <div *ngIf="showCompare; else loadingCompare">
                 <div>
                     <carousel [interval]="NextPhotoInterval" [noWrap]="false">
@@ -14,60 +11,68 @@
                         </slide>
                     </carousel>
                 </div>
-                <div class="iconbenefit" id="padding-none"><i class="material-icons">list</i></div>
-                <div class="textbenefit" id="margin-bottom-benefit">Chọn để xem tiện ích thẻ tín dụng:</div>
+                <div class="clearfix"></div>
                 <!-- button menu -->
-                <div class="mdl-row"  *ngFor="let btn of button">
-                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" 
-                           for="{{btn.option}}">
-                        <input type="radio" id="{{btn.id}}" name="gender"
-                               class="mdl-radio__button">
-                        <span class="mdl-radio__label">{{btn.name}}</span>
-                    </label>
-                    <!--<div class="mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--1-col-phone mdl-column" *ngFor="let btn of button">
-                        <button id="{{btn.id}}" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)="getContentCard(btn.ContentType)">
+                <!--<div class="mdl-row" *ngFor="let btn of button">
+                        <button type="button" id="{{btn.id}}"
+                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)="getContentCard(btn.ContentType);getCardType(btn.id)">
                             {{btn.name}}
                         </button>
-                        <div class="mdl-tooltip" for="1">
-                            Xem ưu điểm tiện ích dặm bay
-                        </div>
-                        <div class="mdl-tooltip" for="2">
-                            Xem ưu điểm tiện ích hoàn tiền
-                        </div>
-                        <div class="mdl-tooltip" for="3">
-                            Xem ưu điểm tiện ích điểm thưởng
-                        </div>
-                        <div class="mdl-tooltip" for="4">
-                            Xem ưu điểm tiện ích rút tiền mặt miễn phí
-                        </div>
-                    </div>-->
+                </div>-->
+                <div class="mdl-grid">
+                    <div class="mdl-cell--3-col mdl-row mdl-cell--2-col-tablet mdl-cell--2-col-phone" *ngFor="let btn of button">
+                        <button type="button" id="{{btn.id}}"
+                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect none-upcase-button" (click)="getContentCard(btn.ContentType);getCardType(btn.id)">
+                            {{btn.name}}
+                        </button>
+                    </div>
+                </div>
+                <div id="thumbs" class="navigation">
+                    <div class="clearfix"></div>
+                    <div class="small-slider">
+                        <a class="left carousel-control" (click)="prevSmallSlider()" [hidden]="prevIsHide">
+                            <i class="mdl-icon-toggle__label material-icons size-icons">chevron_left</i>
+                        </a>
+                        <a class="right carousel-control" (click)="nextSmallSlider()" [hidden]="nextIsHide">
+                            <i class="mdl-icon-toggle__label material-icons size-icons">chevron_right</i>
+                        </a>
+                        <ul class="thumbs noscript">
+                            <ng-container *ngFor="let cardview of cardes">
+                                <li *ngIf="cardview['active']">
+                                    <div class="thumb" href="#">
+                                        <img src="{{cardview.url}}" />
+                                    </div>
+                                </li>
+
+                            </ng-container>
+                        </ul>
+                    </div>
+
                 </div>
 
                 <!-- show card benefit -->
                 <div id="container">
                     <div id="left">
-                        <div id="Lnav">
-                            <h2 class="lvn">Ưu điểm tiện ích</h2>
+                        <div id="Lnav" *ngIf="button">
+                            <h2 class="lvn">Ưu điểm tiện ích {{button.name}}</h2>
                         </div>
-
-                        <div id="width100PercentTest">
-
+                        <div id="width100PercentTest" *ngFor="let conte of contents">
                             <ul class="ul">
                                 <li>
-                                    <div class="iconbenefit"><i class="material-icons">card_giftcard</i></div>
-                                    <div class="textbenefit">Maecenas lorem tellus, pellentesque et mattis ac, euismod sed felis. Maecenas fermentum bibendum mattis. Vivamus id vulputate eros. Quisque venenatis commodo augue nec aliquam. In euismod lorem non enim viverra pretium.</div>
+                                    <div class="iconbenefit"><i class=" mdl-textfield__icon material-icons">{{conte.iconline1}}</i></div>
+                                    <div class="textbenefit">{{conte.contentline1}}</div>
                                 </li>
                                 <li>
-                                    <div class="iconbenefit"><i class="material-icons">airplanemode_active</i></div>
-                                    <div class="textbenefit">Maecenas lorem tellus, pellentesque et mattis ac, euismod sed felis. Maecenas fermentum bibendum mattis. Vivamus id vulputate eros. Quisque venenatis commodo augue nec aliquam. In euismod lorem non enim viverra pretium.</div>
+                                    <div class="iconbenefit"><i class="mdl-textfield__icon material-icons">{{conte.iconline2}}</i></div>
+                                    <div class="textbenefit">{{conte.contentline2}}</div>
                                 </li>
                                 <li>
-                                    <div class="iconbenefit"><i class="mdl-textfield__icon material-icons">person</i></div>
-                                    <div class="textbenefit">Maecenas lorem tellus, pellentesque et mattis ac, euismod sed felis. Maecenas fermentum bibendum mattis. Vivamus id vulputate eros. Quisque venenatis commodo augue nec aliquam. In euismod lorem non enim viverra pretium.</div>
+                                    <div class="iconbenefit"><i class="mdl-textfield__icon material-icons">{{conte.iconline3}}</i></div>
+                                    <div class="textbenefit">{{conte.contentline3}}</div>
                                 </li>
                                 <li>
-                                    <div class="iconbenefit"><i class="material-icons">assignment</i></div>
-                                    <div class="textbenefit">Maecenas lorem tellus, pellentesque et mattis ac, euismod sed felis. Maecenas fermentum bibendum mattis. Vivamus id vulputate eros. Quisque venenatis commodo augue nec aliquam. In euismod lorem non enim viverra pretium.</div>
+                                    <div class="iconbenefit"><i class="mdl-textfield__icon material-icons">{{conte.iconline4}}</i></div>
+                                    <div class="textbenefit">{{conte.contentline4}}</div>
                                 </li>
                             </ul>
                         </div>
@@ -89,6 +94,7 @@
             </div>
 
             <ng-template #loadingCompare> <compare></compare></ng-template>
+            <div *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack"><a href="#" class="mdl-back">Trở về</a></div>
         </div>
         <div class="mdl-cell--4-col mdl-cell--4-col-phone mdl-cell--8-col-tablet">
             <!-- REGISTER FORM -->

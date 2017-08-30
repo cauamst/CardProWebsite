@@ -28,9 +28,6 @@ import { DialogComponent } from './register-credit/dialog';
 import { CompareComponent } from './register-credit/compare';
 import { Accordion, AccordionGroup } from './register-credit/accordion';
 
-import { NgbAccordion, NgbAccordionGroup } from './register-credit/Accordion-example';
-
-
 
 
 @NgModule({
@@ -49,9 +46,7 @@ import { NgbAccordion, NgbAccordionGroup } from './register-credit/Accordion-exa
         CompareComponent,
         Slide,
         Accordion,
-        AccordionGroup,
-        NgbAccordion,
-        NgbAccordionGroup
+        AccordionGroup
     ],
     providers: [
         AuthGuard,

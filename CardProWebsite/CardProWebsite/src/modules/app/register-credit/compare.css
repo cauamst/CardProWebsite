@@ -1,14 +1,10 @@
-﻿.container {
-    margin-left: 60px;
-}
-.inline {
+﻿.inline {
     display: inline-block;
 }
 .dialog-field-margin {
     margin-left : 20px;
 }
 .square {
-    height: 150px;
     overflow: hidden;
 }
 .card-compare {
@@ -16,28 +12,40 @@
     overflow: hidden;
     width :150px;
 }
-.squre-left {
-    float : left;
-}
-.squre-right {
-    float: right;
+.mdl-cell-border {
+    border-left: solid 1px #ececec;
 }
 img {
     display: block;
     margin: 0 auto;
-    width: 100%;
+    width:100%;
 }
 button {
     margin: auto;
     display: block;
-}
-.border-left {
-    border-left: solid 1px #ececec;
-}
-.backgr {
-    background-color: #d2d2d2;
+    font-size :12px !important;
 }
 .dialog-field-right {
     float: right;
+}
+.row {
+    max-width: 85.7142857143em;
+    margin-left: auto;
+    margin-right: auto;
+    word-break: break-word;
+    display: flex;
+    margin: 10px;
+}
+    .row:before {
+        content: "";
+        display: table;
+    }
+    .row:after {
+        content: "";
+        display: table;
+    }
+
+.bgr {
+    background: #f9f9f9;
 }
 

@@ -1,4 +1,4 @@
-﻿import { Component, OnInit, Input, Output, NgZone,NgModule,OnChanges } from '@angular/core';
+﻿import { Component, OnInit, Input, Output, NgZone, NgModule, OnChanges } from '@angular/core';
 import { FormControl } from "@angular/forms/forms";
 import { Validators } from "@angular/forms/src/validators";
 import { FormGroup } from "@angular/forms/src/forms";
@@ -7,6 +7,7 @@ import { CARDES } from '../models/Card-Data';
 import { CARD, Content } from '../models/interface-card';
 import { ActivatedRoute } from "@angular/router";
 import { Location } from '@angular/common';
+import { Accordion, AccordionGroup } from './accordion';
 declare var $: any;
 @Component({
     selector: 'credit',
@@ -19,7 +20,7 @@ export class CreditComponent implements OnInit {
     //get card theo type
     cardes: CARD[];
     card: CARD;
-    currentCatId: number;
+    currentCatId: number = 1;
     //get id card compare
     selectCardId: number;
     //get all card
@@ -29,6 +30,12 @@ export class CreditComponent implements OnInit {
     //content - uu diem
     contents: Content[];
     currentContentType: number = 1;
+    private maximumActive: number = 4;
+    private leftMostIndex: number;
+    private rightMostIndex: number;
+    private prevIsHide: boolean;
+    private nextIsHide: boolean;
+    private nbOfCards: number;
 
     showCompare = true;
     showButtonBack = false;
@@ -45,17 +52,10 @@ export class CreditComponent implements OnInit {
         { id: 4, director: 'Rút tiền mặt miễn phí' },
     ];
     button = [
-        { id: 1, name: 'Dặm bay', ContentType: 1, idTT: 'Xem ưu điểm tiện ích dặm bay', option : 1 },
+        { id: 1, name: 'Dặm bay', ContentType: 1, idTT: 'Xem ưu điểm tiện ích dặm bay', option: 1 },
         { id: 2, name: 'Hoàn tiền', ContentType: 2, idTT: 'Xem ưu điểm tiện ích hoàn tiền', option: 2 },
         { id: 3, name: 'Điểm thưởng', ContentType: 3, idTT: 'xem ưu điểm tiện ích điểm thưởng', option: 3 },
         { id: 4, name: 'Rút tiền mặt miễn phí', ContentType: 4, idTT: 'Xem ưu điểm tiện ích rút tiền mặt miễn phí', option: 4 }
-    ];
-    buttonTooltip =
-    [
-        { id: 1, content: 'Xem ưu điểm tiện ích dặm bay' },
-        { id: 2, content: 'Xem ưu điểm tiện ích hoàn tiền' },
-        { id: 3, content: 'xem ưu điểm tiện ích điểm thưởng' },
-        { id: 4, content: 'Xem ưu điểm tiện ích rút tiền mặt miễn phí' }
     ];
 
     CardView = [
@@ -81,7 +81,7 @@ export class CreditComponent implements OnInit {
         { id: 2, content: 'Thành phố HCM' },
         { id: 3, content: 'Hà Nội' }
     ];
-  
+
 
     constructor(
         private CardService: CardService,
@@ -120,7 +120,57 @@ export class CreditComponent implements OnInit {
     getCardType(type: number): void {
         this.CardService.getCardType(type).then(cardes => {
             this.cardes = cardes;
+            this.nbOfCards = cardes.length;
+            this.activateCards();
+            this.leftMostIndex = 0;
+            this.rightMostIndex = this.maximumActive - 1;
+            this.updatePrevAndNext();
         });
+    }
+
+    private updatePrevAndNext() {
+        this.prevIsHide = this.nbOfCards <= this.maximumActive
+            || this.leftMostIndex <= 0;
+        this.nextIsHide = this.nbOfCards <= this.maximumActive
+            || this.rightMostIndex == (this.nbOfCards-1);
+    }
+
+    public prevSmallSlider() {
+        if (this.leftMostIndex - 1 >= 0) {
+            this.leftMostIndex = this.leftMostIndex - 1;
+            this.cardes[this.leftMostIndex]['active'] = true;
+        }
+
+        if (this.rightMostIndex - 1 >= 0) {
+            this.cardes[this.rightMostIndex]['active'] = false;
+            this.rightMostIndex = this.rightMostIndex - 1;
+        }
+        this.updatePrevAndNext();
+    }
+
+    public nextSmallSlider() {
+        if (this.rightMostIndex + 1 < this.nbOfCards) {
+            this.rightMostIndex = this.rightMostIndex + 1;
+            this.cardes[this.rightMostIndex]['active'] = true;
+        }
+
+        if (this.leftMostIndex + 1 < this.nbOfCards) {
+            this.cardes[this.leftMostIndex]['active'] = false;
+            this.leftMostIndex = this.leftMostIndex + 1;
+        }
+        this.updatePrevAndNext();
+    }
+
+    private activateCards() {
+        let nbOfActive = this.nbOfCards >= this.maximumActive
+            ? this.maximumActive
+            : this.nbOfCards;
+
+        for (let i = 0; i < this.nbOfCards; i++) {
+            this.cardes[i]['active'] = i < nbOfActive
+                ? true
+                : false;
+        }
     }
     //get card by id for creditdetail page
     getCard(Id: number): void {
@@ -161,8 +211,8 @@ export class CreditComponent implements OnInit {
     removeDynamic() {
         this.groups.pop();
     }
-    
-   
-   
+
+
+
 }
 

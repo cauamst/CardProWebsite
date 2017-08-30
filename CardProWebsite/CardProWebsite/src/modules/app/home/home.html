@@ -17,7 +17,7 @@
                 <span class="mdl-typography--font-light mdl-typography--subhead">{{card.content}}</span>
             </div>
             <div class="mdl-card__actions">
-                <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
+                <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" routerLink="/register">
                     {{card.linkRoute}}
                     <i class="material-icons">chevron_right</i>
                 </a>
@@ -29,33 +29,37 @@
     <div class="mdl-grid background-grid-section mdl-margin-row effect">
         <div class="mdl-cell--8-col mdl-cell--8-col-tablet">
             <div class="mdl-layout__header-row card_pro_header_row mdl-margin-row card-header-blue card-fillwidth">
-                <span class="android-section-title mdl-typography--display-1-color-contrast">Tin tức nỗi bật</span>
+                <span class="mdl-typography--display-1-color-contrast">Tin tức nỗi bật</span>
                 <!-- Add spacer, to align navigation to the right -->
                 <div class="mdl-layout-spacer"></div>
             </div>
             <div class="mdl-cell--12-col mdl-left">
-                <img src="../../../assets/img/slide1.jpg" class="imghome-card" />
-                <p>Material is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals. It works on all major web browsers, tablets and phone.</p>
+                <img src="../../../assets/img/ChungChiTienGui1600x530px_1.jpg" class="imghome-card" />
+                <p>Tận hưởng cuộc sống thú vị và ngập tràn ưu đãi với thẻ tín dụng Sacombank - nguồn tài chính dự phòng thiết yếu cho mọi nhu cầu chi tiêu, mua sắm</p>
                 <div class="blockqueue">
-                    <p>Material is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals. It works on all major web browsers, tablets and phone.</p>
+                    <p>Hơn cả tiền mặt, thẻ thanh toán Sacombank là phương tiện tài chính hiện đại được liên kết với tài khoản tiền gửi thanh toán của bạn để thực hiện nhiều chức năng: rút tiền, thanh toán, giao dịch trực tuyến...</p>
                     <small> C.E.O by SAA</small>
                 </div>
             </div>
         </div>
         <div class="mdl-cell--4-col mdl-cell--8-col-tablet">
             <div class="mdl-layout__header-row card_pro_header_row card-header-blue card-full-width">
-                <span class="android-section-title mdl-typography--display-1-color-contrast">Thông tin khuyến mãi</span>
+                <span class="mdl-typography--display-1-color-contrast">Thông tin khuyến mãi</span>
                 <!-- Add spacer, to align navigation to the right -->
                 <div class="mdl-layout-spacer"></div>
             </div>
-            <!--<carousel [interval]="NextPhotoInterval" [noWrap]="noLoopSlides">
+            <carousel [interval]="NextPhotoInterval" [noWrap]="false">
                 <slide *ngFor="let slidez of slides"
                        [active]="slidez.active">
                     <img [src]="slidez.image" style="margin:auto;height: 230px;
                          width: 400px;">
                 </slide>
-            </carousel>-->
-            <div class="snippet-code snippet-group">
+            </carousel>
+            <div class="blockqueue">
+                <p>Thỏa sức sáng tạo chiếc thẻ độc đáo của riêng bạn và lưu giữ mọi khoảnh khắc tuyệt vời</p>
+                <small> S.E.O by SCB</small>
+            </div>
+            <!--<div class="snippet-code snippet-group">
                 <ul class="demo-list-three mdl-list">
                     <li class="mdl-list__item mdl-list__item--three-line">
                         <span class="mdl-list__item-primary-content">
@@ -94,7 +98,7 @@
                         </span>
                     </li>
                 </ul>
-            </div>
+            </div>-->
         </div>
     </div>
 </div>

@@ -24,6 +24,9 @@ export class CompareComponent implements OnInit  {
     cardes2: CARD[];
     ShowimageCompare1 = true;
     ShowimageCompare2 = true;
+
+    public isGroupOpen: boolean = false;
+
     constructor(
         private location: Location,
         private CardService: CardService,

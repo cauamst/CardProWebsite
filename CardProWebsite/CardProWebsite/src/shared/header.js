@@ -21,6 +21,7 @@ HeaderComponent = tslib_1.__decorate([
     core_1.Component({
         selector: 'app-header',
         templateUrl: './header.html',
+        styles: ["\n    .mdl-layout__header {\n        z-index : 1 !important;\n    }\n"]
     }),
     tslib_1.__metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router])
 ], HeaderComponent);

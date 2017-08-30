@@ -214,7 +214,6 @@
     <TypeScriptCompile Include="src\modules\app\models\image.interface.ts" />
     <TypeScriptCompile Include="src\modules\app\models\interface-card.ts" />
     <TypeScriptCompile Include="src\modules\app\models\user.ts" />
-    <TypeScriptCompile Include="src\modules\app\register-credit\Accordion-example.ts" />
     <TypeScriptCompile Include="src\modules\app\register-credit\accordion.ts" />
     <TypeScriptCompile Include="src\modules\app\register-credit\compare.ts" />
     <TypeScriptCompile Include="src\modules\app\register-credit\credit.ts" />

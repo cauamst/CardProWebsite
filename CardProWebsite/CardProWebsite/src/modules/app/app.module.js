@@ -26,7 +26,6 @@ var platform_browser_1 = require("@angular/platform-browser");
 var dialog_1 = require("./register-credit/dialog");
 var compare_1 = require("./register-credit/compare");
 var accordion_1 = require("./register-credit/accordion");
-var Accordion_example_1 = require("./register-credit/Accordion-example");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -49,9 +48,7 @@ AppModule = tslib_1.__decorate([
             compare_1.CompareComponent,
             slide_1.Slide,
             accordion_1.Accordion,
-            accordion_1.AccordionGroup,
-            Accordion_example_1.NgbAccordion,
-            Accordion_example_1.NgbAccordionGroup
+            accordion_1.AccordionGroup
         ],
         providers: [
             auth_guard_1.AuthGuard,

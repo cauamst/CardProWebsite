@@ -13,6 +13,7 @@ var CompareComponent = (function () {
         this.cards = [];
         this.ShowimageCompare1 = true;
         this.ShowimageCompare2 = true;
+        this.isGroupOpen = false;
         this.groups = [
             {
                 heading: 'Tiện ích chung',

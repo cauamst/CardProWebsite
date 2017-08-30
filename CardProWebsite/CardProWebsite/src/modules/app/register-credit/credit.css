@@ -47,7 +47,7 @@
 }
 
 .button-register {
-    width: 100%;
+    float:right;
     margin-top: 80px;
 }
 
@@ -119,10 +119,17 @@ img {
 .textbenefit {
     float: left;
     width: 90%;
-    font-size : 12px;
+    font-size: 12px;
+    margin-top: 3px;
 }
-/*css3 card view */
-#wrapper {
+.mdl-textfield__label {
+    font-size : 12px !important;
+}
+.material-icons {
+    font-size : 18px;
+}
+    /*css3 card view */
+    #wrapper {
     margin: auto;
     background-color: black;
     width: 1100px;
@@ -233,11 +240,15 @@ img {
     margin-bottom: 10px;
     overflow: hidden;
     padding: 0 10px 15px;
+    font-size: 12px !important;
 }
 .note {
     margin: 8px 20px;
     padding-bottom: 15px;
     font-size: 11px;
+}
+.mdl-button {
+    font-size : 12px !important;
 }
 
 
@@ -386,14 +397,16 @@ section {
 /* close commented backslash hack */
 .padding-top-none {
     padding-top : 0px !important;
-    margin-top : 20px
 }
 
 /*button*/
 .mdl-row {
     border-spacing: 10px;
     display: inline;
-    margin-right: 30px;
+    
+}
+.none-upcase-button {
+    text-transform: none !important;
 }
 
 .mdl-column {
@@ -403,8 +416,6 @@ section {
 #container {
     background: #F5F5F5;
     display: table;
-    padding-bottom: 40px;
-    margin-top: 20px;
 }
 .mdl-checkbox__label {
     font-size : 12px !important; 
@@ -415,17 +426,13 @@ section {
 #width100PercentTest {
     margin: 20px;
 }
-#padding-right {
-    padding-right : 30px;
-}
 #Lnav-heading {
     /*float: left;*/
-    margin-right: 4px;
     font-family: Verdana, arial, helvetica, sans-serif;
 }
 
     #Lnav-heading h2 {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: normal;
         color: #000;
     }
@@ -450,7 +457,6 @@ h2.lvn-heading {
 
 #Lnav {
     /*float: left;*/
-    margin-right: 4px;
     font-family: Verdana, arial, helvetica, sans-serif;
 }
 
@@ -493,6 +499,7 @@ h2.lvn {
 }
 ul {
     margin-top: 20px;
+    font-size: 12px!important ;
 }
 
 
@@ -538,7 +545,7 @@ ul {
 .mdl-textfield__icon {
     text-align: center;
     position: absolute;
-    line-height: 1;
+    line-height: 1.5;
 }
 .mdl-textfield__label {
     left : 30px !important;
@@ -549,9 +556,11 @@ ul {
 .mdl-textfield.is-disabled .mdl-textfield__icon {
     color: rgba(0, 0, 0, 0.26) !important;
 }
-
+.mdl-checkbox__box-outline {
+    width : 14px !important;
+    height : 14px !important;
+}
 /*carousel*/
-
 .containerr {
     width: 210px;
     height: 140px;
@@ -622,7 +631,6 @@ ul {
     padding: 5px 20px;
     background: orange;
     position: relative;
-    float: right;
     text-align: center;
     border-radius: 10px;
     text-decoration: none;
@@ -672,14 +680,97 @@ ul {
 .card-list {
     list-style-type: none;
 }
-@media (min-width: 840px) {
-    .mdl-grid {
-         padding: 0px !important; 
-    }
-}
+
 #margin-bottom-benefit {
     margin-bottom : 10px;
 }
 #padding-none {
     padding-top : unset;
+}
+/*image card benefit*/
+ul.thumbs {
+    clear: both;
+    padding-left: 0px;
+    margin: 0 auto;
+}
+
+    ul.thumbs li {
+        display: inline-block;
+        /*float: left;*/
+        padding: 0;
+        margin: 5px 10px 5px 0;
+        list-style: none;
+    }
+
+a.thumb {
+    padding: 2px;
+    display: block;
+    border: 1px solid #ccc;
+}
+
+ul.thumbs li.selected a.thumb {
+    background: #DAA12F;
+}
+
+a.thumb:focus {
+    outline: none;
+}
+
+ul.thumbs img {
+    border: none;
+    display: block;
+    height: 100px;
+    width: 140px;
+    margin: 0px auto;
+}
+.carousel-control.right {
+    right: 0;
+    left: auto;
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+    background-image: -o-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.0001)),to(rgba(0,0,0,.5)));
+    background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+
+.carousel-control.left {
+    background-image: -webkit-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    background-image: -o-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,.0001)));
+    background-image: linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 5%;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: rgba(25, 23, 23, 0.8);
+    
+    background-color: rgba(0,0,0,0);
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+.small-slider {
+    position: relative;
+    padding-left:25px;
+}
+    .small-slider .mdl-icon-toggle__label {
+        position: absolute;
+        top: 35%;
+        font-size: 36px;
+        opacity: 1;
+        color: #000;
+    }
+@media (min-width: 840px) {
+    .mdl-grid {
+         padding: 0px !important;  
+    }
 }

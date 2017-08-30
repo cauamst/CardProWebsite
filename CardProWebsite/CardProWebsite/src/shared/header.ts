@@ -5,6 +5,11 @@ import { routes } from '../modules/app/app.routing';
 @Component({
     selector: 'app-header',
     templateUrl: './header.html',
+    styles: [`
+    .mdl-layout__header {
+        z-index : 1 !important;
+    }
+`]
 })
 export class HeaderComponent {
     title = 'CARD PRO';

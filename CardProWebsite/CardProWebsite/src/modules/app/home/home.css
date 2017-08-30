@@ -75,11 +75,6 @@
     }
 
 
-.mdl-card__supporting-text {
-    margin: 0 8px 0px 15px !important;
-    width: unset !important;
-}
-
 .mdl-demo .mdl-card__actions a {
     float: right;
 }
@@ -99,17 +94,8 @@
     background: antiquewhite;
 }
 
-.mdl-left {
-    float: left;
-    padding-left: 20px;
-}
-
 .mdl-right {
     float: right;
-}
-
-.mdl-margin-row {
-    margin-bottom: 35px;
 }
 
 

@@ -12,10 +12,12 @@ var CreditComponent = (function () {
         this.location = location;
         this.zone = zone;
         this.selected = false;
+        this.currentCatId = 1;
         //get all card
         this.cards = [];
         this.showDialog = false;
         this.currentContentType = 1;
+        this.maximumActive = 4;
         this.showCompare = true;
         this.showButtonBack = false;
         this.NextPhotoInterval = 3000;
@@ -34,12 +36,6 @@ var CreditComponent = (function () {
             { id: 2, name: 'Hoàn tiền', ContentType: 2, idTT: 'Xem ưu điểm tiện ích hoàn tiền', option: 2 },
             { id: 3, name: 'Điểm thưởng', ContentType: 3, idTT: 'xem ưu điểm tiện ích điểm thưởng', option: 3 },
             { id: 4, name: 'Rút tiền mặt miễn phí', ContentType: 4, idTT: 'Xem ưu điểm tiện ích rút tiền mặt miễn phí', option: 4 }
-        ];
-        this.buttonTooltip = [
-            { id: 1, content: 'Xem ưu điểm tiện ích dặm bay' },
-            { id: 2, content: 'Xem ưu điểm tiện ích hoàn tiền' },
-            { id: 3, content: 'xem ưu điểm tiện ích điểm thưởng' },
-            { id: 4, content: 'Xem ưu điểm tiện ích rút tiền mặt miễn phí' }
         ];
         this.CardView = [
             { url: require("../../../assets/img/card_credit.jpg") },
@@ -99,7 +95,50 @@ var CreditComponent = (function () {
         var _this = this;
         this.CardService.getCardType(type).then(function (cardes) {
             _this.cardes = cardes;
+            _this.nbOfCards = cardes.length;
+            _this.activateCards();
+            _this.leftMostIndex = 0;
+            _this.rightMostIndex = _this.maximumActive - 1;
+            _this.updatePrevAndNext();
         });
+    };
+    CreditComponent.prototype.updatePrevAndNext = function () {
+        this.prevIsHide = this.nbOfCards <= this.maximumActive
+            || this.leftMostIndex <= 0;
+        this.nextIsHide = this.nbOfCards <= this.maximumActive
+            || this.rightMostIndex == (this.nbOfCards - 1);
+    };
+    CreditComponent.prototype.prevSmallSlider = function () {
+        if (this.leftMostIndex - 1 >= 0) {
+            this.leftMostIndex = this.leftMostIndex - 1;
+            this.cardes[this.leftMostIndex]['active'] = true;
+        }
+        if (this.rightMostIndex - 1 >= 0) {
+            this.cardes[this.rightMostIndex]['active'] = false;
+            this.rightMostIndex = this.rightMostIndex - 1;
+        }
+        this.updatePrevAndNext();
+    };
+    CreditComponent.prototype.nextSmallSlider = function () {
+        if (this.rightMostIndex + 1 < this.nbOfCards) {
+            this.rightMostIndex = this.rightMostIndex + 1;
+            this.cardes[this.rightMostIndex]['active'] = true;
+        }
+        if (this.leftMostIndex + 1 < this.nbOfCards) {
+            this.cardes[this.leftMostIndex]['active'] = false;
+            this.leftMostIndex = this.leftMostIndex + 1;
+        }
+        this.updatePrevAndNext();
+    };
+    CreditComponent.prototype.activateCards = function () {
+        var nbOfActive = this.nbOfCards >= this.maximumActive
+            ? this.maximumActive
+            : this.nbOfCards;
+        for (var i = 0; i < this.nbOfCards; i++) {
+            this.cardes[i]['active'] = i < nbOfActive
+                ? true
+                : false;
+        }
     };
     //get card by id for creditdetail page
     CreditComponent.prototype.getCard = function (Id) {

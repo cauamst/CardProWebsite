@@ -1,9 +1,8 @@
-﻿<div>
-    <h4>So sánh thẻ</h4>
-</div>
-<div class="mdl-grid">
-    <div class="mdl-cell--4-col mdl-cell--hide-tablet mdl-cell--hide-phone squre-lef inline"></div>
-    <div class="mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone squre-lef inline">
+﻿<div class="mdl-grid">
+    <div class="mdl-cell--4-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell-border">
+        So sánh và lựa chọn thẻ Sacombank phù hợp nhất với bạn
+    </div>
+    <div class="mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone mdl-cell-border">
         <div *ngIf="!card1;else loadingImage1">
             <a (click)="showDialog1 = !showDialog1"><img src="../../../assets/img/CardCompare.png" class="square" /></a>
         </div>
@@ -16,10 +15,9 @@
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right" (click)="showDialog1 = !showDialog1">Thêm thẻ</button>
 
     </div>
-    <div class="mdl-layout-spacer"></div>
-    <div class="mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone squre-right inline">
+    <div class="mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone mdl-cell-border">
         <div *ngIf="!card2;else loadingImage2">
-            <img src="../../../assets/img/CardCompare.png" class="square" />
+            <a (click)="showDialog2 = !showDialog2"><img src="../../../assets/img/CardCompare.png" class="square" /></a>
         </div>
         <ng-template #loadingImage2>
             <div *ngIf="card2">
@@ -30,20 +28,36 @@
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right" (click)="showDialog2 = !showDialog2">Thêm thẻ</button>
     </div>
 </div>
-<accordion>
-
+<accordion closeOthers="true">
     <accordion-group heading="Tiện ích vượt trội" isGroupOpen="true">
         <div class="mdl-grid">
-            <div class="mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--4-col-phone">
-                <p>this is material</p>
+            <div class="mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
+                <div class="row">
+                    <div class="mdl-cell--4-col">Hạn mức tín dụng</div>
+                    <div class="mdl-cell--4-col">Phí thường niên</div>
+                    <div class="mdl-cell--4-col">Thu nhập hàng tháng</div>
+                </div>
             </div>
-            <div class="mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
+                <div class="row">
+                    <div class="mdl-cell--4-col">50 triệu</div>
+                    <div class="mdl-cell--4-col">100 Triệu</div>
+                    <div class="mdl-cell--4-col">200 Triệu</div>
+                </div>
+            </div>
+            <div class="mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
+                <div class="row">
+                    <div class="mdl-cell--4-col">10 trieu</div>
+                    <div class="mdl-cell--4-col">100 Triệu</div>
+                    <div class="mdl-cell--4-col">200 Triệu</div>
+                </div>
+            </div>
+            <!--<div class="mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
                 <p>sadas</p>
             </div>
-            <div class="mdl-layout-spacer"></div>
-            <div class="mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
                 <p>adsad</p>
-            </div>
+            </div>-->
 
         </div>
     </accordion-group>
@@ -52,7 +66,8 @@
         {{group.content}}
     </accordion-group>
 </accordion>
-<div>
+
+<!--<div>
     <h4>Quy đổi</h4>
 </div>
 <input class="mdl-slider mdl-js-slider" type="range"
@@ -61,11 +76,11 @@
     <div class="mdl-textfield mdl-js-textfield" id="text_01">
         <input class="mdl-textfield__input" type="text">
     </div>
-</form>
+</form>-->
 
 
 <app-dialog [(visible)]="showDialog1">
-    <div class="backgr"><h3>Chọn thẻ so sánh</h3></div>
+    <div><h3>Chọn thẻ so sánh</h3></div>
     <section>
         <!-- chọn tiện ích -->
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-margin">
@@ -93,7 +108,7 @@
 </app-dialog>
 
 <app-dialog [(visible)]="showDialog2">
-    <div class="backgr"><h3>Chọn thẻ so sánh</h3></div>
+    <div><h3>Chọn thẻ so sánh</h3></div>
     <section>
         <!-- chọn tiện ích -->
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-margin">

@@ -84,7 +84,7 @@ a img{
   .android-header .mdl-navigation__link {
     color: #757575;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .android-navigation-container {
@@ -161,8 +161,7 @@ a img{
 
   .android-drawer .mdl-layout-title {
     position: relative;
-    background: #6ab344;
-    height: 160px;
+    height: 80px;
   }
 
     .android-drawer .android-logo-image {
@@ -328,8 +327,8 @@ a img{
   }
 
 .android-link {
-  text-decoration: none;
-  color: #8bc34a !important;
+    text-decoration: none;
+    color: #3578de !important;
 }
 
   .android-link:hover {
@@ -379,7 +378,7 @@ a img{
 }
 
 .android-more-section {
-  padding: 80px 0;
+  padding: 30px 0;
   max-width: 1044px;
   margin-left: auto;
   margin-right: auto;
@@ -425,7 +424,8 @@ a img{
 
   .android-card-container .mdl-card__actions a {
     border-top: none;
-    font-size: 16px;
+    font-size: 14px;
+    float : right;
   }
 
 .android-footer {

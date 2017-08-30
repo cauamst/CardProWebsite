@@ -15,5 +15,7 @@
  */
 
 
-
+.mdl-layout__header {
+    z-index: 1 !important;
+}
 /*Template Android*/
