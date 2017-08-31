@@ -4,16 +4,17 @@ var tslib_1 = require("tslib");
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var card_service_1 = require("../services/card.service");
+var pointTransform_service_1 = require("../services/pointTransform.service");
 var CompareComponent = (function () {
-    function CompareComponent(location, CardService) {
+    function CompareComponent(location, CardService, pointService) {
         this.location = location;
         this.CardService = CardService;
+        this.pointService = pointService;
         this.showDialog1 = false;
         this.showDialog2 = false;
         this.cards = [];
         this.ShowimageCompare1 = true;
         this.ShowimageCompare2 = true;
-        this.isGroupOpen = false;
         this.groups = [
             {
                 heading: 'Tiện ích chung',
@@ -86,6 +87,10 @@ var CompareComponent = (function () {
             _this.cardes2 = cardes;
         });
     };
+    CompareComponent.prototype.ShowValue = function (value) {
+        document.getElementById("message").innerHTML = value;
+        console.log(value);
+    };
     return CompareComponent;
 }());
 CompareComponent = tslib_1.__decorate([
@@ -95,7 +100,8 @@ CompareComponent = tslib_1.__decorate([
         styleUrls: ['compare.css']
     }),
     tslib_1.__metadata("design:paramtypes", [common_1.Location,
-        card_service_1.CardService])
+        card_service_1.CardService,
+        pointTransform_service_1.PointTransform])
 ], CompareComponent);
 exports.CompareComponent = CompareComponent;
 //# sourceMappingURL=compare.js.map

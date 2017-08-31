@@ -6,7 +6,7 @@ var router_1 = require("@angular/router");
 var HomeComponent = (function () {
     function HomeComponent(route) {
         this.route = route;
-        this.NextPhotoInterval = 3000;
+        this.NextPhotoInterval = 4000;
         //Looping or not
         this.noLoopSlides = true;
         //Photos

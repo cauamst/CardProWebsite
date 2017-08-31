@@ -2,7 +2,10 @@
     <div class="mdl-cell--4-col mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell-border">
         So sánh và lựa chọn thẻ Sacombank phù hợp nhất với bạn
     </div>
-    <div class="mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone mdl-cell-border">
+    <div class="mdl-cell--hide-col-desktop mdl-cell--2-col-tablet mdl-cell--hide-phone">
+        &nbsp;
+    </div>
+    <div class="mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--2-col-phone mdl-cell-border">
         <div *ngIf="!card1;else loadingImage1">
             <a (click)="showDialog1 = !showDialog1"><img src="../../../assets/img/CardCompare.png" class="square" /></a>
         </div>
@@ -15,7 +18,7 @@
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right" (click)="showDialog1 = !showDialog1">Thêm thẻ</button>
 
     </div>
-    <div class="mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone mdl-cell-border">
+    <div class="mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--2-col-phone mdl-cell-border">
         <div *ngIf="!card2;else loadingImage2">
             <a (click)="showDialog2 = !showDialog2"><img src="../../../assets/img/CardCompare.png" class="square" /></a>
         </div>
@@ -28,75 +31,142 @@
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right" (click)="showDialog2 = !showDialog2">Thêm thẻ</button>
     </div>
 </div>
-<accordion closeOthers="true">
-    <accordion-group heading="Tiện ích vượt trội" isGroupOpen="true">
+<accordion>
+    <accordion-group heading="Tiện ích vượt trội" [isGroupOpen]="true">
+        <!--*ngIf="(card1?.class != 'Classic' || card2?.class != 'Classic')"-->
         <div class="mdl-grid">
-            <div class="mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
+            <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
+                <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Quyền lợi bảo hiểm</div>
                 <div class="row">
-                    <div class="mdl-cell--4-col">Hạn mức tín dụng</div>
-                    <div class="mdl-cell--4-col">Phí thường niên</div>
-                    <div class="mdl-cell--4-col">Thu nhập hàng tháng</div>
+                    <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet">Quyền lợi bảo hiểm</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIVT1}}</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIVT1}}</div>
                 </div>
             </div>
-            <div class="mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
+            <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
+                <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Thẻ Prority Pass, phòng chờ tại hơn 1000 sân bay trên toàn thế giới</div>
                 <div class="row">
-                    <div class="mdl-cell--4-col">50 triệu</div>
-                    <div class="mdl-cell--4-col">100 Triệu</div>
-                    <div class="mdl-cell--4-col">200 Triệu</div>
+                    <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet">Thẻ Prority Pass, phòng chờ tại hơn 1000 sân bay trên toàn thế giới</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIVT2}}</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIVT2}}</div>
                 </div>
             </div>
-            <div class="mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
+            <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
+                <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Golf, Spa cao cấp</div>
                 <div class="row">
-                    <div class="mdl-cell--4-col">10 trieu</div>
-                    <div class="mdl-cell--4-col">100 Triệu</div>
-                    <div class="mdl-cell--4-col">200 Triệu</div>
+                    <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet">Golf, Spa cao cấp</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIVT3}}</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIVT3}}</div>
                 </div>
             </div>
-            <!--<div class="mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
-                <p>sadas</p>
+            <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
+                <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Đặc quyền khác</div>
+                <div class="row">
+                    <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet">Đặc quyền khác</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIVT4}}</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIVT4}}</div>
+                </div>
             </div>
-            <div class="mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
-                <p>adsad</p>
-            </div>-->
-
         </div>
     </accordion-group>
+    <accordion-group heading="Tiện ích chung" [isGroupOpen]="true">
+        <div class="mdl-grid">
+            <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
+                <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Phí thường niên</div>
+                <div class="row">
+                    <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet">Phí thường niên</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIC1}}</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIC1}}</div>
+                </div>
+            </div>
+            <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
+                <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Hạn mức tín dụng</div>
 
-    <accordion-group [heading]="group.heading" *ngFor="let group of groups">
-        {{group.content}}
+                <div class="row">
+                    <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet">Hạn mức tín dụng</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIC2}}</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIC2}}</div>
+                </div>
+            </div>
+            <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
+                <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Lãi suất tháng ( thay đổi theo kỳ)</div>
+
+                <div class="row">
+                    <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet">Lãi suất tháng ( thay đổi theo kỳ)</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIC3}}</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIC3}}</div>
+                </div>
+            </div>
+            <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
+                <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Thời gian miễn lãi tối đa</div>
+
+                <div class="row">
+                    <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet">Thời gian miễn lãi tối đa</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIC4}}</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIC4}}</div>
+                </div>
+            </div>
+            <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
+                <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Hạn mức rút tiền mặt</div>
+
+                <div class="row">
+                    <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet">Hạn mức rút tiền mặt</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIC5}}</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIC5}}</div>
+                </div>
+            </div>
+            <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
+                <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Tham gia chương trình Sacombank Plus</div>
+
+                <div class="row">
+                    <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet">Tham gia chương trình Sacombank Plus</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1"><i class="material-icons">{{card1.TIC6}}</i></div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2"><i class="material-icons">{{card2.TIC6}}</i></div>
+                </div>
+            </div>
+            <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
+                <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Chương trình khách hàng thân thiết</div>
+
+                <div class="row">
+                    <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet">Chương trình khách hàng thân thiết</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1"><i class="material-icons">{{card1.TIC7}}</i></div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2"><i class="material-icons">{{card2.TIC7}}</i></div>
+                </div>
+            </div>
+        </div>
     </accordion-group>
-</accordion>
+    <accordion-group heading="Quy đổi điểm thưởng trong năm" [isGroupOpen]="true">
 
-<!--<div>
-    <h4>Quy đổi</h4>
-</div>
-<input class="mdl-slider mdl-js-slider" type="range"
-       min="0" max="100" value="50" tabindex="0" id="slide_01">
-<form action="#">
-    <div class="mdl-textfield mdl-js-textfield" id="text_01">
-        <input class="mdl-textfield__input" type="text">
-    </div>
-</form>-->
+        <input id="slider1" class="mdl-slider mdl-js-slider" type="range"
+               min="0" max="100" value="0" tabindex="0"
+               oninput="ShowValue(this.value)" onchange="ShowValue(this.value)">
+        Value: <div id="message">25</div>
+    </accordion-group>
+    <accordion-group heading="Quy đổi hoàn tiền trong năm" [isGroupOpen]="false"></accordion-group>
+    <accordion-group heading="Quy đổi dặm bay trong năm" [isGroupOpen]="false"></accordion-group>
+</accordion>
 
 
 <app-dialog [(visible)]="showDialog1">
     <div><h3>Chọn thẻ so sánh</h3></div>
     <section>
         <!-- chọn tiện ích -->
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-margin">
-            <select class="mdl-textfield__input" id="octane" [(ngModel)]="currentCatId1" (ngModelChange)="getCardType1($event)">
-                <option>-- Chọn tiện ích --</option>
-                <option [ngValue]="c.currentCatId" *ngFor="let c of benefit1">{{c.currentCatId}} - {{c.director}}</option>
-            </select>
-            <label class="mdl-textfield__label" for="octane">Chọn tiện ích</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-right" *ngIf="currentCatId1">
-            <select class="mdl-textfield__input" id="octane" name="octane" (ngModelChange)="getCard1($event)" [(ngModel)]="selectCardId1">
+        <div class="dialog-content">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-margin">
+                <select class="mdl-textfield__input" id="octane" [(ngModel)]="currentCatId1" (ngModelChange)="getCardType1($event)">
+                    <option>-- Chọn tiện ích --</option>
+                    <option [ngValue]="c.currentCatId" *ngFor="let c of benefit1">{{c.currentCatId}} - {{c.director}}</option>
+                </select>
+                <label class="mdl-textfield__label" for="octane">Chọn tiện ích</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-right" *ngIf="currentCatId1">
+                <select class="mdl-textfield__input" id="octane" name="octane" (ngModelChange)="getCard1($event)" [(ngModel)]="selectCardId1">
 
-                <option>-- Chọn thẻ --</option>
-                <option *ngFor="let ca of cardes1" [ngValue]="ca.Id" [hidden]="ca == card2">{{ca.Id}} - {{ca.Name}}</option>
-            </select>
-            <label class="mdl-textfield__label" for="octane">Chọn thẻ</label>
+                    <option>-- Chọn thẻ --</option>
+                    <option *ngFor="let ca of cardes1" [ngValue]="ca.Id" [hidden]="ca == card2">{{ca.Id}} - {{ca.Name}}</option>
+                </select>
+                <label class="mdl-textfield__label" for="octane">Chọn thẻ</label>
+            </div>
         </div>
     </section>
     <div class="mdl-card__actions mdl-card--border">
@@ -109,27 +179,23 @@
 
 <app-dialog [(visible)]="showDialog2">
     <div><h3>Chọn thẻ so sánh</h3></div>
-    <section>
-        <!-- chọn tiện ích -->
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-margin">
-            <select class="mdl-textfield__input" id="octane" [(ngModel)]="currentCatId2" (ngModelChange)="getCardType2($event)">
-                <option>-- Chọn tiện ích --</option>
-                <option [ngValue]="c.currentCatId" *ngFor="let c of benefit2">{{c.currentCatId}} - {{c.director}}</option>
-            </select>
-            <label class="mdl-textfield__label" for="octane">Chọn tiện ích</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-right" *ngIf="currentCatId2">
-            <select class="mdl-textfield__input" id="octane" name="octane" (ngModelChange)="getCard2($event)" [(ngModel)]="selectCardId2">
+    <!-- chọn tiện ích -->
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-margin">
+        <select class="mdl-textfield__input" id="octane" [(ngModel)]="currentCatId2" (ngModelChange)="getCardType2($event)">
+            <option>-- Chọn tiện ích --</option>
+            <option [ngValue]="c.currentCatId" *ngFor="let c of benefit2">{{c.currentCatId}} - {{c.director}}</option>
+        </select>
+        <label class="mdl-textfield__label" for="octane">Chọn tiện ích</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" *ngIf="currentCatId2">
+        <select class="mdl-textfield__input" id="octane" name="octane" (ngModelChange)="getCard2($event)" [(ngModel)]="selectCardId2">
 
-                <option>-- Chọn thẻ --</option>
-                <option *ngFor="let ca of cardes2" [ngValue]="ca.Id" [hidden]="ca == card1">{{ca.Id}} - {{ca.Name}}</option>
-            </select>
-            <label class="mdl-textfield__label" for="octane">Chọn thẻ</label>
-        </div>
-    </section>
+            <option>-- Chọn thẻ --</option>
+            <option *ngFor="let ca of cardes2" [ngValue]="ca.Id" [hidden]="ca == card1">{{ca.Id}} - {{ca.Name}}</option>
+        </select>
+        <label class="mdl-textfield__label" for="octane">Chọn thẻ</label>
+    </div>
     <div class="mdl-card__actions mdl-card--border">
-        <div class="mdl-layout-spacer"></div>
-        <div class="mdl-layout-spacer"></div>
         <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect squre-right" (click)="showDialog2 = !showDialog2">Đồng ý</button>
     </div>
 

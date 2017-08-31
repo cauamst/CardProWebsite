@@ -11,7 +11,7 @@ import { Slide } from './slide';
 export class HomeComponent {
     name: string;
     heading: string;
-    private NextPhotoInterval: number = 3000;
+    private NextPhotoInterval: number = 4000;
     //Looping or not
     private noLoopSlides: boolean = true;
     //Photos

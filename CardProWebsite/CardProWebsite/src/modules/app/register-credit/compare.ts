@@ -4,6 +4,7 @@ import { Accordion, AccordionGroup } from './accordion';
 import { CardService } from '../services/card.service';
 import { CARDES } from '../models/Card-Data';
 import { CARD, Content } from '../models/interface-card';
+import { PointTransform } from '../services/pointTransform.service';
 @Component({
     selector: 'compare',
     templateUrl: './compare.html',
@@ -25,12 +26,10 @@ export class CompareComponent implements OnInit  {
     ShowimageCompare1 = true;
     ShowimageCompare2 = true;
 
-    public isGroupOpen: boolean = false;
-
     constructor(
         private location: Location,
         private CardService: CardService,
-
+        private pointService: PointTransform,
     ) {
         
     }
@@ -101,6 +100,11 @@ export class CompareComponent implements OnInit  {
             this.cardes2 = cardes;
         });
     }
+    ShowValue(value): void {
+        document.getElementById("message").innerHTML = value;
+        console.log(value);
+    }
+
     
 
 }

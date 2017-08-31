@@ -6,10 +6,10 @@ var Accordion = (function () {
     function Accordion() {
         this.groups = [];
     }
+    Accordion.prototype.addGroup = function (group) {
+        this.groups.push(group);
+    };
     Accordion.prototype.closeOthers = function (openGroup) {
-        if (!this.onlyOneOpen) {
-            return;
-        }
         this.groups.forEach(function (group) {
             if (group !== openGroup) {
                 group.isOpen = false;
@@ -32,6 +32,7 @@ var AccordionGroup = (function () {
     function AccordionGroup(accordion) {
         this.accordion = accordion;
         this._isOpen = false;
+        this.accordion.addGroup(this);
     }
     Object.defineProperty(AccordionGroup.prototype, "isOpen", {
         get: function () {
@@ -39,33 +40,40 @@ var AccordionGroup = (function () {
         },
         set: function (value) {
             this._isOpen = value;
-            if (value) {
-                this.accordion.closeOthers(this);
-            }
         },
         enumerable: true,
         configurable: true
     });
+    AccordionGroup.prototype.ngOnInit = function () {
+        this.isOpen = this.isGroupOpen;
+    };
     AccordionGroup.prototype.toggleOpen = function (event) {
         event.preventDefault();
         this.isOpen = !this.isOpen;
+        if (this.isOpen) {
+            this.accordion.closeOthers(this);
+        }
     };
     return AccordionGroup;
 }());
 tslib_1.__decorate([
     core_1.Input(),
-    tslib_1.__metadata("design:type", String)
-], AccordionGroup.prototype, "heading", void 0);
+    tslib_1.__metadata("design:type", Boolean)
+], AccordionGroup.prototype, "isGroupOpen", void 0);
 tslib_1.__decorate([
     core_1.Input(),
     tslib_1.__metadata("design:type", Boolean),
     tslib_1.__metadata("design:paramtypes", [Boolean])
 ], AccordionGroup.prototype, "isOpen", null);
+tslib_1.__decorate([
+    core_1.Input(),
+    tslib_1.__metadata("design:type", String)
+], AccordionGroup.prototype, "heading", void 0);
 AccordionGroup = tslib_1.__decorate([
     core_1.Component({
         selector: 'accordion-group',
         template: "\n                <div class=\"panel panel-default\" [ngClass]=\"{'panel-open': isOpen}\">\n                  <div class=\"panel-heading\" (click)=\"toggleOpen($event)\">\n                    <h4 class=\"panel-title\">\n                      <p href tabindex=\"0\">{{heading}}</p>\n                    </h4>\n                  </div>\n                  <div class=\"panel-collapse\" [hidden]=\"!isOpen\">\n                    <div class=\"panel-body\">\n                        <ng-content></ng-content>\n                    </div>\n                  </div>\n                </div>\n          ",
-        styles: ["\na {\n    color: rgba(0,0,0,.87) !important;\n    font-size: 20px;\n}\n.panel-default\n{\n    border-bottom: solid 1px #ececec;\n    margin-bottom: 5px\n}\n.panel-title{\n    text-transform: uppercase;\n    font-weight: 600;\n    background: #ececec;\n    line-height: 49px;\n    padding-left: 15px;\n    cursor: pointer;\n}\n\n"]
+        styles: ["\na {\n    color: rgba(0,0,0,.87) !important;\n    font-size: 20px;\n}\n.panel-default\n{\n    margin-bottom: 10px;\n}\n.panel-title{\n    text-transform: uppercase;\n    font-weight: 600;\n    background: #ececec;\n    line-height: 49px;\n    padding-left: 15px;\n    cursor: pointer;\n}\n\n"]
     }),
     tslib_1.__metadata("design:paramtypes", [Accordion])
 ], AccordionGroup);

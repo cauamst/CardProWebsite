@@ -13,10 +13,11 @@ export class Accordion {
     private onlyOneOpen: boolean;
     groups: Array<AccordionGroup> = [];
 
+    addGroup(group: AccordionGroup): void {
+        this.groups.push(group);
+    }
+
     closeOthers(openGroup): void {
-        if (!this.onlyOneOpen) {
-            return;
-        }
         this.groups.forEach((group: AccordionGroup) => {
             if (group !== openGroup) {
                 group.isOpen = false;
@@ -48,8 +49,7 @@ a {
 }
 .panel-default
 {
-    border-bottom: solid 1px #ececec;
-    margin-bottom: 5px
+    margin-bottom: 10px;
 }
 .panel-title{
     text-transform: uppercase;
@@ -66,24 +66,30 @@ a {
 })
 export class AccordionGroup {
     private _isOpen: boolean = false;
-
-    @Input() heading: string;
-    constructor(private accordion: Accordion) {
-    }
-
+    @Input() isGroupOpen: boolean;
     public get isOpen(): boolean {
         return this._isOpen;
     }
     @Input()
     public set isOpen(value: boolean) {
         this._isOpen = value;
-        if (value) {
-            this.accordion.closeOthers(this);
-        }
     }
 
+    @Input() heading: string;
+
+    constructor(private accordion: Accordion) {
+       
+        this.accordion.addGroup(this);
+    }
+
+    ngOnInit(): void{
+        this.isOpen = this.isGroupOpen
+    }
     toggleOpen(event) {
         event.preventDefault();
         this.isOpen = !this.isOpen;
+        if (this.isOpen) {
+            this.accordion.closeOthers(this);
+        }
     }
 }

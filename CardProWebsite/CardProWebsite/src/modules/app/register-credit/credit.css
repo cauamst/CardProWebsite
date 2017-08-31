@@ -374,24 +374,24 @@ section {
 
 
 
-.clearfix:after {
+.fix:after {
     visibility: hidden;
     display: block;
     font-size: 0;
     content: " ";
-    clear: both;
     height: 0;
+    clear : both;
 }
 
-.clearfix {
+.fix {
     display: inline-block;
 }
 /* start commented backslash hack \*/
-* html .clearfix {
+* html .fix {
     height: 1%;
 }
 
-.clearfix {
+.fix {
     display: block;
 }
 /* close commented backslash hack */
@@ -416,6 +416,7 @@ section {
 #container {
     background: #F5F5F5;
     display: table;
+    width: 100%;
 }
 .mdl-checkbox__label {
     font-size : 12px !important; 
@@ -629,21 +630,22 @@ ul {
 /*button back*/
 .mdl-back {
     padding: 5px 20px;
-    background: orange;
+    background: navy;
     position: relative;
     text-align: center;
+    float: right;
     border-radius: 10px;
     text-decoration: none;
     color: white;
     position: relative;
-    margin-top : 10px
+    margin-top: 10px
 }
 
     .mdl-back:after {
         content: " ";
         border: solid transparent;
         border-width: 0;
-        border-left-color: orange;
+        border-left-color: navy;
         position: absolute;
         -webkit-transition: all 1s ease;
         left: 100%;
@@ -660,7 +662,7 @@ ul {
         position: absolute;
         pointer-events: none;
         border-color: rgba(0, 0, 0, 0);
-        border-left-color: orange;
+        border-left-color: navy;
         border-width: 25px;
         margin-top: -25px;
         margin-left: -10px;
@@ -689,7 +691,7 @@ ul {
 }
 /*image card benefit*/
 ul.thumbs {
-    clear: both;
+    clear : both;
     padding-left: 0px;
     margin: 0 auto;
 }
@@ -773,4 +775,14 @@ ul.thumbs img {
     .mdl-grid {
          padding: 0px !important;  
     }
+}
+
+
+
+/*selected*/
+.selected {
+    box-shadow: 0px 12px 22px 1px #333;
+}
+.font-size-label-radio {
+    font-size : 12px !important;
 }

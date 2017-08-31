@@ -26,6 +26,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var dialog_1 = require("./register-credit/dialog");
 var compare_1 = require("./register-credit/compare");
 var accordion_1 = require("./register-credit/accordion");
+var pointTransform_service_1 = require("./services/pointTransform.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -57,7 +58,8 @@ AppModule = tslib_1.__decorate([
             handshake_service_1.HandShakeService,
             card_service_1.CardService,
             cardProHttp_1.CardProHttpProvider,
-            cryptoUtils_1.CryptoUtils
+            cryptoUtils_1.CryptoUtils,
+            pointTransform_service_1.PointTransform
         ],
         imports: [
             platform_browser_1.BrowserModule,

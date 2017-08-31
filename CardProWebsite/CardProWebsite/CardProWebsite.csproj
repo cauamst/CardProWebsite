@@ -220,6 +220,7 @@
     <TypeScriptCompile Include="src\modules\app\register-credit\dialog.ts" />
     <TypeScriptCompile Include="src\modules\app\services\alert.service.ts" />
     <TypeScriptCompile Include="src\modules\app\services\authentication.service.ts" />
+    <TypeScriptCompile Include="src\modules\app\services\pointTransform.service.ts" />
     <TypeScriptCompile Include="src\modules\app\services\card.service.ts" />
     <TypeScriptCompile Include="src\modules\app\toTop\toTop.ts" />
     <TypeScriptCompile Include="src\modules\app\_login\login.ts" />

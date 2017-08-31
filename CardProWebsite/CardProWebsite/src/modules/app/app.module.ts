@@ -28,6 +28,8 @@ import { DialogComponent } from './register-credit/dialog';
 import { CompareComponent } from './register-credit/compare';
 import { Accordion, AccordionGroup } from './register-credit/accordion';
 
+import { PointTransform } from './services/pointTransform.service';
+
 
 
 @NgModule({
@@ -55,7 +57,8 @@ import { Accordion, AccordionGroup } from './register-credit/accordion';
         HandShakeService,
         CardService,
         CardProHttpProvider,
-        CryptoUtils
+        CryptoUtils,
+        PointTransform
 
     ],
     imports: [

@@ -11,7 +11,6 @@ var CreditComponent = (function () {
         this.route = route;
         this.location = location;
         this.zone = zone;
-        this.selected = false;
         this.currentCatId = 1;
         //get all card
         this.cards = [];
@@ -20,6 +19,8 @@ var CreditComponent = (function () {
         this.maximumActive = 4;
         this.showCompare = true;
         this.showButtonBack = false;
+        this.showBenefit = true;
+        this.showDetail = false;
         this.NextPhotoInterval = 3000;
         //Looping or not
         this.noLoopSlides = true;
@@ -32,23 +33,23 @@ var CreditComponent = (function () {
             { id: 4, director: 'Rút tiền mặt miễn phí' },
         ];
         this.button = [
-            { id: 1, name: 'Dặm bay', ContentType: 1, idTT: 'Xem ưu điểm tiện ích dặm bay', option: 1 },
-            { id: 2, name: 'Hoàn tiền', ContentType: 2, idTT: 'Xem ưu điểm tiện ích hoàn tiền', option: 2 },
-            { id: 3, name: 'Điểm thưởng', ContentType: 3, idTT: 'xem ưu điểm tiện ích điểm thưởng', option: 3 },
-            { id: 4, name: 'Rút tiền mặt miễn phí', ContentType: 4, idTT: 'Xem ưu điểm tiện ích rút tiền mặt miễn phí', option: 4 }
+            { id: 1, name: 'Dặm bay', ContentType: 1, idTT: 'Xem ưu điểm tiện ích dặm bay', option: "b1", for: "b1" },
+            { id: 2, name: 'Hoàn tiền', ContentType: 2, idTT: 'Xem ưu điểm tiện ích hoàn tiền', option: "b2", for: "b2" },
+            { id: 3, name: 'Điểm thưởng', ContentType: 3, idTT: 'xem ưu điểm tiện ích điểm thưởng', option: "b3", for: "b3" },
+            { id: 4, name: 'Rút tiền mặt miễn phí', ContentType: 4, idTT: 'Xem ưu điểm tiện ích rút tiền mặt miễn phí', option: "b4", for: "b4" }
         ];
         this.CardView = [
-            { url: require("../../../assets/img/card_credit.jpg") },
-            { url: require("../../../assets/img/card_credit1.jpg") },
-            { url: require("../../../assets/img/card_credit2.jpg") },
-            { url: require("../../../assets/img/card_credit3.jpg") },
-            { url: require("../../../assets/img/card_credit4.jpg") },
-            { url: require("../../../assets/img/card_credit5.jpg") },
-            { url: require("../../../assets/img/card_credit6.jpg") },
-            { url: require("../../../assets/img/card_credit7.jpg") },
-            { url: require("../../../assets/img/card_credit8.jpg") },
-            { url: require("../../../assets/img/card_credit9.jpg") },
-            { url: require("../../../assets/img/card_credit10.jpg") },
+            { Id: 1, url: require("../../../assets/img/card_credit.jpg") },
+            { Id: 2, url: require("../../../assets/img/card_credit1.jpg") },
+            { Id: 3, url: require("../../../assets/img/card_credit2.jpg") },
+            { Id: 4, url: require("../../../assets/img/card_credit3.jpg") },
+            { Id: 5, url: require("../../../assets/img/card_credit4.jpg") },
+            { Id: 6, url: require("../../../assets/img/card_credit5.jpg") },
+            { Id: 7, url: require("../../../assets/img/card_credit6.jpg") },
+            { Id: 8, url: require("../../../assets/img/card_credit7.jpg") },
+            { Id: 9, url: require("../../../assets/img/card_credit8.jpg") },
+            { Id: 10, url: require("../../../assets/img/card_credit9.jpg") },
+            { Id: 11, url: require("../../../assets/img/card_credit10.jpg") },
         ];
         this.Salary = [
             { id: 1, content: 'Thấp hơn 7 triệu' },
@@ -74,10 +75,12 @@ var CreditComponent = (function () {
             }
         ];
         this.addNewSlide();
+        this.showDetailCard();
+        this.showbenefit();
+        this.onSelected(this.card);
     }
     CreditComponent.prototype.ngOnInit = function () {
         this.GetCards();
-        this.getCard(this.selectCardId);
         this.getCardType(this.currentCatId);
         this.getContentCard(this.currentContentType);
     };
@@ -142,10 +145,7 @@ var CreditComponent = (function () {
     };
     //get card by id for creditdetail page
     CreditComponent.prototype.getCard = function (Id) {
-        var _this = this;
-        this.CardService.getCard(Id).then(function (card) {
-            _this.card = card;
-        });
+        this.card = this.cardes.find(function (card) { return card.Id == Id; });
     };
     //get all card table compare
     CreditComponent.prototype.GetCards = function () {
@@ -157,14 +157,26 @@ var CreditComponent = (function () {
     //get contentCard
     CreditComponent.prototype.getContentCard = function (ContentType) {
         var _this = this;
-        this.zone.run(function () {
-            _this.CardService.getTypeContent(ContentType).then(function (contents) {
-                _this.contents = contents;
-            });
+        this.CardService.getTypeContent(ContentType).then(function (contents) {
+            _this.contents = contents;
         });
     };
     CreditComponent.prototype.removeDynamic = function () {
         this.groups.pop();
+    };
+    CreditComponent.prototype.showbenefit = function () {
+        this.showBenefit = true;
+        this.showDetail = false;
+    };
+    CreditComponent.prototype.showDetailCard = function () {
+        this.showDetail = true;
+        this.showBenefit = false;
+    };
+    CreditComponent.prototype.onSelected = function (card) {
+        this.selectedImage = card;
+    };
+    CreditComponent.prototype.ScrollToTop = function () {
+        window.scrollTo(0, 0);
     };
     return CreditComponent;
 }());
