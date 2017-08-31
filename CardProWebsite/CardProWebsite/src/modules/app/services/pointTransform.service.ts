@@ -7,7 +7,7 @@ export class PointTransform {
     private static factor: number = 33000;
     private static monthsInYear = 12;
 
-    private static AwardedPoints(cardId: number, amount: number): number {
+    public static AwardedPoints(cardId: number, amount: number): number {
         switch (cardId) {
             case 1:
             case 2:

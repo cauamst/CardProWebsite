@@ -425,19 +425,20 @@ section {
     font-size : 18px !important;
 }
 #width100PercentTest {
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 15px;
 }
 #Lnav-heading {
     /*float: left;*/
     font-family: Verdana, arial, helvetica, sans-serif;
 }
 
-    #Lnav-heading h2 {
-        font-size: 14px;
+    #Lnav-heading h4 {
+        font-size: 12px;
         font-weight: normal;
         color: #000;
     }
-h2.lvn-heading:before {
+h4.lvn-heading:before {
     content: '';
     position: absolute;
     height: 0;
@@ -445,7 +446,7 @@ h2.lvn-heading:before {
     top: 100%;
     left: 0;
 }
-h2.lvn-heading {
+h4.lvn-heading {
     font-family: verdana,arial,helvetica, sans-serif;
     font-size: 15px;
     font-weight: normal;
@@ -461,12 +462,12 @@ h2.lvn-heading {
     font-family: Verdana, arial, helvetica, sans-serif;
 }
 
-    #Lnav h2 {
+    #Lnav h4 {
         font-size: 16px;
         font-weight: normal;
         color: #fff;
     }
-h2.lvn:before {
+h4.lvn:before {
     content: '';
     position: absolute;
     height: 0;
@@ -477,7 +478,7 @@ h2.lvn:before {
     border-left: 30px solid transparent;
 }
 
-h2.lvn {
+h4.lvn {
     font-family: verdana,arial,helvetica, sans-serif;
     font-size: 15px;
     font-weight: normal;
@@ -510,8 +511,8 @@ ul {
     background-color: #007E9F;
     text-decoration: none;
     color: white;
-    margin-top : 20px;
-    margin-bottom : 20px;
+    margin-top : 5px;
+    margin-bottom : 5px;
 }
 
 .curl-top-left {

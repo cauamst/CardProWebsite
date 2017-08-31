@@ -43,12 +43,13 @@
                     </div>
 
                 </div>
-
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored curls curl-top-left" (click)="showCompare = !showCompare; showButtonBack = !showButtonBack;ScrollToTop()" style="float:right">So sánh thẻ</button>
+                <div class="fix"></div>
                 <!-- show card benefit -->
                 <div id="container">
                     <div id="left" *ngIf="showBenefit">
                         <div id="Lnav">
-                            <h2 class="lvn">Ưu điểm tiện ích</h2>
+                            <h4 class="lvn">Ưu điểm tiện ích</h4>
                         </div>
                         <div id="width100PercentTest" *ngFor="let conte of contents">
                             <ul class="ul">
@@ -73,7 +74,7 @@
                     </div>
                     <div id="left" *ngIf="showDetail && card">
                         <div id="Lnav">
-                            <h2 class="lvn">Thông tin chi tiết thẻ {{card.Name}}</h2>
+                            <h4 class="lvn">Thông tin chi tiết thẻ {{card.Name}}</h4>
                         </div>
                         <div id="width100PercentTest" >
                             <ul class="ul">
@@ -93,7 +94,7 @@
                         </div>
                     </div>
                     <div id="Lnav">
-                        <h2 class="lvn">Điều kiện đăng ký</h2>
+                        <h4 class="lvn">Điều kiện đăng ký</h4>
                     </div>
                     <div class="mdl-additiona">
                         <ul>
@@ -105,7 +106,7 @@
                     </div>
 
                 </div>
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored curls curl-top-left" (click)="showCompare = !showCompare; showButtonBack = !showButtonBack;ScrollToTop()">So sánh thẻ</button>
+
             </div>
 
             <ng-template #loadingCompare> <compare></compare></ng-template>

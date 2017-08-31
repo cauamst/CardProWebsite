@@ -88,8 +88,8 @@ var CompareComponent = (function () {
         });
     };
     CompareComponent.prototype.ShowValue = function (value) {
-        document.getElementById("message").innerHTML = value;
-        console.log(value);
+        var message = document.getElementById("message");
+        message.innerHTML = value;
     };
     return CompareComponent;
 }());
