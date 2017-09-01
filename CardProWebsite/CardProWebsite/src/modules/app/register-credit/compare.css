@@ -10,23 +10,32 @@
 .card-compare {
     max-height: 100px;
     overflow: hidden;
-    max-width :150px;
-    width : 140px;
+    max-width: 100%;
+    width: 140px;
     height: 100px;
+    min-width: 80px;
+    min-height: 50px;
 }
 .mdl-cell-border {
-    border-left: solid 1px #ececec;
+    border-left: solid 3px #ececec;
     text-align: center;
+}
+.mdl-text-left {
+    text-align: left;
 }
 img {
     display: block;
     margin: 0 auto;
     width:100%;
 }
-button {
+.button-small {
     margin: auto;
     display: block;
-    font-size :12px !important;
+    font-size :10px !important;
+}
+.dialog-button {
+    float: right;
+    margin-right : 30px;
 }
 .row {
     max-width: 85.7142857143em;
@@ -34,8 +43,8 @@ button {
     margin-right: auto;
     word-break: break-word;
     display: flex;
-    margin: 10px;
-    border-bottom: solid 1px #ececec;
+    padding: 10px;
+    border-bottom: solid 3px #ececec;
 }
     .row:before {
         content: "";
@@ -58,5 +67,38 @@ button {
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
+    width: 90%;
 }
+.dialog-header {
+    padding: 5px 20px;
+    background: #546E7A;
+    color: #ffffff;
+}
+
+.container-image:hover .image {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+.container-image {
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.image {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+}
+.button-close-image {
+    border: 0;
+    background: none;
+    color: #2d2d2d;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 1.2em;
+}
+

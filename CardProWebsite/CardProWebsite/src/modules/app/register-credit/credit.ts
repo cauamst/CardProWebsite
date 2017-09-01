@@ -102,6 +102,7 @@ export class CreditComponent implements OnInit {
     ngOnInit(): void {
         this.GetCards();
         this.getCardType(this.currentCatId);
+        console.log(this.getCardType);
         this.getContentCard(this.currentContentType);
     }
 

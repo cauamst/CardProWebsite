@@ -94,6 +94,10 @@ a {
     top : 43%;
     color: #000;
 }
+.mdl-icon-toggle__label:hover
+{
+    background-color : aqua;
+}
 `]
 })
 export class Carousel implements OnDestroy {

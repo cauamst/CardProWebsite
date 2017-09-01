@@ -90,6 +90,7 @@ var CompareComponent = (function () {
     CompareComponent.prototype.ShowValue = function (value) {
         var message = document.getElementById("message");
         message.innerHTML = value;
+        console.log(this);
     };
     return CompareComponent;
 }());

@@ -1,6 +1,6 @@
 ﻿<div class="android-more-section padding-top-none">
     <div class="mdl-grid">
-        <div class="mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" style="margin: 0px 10px 0px 0px;">
+        <div class="mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" style="margin: 0px 10px 20px 0px;">
             <div *ngIf="showCompare; else loadingCompare">
                 <div>
                     <carousel [interval]="NextPhotoInterval" [noWrap]="false">
@@ -69,6 +69,10 @@
                                     <div class="iconbenefit"><i class="mdl-textfield__icon material-icons">{{conte.iconline4}}</i></div>
                                     <div class="textbenefit">{{conte.contentline4}}</div>
                                 </li>
+                                <li>
+                                    <div class="iconbenefit"><i class="mdl-textfield__icon material-icons">{{conte.iconline5}}</i></div>
+                                    <div class="textbenefit">{{conte.contentline5}}</div>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -90,6 +94,14 @@
                                     <div class="iconbenefit"><i class="mdl-textfield__icon material-icons">{{card.icondetail3}}</i></div>
                                     <div class="textbenefit">{{card.detail3}}</div>
                                 </li>
+                                <li>
+                                    <div class="iconbenefit"><i class="mdl-textfield__icon material-icons">{{card.icondetail4}}</i></div>
+                                    <div class="textbenefit">{{card.detail4}}</div>
+                                </li>
+                                <li>
+                                    <div class="iconbenefit"><i class="mdl-textfield__icon material-icons">{{card.icondetail5}}</i></div>
+                                    <div class="textbenefit">{{card.detail5}}</div>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -98,10 +110,8 @@
                     </div>
                     <div class="mdl-additiona">
                         <ul>
-                            <li>Trên 21 tuổi</li>
-                            <li>Thu nhập hàng tháng từ 8 triệu VND trở lên</li>
-                            <li>Nhận lương qua tài khoản ngân hàng</li>
-                            <li><a>Điều khoản và Điều kiện áp dụng.</a></li>
+                            <li>Cá nhân trên 18 tuổi</li>
+                            <li>Thu nhập hàng tháng từ 5 triệu VND trở lên (từ 7 triệu đối với Hà Nội và Hồ Chí Minh)</li>
                         </ul>
                     </div>
 
@@ -144,16 +154,16 @@
                             <i class="mdl-textfield__icon material-icons">location_city</i>
                             <select class="mdl-textfield__input" id="Address" name="Address">
                                 <option></option>
-                                <option value="#" *ngFor="let ci of City">{{ci.id}} - {{ci.content}}</option>
+                                <option value="#" *ngFor="let ci of City">{{ci.content}}</option>
 
                             </select>
                             <label class="mdl-textfield__label" for="Address">Chọn thành phố</label>
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <i class="mdl-textfield__icon material-icons">person</i>
+                            <i class="mdl-textfield__icon material-icons">local_atm</i>
                             <select class="mdl-textfield__input" id="salary" name="salary">
                                 <option></option>
-                                <option value="#" *ngFor="let sala of Salary">{{sala.id}} - {{sala.content}}</option>
+                                <option value="#" *ngFor="let sala of Salary">{{sala.content}}</option>
                             </select>
                             <label class="mdl-textfield__label" for="salary">Mức thu nhập hàng tháng</label>
                         </div>
@@ -175,7 +185,7 @@
                     </form>
                 </div>
             </div>
-            <div class="note"><strong>Lưu ý: </strong>Các thông tin của Quý khách sẽ không được sử dụng cho các mục đích khác ngoài những mục đích được nêu trên hoặc chia sẻ với bên thứ 3 ngoại trừ Sacombank.</div>
+            <div class="note"><strong>Lưu ý: </strong>Quý khách hoàn toàn yên tâm vì chúng tôi sẽ không sử dụng thông tin của Quý khách cho các mục đích khác ngoài những mục đích được nêu trên hoặc chia sẻ với bên thứ 3.</div>
         </div>
     </div>
 </div>    

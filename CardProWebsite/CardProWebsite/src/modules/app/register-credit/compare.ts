@@ -32,6 +32,8 @@ export class CompareComponent implements OnInit  {
         private pointService: PointTransform,
     ) {
     }
+
+
     ngOnInit(): void {
         this.GetCards();
         this.getCard1(this.selectCardId1);
@@ -102,8 +104,10 @@ export class CompareComponent implements OnInit  {
     ShowValue(value): void {
         var message = document.getElementById("message");
         message.innerHTML = value;
+        console.log(this);
     }
-    
+   
+
 
     
 

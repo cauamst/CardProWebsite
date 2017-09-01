@@ -30,9 +30,10 @@ export class Accordion {
     selector: 'accordion-group',
     template: `
                 <div class="panel panel-default" [ngClass]="{'panel-open': isOpen}">
-                  <div class="panel-heading" (click)="toggleOpen($event)">
+                  <div class="panel-heading" (click)="toggleOpen($event);ChangeArrow()">
                     <h4 class="panel-title">
-                      <p href tabindex="0">{{heading}}</p>
+                        <i class="material-icons">{{changeArrow}}</i> 
+                      <p href tabindex="0" class="accordion-margin">{{heading}}</p>
                     </h4>
                   </div>
                   <div class="panel-collapse" [hidden]="!isOpen">
@@ -51,20 +52,29 @@ a {
 {
     margin-bottom: 10px;
 }
+.accordion-margin{
+    padding-left: 30px;
+}
 .panel-title{
     text-transform: uppercase;
     font-weight: 600;
-    background: #ececec;
     line-height: 49px;
-    padding-left: 15px;
     cursor: pointer;
+    background: #546E7A;
+    color: #ffffff;
+    padding-left: 15px;
 }
-
+i {
+    position: absolute;
+}
 `]
 
 
 })
 export class AccordionGroup {
+
+    changeArrow = "keyboard_arrow_down";
+
     private _isOpen: boolean = false;
     @Input() isGroupOpen: boolean;
     public get isOpen(): boolean {
@@ -90,6 +100,17 @@ export class AccordionGroup {
         this.isOpen = !this.isOpen;
         if (this.isOpen) {
             this.accordion.closeOthers(this);
+        }
+    }
+    ChangeArrow(): void
+    {
+        if (this.changeArrow == 'keyboard_arrow_right')
+        {
+            this.changeArrow = 'keyboard_arrow_down';
+        }
+        else
+        {
+            this.changeArrow = 'keyboard_arrow_right';
         }
     }
 }

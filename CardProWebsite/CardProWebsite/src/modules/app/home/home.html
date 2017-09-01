@@ -3,7 +3,7 @@
 
 <div class="android-more-section">
     <a name="screens"></a>
-    <div class="android-section-title mdl-typography--display-1-color-contrast">Đăng ký trực tuyến</div>
+    <div class="android-section-title mdl-typography--display-1-color-contrast font-size-heading">Đăng ký trực tuyến</div>
     <div class="android-card-container mdl-grid">
         <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp" *ngFor="let card of cardhome">
             <div class="mdl-card__media">
@@ -14,7 +14,7 @@
             </div>
 
             <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">{{card.content}}</span>
+                <span class="mdl-typography--font-light mdl-typography--subhead font-size-content">{{card.content}}</span>
             </div>
             <div class="mdl-card__actions">
                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" routerLink="/register">
@@ -26,16 +26,26 @@
     </div>
 </div>
 <div class="android-more-section">
-    <div class="mdl-grid background-grid-section mdl-margin-row effect">
+    <div class="mdl-grid background-grid-section effect">
         <div class="mdl-cell--8-col mdl-cell--8-col-tablet">
-            <div class="mdl-layout__header-row card_pro_header_row mdl-margin-row card-header-blue card-fillwidth">
-                <span class="mdl-typography--display-1-color-contrast">Thông tin khuyến mãi</span>
+            <div class="mdl-layout__header-row card_pro_header_row card-header-blue ">
+                <span class="mdl-typography--display-1-color-contrast font-size-heading">Thông tin khuyến mãi</span>
                 <!-- Add spacer, to align navigation to the right -->
                 <div class="mdl-layout-spacer"></div>
             </div>
-            <div class="mdl-cell--12-col mdl-left">
-                <img src="../../../assets/img/ChungChiTienGui1600x530px_1.jpg" class="imghome-card" />
-                <p>Tận hưởng cuộc sống thú vị và ngập tràn ưu đãi với thẻ tín dụng Sacombank - nguồn tài chính dự phòng thiết yếu cho mọi nhu cầu chi tiêu, mua sắm</p>
+            <div class="row">
+                <div class="mdl-cell--4-col mdl-cell--8-col-tablet" style="float:left">
+                    <div class="image-mdl">
+                        <img src="../../../assets/img/img18.jpg" class="imghome-card" />
+                    </div>
+                </div>
+                <div class="mdl-cell--8-col mdl-p">
+                    <p>Tận hưởng cuộc sống thú vị và ngập tràn ưu đãi với thẻ tín dụng Sacombank - nguồn tài chính dự phòng thiết yếu cho mọi nhu cầu chi tiêu, mua sắm</p>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                    </ul>
+                </div>
                 <div class="blockqueue">
                     <p>Hơn cả tiền mặt, thẻ thanh toán Sacombank là phương tiện tài chính hiện đại được liên kết với tài khoản tiền gửi thanh toán của bạn để thực hiện nhiều chức năng: rút tiền, thanh toán, giao dịch trực tuyến...</p>
                     <small> C.E.O by SAA</small>
@@ -44,20 +54,13 @@
         </div>
         <div class="mdl-cell--4-col mdl-cell--8-col-tablet">
             <div class="mdl-layout__header-row card_pro_header_row card-header-blue card-full-width">
-                <span class="mdl-typography--display-1-color-contrast">Liên hệ</span>
+                <span class="mdl-typography--display-1-color-contrast font-size-heading">Liên hệ</span>
                 <!-- Add spacer, to align navigation to the right -->
                 <div class="mdl-layout-spacer"></div>
             </div>
-            <carousel [interval]="NextPhotoInterval" [noWrap]="false">
-                <slide *ngFor="let slidez of slides"
-                       [active]="slidez.active">
-                    <img [src]="slidez.image" style="margin:auto;height: 230px;
-                         width: 400px;">
-                </slide>
-            </carousel>
-            <div class="blockqueue">
-                <p>Thỏa sức sáng tạo chiếc thẻ độc đáo của riêng bạn và lưu giữ mọi khoảnh khắc tuyệt vời</p>
-                <small> S.E.O by SCB</small>
+            
+            <div class="thumbs-image">
+                <img src="../../../assets/img/contact.jpg" style="width : 100%" />
             </div>
 
         </div>
@@ -71,7 +74,7 @@
                Sử dụng trọn gói - Lợi ích trọn đời
             </p>
             <p>
-                <a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" href="">
+                <a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" href="__">
                    Xem chi tiết&nbsp;<i class="material-icons">chevron_right</i>
                 </a>
             </p>
@@ -84,7 +87,7 @@
         <p class="mdl-typography--font-light">
             Put the stuff that you care about right on your home screen: the latest news, the weather or a stream of your recent photos.
             <br>
-            <a href="" class="android-link mdl-typography--font-light">Xem chi tiết</a>
+            <a href="__" class="android-link mdl-typography--font-light">Xem chi tiết</a>
         </p>
     </div>
     <div class="android-customized-section-image"></div>

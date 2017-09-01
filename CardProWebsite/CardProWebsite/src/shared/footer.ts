@@ -8,8 +8,8 @@
                 <p class="mdl-typography--font-light"> 266-268, Nam Kỳ Khởi Nghĩa, Phường 8, Quận 3, Hồ Chí Minh: Ngân hàng Sacombank, Trung tâm thẻ Sacombank.</p>
             </div>
             <div class="mdl-mega-footer--bottom-section">
- <a class="android-link mdl-typography--font-light" href="">Trang chủ</a>
-                <a class="android-link mdl-typography--font-light" href="">Privacy Policy</a>
+ <a class="android-link mdl-typography--font-light" href="__">Trang chủ</a>
+                <a class="android-link mdl-typography--font-light" href="__">Privacy Policy</a>
                 <a class="android-link android-link-menu mdl-typography--font-light" id="version-dropdown">
                     Versions
                     <i class="material-icons">arrow_drop_up</i>
