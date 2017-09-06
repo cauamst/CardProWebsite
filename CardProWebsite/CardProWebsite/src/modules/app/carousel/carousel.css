@@ -13,7 +13,7 @@ card_pro.carousel {
     /* Slide effect Animations*/
     -moz-animation: carousel 30s infinite;
     -webkit-animation: carousel 30s infinite;
-    animation: carousel 30s infinite;
+    animation: carousel 45s infinite;
 }
 .slides > li{
     position:relative;

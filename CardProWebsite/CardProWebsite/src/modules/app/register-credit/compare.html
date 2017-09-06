@@ -1,46 +1,47 @@
 ﻿
-<div class="mdl-grid">
-    <div class="mdl-cell--4-col mdl-cell--hide-tablet mdl-cell--hide-phone" style="text-align:center">
-        So sánh và lựa chọn thẻ Sacombank phù hợp nhất với bạn
-    </div>
-    <div class="mdl-cell--hide-col-desktop mdl-cell--2-col-tablet mdl-cell--hide-phone">
-        &nbsp;
-    </div>
-    <div class="mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--2-col-phone mdl-cell-border">
-        <div *ngIf="!card1;else loadingImage1">
-            <a (click)="showDialog1 = !showDialog1"><img src="../../../assets/img/CardCompare.png" class="square" /></a>
+<div class="mdl-grid" style="width : 100%">
+        <div class="mdl-cell--4-col mdl-cell--hide-tablet mdl-cell--hide-phone text-center-compare">
+            So sánh và lựa chọn thẻ Sacombank phù hợp nhất với bạn
         </div>
-        <ng-template #loadingImage1>
-            <div *ngIf="card1" class="container-image">
-                <img src="{{card1.url}}" class="card-compare image" />
-                <p>{{card1.Name}}</p>
-            </div>
-        </ng-template>
-        <br />
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small" (click)="showDialog1 = !showDialog1">Thêm thẻ</button>
-
-    </div>
-    <div class="mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--2-col-phone mdl-cell-border">
-        <div *ngIf="!card2;else loadingImage2">
-            <a (click)="showDialog2 = !showDialog2"><img src="../../../assets/img/CardCompare.png" class="square" /></a>
+        <div class="mdl-cell--hide-col-desktop mdl-cell--2-col-tablet mdl-cell--hide-phone">
+            &nbsp;
         </div>
-        <ng-template #loadingImage2>
-            <div *ngIf="card2" class="container-image">
-                <img src="{{card2.url}}" class="image card-compare" />
-                <p>{{card2.Name}}</p>
+        <div class="mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--2-col-phone mdl-cell-border">
+            <div *ngIf="!card1;else loadingImage1">
+                <a (click)="showDialog1 = !showDialog1"><img src="../../../assets/img/CardCompare.png" class="square" /></a>
             </div>
-        </ng-template>
-        <br />
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small" (click)="showDialog2 = !showDialog2">Thêm thẻ</button>
+            <ng-template #loadingImage1>
+                <div *ngIf="card1" class="container-image">
+                    <img src="{{card1.url}}" class="card-compare image" />
+                    <p>{{card1.Name}}</p>
+                </div>
+            </ng-template>
+            <br />
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small" *ngIf="!card1" (click)="showDialog1 = !showDialog1">Thêm thẻ</button>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small" *ngIf="card1" (click)="RemoveCard1()">Hủy chọn</button>
+        </div>
+        <div class="mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--2-col-phone mdl-cell-border">
+            <div *ngIf="!card2;else loadingImage2">
+                <a (click)="showDialog2 = !showDialog2"><img src="../../../assets/img/CardCompare.png" class="square" /></a>
+            </div>
+            <ng-template #loadingImage2>
+                <div *ngIf="card2" class="container-image">
+                    <img src="{{card2.url}}" class="image card-compare" />
+                    <p>{{card2.Name}}</p>
+                </div>
+            </ng-template>
+            <br />
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small" *ngIf="!card2" (click)="showDialog2 = !showDialog2">Thêm thẻ</button>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small" *ngIf="card2" (click)="RemoveCard2()">Hủy chọn</button>
+        </div>
     </div>
-</div>
 <accordion>
     <accordion-group heading="Tiện ích vượt trội" [isGroupOpen]="true">
         <!--*ngIf="(card1?.class != 'Classic' || card2?.class != 'Classic')"-->
         <div class="mdl-grid">
             <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
                 <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet mdl-tex">Quyền lợi bảo hiểm</div>
-                <div class="row">
+                <div class="row bgr">
                     <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet mdl-text-left">Quyền lợi bảo hiểm</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIVT1}}</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIVT1}}</div>
@@ -48,7 +49,7 @@
             </div>
             <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
                 <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Thẻ Prority Pass, phòng chờ tại hơn 1000 sân bay trên toàn thế giới</div>
-                <div class="row bgr">
+                <div class="row">
                     <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet mdl-text-left">Thẻ Prority Pass, phòng chờ tại hơn 1000 sân bay trên toàn thế giới</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIVT2}}</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIVT2}}</div>
@@ -56,7 +57,7 @@
             </div>
             <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
                 <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Golf, Spa cao cấp</div>
-                <div class="row">
+                <div class="row bgr">
                     <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet mdl-text-left">Golf, Spa cao cấp</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIVT3}}</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIVT3}}</div>
@@ -64,7 +65,7 @@
             </div>
             <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
                 <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Đặc quyền khác</div>
-                <div class="row bgr">
+                <div class="row">
                     <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet mdl-text-left">Đặc quyền khác</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIVT4}}</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIVT4}}</div>
@@ -76,7 +77,7 @@
         <div class="mdl-grid">
             <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
                 <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Phí thường niên</div>
-                <div class="row">
+                <div class="row bgr">
                     <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet mdl-text-left">Phí thường niên</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIC1}}</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIC1}}</div>
@@ -85,7 +86,7 @@
             <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
                 <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Hạn mức tín dụng</div>
 
-                <div class="row bgr">
+                <div class="row">
                     <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet mdl-text-left">Hạn mức tín dụng</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIC2}}</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIC2}}</div>
@@ -94,7 +95,7 @@
             <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
                 <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Lãi suất tháng ( thay đổi theo kỳ)</div>
 
-                <div class="row">
+                <div class="row bgr">
                     <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet mdl-text-left">Lãi suất tháng ( thay đổi theo kỳ)</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIC3}}</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIC3}}</div>
@@ -103,7 +104,7 @@
             <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
                 <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Thời gian miễn lãi tối đa</div>
 
-                <div class="row bgr">
+                <div class="row">
                     <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet mdl-text-left">Thời gian miễn lãi tối đa</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIC4}}</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIC4}}</div>
@@ -112,7 +113,7 @@
             <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
                 <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Hạn mức rút tiền mặt</div>
 
-                <div class="row">
+                <div class="row bgr">
                     <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet mdl-text-left">Hạn mức rút tiền mặt</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1">{{card1.TIC5}}</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2">{{card2.TIC5}}</div>
@@ -121,7 +122,7 @@
             <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
                 <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Tham gia chương trình Sacombank Plus</div>
 
-                <div class="row bgr">
+                <div class="row">
                     <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet mdl-text-left">Tham gia chương trình Sacombank Plus</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1"><i class="material-icons">{{card1.TIC6}}</i></div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2"><i class="material-icons">{{card2.TIC6}}</i></div>
@@ -130,7 +131,7 @@
             <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
                 <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">Chương trình khách hàng thân thiết</div>
 
-                <div class="row">
+                <div class="row bgr">
                     <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet mdl-text-left">Chương trình khách hàng thân thiết</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card1"><i class="material-icons">{{card1.TIC7}}</i></div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet" *ngIf="card2"><i class="material-icons">{{card2.TIC7}}</i></div>
@@ -139,14 +140,15 @@
         </div>
     </accordion-group>
     <accordion-group heading="Quy đổi điểm thưởng trong năm" [isGroupOpen]="true">
-
-        <input id="slider1" class="mdl-slider mdl-js-slider" type="range"
-               min="0" max="100" value="0" tabindex="0"
-               oninput="ShowValue(this.value)" onchange="ShowValue(this.value)">
-        Value: <div id="message">25</div>
+        <transform-slider *ngIf="card1 && card2" [transformTypeId]="1" [firstCardId]="card1.Id" [secondCardId]="card2.Id"></transform-slider>
     </accordion-group>
-    <accordion-group heading="Quy đổi hoàn tiền trong năm" [isGroupOpen]="false"></accordion-group>
-    <accordion-group heading="Quy đổi dặm bay trong năm" [isGroupOpen]="false"></accordion-group>
+    <accordion-group heading="Quy đổi hoàn tiền trong năm" [isGroupOpen]="true">
+        <transform-slider *ngIf="card1 && card2" [transformTypeId]="2" [firstCardId]="card1.Id" [secondCardId]="card2.Id"></transform-slider>
+        <transform-slider *ngIf="card1 && card2" [transformTypeId]="2" [firstCardId]="card1.Id" [secondCardId]="card2.Id" [isOnlineExpenses]="true"></transform-slider>
+    </accordion-group>
+    <accordion-group heading="Quy đổi dặm bay trong năm" [isGroupOpen]="true">
+        <transform-slider *ngIf="card1 && card2" [transformTypeId]="3" [firstCardId]="card1.Id" [secondCardId]="card2.Id"></transform-slider>
+    </accordion-group>
 </accordion>
 
 
@@ -200,9 +202,6 @@
     <div class="mdl-card__actions mdl-card--border">
         <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect dialog-button" (click)="showDialog2 = !showDialog2">Đồng ý</button>
     </div>
-
-    <!-- chọn thẻ trong tiện ích -->
-
 </app-dialog>
 
 

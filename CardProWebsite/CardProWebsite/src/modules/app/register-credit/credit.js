@@ -82,7 +82,6 @@ var CreditComponent = (function () {
     CreditComponent.prototype.ngOnInit = function () {
         this.GetCards();
         this.getCardType(this.currentCatId);
-        console.log(this.getCardType);
         this.getContentCard(this.currentContentType);
     };
     CreditComponent.prototype.addNewSlide = function () {

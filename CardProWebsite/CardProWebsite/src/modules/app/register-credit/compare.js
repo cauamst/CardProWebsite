@@ -4,12 +4,10 @@ var tslib_1 = require("tslib");
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var card_service_1 = require("../services/card.service");
-var pointTransform_service_1 = require("../services/pointTransform.service");
 var CompareComponent = (function () {
-    function CompareComponent(location, CardService, pointService) {
+    function CompareComponent(location, CardService) {
         this.location = location;
         this.CardService = CardService;
-        this.pointService = pointService;
         this.showDialog1 = false;
         this.showDialog2 = false;
         this.cards = [];
@@ -87,10 +85,13 @@ var CompareComponent = (function () {
             _this.cardes2 = cardes;
         });
     };
-    CompareComponent.prototype.ShowValue = function (value) {
-        var message = document.getElementById("message");
-        message.innerHTML = value;
-        console.log(this);
+    CompareComponent.prototype.RemoveCard1 = function () {
+        this.card1 = null;
+        console.log(this.card1);
+    };
+    CompareComponent.prototype.RemoveCard2 = function () {
+        this.card2 = null;
+        console.log(this.card2);
     };
     return CompareComponent;
 }());
@@ -101,8 +102,7 @@ CompareComponent = tslib_1.__decorate([
         styleUrls: ['compare.css']
     }),
     tslib_1.__metadata("design:paramtypes", [common_1.Location,
-        card_service_1.CardService,
-        pointTransform_service_1.PointTransform])
+        card_service_1.CardService])
 ], CompareComponent);
 exports.CompareComponent = CompareComponent;
 //# sourceMappingURL=compare.js.map

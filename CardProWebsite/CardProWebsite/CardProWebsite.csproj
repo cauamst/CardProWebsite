@@ -158,12 +158,14 @@
     <Content Include="src\modules\app\register-credit\dialog.css" />
     <Content Include="src\modules\app\register-credit\dialog.html" />
     <Content Include="src\modules\app\toTop\toTop.html" />
+    <Content Include="src\modules\app\transformSlider\transformSlider.html" />
     <Content Include="src\modules\app\_login\login.css" />
     <Content Include="src\modules\app\_login\login.html" />
     <Content Include="src\shared\header.html" />
     <Content Include="Web.config" />
     <Content Include="src\modules\app\directives\alert.component.html" />
     <Content Include="src\modules\app\toTop\toTop.css" />
+    <Content Include="src\modules\app\transformSlider\transformSlider.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -210,6 +212,7 @@
     <TypeScriptCompile Include="src\modules\app\services\pointTransform.service.ts" />
     <TypeScriptCompile Include="src\modules\app\services\card.service.ts" />
     <TypeScriptCompile Include="src\modules\app\toTop\toTop.ts" />
+    <TypeScriptCompile Include="src\modules\app\transformSlider\TransformSlider.ts" />
     <TypeScriptCompile Include="src\modules\app\_login\login.ts" />
     <TypeScriptCompile Include="src\shared\footer.ts" />
     <TypeScriptCompile Include="src\shared\header.ts" />

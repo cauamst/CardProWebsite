@@ -48,10 +48,6 @@ a {
     color: rgba(0,0,0,.87) !important;
     font-size: 20px;
 }
-.panel-default
-{
-    margin-bottom: 10px;
-}
 .accordion-margin{
     padding-left: 30px;
 }
@@ -60,8 +56,8 @@ a {
     font-weight: 600;
     line-height: 49px;
     cursor: pointer;
-    background: #546E7A;
-    color: #ffffff;
+    background: #0066b3;
+    color: #fff;
     padding-left: 15px;
 }
 i {

@@ -27,6 +27,7 @@ var dialog_1 = require("./register-credit/dialog");
 var compare_1 = require("./register-credit/compare");
 var accordion_1 = require("./register-credit/accordion");
 var pointTransform_service_1 = require("./services/pointTransform.service");
+var TransformSlider_1 = require("./transformSlider/TransformSlider");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -49,7 +50,8 @@ AppModule = tslib_1.__decorate([
             compare_1.CompareComponent,
             slide_1.Slide,
             accordion_1.Accordion,
-            accordion_1.AccordionGroup
+            accordion_1.AccordionGroup,
+            TransformSlider_1.TransformSlider
         ],
         providers: [
             auth_guard_1.AuthGuard,
@@ -59,7 +61,7 @@ AppModule = tslib_1.__decorate([
             card_service_1.CardService,
             cardProHttp_1.CardProHttpProvider,
             cryptoUtils_1.CryptoUtils,
-            pointTransform_service_1.PointTransform
+            pointTransform_service_1.PointTransformService
         ],
         imports: [
             platform_browser_1.BrowserModule,

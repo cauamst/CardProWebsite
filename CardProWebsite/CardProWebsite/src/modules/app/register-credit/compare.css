@@ -17,11 +17,11 @@
     min-height: 50px;
 }
 .mdl-cell-border {
-    border-left: solid 3px #ececec;
     text-align: center;
 }
 .mdl-text-left {
     text-align: left;
+    font-weight: bold;
 }
 img {
     display: block;
@@ -43,16 +43,26 @@ img {
     margin-right: auto;
     word-break: break-word;
     display: flex;
-    padding: 10px;
-    border-bottom: solid 3px #ececec;
+    width: 100%;
+    border-bottom: solid 1px #ececec;
 }
     .row:before {
         content: "";
         display: table;
+        box-sizing: border-box;
+        border-right: solid 1px #ececec;
     }
     .row:after {
         content: "";
         display: table;
+        box-sizing: border-box;
+        border-right: solid 1px #ececec;
+    }
+    .row div {
+        border-right: solid 1px #ececec;
+        padding: 10px;
+        border-top: solid 1px #ececec;
+        border-left: solid 1px #ececec;
     }
 
 .bgr {
@@ -77,8 +87,8 @@ img {
 }
 
 .container-image:hover .image {
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8);
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
 }
 
 .container-image {
@@ -89,8 +99,8 @@ img {
 .image {
     -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-transition: all 0.7s ease;
-    transition: all 0.7s ease;
+    -webkit-transition: all 0.9s ease;
+    transition: all 0.9s ease;
 }
 .button-close-image {
     border: 0;
@@ -100,5 +110,8 @@ img {
     top: 8px;
     right: 8px;
     font-size: 1.2em;
+}
+.text-center-compare {
+    margin-top: 7%;
 }
 

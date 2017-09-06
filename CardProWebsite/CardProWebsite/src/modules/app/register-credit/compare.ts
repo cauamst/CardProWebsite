@@ -1,17 +1,17 @@
-﻿import { Component, OnInit} from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Accordion, AccordionGroup } from './accordion';
 import { CardService } from '../services/card.service';
 import { CARDES } from '../models/Card-Data';
 import { CARD, Content } from '../models/interface-card';
-import { PointTransform } from '../services/pointTransform.service';
+
 @Component({
     selector: 'compare',
     templateUrl: './compare.html',
-    styleUrls : ['compare.css']
+    styleUrls: ['compare.css']
 
 })
-export class CompareComponent implements OnInit  {
+export class CompareComponent implements OnInit {
     currentCatId1: number
     currentCatId2: number;
     selectCardId1: number;
@@ -28,8 +28,7 @@ export class CompareComponent implements OnInit  {
 
     constructor(
         private location: Location,
-        private CardService: CardService,
-        private pointService: PointTransform,
+        private CardService: CardService
     ) {
     }
 
@@ -101,14 +100,14 @@ export class CompareComponent implements OnInit  {
             this.cardes2 = cardes;
         });
     }
-    ShowValue(value): void {
-        var message = document.getElementById("message");
-        message.innerHTML = value;
-        console.log(this);
+    RemoveCard1(): void {
+        this.card1 = null;
+        console.log(this.card1);
     }
-   
+    RemoveCard2(): void {
+        this.card2 = null;
+        console.log(this.card2);
+    }
 
-
-    
 
 }

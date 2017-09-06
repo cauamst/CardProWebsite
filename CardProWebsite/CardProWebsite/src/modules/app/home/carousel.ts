@@ -92,12 +92,9 @@ a {
 .mdl-icon-toggle__label{
     font-size: 44px !important;
     top : 43%;
-    color: #000;
+    color: #e0e0e0;
 }
-.mdl-icon-toggle__label:hover
-{
-    background-color : aqua;
-}
+
 `]
 })
 export class Carousel implements OnDestroy {

@@ -82,7 +82,7 @@ AccordionGroup = tslib_1.__decorate([
     core_1.Component({
         selector: 'accordion-group',
         template: "\n                <div class=\"panel panel-default\" [ngClass]=\"{'panel-open': isOpen}\">\n                  <div class=\"panel-heading\" (click)=\"toggleOpen($event);ChangeArrow()\">\n                    <h4 class=\"panel-title\">\n                        <i class=\"material-icons\">{{changeArrow}}</i> \n                      <p href tabindex=\"0\" class=\"accordion-margin\">{{heading}}</p>\n                    </h4>\n                  </div>\n                  <div class=\"panel-collapse\" [hidden]=\"!isOpen\">\n                    <div class=\"panel-body\">\n                        <ng-content></ng-content>\n                    </div>\n                  </div>\n                </div>\n          ",
-        styles: ["\na {\n    color: rgba(0,0,0,.87) !important;\n    font-size: 20px;\n}\n.panel-default\n{\n    margin-bottom: 10px;\n}\n.accordion-margin{\n    padding-left: 30px;\n}\n.panel-title{\n    text-transform: uppercase;\n    font-weight: 600;\n    line-height: 49px;\n    cursor: pointer;\n    background: #546E7A;\n    color: #ffffff;\n    padding-left: 15px;\n}\ni {\n    position: absolute;\n}\n"]
+        styles: ["\na {\n    color: rgba(0,0,0,.87) !important;\n    font-size: 20px;\n}\n.accordion-margin{\n    padding-left: 30px;\n}\n.panel-title{\n    text-transform: uppercase;\n    font-weight: 600;\n    line-height: 49px;\n    cursor: pointer;\n    background: #0066b3;\n    color: #fff;\n    padding-left: 15px;\n}\ni {\n    position: absolute;\n}\n"]
     }),
     tslib_1.__metadata("design:paramtypes", [Accordion])
 ], AccordionGroup);

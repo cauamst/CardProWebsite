@@ -28,8 +28,8 @@ import { DialogComponent } from './register-credit/dialog';
 import { CompareComponent } from './register-credit/compare';
 import { Accordion, AccordionGroup } from './register-credit/accordion';
 
-import { PointTransform } from './services/pointTransform.service';
-
+import { PointTransformService } from './services/pointTransform.service';
+import { TransformSlider } from './transformSlider/TransformSlider';
 
 
 @NgModule({
@@ -48,7 +48,8 @@ import { PointTransform } from './services/pointTransform.service';
         CompareComponent,
         Slide,
         Accordion,
-        AccordionGroup
+        AccordionGroup,
+        TransformSlider
     ],
     providers: [
         AuthGuard,
@@ -58,7 +59,7 @@ import { PointTransform } from './services/pointTransform.service';
         CardService,
         CardProHttpProvider,
         CryptoUtils,
-        PointTransform
+        PointTransformService
 
     ],
     imports: [
