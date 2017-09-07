@@ -17,7 +17,13 @@
     min-height: 50px;
 }
 .mdl-cell-border {
-    text-align: center;
+    text-align: justify;
+}
+.none-border {
+    border :none !important;
+}
+.text-center {
+    text-align :center;
 }
 .mdl-text-left {
     text-align: left;
@@ -114,4 +120,19 @@ img {
 .text-center-compare {
     margin-top: 7%;
 }
-
+.remove-button {
+    background: #da4a4a !important;
+    color : #fff;
+}
+    .remove-button:hover {
+        background: #2b2828 !important;
+    }
+.mdl-grid {
+    width : 100%;
+}
+.none-margin {
+    margin : 0 0 0;
+}
+.text-align {
+    text-align:justify !important;
+}

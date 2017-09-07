@@ -1,5 +1,5 @@
 ﻿<div class="android-more-section padding-top-none">
-    <div class="mdl-grid">
+    <div class="mdl-grid " style="width:100%;">
         <div class="mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" style="margin: 0px 10px 20px 0px;">
             <div *ngIf="showCompare; else loadingCompare">
                 <div>
@@ -119,7 +119,7 @@
 
             </div>
 
-            <ng-template #loadingCompare> <compare></compare></ng-template>
+            <ng-template #loadingCompare> <compare (AddCardToFormEvent)="addCardToForm($event)"></compare></ng-template>
             <div *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack"><a href="#" class="mdl-back">Trở về</a></div>
         </div>
         <div class="mdl-cell--4-col mdl-cell--4-col-phone mdl-cell--8-col-tablet">
@@ -142,13 +142,13 @@
                             <i class="mdl-textfield__icon material-icons">email</i>
                             <input class="mdl-textfield__input" type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
                             <label class="mdl-textfield__label" for="email">Email</label>
-                            <span class="mdl-textfield__error">Bạn chưa nhập đúng định dạng email! example@email.com</span>
+                            <span class="mdl-textfield__error span-left">Email phải có @ và .com</span>
                         </div>
                         <div class="mdl-textfield mdl-js-textfield">
                             <i class="mdl-textfield__icon material-icons">phone</i>
                             <input class="mdl-textfield__input" type="number" id="phone" pattern="(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)" maxlength="13" />
                             <label class="mdl-textfield__label" for="phone">Số điện thoại</label>
-                            <span class="mdl-textfield__error">Chưa nhập đúng định dạng số điện thoại! ex: 0933 588295</span>
+                            <span class="mdl-textfield__error span-left">Độ dài số điện thoại là 10 hoặc 11 số.</span>
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <i class="mdl-textfield__icon material-icons">location_city</i>
@@ -181,7 +181,7 @@
                         </div>
                         
                         <div class="fix"></div>
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-register">Đăng ký</button>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-register" (click)="printSelectedCard1()">Đăng ký</button>
                     </form>
                 </div>
             </div>

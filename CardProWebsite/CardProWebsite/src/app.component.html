@@ -11,7 +11,7 @@
             
         </nav>
     </div>
-    <div class="android-content mdl-layout__content">
+    <div class="android-content mdl-layout__content" (scroll) ="scroll($event)" #cardProMain>
         <router-outlet></router-outlet>
         <app-footer></app-footer>
         <to-top></to-top>

@@ -36,7 +36,7 @@ MainModule = tslib_1.__decorate([
             router_1.RouterModule.forRoot(routes),
             app_module_1.AppModule
         ],
-        providers: [],
+        providers: [utils_1.NotificationService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], MainModule);

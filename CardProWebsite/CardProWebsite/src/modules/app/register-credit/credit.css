@@ -117,10 +117,9 @@ img {
     padding-top: 2px;
 }
 .textbenefit {
-    float: left;
-    width: 90%;
     font-size: 12px;
-    margin-top: 3px;
+    padding-top: 3px;
+    padding-left: 40px;
 }
 .mdl-textfield__label {
     font-size : 12px !important;
@@ -678,6 +677,9 @@ ul.thumbs img {
     height: 100px;
     width: 140px;
     margin: 0px auto;
+}
+.span-left {
+    margin-left: 30px;
 }
 .carousel-control.right {
     right: 0;

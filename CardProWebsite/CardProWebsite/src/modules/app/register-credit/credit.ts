@@ -44,6 +44,8 @@ export class CreditComponent implements OnInit {
     selectedImage: CARD;
     currentCardId: number;
 
+    card1toform: number;
+
     private NextPhotoInterval: number = 3000;
     //Looping or not
     private noLoopSlides: boolean = true;
@@ -63,17 +65,20 @@ export class CreditComponent implements OnInit {
     ];
 
     CardView = [
-        { Id: 1, url: require("../../../assets/img/card_credit.jpg") },
-        { Id: 2, url: require("../../../assets/img/card_credit1.jpg") },
-        { Id: 3, url: require("../../../assets/img/card_credit2.jpg") },
-        { Id: 4, url: require("../../../assets/img/card_credit3.jpg") },
-        { Id: 5, url: require("../../../assets/img/card_credit4.jpg") },
-        { Id: 6, url: require("../../../assets/img/card_credit5.jpg") },
-        { Id: 7, url: require("../../../assets/img/card_credit6.jpg") },
-        { Id: 8, url: require("../../../assets/img/card_credit7.jpg") },
-        { Id: 9, url: require("../../../assets/img/card_credit8.jpg") },
-        { Id: 10, url: require("../../../assets/img/card_credit9.jpg") },
-        { Id: 11, url: require("../../../assets/img/card_credit10.jpg") },
+        { Id: 1, url: require("../../../assets/img/FamilyCard.jpg") },
+        { Id: 2, url: require("../../../assets/img/UnionPaycard.jpg") },
+        { Id: 3, url: require("../../../assets/img/VisaLadiesFirst.jpg") },
+        { Id: 4, url: require("../../../assets/img/VisaCreditClassic.jpg") },
+        { Id: 5, url: require("../../../assets/img/MCcreditclassic.jpg") },
+        { Id: 6, url: require("../../../assets/img/Motorcard.jpg") },
+        { Id: 7, url: require("../../../assets/img/VisaCreditGold.jpg") },
+        { Id: 8, url: require("../../../assets/img/MCcreditgold.jpg") },
+        { Id: 9, url: require("../../../assets/img/Carcard.jpg") },
+        { Id: 10, url: require("../../../assets/img/VisaCreditPlantinum.jpg") },
+        { Id: 11, url: require("../../../assets/img/VisaCreditSignature.jpg") },
+        { Id: 12, url: require("../../../assets/img/MCworld.jpg") },
+        { Id: 13, url: require("../../../assets/img/Infinitecard_Front.jpg") },
+        { Id: 14, url: require("../../../assets/img/VisaCreditPlantinumCashback.jpg") },
     ];
     Salary = [
         { id: 1, content: 'Thấp hơn 7 triệu' },
@@ -107,7 +112,7 @@ export class CreditComponent implements OnInit {
 
     private addNewSlide() {
         this.slides.push(
-            { image: require("../../../assets/img/ChungChiTienGui1600x530px_1.jpg") },
+            { image: require("../../../assets/img/1200x350.jpg") },
             { image: require("../../../assets/img/ComboDoanhNGhiep-1600x530px.jpg") },
             { image: require("../../../assets/img/CTKM-Contactless1600x530.jpg") },
             { image: require("../../../assets/img/DichVuKieuHoi1600x530px.jpg") },
@@ -225,11 +230,15 @@ export class CreditComponent implements OnInit {
     }
 
     onSelected(card: CARD): void {
-
         this.selectedImage = card;
     }
     ScrollToTop() {
         window.scrollTo(0, 0);
+    }
+    addCardToForm(card: CARD)
+    {
+        this.selectedImage = card;
+        console.log(card);
     }
 }
 

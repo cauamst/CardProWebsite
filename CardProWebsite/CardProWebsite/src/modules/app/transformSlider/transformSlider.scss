@@ -1,54 +1,76 @@
-﻿.row {
+﻿.mdl-cell-border {
+    text-align: center;
+}
+
+.min-max-amount {
+    width: 100%;
+    position: relative;
+}
+
+.min-value {
+    position: absolute;
+    font-size: 0.75em;
+}
+
+.max-value {
+    float: right;
+    font-size: 0.75em;
+}
+
+.text-center {
+    text-align: center;
+    color: #1d88f7;
+    font-weight: 600;
+    font-size: 0.9375em;
+    padding: 0.6666666667em 0.9333333333em;
+    width: auto;
+}
+
+.color-text {
+    color: red;
+    font-size: 0.9375em;
+    font-weight: 600;
+}
+
+.border-trans {
+    border: solid 3px #ececec;
+}
+
+.transform-left {
+    text-align: left;
+}
+
+.border-full {
+    border: solid 1px #ececec;
+}
+
+.row {
     max-width: 85.7142857143em;
     margin-left: auto;
     margin-right: auto;
     word-break: break-word;
     display: flex;
-    padding: 10px;
-    border-bottom: solid 3px #ececec;
+    width: 100%;
+    border-bottom: solid 1px #ececec;
 }
+
 .row:before {
     content: "";
     display: table;
+    box-sizing: border-box;
+    border-right: solid 1px #ececec;
 }
+
 .row:after {
     content: "";
     display: table;
+    box-sizing: border-box;
+    border-right: solid 1px #ececec;
 }
 
-    .mdl-cell-border {
-        text-align: center;
-    }
-
-    .min-max-amount {
-        width: 100%;
-        position: relative;
-    }
-
-    .min-value {
-        position: absolute;
-        font-size: 0.75em;
-    }
-
-    .max-value {
-        float: right;
-        font-size: 0.75em;
-    }
-
-    .text-center {
-        text-align: center;
-        color: #1d88f7;
-        font-weight: 600;
-        font-size: 0.9375em;
-        padding: 0.6666666667em 0.9333333333em;
-        border: 1px solid #ededed;
-        width: 100%;
-        margin-bottom: 5px;
-    }
-
-    .color-text {
-        color: red;
-        font-size: 0.9375em;
-        font-weight: 600;
-    }
-
+.row div {
+    border-right: solid 1px #ececec;
+    padding: 10px;
+    border-top: solid 1px #ececec;
+    border-left: solid 1px #ececec;
+}

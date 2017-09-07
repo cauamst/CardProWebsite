@@ -1,5 +1,9 @@
-﻿<div class="mdl-grid">
+﻿<div class="mdl-grid border-full">
     <div class="mdl-cell--12-col">
+        <div class="mdl-textfield mdl-js-textfield">
+            <label class="" for="amounts">{{transformTitle}} :</label>
+            <input class="mdl-textfield__input text-center" type="number" id="amounts" [(ngModel)]="amount" (ngModelChange)="transform($event);" />
+        </div>
         <input #sliderInput class="mdl-slider mdl-js-slider" type="range"
                min="{{minAmount}}" max="{{maxAmount}}" [(ngModel)]="amount" step="{{step}}"
                (ngModelChange)="transform($event)">
@@ -8,14 +12,11 @@
             <span class="max-value">500.000.000 VNĐ</span>
         </div>
     </div>
-    <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-cell-border">
-        <div class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input text-center" type="number" id="amounts" [(ngModel)]="amount" (ngModelChange)="transform($event);" />
-            <label class="" for="amounts">{{transformTitle}}</label>
-        </div>
-        <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet">{{transformLabel}}</div>
-        <div class="row">
-            <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet mdl-text-left">{{transformLabel}}</div>
+    <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone" style="width: 100%;">
+        
+        <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet mdl-cell-border">{{transformLabel}}</div>
+        <div class="row mdl-cell-border" style="width: 100%">
+            <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet transform-left">{{transformLabel}}</div>
             <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet color-text">{{firstCardPoints |number :'.0-3'}}</div>
             <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet color-text">{{secondCardPoints |number :'.0-3'}}</div>
         </div>

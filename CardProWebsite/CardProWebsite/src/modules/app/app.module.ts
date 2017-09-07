@@ -1,7 +1,5 @@
 ﻿import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import * as moment from 'moment';
-import * as $ from 'jquery';
 import { routing } from './app.routing';
 import { HomeComponent } from './home/home';
 import { HelloComponent } from './home/hello';
@@ -17,7 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { CardProHttpProvider } from './helpers/cardProHttp';
 import { CryptoUtils } from './helpers/cryptoUtils';
 import { Carousel } from './home/carousel';
-import {Slide } from './home/slide';
+import { Slide } from './home/slide';
 import { CreditComponent } from './register-credit/credit';
 import { CarouselComponent } from './carousel/carousel';
 import { LoginLayoutComponent } from './_login/login';

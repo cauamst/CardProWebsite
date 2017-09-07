@@ -1,9 +1,10 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Location } from '@angular/common';
 import { Accordion, AccordionGroup } from './accordion';
 import { CardService } from '../services/card.service';
 import { CARDES } from '../models/Card-Data';
 import { CARD, Content } from '../models/interface-card';
+import { NotificationService } from '../../../shared/utils';
 
 @Component({
     selector: 'compare',
@@ -26,9 +27,16 @@ export class CompareComponent implements OnInit {
     ShowimageCompare1 = true;
     ShowimageCompare2 = true;
 
+    selectedCard1ToForm: CARD;
+    selectedCard2ToForm: CARD;
+
+    @Output('AddCardToFormEvent')
+    selectedCardToFormEvent = new EventEmitter();
+
     constructor(
         private location: Location,
-        private CardService: CardService
+        private CardService: CardService,
+        private NotificationService: NotificationService
     ) {
     }
 
@@ -102,12 +110,35 @@ export class CompareComponent implements OnInit {
     }
     RemoveCard1(): void {
         this.card1 = null;
-        console.log(this.card1);
+        this.card1 = this.card2;
+        this.card2 = null;
     }
     RemoveCard2(): void {
         this.card2 = null;
-        console.log(this.card2);
+    }
+    UnSelectedCard1(): void
+    {
+        this.currentCatId1 = undefined;
+        this.selectCardId1 = undefined;
+    }
+    UnSelectedCard2(): void {
+        this.currentCatId2 = undefined;
+        this.selectCardId2 = undefined;
+    }
+    onSelectedCard1(): void {
+        this.selectedCard1ToForm = this.card1;
+        console.log(this.selectedCard1ToForm);
+    }
+    onSelectedCard2(): void {
+        this.selectedCard2ToForm = this.card2;
+        console.log(this.selectedCard2ToForm);
     }
 
+    selectCard(card: CARD) {
+        this.selectedCardToFormEvent.emit(card);
+    }
+    moveToTopButton() {
+        this.NotificationService.needToTop(true);
+    }
 
 }
