@@ -1,5 +1,5 @@
 ﻿import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routing';
 import { HomeComponent } from './home/home';
 import { HelloComponent } from './home/hello';
@@ -63,8 +63,8 @@ import { TransformSlider } from './transformSlider/TransformSlider';
     imports: [
         BrowserModule,
         FormsModule,
-        routing
-        
+        routing,
+        ReactiveFormsModule
     ]
 })
 export class AppModule { }

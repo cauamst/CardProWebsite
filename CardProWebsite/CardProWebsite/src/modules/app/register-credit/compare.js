@@ -6,10 +6,11 @@ var common_1 = require("@angular/common");
 var card_service_1 = require("../services/card.service");
 var utils_1 = require("../../../shared/utils");
 var CompareComponent = (function () {
-    function CompareComponent(location, CardService, NotificationService) {
+    function CompareComponent(location, CardService, NotificationService, PipeCurrency) {
         this.location = location;
         this.CardService = CardService;
         this.NotificationService = NotificationService;
+        this.PipeCurrency = PipeCurrency;
         this.showDialog1 = false;
         this.showDialog2 = false;
         this.cards = [];
@@ -132,7 +133,7 @@ CompareComponent = tslib_1.__decorate([
     }),
     tslib_1.__metadata("design:paramtypes", [common_1.Location,
         card_service_1.CardService,
-        utils_1.NotificationService])
+        utils_1.NotificationService, Object])
 ], CompareComponent);
 exports.CompareComponent = CompareComponent;
 //# sourceMappingURL=compare.js.map

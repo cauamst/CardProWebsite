@@ -362,6 +362,9 @@ img {
 section {
     padding: 0 20px;
 }
+.padding-top {
+    margin-top: 20px;
+}
 
 #toggle:checked ~ #expand {
     height: 250px;
@@ -394,9 +397,6 @@ section {
     display: block;
 }
 /* close commented backslash hack */
-.padding-top-none {
-    padding-top : 0px !important;
-}
 
 /*button*/
 .mdl-row {

@@ -82,6 +82,11 @@ var CreditComponent = (function () {
         this.showbenefit();
         this.onSelected(this.card);
     }
+    CreditComponent.prototype.onResize = function (event) {
+        this.zone.run(function () {
+            event.target.innerWidth;
+        });
+    };
     CreditComponent.prototype.ngOnInit = function () {
         this.GetCards();
         this.getCardType(this.currentCatId);
@@ -187,6 +192,12 @@ var CreditComponent = (function () {
     };
     return CreditComponent;
 }());
+tslib_1.__decorate([
+    core_1.HostListener('window:resize', ['$event']),
+    tslib_1.__metadata("design:type", Function),
+    tslib_1.__metadata("design:paramtypes", [Object]),
+    tslib_1.__metadata("design:returntype", void 0)
+], CreditComponent.prototype, "onResize", null);
 CreditComponent = tslib_1.__decorate([
     core_1.Component({
         selector: 'credit',

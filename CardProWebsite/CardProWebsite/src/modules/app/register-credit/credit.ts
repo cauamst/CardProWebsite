@@ -1,6 +1,5 @@
-﻿import { Component, OnInit, Input, Output, NgZone, NgModule, OnChanges } from '@angular/core';
+﻿import { Component, OnInit, Input, Output, NgZone, NgModule, OnChanges, HostListener, SimpleChanges, Attribute, Directive } from '@angular/core';
 import { FormControl } from "@angular/forms/forms";
-import { Validators } from "@angular/forms/src/validators";
 import { FormGroup } from "@angular/forms/src/forms";
 import { CardService } from '../services/card.service';
 import { CARDES } from '../models/Card-Data';
@@ -8,7 +7,11 @@ import { CARD, Content } from '../models/interface-card';
 import { ActivatedRoute } from "@angular/router";
 import { Location } from '@angular/common';
 import { Accordion, AccordionGroup } from './accordion';
-declare var $: any;
+import {
+    NG_VALIDATORS, Validator,
+    Validators, AbstractControl, ValidatorFn
+} from '@angular/forms';
+
 @Component({
     selector: 'credit',
     templateUrl: './credit.html',
@@ -51,6 +54,14 @@ export class CreditComponent implements OnInit {
     private noLoopSlides: boolean = true;
     //Photos
     private slides: Array<any> = [];
+
+    @HostListener('window:resize', ['$event'])
+    onResize(event) {
+        this.zone.run(() => {
+            event.target.innerWidth;
+        });
+    }
+
     benefit = [
         { id: 1, director: 'Dặm bay' },
         { id: 2, director: 'Hoàn tiền' },
@@ -240,5 +251,6 @@ export class CreditComponent implements OnInit {
         this.selectedImage = card;
         console.log(card);
     }
+
 }
 

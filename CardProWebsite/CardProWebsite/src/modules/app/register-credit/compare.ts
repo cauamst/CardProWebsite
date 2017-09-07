@@ -6,6 +6,7 @@ import { CARDES } from '../models/Card-Data';
 import { CARD, Content } from '../models/interface-card';
 import { NotificationService } from '../../../shared/utils';
 
+
 @Component({
     selector: 'compare',
     templateUrl: './compare.html',

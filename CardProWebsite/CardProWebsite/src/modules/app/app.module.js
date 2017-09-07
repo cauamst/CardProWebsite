@@ -66,7 +66,8 @@ AppModule = tslib_1.__decorate([
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
-            app_routing_1.routing
+            app_routing_1.routing,
+            forms_1.ReactiveFormsModule
         ]
     })
 ], AppModule);
