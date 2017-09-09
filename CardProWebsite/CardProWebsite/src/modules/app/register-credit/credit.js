@@ -5,6 +5,8 @@ var core_1 = require("@angular/core");
 var card_service_1 = require("../services/card.service");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
+var creditCardForm_1 = require("../models/creditCardForm");
+var forms_1 = require("@angular/forms");
 var CreditComponent = (function () {
     function CreditComponent(CardService, route, location, zone) {
         this.CardService = CardService;
@@ -12,11 +14,12 @@ var CreditComponent = (function () {
         this.location = location;
         this.zone = zone;
         this.currentCatId = 1;
-        //get all card
         this.cards = [];
         this.showDialog = false;
         this.currentContentType = 1;
+        // Slider Region
         this.maximumActive = 4;
+        this.registerInfo = new creditCardForm_1.CreditCardForm();
         this.showCompare = true;
         this.showButtonBack = false;
         this.showBenefit = true;
@@ -56,41 +59,45 @@ var CreditComponent = (function () {
         ];
         this.Salary = [
             { id: 1, content: 'Thấp hơn 7 triệu' },
-            { id: 2, content: 'Từ 7 - 15 triệu' },
-            { id: 3, content: 'Trên 15 triệu' }
+            { id: 2, content: 'Từ 7 - 20 triệu' },
+            { id: 3, content: 'Trên 20 triệu' }
         ];
         this.City = [
-            { id: 1, content: 'Cần thơ' },
-            { id: 2, content: 'Thành phố HCM' },
-            { id: 3, content: 'Hà Nội' }
+            { id: 1, content: 'An Giang' },
+            { id: 2, content: 'Bà rịa - Vũng tàu' },
+            { id: 3, content: 'Bắc Cạn' },
+            { id: 4, content: 'Bắc Giang' },
+            { id: 5, content: 'Bắc Kan' },
+            { id: 6, content: 'Bạc Liêu' },
+            { id: 7, content: 'Bắc Ninh' },
+            { id: 8, content: 'Bến Tre' },
+            { id: 9, content: 'Bình Định' },
+            { id: 10, content: 'Bình Dương' },
+            { id: 11, content: 'Bình Phước' },
+            { id: 12, content: 'Bình Thuận' },
+            { id: 13, content: 'Cà Mau' },
+            { id: 14, content: 'Cần Thơ' },
+            { id: 15, content: 'Cao Bằng' },
+            { id: 16, content: 'Đà Nẵng' },
+            { id: 17, content: 'Đắc Lắc' },
+            { id: 18, content: 'Đắc Nông' },
+            { id: 19, content: 'DAK LAK' },
+            { id: 20, content: 'DAK NONG' },
+            { id: 21, content: 'Điện Biên' },
+            { id: 22, content: 'Hà Nội' }
         ];
-        //accordion-example
-        this.firstDisabled = false;
-        this.isOpen = false;
-        this.groups = [
-            {
-                heading: 'Dynamic 1',
-                content: 'I am dynamic!'
-            },
-            {
-                heading: 'Dynamic 2',
-                content: 'Dynamic as well'
-            }
-        ];
+        this.initialWidth = window.innerWidth;
         this.addNewSlide();
         this.showDetailCard();
         this.showbenefit();
         this.onSelected(this.card);
     }
-    CreditComponent.prototype.onResize = function (event) {
-        this.zone.run(function () {
-            event.target.innerWidth;
-        });
-    };
     CreditComponent.prototype.ngOnInit = function () {
         this.GetCards();
         this.getCardType(this.currentCatId);
         this.getContentCard(this.currentContentType);
+        this.CreateValidatorForm();
+        this.CreateRegisterForm();
     };
     CreditComponent.prototype.addNewSlide = function () {
         this.slides.push({ image: require("../../../assets/img/1200x350.jpg") }, { image: require("../../../assets/img/ComboDoanhNGhiep-1600x530px.jpg") }, { image: require("../../../assets/img/CTKM-Contactless1600x530.jpg") }, { image: require("../../../assets/img/DichVuKieuHoi1600x530px.jpg") }, { image: require("../../../assets/img/DonThuSangNganQuaTang1600x530.jpg") }, { image: require("../../../assets/img/Top40ThuongHIeu2017_1600x530.jpg") });
@@ -107,11 +114,40 @@ var CreditComponent = (function () {
         this.CardService.getCardType(type).then(function (cardes) {
             _this.cardes = cardes;
             _this.nbOfCards = cardes.length;
+            _this.maximumActive = _this.getNbOfActiveByWindowWidth(_this.initialWidth);
             _this.activateCards();
             _this.leftMostIndex = 0;
             _this.rightMostIndex = _this.maximumActive - 1;
             _this.updatePrevAndNext();
         });
+    };
+    // ---- slider Region -------------------
+    CreditComponent.prototype.getNbOfActiveByWindowWidth = function (wWidth) {
+        var nbOfActive;
+        if (wWidth < 380) {
+            nbOfActive = 1;
+        }
+        else if (wWidth >= 380 && wWidth <= 560) {
+            nbOfActive = 2;
+        }
+        else if (wWidth > 560 && wWidth <= 720 || (wWidth >= 840 && wWidth < 1040)) {
+            nbOfActive = 3;
+        }
+        else if (wWidth >= 720 && wWidth < 840 || wWidth >= 1040) {
+            nbOfActive = 4;
+        }
+        return nbOfActive;
+    };
+    CreditComponent.prototype.onResize = function (event) {
+        var wWidth = event.target.innerWidth;
+        var nbOfActive = this.getNbOfActiveByWindowWidth(wWidth);
+        if (nbOfActive != this.maximumActive) {
+            this.maximumActive = nbOfActive;
+            this.activateCards();
+            this.leftMostIndex = 0;
+            this.rightMostIndex = this.maximumActive - 1;
+            this.updatePrevAndNext();
+        }
     };
     CreditComponent.prototype.updatePrevAndNext = function () {
         this.prevIsHide = this.nbOfCards <= this.maximumActive
@@ -151,6 +187,7 @@ var CreditComponent = (function () {
                 : false;
         }
     };
+    // ---- slider Region ------------------
     //get card by id for creditdetail page
     CreditComponent.prototype.getCard = function (Id) {
         this.card = this.cardes.find(function (card) { return card.Id == Id; });
@@ -169,9 +206,6 @@ var CreditComponent = (function () {
             _this.contents = contents;
         });
     };
-    CreditComponent.prototype.removeDynamic = function () {
-        this.groups.pop();
-    };
     CreditComponent.prototype.showbenefit = function () {
         this.showBenefit = true;
         this.showDetail = false;
@@ -189,6 +223,31 @@ var CreditComponent = (function () {
     CreditComponent.prototype.addCardToForm = function (card) {
         this.selectedImage = card;
         console.log(card);
+    };
+    CreditComponent.prototype.CreateRegisterForm = function () {
+        this.registerForm = new forms_1.FormGroup({
+            name: this.name,
+            email: this.email,
+            phone: this.phone,
+            address: this.address,
+            salary: this.salary,
+            agree: this.agree
+        });
+    };
+    CreditComponent.prototype.CreateValidatorForm = function () {
+        this.name = new forms_1.FormControl('', [forms_1.Validators.required, forms_1.Validators.minLength(3), forms_1.Validators.maxLength(24)]);
+        this.email = new forms_1.FormControl('', [forms_1.Validators.pattern("[^ @]*@[^ @]*")]);
+        this.phone = new forms_1.FormControl('', [forms_1.Validators.pattern(/^(01[2689]|09)[0-9]{8}$/)]);
+        this.address = new forms_1.FormControl('', forms_1.Validators.required);
+        this.salary = new forms_1.FormControl('', forms_1.Validators.required);
+        this.agree = new forms_1.FormControl('', forms_1.Validators.requiredTrue);
+    };
+    CreditComponent.prototype.submitForm = function () {
+        var _this = this;
+        this.formIsSubmitting = true;
+        setTimeout(function () {
+            _this.formIsSubmitting = false;
+        }, 5000);
     };
     return CreditComponent;
 }());

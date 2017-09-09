@@ -29,9 +29,10 @@ import { Accordion, AccordionGroup } from './register-credit/accordion';
 import { PointTransformService } from './services/pointTransform.service';
 import { TransformSlider } from './transformSlider/TransformSlider';
 
-
+import { Loader } from './directives/loader.directive';
 @NgModule({
     declarations: [
+        Loader,
         HomeComponent,
         HelloComponent,
         ProductsComponent,
@@ -58,7 +59,6 @@ import { TransformSlider } from './transformSlider/TransformSlider';
         CardProHttpProvider,
         CryptoUtils,
         PointTransformService
-
     ],
     imports: [
         BrowserModule,

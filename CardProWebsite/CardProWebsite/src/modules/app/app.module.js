@@ -28,6 +28,7 @@ var compare_1 = require("./register-credit/compare");
 var accordion_1 = require("./register-credit/accordion");
 var pointTransform_service_1 = require("./services/pointTransform.service");
 var TransformSlider_1 = require("./transformSlider/TransformSlider");
+var loader_directive_1 = require("./directives/loader.directive");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -36,6 +37,7 @@ var AppModule = (function () {
 AppModule = tslib_1.__decorate([
     core_1.NgModule({
         declarations: [
+            loader_directive_1.Loader,
             home_1.HomeComponent,
             hello_1.HelloComponent,
             products_1.ProductsComponent,

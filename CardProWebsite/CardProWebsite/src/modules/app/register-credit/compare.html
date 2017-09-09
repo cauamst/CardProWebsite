@@ -12,7 +12,7 @@
         </div>
         <ng-template #loadingImage1>
             <div *ngIf="card1" class="container-image">
-                <img src="{{card1.url}}" class="card-compare image" />
+                <img src="{{card1.url}}" class="card-compare image" (click)="selectCard(card1)" />
                 <p class="none-margin">{{card1.Name}}</p>
             </div>
         </ng-template>
@@ -26,7 +26,7 @@
         </div>
         <ng-template #loadingImage2>
             <div *ngIf="card2" class="container-image">
-                <img src="{{card2.url}}" class="image card-compare" />
+                <img src="{{card2.url}}" class="image card-compare" (click)="selectCard(card2)" />
                 <p class="none-margin">{{card2.Name}}</p>
             </div>
         </ng-template>

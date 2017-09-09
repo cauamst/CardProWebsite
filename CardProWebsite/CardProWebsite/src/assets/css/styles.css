@@ -15,8 +15,13 @@
  */
 
 body {
-  margin: 0;
+    margin: 0;
+    
 }
+div {
+    font-family: arial,verdana,times New Roman;
+}
+
 
 /* Disable ugly boxes around images in IE10 */
 a img{
@@ -328,7 +333,7 @@ a img{
 
 .android-link {
     text-decoration: none;
-    color: #3578de !important;
+    color: #fff !important;
 }
 
     .android-link:hover {
@@ -429,8 +434,11 @@ a img{
   }
 
 .android-footer {
-  background-color: #fafafa;
-  position: relative;
+    background-color: #0071bb;
+    position: relative;
+    color: #fff;
+    line-height: .85rem;
+    margin-top: 20px;
 }
 
     .android-footer a:hover {
@@ -445,9 +453,10 @@ a img{
     border-bottom: none;
   }
 
-  .android-footer .mdl-mega-footer--bottom-section {
-    position: relative;
-  }
+    .android-footer .mdl-mega-footer--bottom-section {
+        position: relative;
+        color: #fff;
+    }
 
   .android-footer .mdl-mega-footer--bottom-section a {
     margin-right: 2em;

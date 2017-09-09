@@ -3,9 +3,6 @@
         <app-header></app-header>
     </div>
     <div class="android-drawer mdl-layout__drawer mdl-layout--small-screen-only">
-        <span class="mdl-layout-title">
-            <a><img class="android-logo-image" src="../src/assets/img/logo.png"></a>
-        </span>
         <nav class="mdl-navigation"  *ngFor="let route of routes">
             <a class="mdl-navigation__link"  *ngIf="route.data" routerLinkActive="active-link" routerLink="{{route.path}}">{{route.data.title}}</a>
             

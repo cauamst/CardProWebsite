@@ -1,16 +1,21 @@
-﻿import { Component, OnInit, Input, Output, NgZone, NgModule, OnChanges, HostListener, SimpleChanges, Attribute, Directive } from '@angular/core';
-import { FormControl } from "@angular/forms/forms";
-import { FormGroup } from "@angular/forms/src/forms";
+﻿import { Component, OnInit, Input, Output, NgZone, NgModule, OnChanges, HostListener, SimpleChanges, Attribute, Directive, Pipe } from '@angular/core';
 import { CardService } from '../services/card.service';
 import { CARDES } from '../models/Card-Data';
 import { CARD, Content } from '../models/interface-card';
 import { ActivatedRoute } from "@angular/router";
 import { Location } from '@angular/common';
 import { Accordion, AccordionGroup } from './accordion';
+import { CreditCardForm } from '../models/creditCardForm';
+
 import {
-    NG_VALIDATORS, Validator,
-    Validators, AbstractControl, ValidatorFn
+    ReactiveFormsModule,
+    FormsModule,
+    FormGroup,
+    FormControl,
+    Validators,
+    FormBuilder
 } from '@angular/forms';
+
 
 @Component({
     selector: 'credit',
@@ -19,26 +24,34 @@ import {
 
 })
 export class CreditComponent implements OnInit {
-
-    //get card theo type
     cardes: CARD[];
     card: CARD;
     currentCatId: number = 1;
-    //get id card compare
     selectCardId: number;
-    //get all card
     cards: CARD[] = [];
     showDialog = false;
-    //isOpen = false;
-    //content - uu diem
     contents: Content[];
     currentContentType: number = 1;
+
+    // Slider Region
     private maximumActive: number = 4;
     private leftMostIndex: number;
     private rightMostIndex: number;
     private prevIsHide: boolean;
     private nextIsHide: boolean;
     private nbOfCards: number;
+    private initialWidth: number;
+
+    private registerInfo: CreditCardForm = new CreditCardForm();
+    formIsSubmitting: boolean;
+
+    registerForm: FormGroup;
+    name: FormControl;
+    email: FormControl;
+    phone: FormControl;
+    address: FormControl;
+    salary: FormControl;
+    agree: FormControl;
 
     showCompare = true;
     showButtonBack = false;
@@ -55,13 +68,6 @@ export class CreditComponent implements OnInit {
     //Photos
     private slides: Array<any> = [];
 
-    @HostListener('window:resize', ['$event'])
-    onResize(event) {
-        this.zone.run(() => {
-            event.target.innerWidth;
-        });
-    }
-
     benefit = [
         { id: 1, director: 'Dặm bay' },
         { id: 2, director: 'Hoàn tiền' },
@@ -74,7 +80,6 @@ export class CreditComponent implements OnInit {
         { id: 3, name: 'Điểm thưởng', ContentType: 3, idTT: 'xem ưu điểm tiện ích điểm thưởng', option: "b3", for: "b3" },
         { id: 4, name: 'Rút tiền mặt miễn phí', ContentType: 4, idTT: 'Xem ưu điểm tiện ích rút tiền mặt miễn phí', option: "b4", for: "b4" }
     ];
-
     CardView = [
         { Id: 1, url: require("../../../assets/img/FamilyCard.jpg") },
         { Id: 2, url: require("../../../assets/img/UnionPaycard.jpg") },
@@ -93,15 +98,33 @@ export class CreditComponent implements OnInit {
     ];
     Salary = [
         { id: 1, content: 'Thấp hơn 7 triệu' },
-        { id: 2, content: 'Từ 7 - 15 triệu' },
-        { id: 3, content: 'Trên 15 triệu' }
+        { id: 2, content: 'Từ 7 - 20 triệu' },
+        { id: 3, content: 'Trên 20 triệu' }
     ];
     City = [
-        { id: 1, content: 'Cần thơ' },
-        { id: 2, content: 'Thành phố HCM' },
-        { id: 3, content: 'Hà Nội' }
+        { id: 1, content: 'An Giang' },
+        { id: 2, content: 'Bà rịa - Vũng tàu' },
+        { id: 3, content: 'Bắc Cạn' },
+        { id: 4, content: 'Bắc Giang' },
+        { id: 5, content: 'Bắc Kan' },
+        { id: 6, content: 'Bạc Liêu' },
+        { id: 7, content: 'Bắc Ninh' },
+        { id: 8, content: 'Bến Tre' },
+        { id: 9, content: 'Bình Định' },
+        { id: 10, content: 'Bình Dương' },
+        { id: 11, content: 'Bình Phước' },
+        { id: 12, content: 'Bình Thuận' },
+        { id: 13, content: 'Cà Mau' },
+        { id: 14, content: 'Cần Thơ' },
+        { id: 15, content: 'Cao Bằng' },
+        { id: 16, content: 'Đà Nẵng' },
+        { id: 17, content: 'Đắc Lắc' },
+        { id: 18, content: 'Đắc Nông' },
+        { id: 19, content: 'DAK LAK' },
+        { id: 20, content: 'DAK NONG' },
+        { id: 21, content: 'Điện Biên' },
+        { id: 22, content: 'Hà Nội' }
     ];
-
 
     constructor(
         private CardService: CardService,
@@ -109,16 +132,19 @@ export class CreditComponent implements OnInit {
         private location: Location,
         private zone: NgZone
     ) {
-
+        this.initialWidth = window.innerWidth; 
         this.addNewSlide();
         this.showDetailCard();
         this.showbenefit();
         this.onSelected(this.card);
     }
-    ngOnInit(): void {
+
+    ngOnInit() {
         this.GetCards();
         this.getCardType(this.currentCatId);
         this.getContentCard(this.currentContentType);
+        this.CreateValidatorForm();
+        this.CreateRegisterForm();
     }
 
     private addNewSlide() {
@@ -131,23 +157,56 @@ export class CreditComponent implements OnInit {
             { image: require("../../../assets/img/Top40ThuongHIeu2017_1600x530.jpg") }
         );
     }
+
     private removeLastSlide() {
         this.slides.pop();
 
     }
+    
     goBack(): void {
         this.location.back();
     }
+
     // get card by type for textfield compare
     getCardType(type: number): void {
         this.CardService.getCardType(type).then(cardes => {
             this.cardes = cardes;
             this.nbOfCards = cardes.length;
+            this.maximumActive = this.getNbOfActiveByWindowWidth(this.initialWidth);
             this.activateCards();
             this.leftMostIndex = 0;
             this.rightMostIndex = this.maximumActive - 1;
             this.updatePrevAndNext();
         });
+    }
+
+    // ---- slider Region -------------------
+    private getNbOfActiveByWindowWidth(wWidth: number) : number {
+        let nbOfActive: number;
+        if (wWidth < 380) {
+            nbOfActive = 1;
+        } else if (wWidth >= 380 && wWidth <= 560) {
+            nbOfActive = 2;
+        } else if (wWidth > 560 && wWidth <= 720 || (wWidth >= 840 && wWidth < 1040)) {
+            nbOfActive = 3;
+        } else if (wWidth >= 720 && wWidth < 840 || wWidth >= 1040) {
+            nbOfActive = 4;
+        }
+        return nbOfActive;
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize(event) {
+        let wWidth = event.target.innerWidth;
+        let nbOfActive = this.getNbOfActiveByWindowWidth(wWidth);
+        if (nbOfActive != this.maximumActive) {
+            this.maximumActive = nbOfActive;
+            this.activateCards();
+            this.leftMostIndex = 0;
+            this.rightMostIndex = this.maximumActive - 1;
+            this.updatePrevAndNext();
+        }
+       
     }
 
     private updatePrevAndNext() {
@@ -194,6 +253,9 @@ export class CreditComponent implements OnInit {
                 : false;
         }
     }
+
+    // ---- slider Region ------------------
+
     //get card by id for creditdetail page
     getCard(Id: number): void {
         this.card = this.cardes.find(card => card.Id == Id);
@@ -211,28 +273,9 @@ export class CreditComponent implements OnInit {
         });
     }
 
-    //accordion-example
-    firstDisabled: boolean = false;
-    isOpen: boolean = false;
-
-    groups: Array<any> = [
-        {
-            heading: 'Dynamic 1',
-            content: 'I am dynamic!'
-        },
-        {
-            heading: 'Dynamic 2',
-            content: 'Dynamic as well'
-        }
-    ];
-
-    removeDynamic() {
-        this.groups.pop();
-    }
-
     showbenefit() {
-            this.showBenefit = true;
-            this.showDetail = false;
+        this.showBenefit = true;
+        this.showDetail = false;
     }
 
     showDetailCard() {
@@ -243,14 +286,40 @@ export class CreditComponent implements OnInit {
     onSelected(card: CARD): void {
         this.selectedImage = card;
     }
+
     ScrollToTop() {
         window.scrollTo(0, 0);
     }
-    addCardToForm(card: CARD)
-    {
+
+    addCardToForm(card: CARD) {
         this.selectedImage = card;
         console.log(card);
     }
 
-}
+    CreateRegisterForm() {
+        this.registerForm = new FormGroup({
+            name: this.name,
+            email: this.email,
+            phone: this.phone,
+            address: this.address,
+            salary: this.salary,
+            agree: this.agree
+        });
+    }
 
+    CreateValidatorForm() {
+        this.name = new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(24)]);
+        this.email = new FormControl('', [Validators.pattern("[^ @]*@[^ @]*")]);
+        this.phone = new FormControl('', [Validators.pattern(/^(01[2689]|09)[0-9]{8}$/)]);
+        this.address = new FormControl('', Validators.required);
+        this.salary = new FormControl('', Validators.required);
+        this.agree = new FormControl('', Validators.requiredTrue);
+    }
+
+    submitForm(): void {
+        this.formIsSubmitting = true;
+        setTimeout(() => {
+            this.formIsSubmitting = false;
+        }, 5000);
+    }
+}

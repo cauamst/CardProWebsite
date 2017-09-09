@@ -195,6 +195,7 @@
     <TypeScriptCompile Include="src\modules\app\app.module.ts" />
     <TypeScriptCompile Include="src\modules\app\app.routing.ts" />
     <TypeScriptCompile Include="src\modules\app\carousel\carousel.ts" />
+    <TypeScriptCompile Include="src\modules\app\directives\loader.directive.ts" />
     <TypeScriptCompile Include="src\modules\app\directives\alert.component.ts" />
     <TypeScriptCompile Include="src\modules\app\guard\auth.guard.ts" />
     <TypeScriptCompile Include="src\modules\app\helpers\cryptoUtils.ts" />
@@ -206,6 +207,7 @@
     <TypeScriptCompile Include="src\modules\app\models\Card.ts" />
     <TypeScriptCompile Include="src\modules\app\models\image.interface.ts" />
     <TypeScriptCompile Include="src\modules\app\models\interface-card.ts" />
+    <TypeScriptCompile Include="src\modules\app\models\creditCardForm.ts" />
     <TypeScriptCompile Include="src\modules\app\models\user.ts" />
     <TypeScriptCompile Include="src\modules\app\register-credit\accordion.ts" />
     <TypeScriptCompile Include="src\modules\app\register-credit\compare.ts" />

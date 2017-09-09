@@ -1,6 +1,6 @@
 ﻿<div class="android-more-section padding-top">
-    <div class="mdl-grid " style="width:100%;">
-        <div class="mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-shadow--6dp" style="margin: auto">
+    <div class="mdl-grid credit-grid">
+        <div class="left-content mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-shadow--6dp">
             <div *ngIf="showCompare; else loadingCompare">
                 <div>
                     <carousel [interval]="NextPhotoInterval" [noWrap]="false">
@@ -13,9 +13,9 @@
                 <div class="fix"></div>
                 <!-- button menu -->
                 <div class="mdl-grid">
-                    <div class="mdl-cell--3-col mdl-row mdl-cell--2-col-tablet mdl-cell--2-col-phone" *ngFor="let btn of button; let first = first;">
-                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="options-{{btn.id}}"  (click)="getContentCard(btn.ContentType);getCardType(btn.id);showbenefit()">
-                            <input type="radio" id="options-{{btn.id}}" class="mdl-radio__button" name="category" [checked]="first"/>
+                    <div class="mdl-cell--3-col mdl-row mdl-cell--2-col-tablet mdl-cell--2-col-phone card-pro-radio " *ngFor="let btn of button; let first = first;">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="options-{{btn.id}}" (click)="getContentCard(btn.ContentType);getCardType(btn.id);showbenefit()">
+                            <input type="radio" id="options-{{btn.id}}" class="mdl-radio__button" name="category" [checked]="first" />
                             <!-- intitial state checked using attribute checked  -->
                             <span class="mdl-radio__label font-size-label-radio">{{btn.name}}</span>
                         </label>
@@ -31,7 +31,7 @@
                         </a>
                         <ul class="thumbs noscript">
                             <ng-container *ngFor="let cardview of cardes">
-                                <li *ngIf="cardview['active']" >
+                                <li *ngIf="cardview['active']">
                                     <div class="thumb" [class.selected]="cardview === selectedImage">
                                         <img src="{{cardview.url}}" (click)="getCard(cardview.Id);showDetailCard();onSelected(card)" />
                                     </div>
@@ -79,7 +79,7 @@
                         <div id="Lnav">
                             <h4 class="lvn">Thông tin chi tiết thẻ {{card.Name}}</h4>
                         </div>
-                        <div id="width100PercentTest" >
+                        <div id="width100PercentTest">
                             <ul class="ul">
                                 <li>
                                     <div class="iconbenefit"><i class="mdl-textfield__icon material-icons">{{card.icondetail1}}</i></div>
@@ -121,52 +121,88 @@
             <ng-template #loadingCompare> <compare (AddCardToFormEvent)="addCardToForm($event)"></compare></ng-template>
             <div *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack"><a href="#" class="mdl-back">Trở về</a></div>
         </div>
-        <div class="mdl-cell--4-col mdl-cell--4-col-phone mdl-cell--8-col-tablet">
+        <div class="right-content mdl-cell--4-col mdl-cell--4-col-phone mdl-cell--8-col-tablet">
             <!-- REGISTER FORM -->
             <div class="mdl-shadow--6dp">
                 <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
                     <i class="material-icons">mode_edit</i>
                     <h3 class="mdl-card__title-text" id="size18">&nbsp; Thông tin khách hàng</h3>
                 </div>
-                <div class="mdl-card__supporting-text">
-                    <form (ngSubmit)="onSubmit()" #register="ngForm">
+                <div class="mdl-card__supporting-text cardPro-form-block" loader [isLoading]="formIsSubmitting">
+                    <form [formGroup]="registerForm" name="registerForm" novalidate (ngSubmit)="submitForm($event)">
                         <!--<p>Hãy điền đầy đủ thông tin của bạn bên dưới và chúng tôi sẽ gọi lại để hỗ trợ bạn đăng ký.</p>-->
-                        <div class="mdl-textfield mdl-js-textfield">
+                        <div class="mdl-textfield mdl-js-textfield"
+                             [ngClass]="{
+                                    'has-error': name.invalid && (name.dirty || name.touched)
+                             }">
                             <i class="mdl-textfield__icon material-icons">person</i>
-                            <input class="mdl-textfield__input" type="text" id="name" name="name" data-required pattern="[A-Z,a-z, ]*"/>
+                            <input class="mdl-textfield__input" type="text" id="name" name="name" formControlName="name" />
                             <label class="mdl-textfield__label" for="name">Họ Tên</label>
-                            <span class="mdl-textfield__error">Vui lòng nhập Họ Tên</span>
+                            <span class="form-control-feedback"
+                                  *ngIf="name.errors && (name.dirty || name.touched)">
+                                <span class="mdl-textfield__error" *ngIf="name.errors.required">Bạn chưa nhập Họ Tên.</span>
+                                <span class="mdl-textfield__error" *ngIf="name.errors.minlength">Họ Tên không được ngắn hơn 3 ký tự.</span>
+                                <span class="mdl-textfield__error" *ngIf="name.errors.maxlength">Họ Tên không quá 24 ký tự.</span>
+                            </span>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield"
+                             [ngClass]="{
+                                    'has-error': email.invalid && (email.dirty || email.touched)
+                             }">
+                            <i class="mdl-textfield__icon material-icons">email</i>
+                            <input class="mdl-textfield__input" type="email" id="email" name="email" formControlName="email" />
+                            <label class="mdl-textfield__label" for="email">Email</label>
+                            <span class="form-control-feedback"
+                                  *ngIf="email.errors && (email.dirty || email.touched)">
+                                <span class="mdl-textfield__error" *ngIf="email.errors.pattern">Vui lòng nhập đúng định dạng như example@domain.com</span>
+                            </span>
                         </div>
                         
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <i class="mdl-textfield__icon material-icons">email</i>
-                            <input class="mdl-textfield__input" type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" data-required/>
-                            <label class="mdl-textfield__label" for="email">Email</label>
-                            <span class="mdl-textfield__error span-left">Vui lòng nhập đúng định dạng email! ex: example@domain.com</span>
-                        </div>
-                        <div class="mdl-textfield mdl-js-textfield">
+                        <div class="mdl-textfield mdl-js-textfield"
+                             [ngClass]="{
+                                    'has-error': phone.invalid && (phone.dirty || phone.touched)
+                             }">
                             <i class="mdl-textfield__icon material-icons">phone</i>
-                            <input class="mdl-textfield__input" type="number" id="phone" pattern="(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)" maxlength="13" />
+                            <input class="mdl-textfield__input" type="text" id="phone" name="phone" formControlName="phone" />
                             <label class="mdl-textfield__label" for="phone">Số điện thoại</label>
-                            <span class="mdl-textfield__error span-left">Độ dài số điện thoại là 10 hoặc 11 số.</span>
+                            <span class="form-control-feedback"
+                                  *ngIf="phone.errors && (phone.dirty || phone.touched)">
+                                <span class="mdl-textfield__error" *ngIf="phone.errors.pattern">Bạn chưa nhập đúng định dạng số điện thoại độ dài 10 hoặc 11.</span>
+                            </span>
                         </div>
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        
+                        <div class="mdl-textfield mdl-js-textfield"
+                             [ngClass]="{
+                                    'has-error': address.invalid && (address.dirty || address.touched)
+                             }">
                             <i class="mdl-textfield__icon material-icons">location_city</i>
-                            <select class="mdl-textfield__input" id="Address" name="Address" >
+                            <select class="mdl-textfield__input" id="Address" name="address" formControlName="address">
                                 <option></option>
-                                <option value="#" *ngFor="let ci of City">{{ci.content}}</option>
-
+                                <option [value]="ci.id" *ngFor="let ci of City">{{ci.content}}</option>
                             </select>
                             <label class="mdl-textfield__label" for="Address">Chọn thành phố</label>
+                            <span class="form-control-feedback"
+                                  *ngIf="address.errors && (address.dirty || address.touched)">
+                                <span class="mdl-textfield__error" *ngIf="address.errors.required">Bạn chưa chọn địa chỉ cư trú.</span>
+                            </span>
                         </div>
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                       
+                        <div class="mdl-textfield mdl-js-textfield"
+                             [ngClass]="{
+                                    'has-error': salary.invalid && (salary.dirty || salary.touched)
+                             }">
                             <i class="mdl-textfield__icon material-icons">local_atm</i>
-                            <select class="mdl-textfield__input" id="salary" name="salary">
+                            <select class="mdl-textfield__input" id="salary" name="salary" formControlName="salary">
                                 <option></option>
-                                <option value="#" *ngFor="let sala of Salary">{{sala.content}}</option>
+                                <option *ngFor="let sala of Salary"  [value]="sala.id">{{sala.content}}</option>
                             </select>
                             <label class="mdl-textfield__label" for="salary">Mức thu nhập hàng tháng</label>
+                            <span class="form-control-feedback"
+                                  *ngIf="salary.errors && (salary.dirty || salary.touched)">
+                                <span class="mdl-textfield__error" *ngIf="salary.errors.required">Bạn chưa chọn mức thu nhập hàng tháng.</span>
+                            </span>
                         </div>
+                        
                         <div class="mdl-textfield mdl-js-textfield" *ngIf="selectedImage">
                             <i class="mdl-textfield__icon material-icons">credit_card</i>
                             <input class="mdl-textfield__input" type="text" id="card" name="selectedCard" [value]="selectedImage.Name" disabled />
@@ -175,13 +211,13 @@
                         <div>
                             <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-checkbox"
                                    for="checkbox2">
-                                <input type="checkbox" id="checkbox2" class="mdl-checkbox__input">
+                                <input type="checkbox" id="checkbox2" class="mdl-checkbox__input" formControlName="agree">
                                 <span class="mdl-checkbox__label">Tôi đồng ý rằng Sacombank có thể sử dụng thông tin trên đây để liên hệ với tôi nhằm giới thiệu những sản phẩm, dịch vụ và chương trình khuyến mãi của Sacombank từ nay trở về sau.</span>
                             </label>
                         </div>
-                        
+
                         <div class="fix"></div>
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-register" [disabled]="!register.form.valid" (click)="printSelectedCard1()">Đăng ký</button>
+                        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-register" [disabled]="!registerForm.valid">Đăng ký</button>
                     </form>
                 </div>
             </div>

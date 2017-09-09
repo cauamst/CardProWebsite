@@ -617,7 +617,8 @@ ul {
     text-decoration: none;
     color: white;
     position: relative;
-    margin-top: 10px
+    margin-top: 10px;
+    margin:5px;
 }
 
 .row li {
@@ -674,9 +675,10 @@ a.thumb:focus {
 ul.thumbs img {
     border: none;
     display: block;
-    height: 100px;
+    height: 90px;
     width: 140px;
     margin: 0px auto;
+    cursor: pointer;
 }
 .span-left {
     margin-left: 30px;
@@ -718,7 +720,8 @@ ul.thumbs img {
 
 .small-slider {
     position: relative;
-    padding-left:25px;
+    padding-left: 40px;
+    margin-top: 10px;
 }
     .small-slider .mdl-icon-toggle__label {
         position: absolute;
@@ -726,6 +729,7 @@ ul.thumbs img {
         font-size: 36px;
         opacity: 1;
         color: #000;
+        left : auto;
     }
 @media (min-width: 840px) {
     .mdl-grid {
@@ -734,11 +738,57 @@ ul.thumbs img {
 }
 
 
-
 /*selected*/
 .selected {
     box-shadow: 0px 12px 22px 1px #333;
 }
 .font-size-label-radio {
     font-size : 12px !important;
+}
+.mdl-textfield.has-error .mdl-textfield__icon {
+    color: #de3226 !important; 
+}
+
+.mdl-textfield.has-error .mdl-textfield__input {
+    border-color: #d50000;
+    box-shadow: none;
+}
+
+.mdl-textfield.has-error .mdl-textfield__error {
+    visibility: visible;
+    margin-left: 30px;
+}
+
+.cardPro-form-block {
+    width: auto; 
+}
+
+.credit-grid {
+    width: 100%;
+}
+
+left-content {
+    margin-right: 0;
+}
+
+@media (min-width: 840px) {
+    .mdl-grid {
+        padding: 0px !important;
+    }
+    .left-content {
+        margin-right: 15px;
+    }
+}
+@media (max-width: 840px) {
+    .right-content {
+        margin-top: 15px;
+    }
+}
+.card-pro-radio {
+    text-align:center;
+}
+@media (max-width: 480px) {
+    .card-pro-radio {
+        text-align : unset;
+    }
 }

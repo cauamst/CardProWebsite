@@ -93,6 +93,7 @@ a {
     font-size: 44px !important;
     top : 43%;
     color: #e0e0e0;
+    right: -15%;
 }
 
 `]
