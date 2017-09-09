@@ -11,7 +11,7 @@ import { AlertService } from './services/alert.service';
 import { AuthenticationService } from './services/authentication.service';
 import { CardService } from './services/card.service';
 import { HandShakeService } from './services/handshake.service';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './login/login';
 import { CardProHttpProvider } from './helpers/cardProHttp';
 import { CryptoUtils } from './helpers/cryptoUtils';
 import { Carousel } from './home/carousel';

@@ -3,12 +3,12 @@
         <app-header></app-header>
     </div>
     <div class="android-drawer mdl-layout__drawer mdl-layout--small-screen-only">
-        <nav class="mdl-navigation"  *ngFor="let route of routes">
-            <a class="mdl-navigation__link"  *ngIf="route.data" routerLinkActive="active-link" routerLink="{{route.path}}">{{route.data.title}}</a>
-            
+        <nav class="mdl-navigation" *ngFor="let route of routes">
+            <a class="mdl-navigation__link" *ngIf="route.data" routerLinkActive="active-link" routerLink="{{route.path}}">{{route.data.title}}</a>
+
         </nav>
     </div>
-    <div class="android-content mdl-layout__content" (scroll) ="scroll($event)" #cardProMain>
+    <div class="android-content mdl-layout__content" (scroll)="scroll($event)" #cardProMain>
         <router-outlet></router-outlet>
         <app-footer></app-footer>
         <to-top></to-top>
