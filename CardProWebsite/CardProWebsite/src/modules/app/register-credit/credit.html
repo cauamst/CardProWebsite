@@ -14,7 +14,7 @@
                 <!-- button menu -->
                 <div class="mdl-grid">
                     <div class="mdl-cell--3-col mdl-row mdl-cell--2-col-tablet mdl-cell--2-col-phone card-pro-radio " *ngFor="let btn of button; let first = first;">
-                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="options-{{btn.id}}" (click)="getContentCard(btn.ContentType);getCardType(btn.id);showbenefit()">
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="options-{{btn.id}}" (click)="chooseOption(btn)">
                             <input type="radio" id="options-{{btn.id}}" class="mdl-radio__button" name="category" [checked]="first" />
                             <!-- intitial state checked using attribute checked  -->
                             <span class="mdl-radio__label font-size-label-radio">{{btn.name}}</span>
@@ -118,13 +118,12 @@
                             <li>Thu nhập hàng tháng từ 5 triệu VND trở lên (từ 7 triệu đối với Hà Nội và Hồ Chí Minh)</li>
                         </ul>
                     </div>
-
                 </div>
-
             </div>
 
             <ng-template #loadingCompare> <compare (AddCardToFormEvent)="addCardToForm($event)"></compare></ng-template>
-            <div *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack"><a href="#" class="mdl-back">Trở về</a></div>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small" 
+                    *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack">Trở về</button>
         </div>
         <div class="right-content mdl-cell--4-col mdl-cell--4-col-phone mdl-cell--8-col-tablet">
             <!-- REGISTER FORM -->
