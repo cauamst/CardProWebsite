@@ -503,8 +503,6 @@ ul {
     font-size: 12px!important ;
 }
 
-
-
 .curls {
     display: inline-block;
     background-color: #007E9F;
@@ -723,14 +721,22 @@ ul.thumbs img {
     padding-left: 40px;
     margin-top: 10px;
 }
-    .small-slider .mdl-icon-toggle__label {
-        position: absolute;
-        top: 35%;
-        font-size: 36px;
-        opacity: 1;
-        color: #000;
-        left : auto;
+    .small-slider .carousel-control {
+        background-image: none;
     }
+        .small-slider .carousel-control.left{
+            padding-left: 10px;
+        }
+        .small-slider .carousel-control.right {
+            padding-right: 10px;
+        } 
+        .small-slider .mdl-icon-toggle__label {
+            position: absolute;
+            top: 35%;
+            font-size: 36px;
+            opacity: 1;
+            color: #000;
+        }
 @media (min-width: 840px) {
     .mdl-grid {
          padding: 0px !important;  
@@ -791,4 +797,10 @@ left-content {
     .card-pro-radio {
         text-align : unset;
     }
+}
+
+.compare-button {
+    float: right;
+    margin-bottom: 20px;
+    margin-right: 40px;
 }

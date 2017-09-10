@@ -39,11 +39,14 @@
 
                             </ng-container>
                         </ul>
-                    </div>
 
+                    </div>
+                    <button class="compare-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored curls curl-top-left"
+                            (click)="showCompare = !showCompare; showButtonBack = !showButtonBack;ScrollToTop()">
+                        So sánh thẻ
+                    </button>
+                    <div class="fix"></div>
                 </div>
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored curls curl-top-left" (click)="showCompare = !showCompare; showButtonBack = !showButtonBack;ScrollToTop()" style="float:right">So sánh thẻ</button>
-                <div class="fix"></div>
                 <!-- show card benefit -->
                 <div id="container">
                     <div id="left" *ngIf="showBenefit">
