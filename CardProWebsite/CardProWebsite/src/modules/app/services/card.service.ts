@@ -3,7 +3,8 @@ import { Http, Headers, RequestOptions, Response, RequestOptionsArgs } from '@an
 import { Card } from '../models/card';
 import { DtoWrapper } from '../models/DtoWrapper';
 import { appConfig } from '../../../app.config';
-
+import { CARDES, CONTENT } from '../models/Card-Data';
+import { CARD, Content } from '../models/interface-card';
 @Injectable()
 export class CardService {
     constructor(private http: Http) { }
@@ -25,5 +26,28 @@ export class CardService {
         return this.http.post(appConfig.registerCard, { Data: data }, opts)
             .map((response: Response) => response.json());
     }
+    getAllCard(): Promise<CARD[]>
+    {
+        return Promise.resolve(CARDES);
+    }
+    
+    getCard(Id: number): Promise<CARD>
+    {
+        return this.getAllCard().then(card => card.find(CARD => CARD.Id === Id));
+    }
+    getCardType(type : number)
+    {
+        return this.getAllCard().then(cards => cards.filter(card => card.Type === type));
+    }
+    //serviceContent
+    getAllContent(): Promise<Content[]> {
+        return Promise.resolve(CONTENT);
+    }
+    getTypeContent(contentType: number) {
+        return this.getAllContent().then(Contents => Contents.filter(Content => Content.ContentType === contentType));
+    }
+
+
+
 
 }

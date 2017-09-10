@@ -7,7 +7,7 @@ import { appConfig } from '../../../app.config';
 @Component({
     selector: 'products', 
     templateUrl:'products.html',
-    styleUrls: ['products.scss']
+    styleUrls: ['product.scss']
 })
 
 export class ProductsComponent {

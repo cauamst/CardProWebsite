@@ -1,18 +1,19 @@
-.carousel{
-    overflow:hidden;
-    width: 100%;
+card_pro.carousel {
+    overflow: hidden;
+    margin-right: -8px;
+    margin-left: -8px;
 }
-.slides{
-    list-style:none;
-    position:relative;
-    width:500%; 
+.slides {
+    list-style: none;
+    position: relative;
+    width: 500%;
     /* Number of panes * 100% */
-    overflow:hidden; 
-    /* Clear floats */
-        /* Slide effect Animations*/
-    -moz-animation:carousel 30s infinite;
-    -webkit-animation:carousel 30s infinite;
-    animation:carousel 30s infinite;
+    overflow: hidden;
+    /*  floats */
+    /* Slide effect Animations*/
+    -moz-animation: carousel 30s infinite;
+    -webkit-animation: carousel 30s infinite;
+    animation: carousel 45s infinite;
 }
 .slides > li{
     position:relative;
@@ -27,7 +28,6 @@
 .carousel h2{
     margin-bottom: 0;
     font-size:1em;
-    padding:1.5em 0.5em 1.5em 0.5em;
     position:absolute;
     right:0px;
     bottom:0px;
@@ -38,21 +38,36 @@
     text-transform: uppercase;
 }
 @keyframes carousel{
-    0%    { left:10%; }
-    10%   { left:-5%; }
-    12.5% { left:-110%; }
-    23.5% { left:-100%; }
-    25%   { left:-200%; }
-    36%   { left:-210%; }
+    0%    { left:5%; }
+    10%   { left:-3%; }
+    12.5% { left:-100%; }
+    23.5% { left:-103%; }
+    25%   { left:-210%; }
+    36%   { left:-203%; }
     37.5% { left:-300%; }
-    48.5% { left:-310%; }
-    50%   { left:-400%; }
-    61%   { left:-410%; }
-    62.5% { left:-310%; }
-    73.5% { left:-300%; }
-    75%   { left:-210%; }
-    86%   { left:-200%; }
+    48.5% { left:-305%; }
+    50%   { left:-420%; }
+    61%   { left:-405%; }
+    62.5% { left:-320%; }
+    73.5% { left:-303%; }
+    75%   { left:-200%; }
+    86%   { left:-203%; }
     87.5% { left:-110%; }
-    98.5% { left:-100%; }
+    98.5% { left:-103%; }
     100%  { left:5%; }
 }
+img {
+    width : 100%;
+    height: 100%;
+}
+/*@media screen and (min-width: 1200px) {
+    img {
+        height : 400px;
+        width : 100%;
+    }
+}
+@media screen and (min-width: 992px) {
+    img {
+        
+    }
+}*/
