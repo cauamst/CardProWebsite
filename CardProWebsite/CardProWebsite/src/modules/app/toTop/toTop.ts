@@ -3,6 +3,7 @@ import { DOCUMENT } from '@angular/platform-browser';
 import { appConfig } from '../../../app.config';
 import { NotificationService } from '../../../shared/utils';
 import { Subscription } from "rxjs/Subscription";
+import { Router, NavigationEnd } from "@angular/router";
 @Component({
     selector: 'to-top',
     templateUrl: 'toTop.html',
@@ -12,7 +13,7 @@ export class ToTopComponent {
     display: boolean;
     private subscription: Subscription;
 
-    constructor( @Inject(DOCUMENT) private document: Document, private zone: NgZone,
+    constructor( @Inject(DOCUMENT) private document: Document, private router: Router, private zone: NgZone,
         private notificationService: NotificationService) { }
 
     ngOnInit() {
@@ -20,14 +21,19 @@ export class ToTopComponent {
         this.subscription = this.notificationService.notifyObservable$.subscribe((res) => {
             this.handleScroll(res);
         });
+        this.router.events.subscribe((evt) => {
+            if (!(evt instanceof NavigationEnd)) {
+                return;
+            }
+            this.zone.run(() => this.display = false);
+        });
     }
 
     public handleScroll(scrollPosition) {
         if (scrollPosition >= appConfig.minimumDistance) {
-            if (!this.display) {
                 this.zone.run(() => this.display = true);
-            }
-        } else if (this.display) {
+
+        } else {
             this.zone.run(() => this.display = false);
         }
     }

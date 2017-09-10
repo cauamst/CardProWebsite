@@ -52,13 +52,13 @@ export class AppComponent {
     public scrollToTop() {
         let scrollPosition = this.cardProMain.nativeElement.scrollTop;
         let id = setInterval(() => {
-            if (scrollPosition <= 0) {
-                clearInterval(id);
-            }
             scrollPosition = scrollPosition - 10;
             this.cardProMain.nativeElement.scrollTop = scrollPosition < 0
                 ? 0
                 : scrollPosition;
+            if (scrollPosition <= 0) {
+                clearInterval(id);
+            }
         }, 1)
     }
 }
