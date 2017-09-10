@@ -2,7 +2,6 @@
 import { HomeComponent } from './home/home';
 import { HelloComponent } from './home/hello';
 import { ProductsComponent } from './products/products';
-import { TechnologyComponent } from './technology/technology';
 import { CardRegistrationComponent } from './cardRegistration/cardRegistration.component';
 import { LoginComponent } from './login/login';
 import { AuthGuard } from './guard/auth.guard';
