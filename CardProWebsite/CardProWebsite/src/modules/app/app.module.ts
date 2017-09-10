@@ -2,7 +2,6 @@
 import { FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routing';
 import { HomeComponent } from './home/home';
-import { HelloComponent } from './home/hello';
 import { CardRegistrationComponent } from './cardRegistration/cardRegistration.component';
 import { ProductsComponent } from './products/products';
 import { AuthGuard } from './guard/auth.guard';
@@ -33,7 +32,6 @@ import { Loader } from './directives/loader.directive';
     declarations: [
         Loader,
         HomeComponent,
-        HelloComponent,
         ProductsComponent,
         LoginComponent,
         CardRegistrationComponent,

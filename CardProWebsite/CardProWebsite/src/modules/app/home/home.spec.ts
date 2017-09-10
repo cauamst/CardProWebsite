@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Data } from '@angular/router';
 import { TestBed } from '@angular/core/testing';
 
-import { HelloComponent } from './hello';
 import { HomeComponent } from './home';
 
 describe('Home Component', () => {
@@ -13,7 +12,7 @@ describe('Home Component', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [FormsModule],
-      declarations: [HelloComponent, HomeComponent, TestComponent],
+      declarations: [HomeComponent, TestComponent],
       providers: [{
           provide: ActivatedRoute,
           useValue: {

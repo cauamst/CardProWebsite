@@ -7,58 +7,54 @@ import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class HandShakeService {
-    constructor(private http: Http, private crypto: CryptoUtils) { }
+    private sharedSecret: string;
+    private sharedSecretBase64: string;
+    private ssId: string;
+
+    constructor(private http: Http) { }
 
     handShake(data: object) {
-        let ssId;
-        let base64Data = CryptoUtils.toBase64(JSON.stringify(data));
-        console.log("data: " + JSON.stringify(data));
-
-        let jwk = {
-            kty: 'oct',
-            alg: 'A256GCM',
-            kid: '4cA7CcxinDmcgiCHokULDrN1ktyTo2wl',
-            use: 'enc',
-            k: CryptoUtils.toBase64("4cA7CcxinDmcgiCHokULDrN1ktyTo2wl"),
-            length: 256
-        };
-
         return this.doHandShake()
-            .flatMap((obj) => {
-                ssId = obj.key;
+            .flatMap((ssId) => {
+                this.ssId = ssId;
+
                 return CryptoUtils
-                    .importKey(JSON.stringify(jwk), "json");
+                    .importKey(JSON.stringify({
+                        kty: 'oct',
+                        alg: 'A256GCM',
+                        kid: this.sharedSecret,
+                        use: 'enc',
+                        k: this.sharedSecretBase64,
+                        length: 256
+                    }), "json");
             })
-            .flatMap((jwk) => {
-                return CryptoUtils
-                    .encrypt(JSON.stringify(data), jwk)
+            .flatMap((pageJWK) => {
+                return CryptoUtils.encrypt(JSON.stringify(data), pageJWK)
             })
             .map((result) => {
-                console.log("encryptedData: " + JSON.stringify(result));
-                return { "ssId": ssId, "data": result };
+                return { "ssId": this.ssId, "data": result };
             });
     }
 
     private doHandShake() {
-        let sharedSecret = "4cA7CcxinDmcgiCHokULDrN1ktyTo2wl";
-        let sharedSecretBase64 = CryptoUtils.toBase64(sharedSecret);
-        let jwk = {
-            kty: 'oct',
-            alg: 'dir',
-            kid: '4cA7CcxinDmcgiCHokULDrN1ktyTo2wl',
-            k: sharedSecretBase64,
-            length: 256
-        };
+        this.sharedSecret = CryptoUtils.randomKeyString(32);
+        this.sharedSecretBase64 = CryptoUtils.toBase64(this.sharedSecret);
         let pageJWK: any;
 
         return CryptoUtils
-            .importKey(JSON.stringify(jwk), "json")
+            .importKey(JSON.stringify({
+                kty: 'oct',
+                alg: 'dir',
+                kid: this.sharedSecret,
+                k: this.sharedSecretBase64,
+                length: 256
+            }), "json")
             .flatMap((jwk) => {
                 pageJWK = jwk;
                 return CryptoUtils.importKey(HandShakeConfig.publicKey, "pem");
             })
             .flatMap((rsaKey) => {
-                let sharedSecretBuffer = CryptoUtils.toBufferFromBase64(sharedSecretBase64);
+                let sharedSecretBuffer = CryptoUtils.toBufferFromBase64(this.sharedSecretBase64);
                 return CryptoUtils.encrypt(sharedSecretBuffer, rsaKey);
             })
             .flatMap((encryptedContent) => {
@@ -68,20 +64,20 @@ export class HandShakeService {
                 return this.http.post(HandShakeConfig.handshakeUrl, handShakeDto)
                     .map((response: Response) => response.json())
                     .flatMap((dto: HandShake) => {
-                        return this.doChallenge(dto, pageJWK, sharedSecret)
+                        return this.doChallenge(dto, pageJWK)
                     })
             });
     }
 
-    private doChallenge(dto: HandShake, secretKey, pageKey) {
+    private doChallenge(dto: HandShake, pageJWK) {
         return CryptoUtils
-            .decryptFromKeyStore(dto.Challenge, secretKey)
+            .decryptFromKeyStore(dto.Challenge, pageJWK)
             .map((result) => {
                 let decryptedKey = result.plaintext.toString();
-                if (decryptedKey !== pageKey) {
+                if (decryptedKey !== this.sharedSecret) {
                     throw new Error("Handshake failed");
                 }
-                return { "key": dto.Key, "pageJWK": secretKey }
+                return dto.Key
             });
     }
 }

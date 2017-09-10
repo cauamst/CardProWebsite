@@ -1,4 +1,4 @@
-﻿import { Directive, AfterViewChecked, Injectable } from '@angular/core';
+import { Directive, AfterViewChecked, Injectable } from '@angular/core';
 import { JsonServiceClient } from 'servicestack-client';
 import { Subject } from "rxjs/Subject";
 
@@ -11,6 +11,7 @@ declare var componentHandler: any;
 @Directive({
     selector: '[mdl]'
 })
+
 export class MDL implements AfterViewChecked {
     ngAfterViewChecked() {
         if (componentHandler) {
