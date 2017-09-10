@@ -50,6 +50,15 @@ export class AppComponent {
     }
 
     public scrollToTop() {
-        this.cardProMain.nativeElement.scrollTop = 0;
+        let scrollPosition = this.cardProMain.nativeElement.scrollTop;
+        let id = setInterval(() => {
+            if (scrollPosition <= 0) {
+                clearInterval(id);
+            }
+            scrollPosition = scrollPosition - 10;
+            this.cardProMain.nativeElement.scrollTop = scrollPosition < 0
+                ? 0
+                : scrollPosition;
+        }, 1)
     }
 }
