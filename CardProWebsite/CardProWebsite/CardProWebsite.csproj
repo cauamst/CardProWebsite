@@ -154,8 +154,6 @@
     <Content Include="src\modules\app\carousel\carousel.html" />
     <Content Include="src\modules\app\directives\alert.component.html" />
     <Content Include="src\modules\app\directives\loading.directive.html" />
-    <Content Include="src\modules\app\home\hello.css" />
-    <Content Include="src\modules\app\home\hello.html" />
     <Content Include="src\modules\app\home\home.css" />
     <Content Include="src\modules\app\home\home.html" />
     <Content Include="src\modules\app\login\login.component.html" />
@@ -169,8 +167,6 @@
     <Content Include="src\modules\app\register-credit\dialog.html" />
     <Content Include="src\modules\app\toTop\toTop.css" />
     <Content Include="src\modules\app\toTop\toTop.html" />
-    <Content Include="src\modules\app\transformRefund\transformRefund.css" />
-    <Content Include="src\modules\app\transformRefund\transformRefund.html" />
     <Content Include="src\modules\app\transformSlider\transformSlider.html" />
     <Content Include="src\modules\app\_login\login.css" />
     <Content Include="src\modules\app\_login\login.html" />
@@ -206,7 +202,6 @@
     <TypeScriptCompile Include="src\modules\app\helpers\cardProHttp.ts" />
     <TypeScriptCompile Include="src\modules\app\helpers\cryptoUtils.ts" />
     <TypeScriptCompile Include="src\modules\app\home\carousel.ts" />
-    <TypeScriptCompile Include="src\modules\app\home\hello.ts" />
     <TypeScriptCompile Include="src\modules\app\home\home.spec.ts" />
     <TypeScriptCompile Include="src\modules\app\home\home.ts" />
     <TypeScriptCompile Include="src\modules\app\home\slide.ts" />
@@ -235,10 +230,7 @@
     <TypeScriptCompile Include="src\modules\app\services\card.service.ts" />
     <TypeScriptCompile Include="src\modules\app\services\handshake.service.ts" />
     <TypeScriptCompile Include="src\modules\app\services\pointTransform.service.ts" />
-    <TypeScriptCompile Include="src\modules\app\technology\technology.spec.ts" />
-    <TypeScriptCompile Include="src\modules\app\technology\technology.ts" />
     <TypeScriptCompile Include="src\modules\app\toTop\toTop.ts" />
-    <TypeScriptCompile Include="src\modules\app\transformRefund\transformRefund.ts" />
     <TypeScriptCompile Include="src\modules\app\transformSlider\TransformSlider.ts" />
     <TypeScriptCompile Include="src\common.d.ts" />
     <TypeScriptCompile Include="src\dtos.ts" />
