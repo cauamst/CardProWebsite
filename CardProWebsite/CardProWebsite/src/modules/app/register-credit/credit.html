@@ -124,7 +124,7 @@
 
             <ng-template #loadingCompare> <compare (AddCardToFormEvent)="addCardToForm($event)"></compare></ng-template>
             <a class="mdl-button mdl-js-button mdl-typography--text-uppercase send-button" *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack">
-                
+
                 <i class="material-icons mdl-icon-comback ">chevron_left</i>
                 Trở về trước
             </a>
@@ -217,15 +217,35 @@
                             <!--<label class="mdl-textfield__label" for="card">Thẻ tín dụng bạn chọn</label>-->
                         </div>
                         <div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label captcha-input"
+                                 [ngClass]="{
+                                    'has-error': captcha.invalid && (captcha.dirty || captcha.touched)
+                             }">
+                                <i class="mdl-textfield__icon material-icons">credit_card</i>
+                                <input class="mdl-textfield__input" type="text" name="captcha" formControlName="captcha" id="captcha">
+                                <label class="mdl-textfield__label" for="captcha">Mã xác nhận</label>
+                                <span class="form-control-feedback"
+                                      *ngIf="captcha.errors && (captcha.dirty || captcha.touched)">
+                                    <span class="mdl-textfield__error" *ngIf="captcha.errors.pattern">Nhập sai mã xác nhận</span>
+                                </span>
+                            </div>
+                            <img src="../../../assets/img/input-black.jpg" class="captcha-image" />
+                            <div class="fix"></div>
+                        </div>
+
+                        <div class="text-jutify">
                             <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-checkbox"
                                    for="checkbox2">
+
                                 <input type="checkbox" id="checkbox2" class="mdl-checkbox__input" formControlName="agree">
                                 <span class="mdl-checkbox__label">Tôi đồng ý rằng Sacombank có thể sử dụng thông tin trên đây để liên hệ với tôi nhằm giới thiệu những sản phẩm, dịch vụ và chương trình khuyến mãi của Sacombank từ nay trở về sau.</span>
                             </label>
                         </div>
 
                         <div class="fix"></div>
-                        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-register" [disabled]="!registerForm.valid" (click)="submitForm()">Đăng ký</button>
+                        <div>
+                            <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-register" [disabled]="!registerForm.valid" (click)="submitForm()">Đăng ký</button>
+                        </div>
                     </form>
                     <div *ngIf="titleResultFormCheck">
                         <p class="title-result-register">Cảm ơn Quý khách đã tin tưởng và lựa chọn Sacombank</p>

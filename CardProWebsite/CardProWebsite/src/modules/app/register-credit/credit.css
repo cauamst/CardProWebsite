@@ -939,3 +939,25 @@ left-content {
     padding: 5px 0 7px 5px;
     font-size : 12px !important; 
 }
+.captcha-image {
+    max-width: 110px;
+    max-height: 40px;
+    margin-top: 20px;
+    float: right;
+}
+.captcha-input {
+    float: left;
+    max-width: 105px;
+    margin-right: 20px;
+}
+
+    .captcha-input .mdl-textfield__input {
+        width: 100px;
+        margin-left: 30px;
+    }
+.captcha-input.is-focused .mdl-textfield__label:after {
+    width: 100%;
+}
+.text-jutify {
+    text-align :justify;
+}

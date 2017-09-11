@@ -56,6 +56,7 @@ export class CreditComponent implements OnInit {
     address: FormControl;
     salary: FormControl;
     agree: FormControl;
+    captcha:FormControl;
 
     showCompare = true;
     showButtonBack = false;
@@ -315,7 +316,8 @@ export class CreditComponent implements OnInit {
             phone: this.phone,
             address: this.address,
             salary: this.salary,
-            agree: this.agree
+            agree: this.agree,
+            captcha: this.captcha
         });
     }
 
@@ -326,6 +328,7 @@ export class CreditComponent implements OnInit {
         this.address = new FormControl('', Validators.required);
         this.salary = new FormControl('', Validators.required);
         this.agree = new FormControl('', Validators.requiredTrue);
+        this.captcha = new FormControl('', [Validators.pattern("-?[0-9]*(\.[0-9]+)?")]);
     }
 
     
