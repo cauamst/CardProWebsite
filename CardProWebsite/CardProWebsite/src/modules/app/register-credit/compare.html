@@ -1,7 +1,7 @@
 ﻿
 <div class="mdl-grid" style="width : 100%">
     <div class="mdl-cell--4-col mdl-cell--hide-tablet mdl-cell--hide-phone text-center-compare">
-        Lựa chọn và so sánh thẻ Sacombank phù hợp nhất với bạn
+        Lựa chọn thẻ và so sánh thẻ Sacombank phù hợp nhất với bạn
     </div>
     <div class="mdl-cell--hide-col-desktop mdl-cell--2-col-tablet mdl-cell--hide-phone">
         &nbsp;
@@ -16,8 +16,7 @@
                 <p class="none-margin">{{card1.Name}}</p>
             </div>
         </ng-template>
-        <br />
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small" *ngIf="!card1" (click)="showDialog1 = !showDialog1">Chọn thẻ</button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small mdl-button-pickcard" *ngIf="!card1" (click)="showDialog1 = !showDialog1">Chọn thẻ</button>
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small remove-button" *ngIf="card1" (click)="RemoveCard1()">Hủy chọn</button>
     </div>
     <div class="mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--2-col-phone text-center" *ngIf="card1" style="padding-left: 16px;">
@@ -30,8 +29,7 @@
                 <p class="none-margin">{{card2.Name}}</p>
             </div>
         </ng-template>
-        <br />
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small" *ngIf="!card2" (click)="showDialog2 = !showDialog2">Chọn thẻ</button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small mdl-button-pickcard" *ngIf="!card2" (click)="showDialog2 = !showDialog2">Chọn thẻ</button>
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small remove-button" *ngIf="card2" (click)="RemoveCard2()">Hủy chọn</button>
     </div>
 </div>
@@ -139,15 +137,14 @@
             </div>
         </div>
     </accordion-group>
-    <accordion-group heading="Quy đổi điểm thưởng trong năm" [isGroupOpen]="true">
+    <accordion-group heading="Quy đổi điểm thưởng trong năm" [isGroupOpen]="true" *ngIf="card1 || card2">
         <transform-slider *ngIf="card1 || card2" [transformTypeId]="1" [firstCardId]="card1 != null ? card1.Id : 0" [secondCardId]="card2 != null ? card2.Id : 0"></transform-slider>
     </accordion-group>
-    <accordion-group heading="Quy đổi hoàn tiền trong năm" [isGroupOpen]="true">
+    <accordion-group heading="Quy đổi hoàn tiền trong năm" [isGroupOpen]="true" *ngIf="card1 || card2">
         <transform-slider *ngIf="card1 || card2" [transformTypeId]="2" [firstCardId]="card1 != null ? card1.Id : 0" [secondCardId]="card2 != null ? card2.Id : 0"></transform-slider>
-        <br />
         <transform-slider *ngIf="card1 || card2" [transformTypeId]="2" [firstCardId]="card1 != null ? card1.Id : 0" [secondCardId]="card2 != null ? card2.Id : 0" [isOnlineExpenses]="true"></transform-slider>
     </accordion-group>
-    <accordion-group heading="Quy đổi dặm bay trong năm" [isGroupOpen]="true">
+    <accordion-group heading="Quy đổi dặm bay trong năm" [isGroupOpen]="true" *ngIf="card1 || card2">
         <transform-slider *ngIf="card1 || card2" [transformTypeId]="3" [firstCardId]="card1 != null ? card1.Id : 0" [secondCardId]="card2 != null ? card2.Id : 0"></transform-slider>
     </accordion-group>
     <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone">

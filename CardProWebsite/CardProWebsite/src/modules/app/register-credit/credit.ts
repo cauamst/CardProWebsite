@@ -72,13 +72,13 @@ export class CreditComponent implements OnInit {
         { id: 1, director: 'Dặm bay' },
         { id: 2, director: 'Hoàn tiền' },
         { id: 3, director: 'Điểm thưởng' },
-        { id: 4, director: 'Rút tiền mặt miễn phí' },
+        { id: 4, director: 'Rút tiền miễn phí' },
     ];
     button = [
         { id: 1, name: 'Dặm bay', ContentType: 1, idTT: 'Xem ưu điểm tiện ích dặm bay', option: "b1", for: "b1" },
         { id: 2, name: 'Hoàn tiền', ContentType: 2, idTT: 'Xem ưu điểm tiện ích hoàn tiền', option: "b2", for: "b2" },
         { id: 3, name: 'Điểm thưởng', ContentType: 3, idTT: 'xem ưu điểm tiện ích điểm thưởng', option: "b3", for: "b3" },
-        { id: 4, name: 'Rút tiền mặt miễn phí', ContentType: 4, idTT: 'Xem ưu điểm tiện ích rút tiền mặt miễn phí', option: "b4", for: "b4" }
+        { id: 4, name: 'Rút tiền miễn phí', ContentType: 4, idTT: 'Xem ưu điểm tiện ích rút tiền mặt miễn phí', option: "b4", for: "b4" }
     ];
     CardView = [
         { Id: 1, url: require("../../../assets/img/FamilyCard.jpg") },

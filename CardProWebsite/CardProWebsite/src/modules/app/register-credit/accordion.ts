@@ -32,7 +32,7 @@ export class Accordion {
                 <div class="panel panel-default" [ngClass]="{'panel-open': isOpen}">
                   <div class="panel-heading" (click)="toggleOpen($event);ChangeArrow()">
                     <h4 class="panel-title">
-                        <i class="material-icons">{{changeArrow}}</i> 
+                        <i class="material-icons accordion-icon">{{changeArrow}}</i> 
                       <p href tabindex="0" class="accordion-margin">{{heading}}</p>
                     </h4>
                   </div>
@@ -50,6 +50,11 @@ a {
 }
 .accordion-margin{
     padding-left: 30px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.accordion-icon {
+    margin-top: 5px;
 }
 .panel-title{
     text-transform: uppercase;

@@ -12,10 +12,10 @@ export enum Direction { UNKNOWN, NEXT, PREV }
       </ol>
       <div class="carousel-inner"><ng-content></ng-content></div>
                   <a class="left carousel-control" (click)="prev()" [hidden]="!slides.length">
-                         <i class = "mdl-icon-toggle__label material-icons size-icons">chevron_left</i>
+                         <i class = "mdl-icon-toggle__label material-icons size-icons left-icon">chevron_left</i>
                   </a>
                   <a class="right carousel-control" (click)="next()" [hidden]="!slides.length">
-                 <i class = "mdl-icon-toggle__label material-icons size-icons">chevron_right</i>
+                 <i class = "mdl-icon-toggle__label material-icons size-icons media-icon-right">chevron_right</i>
                  </a>
     </div>
   `,
@@ -94,6 +94,21 @@ a {
     top : 43%;
     color: #e0e0e0;
     right: -15%;
+}
+@media (max-width: 600px){
+    .left-icon {
+        left : 0;
+}
+}
+@media (min-width:600px) {
+    .media-icon-right {
+        left: 15%;    
+}
+}
+@media screen and (max-width: 599px) {
+    .media-icon-right {
+        right: 10%;    
+}
 }
 
 `]

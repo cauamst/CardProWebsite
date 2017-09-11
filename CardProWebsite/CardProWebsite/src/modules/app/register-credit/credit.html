@@ -13,21 +13,22 @@
                 <div class="fix"></div>
                 <!-- button menu -->
                 <div class="mdl-grid">
-                    <div class="mdl-cell--3-col mdl-row mdl-cell--2-col-tablet mdl-cell--2-col-phone card-pro-radio " *ngFor="let btn of button; let first = first;">
-                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="options-{{btn.id}}" (click)="chooseOption(btn)">
-                            <input type="radio" id="options-{{btn.id}}" class="mdl-radio__button" name="category" [checked]="first" />
-                            <!-- intitial state checked using attribute checked  -->
-                            <span class="mdl-radio__label font-size-label-radio">{{btn.name}}</span>
-                        </label>
-                    </div>
+                    <ul class="card-radio-ul">
+                        <li *ngFor="let btn of button; let first = first;" class="card-radio-li card-media-cell">
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="options-{{btn.id}}" (click)="chooseOption(btn)">
+                                <input type="radio" id="options-{{btn.id}}" class="mdl-radio__button" name="category" [checked]="first" />
+                                <span class="mdl-radio__label font-size-label-radio">{{btn.name}}</span>
+                            </label>
+                        </li>
+                    </ul>
                 </div>
                 <div id="thumbs" class="navigation" (window:resize)="onResize($event)">
                     <div class="small-slider">
                         <a class="left carousel-control" (click)="prevSmallSlider()" [hidden]="prevIsHide">
-                            <i class="mdl-icon-toggle__label material-icons size-icons">chevron_left</i>
+                            <i class="mdl-icon-toggle__label material-icons size-icons icon-left">chevron_left</i>
                         </a>
                         <a class="right carousel-control" (click)="nextSmallSlider()" [hidden]="nextIsHide">
-                            <i class="mdl-icon-toggle__label material-icons size-icons">chevron_right</i>
+                            <i class="mdl-icon-toggle__label material-icons size-icons icon-right">chevron_right</i>
                         </a>
                         <ul class="thumbs noscript">
                             <ng-container *ngFor="let cardview of cardes">
@@ -122,8 +123,11 @@
             </div>
 
             <ng-template #loadingCompare> <compare (AddCardToFormEvent)="addCardToForm($event)"></compare></ng-template>
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small" 
-                    *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack">Trở về</button>
+            <a class="mdl-button mdl-js-button mdl-typography--text-uppercase send-button" *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack">
+                
+                <i class="material-icons mdl-icon-comback ">chevron_left</i>
+                Trở về trước
+            </a>
         </div>
         <div class="right-content mdl-cell--4-col mdl-cell--4-col-phone mdl-cell--8-col-tablet">
             <!-- REGISTER FORM -->
@@ -161,7 +165,7 @@
                                 <span class="mdl-textfield__error" *ngIf="email.errors.pattern">Vui lòng nhập đúng định dạng như example@domain.com</span>
                             </span>
                         </div>
-                        
+
                         <div class="mdl-textfield mdl-js-textfield"
                              [ngClass]="{
                                     'has-error': phone.invalid && (phone.dirty || phone.touched)
@@ -174,7 +178,7 @@
                                 <span class="mdl-textfield__error" *ngIf="phone.errors.pattern">Bạn chưa nhập đúng định dạng số điện thoại độ dài 10 hoặc 11.</span>
                             </span>
                         </div>
-                        
+
                         <div class="mdl-textfield mdl-js-textfield"
                              [ngClass]="{
                                     'has-error': address.invalid && (address.dirty || address.touched)
@@ -190,7 +194,7 @@
                                 <span class="mdl-textfield__error" *ngIf="address.errors.required">Bạn chưa chọn địa chỉ cư trú.</span>
                             </span>
                         </div>
-                       
+
                         <div class="mdl-textfield mdl-js-textfield"
                              [ngClass]="{
                                     'has-error': salary.invalid && (salary.dirty || salary.touched)
@@ -198,7 +202,7 @@
                             <i class="mdl-textfield__icon material-icons">local_atm</i>
                             <select class="mdl-textfield__input" id="salary" name="salary" formControlName="salary">
                                 <option></option>
-                                <option *ngFor="let sala of Salary"  [value]="sala.id">{{sala.content}}</option>
+                                <option *ngFor="let sala of Salary" [value]="sala.id">{{sala.content}}</option>
                             </select>
                             <label class="mdl-textfield__label" for="salary">Mức thu nhập hàng tháng</label>
                             <span class="form-control-feedback"
@@ -206,7 +210,7 @@
                                 <span class="mdl-textfield__error" *ngIf="salary.errors.required">Bạn chưa chọn mức thu nhập hàng tháng.</span>
                             </span>
                         </div>
-                        
+
                         <div class="mdl-textfield mdl-js-textfield" *ngIf="selectedImage">
                             <i class="mdl-textfield__icon material-icons">credit_card</i>
                             <input class="mdl-textfield__input" type="text" id="card" name="selectedCard" [value]="selectedImage.Name" disabled />
