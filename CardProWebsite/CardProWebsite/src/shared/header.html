@@ -1,18 +1,19 @@
-﻿<!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
-            <!-- Title -->
-            <span class="mdl-layout-title">{{title}}</span>
-            <!-- Add spacer, to align navigation to the right -->
-            <div class="mdl-layout-spacer"></div>
-            <!-- Navigation. We hide it in small screens. -->
-            <nav class="mdl-navigation mdl-layout--large-screen-only">
-                <span *ngFor="let route of routes">
-                    <a *ngIf="route.data" class="mdl-layout__tab" [class.is-active]="isActive(route.path)"
-                       routerLink="{{route.path}}">{{route.data.title}}</a>
-                </span>
-            </nav>
-        </div>
-    </header>
+﻿
+<div class="mdl-layout__header-row">
+    <span class="android-title mdl-layout-title">
+        <a href="/">  <img class="android-logo-image" src="../assets/img/logo.png"></a>
+    </span>
+    <!-- Add spacer, to align navigation to the right in desktop -->
+    <div class="android-header-spacer mdl-layout-spacer"></div>
+    <!-- Navigation -->
+    <div class="android-navigation-container">
+        <nav class="android-navigation mdl-navigation">
+            <span *ngFor="let route of routes">
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" *ngIf="route.data" routerLinkActive="active-link" routerLink="{{route.path}}">{{route.data.title}}</a>
+            </span>
+        </nav>
+    </div>
+    <span class="android-mobile-title mdl-layout-title">
+        <a href="/"><img class="android-logo-image" src="../assets/img/logo.png"></a>
+    </span>
 </div>

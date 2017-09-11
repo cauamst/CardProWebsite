@@ -1,27 +1,76 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1">
-    <title>CardProWebsite</title>
-    <base href="/">
-
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="/dist/img/android-desktop.png">
-
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
-    <link rel="apple-touch-icon-precomposed" href="/dist/img/ios-desktop.png">
-
-    <link rel="shortcut icon" href="/dist/img/favicon.png">
-<link href="/dist/app.css" rel="stylesheet"></head>
-<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-
-    <app-root>loading...</app-root>
-	
-<script type="text/javascript" src="/dist/vendor.bundle.js"></script><script type="text/javascript" src="/dist/app.bundle.js"></script><script type="text/javascript" src="/dist/polyfills.bundle.js"></script></body>
-</html>
+<head><link href="/dist/app.css" rel="stylesheet"></head>Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module not found: Error: Can't resolve './src/assets/img/favicon.png' in 'D:\s  olutions\CardProWebsite\CardProWebsite\CardProWebsite':
+  Error: Can't resolve './src/assets/img/favicon.png' in 'D:\solutions\CardProWe  bsite\CardProWebsite\CardProWebsite'
+  
+  - compiler.js:76 
+    [CardProWebsite]/[html-webpack-plugin]/lib/compiler.js:76:16
+  
+  - Compiler.js:296 Compiler.<anonymous>
+    [CardProWebsite]/[webpack]/lib/Compiler.js:296:10
+  
+  - Compiler.js:499 
+    [CardProWebsite]/[webpack]/lib/Compiler.js:499:13
+  
+  - Tapable.js:202 next
+    [CardProWebsite]/[tapable]/lib/Tapable.js:202:11
+  
+  - CachePlugin.js:62 Compiler.<anonymous>
+    [CardProWebsite]/[webpack]/lib/CachePlugin.js:62:5
+  
+  - Tapable.js:206 Compiler.applyPluginsAsyncSeries
+    [CardProWebsite]/[tapable]/lib/Tapable.js:206:13
+  
+  - Compiler.js:496 
+    [CardProWebsite]/[webpack]/lib/Compiler.js:496:10
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [CardProWebsite]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:649 self.applyPluginsAsync.err
+    [CardProWebsite]/[webpack]/lib/Compilation.js:649:19
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [CardProWebsite]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:640 self.applyPluginsAsync.err
+    [CardProWebsite]/[webpack]/lib/Compilation.js:640:11
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [CardProWebsite]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:635 self.applyPluginsAsync.err
+    [CardProWebsite]/[webpack]/lib/Compilation.js:635:10
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [CardProWebsite]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:631 sealPart2
+    [CardProWebsite]/[webpack]/lib/Compilation.js:631:9
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [CardProWebsite]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:579 Compilation.seal
+    [CardProWebsite]/[webpack]/lib/Compilation.js:579:8
+  
+  - Compiler.js:493 
+    [CardProWebsite]/[webpack]/lib/Compiler.js:493:16
+  
+  - Tapable.js:289 
+    [CardProWebsite]/[tapable]/lib/Tapable.js:289:11
+  
+  - Compilation.js:481 _addModuleChain
+    [CardProWebsite]/[webpack]/lib/Compilation.js:481:11
+  
+  - Compilation.js:452 processModuleDependencies.err
+    [CardProWebsite]/[webpack]/lib/Compilation.js:452:13
+  
+  - next_tick.js:73 _combinedTickCallback
+    internal/process/next_tick.js:73:7
+  
+  - next_tick.js:104 process._tickCallback
+    internal/process/next_tick.js:104:9
+  
+</pre><script type="text/javascript" src="/dist/vendor.bundle.js"></script><script type="text/javascript" src="/dist/app.bundle.js"></script><script type="text/javascript" src="/dist/polyfills.bundle.js"></script>

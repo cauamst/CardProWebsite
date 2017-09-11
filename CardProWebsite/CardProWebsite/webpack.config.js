@@ -66,7 +66,7 @@ module.exports = {
         path: isProd ? root('wwwroot/dist') : root('dist'),
         publicPath: isProd?  '/Apps/cardProWebsite/dist/' : '/dist/',
         filename: isProd ? '[name].[chunkhash].bundle.js' : '[name].bundle.js',
-        chunkFilename: isProd ? '[name].[chunkhash].js' : '[name].js',
+        chunkFilename: isProd ? '[name].[chunkhash].js' : '[name].js'
     },
 
     devServer: {
@@ -159,8 +159,7 @@ module.exports = {
                 filename: isProd ? 'vendor.[chunkhash].bundle.js' : 'vendor.bundle.js'
             }),
             new HtmlWebpackPlugin({
-                template: 'index.template.ejs',
-                filename: '../index.html',
+                template: 'index.template.ejs',                filename: '../index.html',
                 inject: true
             }),
         ]),
@@ -172,6 +171,7 @@ module.exports = {
             new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
             new CopyWebpackPlugin(COPY_FILES)
         ]),
+
     ]
 };
 

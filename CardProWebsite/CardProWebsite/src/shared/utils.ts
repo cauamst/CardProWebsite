@@ -1,5 +1,6 @@
-﻿import { Directive, AfterViewChecked } from '@angular/core';
+import { Directive, AfterViewChecked, Injectable } from '@angular/core';
 import { JsonServiceClient } from 'servicestack-client';
+import { Subject } from "rxjs/Subject";
 
 declare var global; //populated from package.json/karma/globals
 
@@ -10,10 +11,36 @@ declare var componentHandler: any;
 @Directive({
     selector: '[mdl]'
 })
-export class MDL implements AfterViewChecked  {
-   ngAfterViewChecked() {
+        
+export class MDL implements AfterViewChecked {
+    ngAfterViewChecked() {
         if (componentHandler) {
             componentHandler.upgradeAllRegistered();
+        }
+    }
+}
+
+@Injectable()
+export class NotificationService {
+    private notify = new Subject<any>();
+    private needToTopNotify = new Subject<any>();
+    /**
+     * Observable string streams
+     */
+    notifyObservable$ = this.notify.asObservable();
+    needToTopObservable$ = this.needToTopNotify.asObservable();
+
+    constructor() { }
+
+    public notifyOther(data: any) {
+        if (data) {
+            this.notify.next(data);
+        }
+    }
+
+    public needToTop(data) {
+        if (data) {
+            this.needToTopNotify.next(data);
         }
     }
 }

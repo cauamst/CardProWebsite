@@ -1,15 +1,16 @@
 ﻿<div mdl class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <app-header></app-header>
-    <main class="mdl-layout__content">
-        <app-carousel></app-carousel>
-        <div class="mdl-layout__tab-panel is-active" id="overview">
-            <router-outlet></router-outlet>
-        </div>
-        <h4 style="text-align: center">
-            <img [src]="logoUrl" />
-            <a [href]="url">Learn about this Angular4 VS.NET template</a>
-        </h4>
+    <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+        <app-header></app-header>
+    </div>
+    <div class="android-drawer mdl-layout__drawer mdl-layout--small-screen-only">
+        <nav class="mdl-navigation" *ngFor="let route of routes">
+            <a class="mdl-navigation__link" *ngIf="route.data" routerLinkActive="active-link" routerLink="{{route.path}}">{{route.data.title}}</a>
+
+        </nav>
+    </div>
+    <div class="android-content mdl-layout__content" (scroll)="scroll($event)" #cardProMain>
+        <router-outlet></router-outlet>
         <app-footer></app-footer>
         <to-top></to-top>
-    </main>
+    </div>
 </div>

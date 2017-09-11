@@ -41,7 +41,6 @@ export class HandShakeService {
             .map((result) => {
                 cardProPageSession.ssId = this.ssId;
                 cardProPageSession.pageKey = this.sharedSecret;
-
                 return { "ssId": this.ssId, "data": result };
             });
     }
