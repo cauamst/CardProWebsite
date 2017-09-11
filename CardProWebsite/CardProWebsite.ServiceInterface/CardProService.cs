@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using ServiceStack;
+﻿using ServiceStack;
 using ServiceStack.DataAnnotations;
-using CardProWebsite.ServiceModel;
 
 namespace CardProWebsite.ServiceInterface
 {
@@ -14,15 +10,10 @@ namespace CardProWebsite.ServiceInterface
         public string PathInfo { get; set; }
     }
 
-    public class MyServices : Service
+    public class CardProService : Service
     {
         //Return default.html for unmatched requests so routing is handled on client
         public object Any(FallbackForClientRoutes request) =>
             new HttpResult(VirtualFileSources.GetFile("index.html"));
-
-        public object Any(Hello request)
-        {
-            return new HelloResponse { Result = $"Hello, {request.Name}!" };
-        }
     }
 }

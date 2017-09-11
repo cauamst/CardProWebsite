@@ -2,9 +2,12 @@
 import { Observable } from "rxjs/Observable";
 import jose = require('node-jose');
 
-export class CryptoUtils {
-    constructor() { }
+const characters: string = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
+export class CryptoUtils {
+    
+    constructor() { }
+    
     public static importKey(input: any, format: string): Observable<any>  {
         return Observable.fromPromise(jose.JWK.asKey(input, format));
     }
@@ -39,6 +42,12 @@ export class CryptoUtils {
 
     public static randomKeyBuffer(size: number)   {
         return jose.util.randomBytes(size);
+    }
+
+    public static randomKeyString(size: number) {
+        return Array(size).join().split(',').map(function () {
+            return characters.charAt(Math.floor(Math.random() * characters.length));
+        }).join('');
     }
 
     public static AesGcmDecrypt(key, cipherText): Observable<any>   {

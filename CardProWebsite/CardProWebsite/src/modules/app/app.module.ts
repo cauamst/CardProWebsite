@@ -2,10 +2,8 @@
 import { FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routing';
 import { HomeComponent } from './home/home';
-import { HelloComponent } from './home/hello';
 import { CardRegistrationComponent } from './cardRegistration/cardRegistration.component';
 import { ProductsComponent } from './products/products';
-import { TechnologyComponent } from './technology/technology';
 import { AuthGuard } from './guard/auth.guard';
 import { AlertService } from './services/alert.service';
 import { AuthenticationService } from './services/authentication.service';
@@ -34,9 +32,7 @@ import { Loader } from './directives/loader.directive';
     declarations: [
         Loader,
         HomeComponent,
-        HelloComponent,
         ProductsComponent,
-        TechnologyComponent,
         LoginComponent,
         CardRegistrationComponent,
         Carousel,

@@ -199,6 +199,7 @@ export class CreditComponent implements OnInit {
     onResize(event) {
         let wWidth = event.target.innerWidth;
         let nbOfActive = this.getNbOfActiveByWindowWidth(wWidth);
+        this.initialWidth = wWidth;
         if (nbOfActive != this.maximumActive) {
             this.maximumActive = nbOfActive;
             this.activateCards();
@@ -255,6 +256,12 @@ export class CreditComponent implements OnInit {
     }
 
     // ---- slider Region ------------------
+
+    chooseOption(btn: any) {
+        this.getContentCard(btn.ContentType);
+        this.getCardType(btn.id);
+        this.showbenefit();
+    }
 
     //get card by id for creditdetail page
     getCard(Id: number): void {

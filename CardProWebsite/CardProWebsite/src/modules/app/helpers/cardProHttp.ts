@@ -14,19 +14,19 @@ export class CardProHttp extends Http {
     }
 
     get(url: string, options?: RequestOptionsArgs): Observable<Response> {
-        return super.get(appConfig.apiUrl + url, this.addJwt(options)).catch(this.handleError);
+        return super.get(appConfig.apiUrl + url, options).catch(this.handleError);
     }
 
     post(url: string, body: any, options?: RequestOptionsArgs): Observable<Response> {
-        return super.post(appConfig.apiUrl + url, body, this.addJwt(options)).catch(this.handleError);
+        return super.post(appConfig.apiUrl + url, body, this.addCookiesToRequest(options)).catch(this.handleError);
     }
 
     put(url: string, body: any, options?: RequestOptionsArgs): Observable<Response> {
-        return super.put(appConfig.apiUrl + url, body, this.addJwt(options)).catch(this.handleError);
+        return super.put(appConfig.apiUrl + url, body, options).catch(this.handleError);
     }
 
     delete(url: string, options?: RequestOptionsArgs): Observable<Response> {
-        return super.delete(appConfig.apiUrl + url, this.addJwt(options)).catch(this.handleError);
+        return super.delete(appConfig.apiUrl + url, options).catch(this.handleError);
     }
 
     // private helper methods
@@ -46,12 +46,17 @@ export class CardProHttp extends Http {
         return options;
     }
 
+	private addCookiesToRequest(options?: RequestOptionsArgs) : RequestOptionsArgs {
+		options = options || new RequestOptions();
+		options.withCredentials = true;
+
+		return options;
+	}
     private handleError(error: any) {
         if (error.status === 401) {
-            // 401 unauthorized response so log user out of client
-            window.location.href = '/login';
+			// TODO: remove
+            alert("connect to server failed");
         }
-
         return Observable.throw(error._body);
     }
 }

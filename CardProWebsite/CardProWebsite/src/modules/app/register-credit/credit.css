@@ -47,19 +47,20 @@
 }
 
 .button-register {
-    float:right;
+    float: right;
     margin-top: 80px;
 }
 
 .send-button {
     float: right;
 }
+
 .mdl-textfield__input {
     margin-left: 10%;
     width: 90%;
 }
-    /*card*/
-    .mdl-card__media {
+/*card*/
+.mdl-card__media {
     margin: 5px;
     background-color: none !important;
 }
@@ -71,7 +72,7 @@
 
 img {
     width: 100%;
-    height : 200px;
+    height: 200px;
 }
 
 
@@ -110,25 +111,29 @@ img {
     word-wrap: break-word;
     margin-bottom: 20px;
 }
+
 .iconbenefit {
     float: left;
     padding-right: 15px;
     width: 25px;
     padding-top: 2px;
 }
+
 .textbenefit {
     font-size: 12px;
     padding-top: 3px;
     padding-left: 40px;
 }
+
 .mdl-textfield__label {
-    font-size : 12px !important;
+    font-size: 12px !important;
 }
+
 .material-icons {
-    font-size : 18px;
+    font-size: 18px;
 }
-    /*css3 card view */
-    #wrapper {
+/*css3 card view */
+#wrapper {
     margin: auto;
     background-color: black;
     width: 1100px;
@@ -234,6 +239,7 @@ img {
         left: 300px;
     }
 }
+
 .ul {
     list-style: outside none none;
     margin-bottom: 10px;
@@ -241,13 +247,15 @@ img {
     padding: 0 10px 15px;
     font-size: 12px !important;
 }
+
 .note {
     margin: 8px 20px;
     padding-bottom: 15px;
     font-size: 11px;
 }
+
 .mdl-button {
-    font-size : 12px !important;
+    font-size: 12px !important;
 }
 
 
@@ -362,6 +370,7 @@ img {
 section {
     padding: 0 20px;
 }
+
 .padding-top {
     margin-top: 20px;
 }
@@ -382,7 +391,7 @@ section {
     font-size: 0;
     content: " ";
     height: 0;
-    clear : both;
+    clear: both;
 }
 
 .fix {
@@ -402,8 +411,8 @@ section {
 .mdl-row {
     border-spacing: 10px;
     display: inline;
-    
 }
+
 .none-upcase-button {
     text-transform: none !important;
 }
@@ -417,16 +426,20 @@ section {
     display: table;
     width: 100%;
 }
+
 .mdl-checkbox__label {
-    font-size : 12px !important; 
+    font-size: 12px !important;
 }
+
 #size18 {
-    font-size : 18px !important;
+    font-size: 18px !important;
 }
+
 #width100PercentTest {
     margin-left: 20px;
     margin-right: 15px;
 }
+
 #Lnav-heading {
     /*float: left;*/
     font-family: Verdana, arial, helvetica, sans-serif;
@@ -437,6 +450,7 @@ section {
         font-weight: normal;
         color: #000;
     }
+
 h4.lvn-heading:before {
     content: '';
     position: absolute;
@@ -445,6 +459,7 @@ h4.lvn-heading:before {
     top: 100%;
     left: 0;
 }
+
 h4.lvn-heading {
     font-family: verdana,arial,helvetica, sans-serif;
     font-size: 15px;
@@ -466,6 +481,7 @@ h4.lvn-heading {
         font-weight: normal;
         color: #fff;
     }
+
 h4.lvn:before {
     content: '';
     position: absolute;
@@ -491,27 +507,27 @@ h4.lvn {
     -webkit-box-shadow: 0px 0px 3px 2px #999;
     box-shadow: 0px 0px 3px 2px #999;
 }
+
 .margin-left {
     margin-left: 35px !important;
+}
 
-}
 .mdl-additiona {
-    margin-top : 20px;
+    margin-top: 20px;
 }
+
 ul {
     margin-top: 20px;
-    font-size: 12px!important ;
+    font-size: 12px !important;
 }
-
-
 
 .curls {
     display: inline-block;
     background-color: #007E9F;
     text-decoration: none;
     color: white;
-    margin-top : 5px;
-    margin-bottom : 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .curl-top-left {
@@ -527,18 +543,22 @@ ul {
     position: absolute;
     line-height: 1.5;
 }
+
 .mdl-textfield__label {
-    left : 30px !important;
+    left: 30px !important;
 }
+
 .mdl-textfield.is-invalid .mdl-textfield__icon {
     color: #de3226 !important;
 }
+
 .mdl-textfield.is-disabled .mdl-textfield__icon {
     color: rgba(0, 0, 0, 0.26) !important;
 }
+
 .mdl-checkbox__box-outline {
-    width : 14px !important;
-    height : 14px !important;
+    width: 14px !important;
+    height: 14px !important;
 }
 /*carousel*/
 .containerr {
@@ -565,6 +585,7 @@ ul {
         top: 10px;
         border: 2px solid black;
     }
+
         #carousel figure:nth-child(1) {
             transform: rotateY( 0deg );
         }
@@ -600,9 +621,10 @@ ul {
         #carousel figure:nth-child(9) {
             transform: rotateY( 320deg );
         }
+
 .mdl-image {
-    width : 250px;
-    height : 150px;
+    width: 250px;
+    height: 150px;
 }
 
 
@@ -618,13 +640,14 @@ ul {
     color: white;
     position: relative;
     margin-top: 10px;
-    margin:5px;
+    margin: 5px;
 }
 
 .row li {
     width: 20%;
     float: left;
 }
+
 .mdl-img {
     border: 0 none;
     height: auto;
@@ -638,14 +661,15 @@ ul {
 }
 
 #margin-bottom-benefit {
-    margin-bottom : 10px;
+    margin-bottom: 10px;
 }
+
 #padding-none {
-    padding-top : unset;
+    padding-top: unset;
 }
 /*image card benefit*/
 ul.thumbs {
-    clear : both;
+    clear: both;
     padding-left: 0px;
     margin: 0 auto;
 }
@@ -680,9 +704,11 @@ ul.thumbs img {
     margin: 0px auto;
     cursor: pointer;
 }
+
 .span-left {
     margin-left: 30px;
 }
+
 .carousel-control.right {
     right: 0;
     left: auto;
@@ -712,7 +738,6 @@ ul.thumbs img {
     font-size: 20px;
     color: #fff;
     text-shadow: rgba(25, 23, 23, 0.8);
-    
     background-color: rgba(0,0,0,0);
     filter: alpha(opacity=50);
     opacity: 0.5;
@@ -723,17 +748,30 @@ ul.thumbs img {
     padding-left: 40px;
     margin-top: 10px;
 }
+
+    .small-slider .carousel-control {
+        background-image: none;
+    }
+
+        .small-slider .carousel-control.left {
+            padding-left: 10px;
+        }
+
+        .small-slider .carousel-control.right {
+            padding-right: 10px;
+        }
+
     .small-slider .mdl-icon-toggle__label {
         position: absolute;
         top: 35%;
         font-size: 36px;
         opacity: 1;
         color: #000;
-        left : auto;
     }
+
 @media (min-width: 840px) {
     .mdl-grid {
-         padding: 0px !important;  
+        padding: 0px !important;
     }
 }
 
@@ -742,11 +780,13 @@ ul.thumbs img {
 .selected {
     box-shadow: 0px 12px 22px 1px #333;
 }
+
 .font-size-label-radio {
-    font-size : 12px !important;
+    font-size: 12px !important;
 }
+
 .mdl-textfield.has-error .mdl-textfield__icon {
-    color: #de3226 !important; 
+    color: #de3226 !important;
 }
 
 .mdl-textfield.has-error .mdl-textfield__input {
@@ -760,7 +800,7 @@ ul.thumbs img {
 }
 
 .cardPro-form-block {
-    width: auto; 
+    width: auto;
 }
 
 .credit-grid {
@@ -775,20 +815,33 @@ left-content {
     .mdl-grid {
         padding: 0px !important;
     }
+
     .left-content {
         margin-right: 15px;
     }
 }
+
 @media (max-width: 840px) {
     .right-content {
         margin-top: 15px;
     }
 }
+
 .card-pro-radio {
-    text-align:center;
+    text-align: center;
 }
+
 @media (max-width: 480px) {
     .card-pro-radio {
-        text-align : unset;
+        text-align: unset;
     }
 }
+
+.compare-button-block {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+    .compare-button-block button {
+        background-color: #4490c7;
+    }

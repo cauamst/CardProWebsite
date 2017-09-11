@@ -1,4 +1,4 @@
-//import "material-design-lite/dist/material.deep_purple-pink.min.css";
+﻿//import "material-design-lite/dist/material.deep_purple-pink.min.css";
 import "./app.css";
 //import "material-design-lite/material.min.js";
 
@@ -11,7 +11,7 @@ import { MainModule } from './main.module';
 
 import { enableProdMode } from '@angular/core';
 if (process.env.NODE_ENV === 'production') {
-  enableProdMode();
+    enableProdMode();
 }
 
 platformBrowserDynamic().bootstrapModule(MainModule);

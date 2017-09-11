@@ -64,7 +64,7 @@ module.exports = {
 
     output: {
         path: isProd ? root('wwwroot/dist') : root('dist'),
-        publicPath: '/dist/',
+        publicPath: isProd?  '/Apps/cardProWebsite/dist/' : '/dist/',
         filename: isProd ? '[name].[chunkhash].bundle.js' : '[name].bundle.js',
         chunkFilename: isProd ? '[name].[chunkhash].js' : '[name].js'
     },
@@ -114,7 +114,7 @@ module.exports = {
             },
             {
                 test: /\.(eot|ttf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-                loader: isProd ? 'url-loader?limit=10000&name=img/[name].[hash].[ext]' : 'file-loader?name=img/[name].[ext]'
+                loader: isProd ? 'url-loader?limit=10000&name=fonts/[name].[hash].[ext]' : 'file-loader?name=fonts/[name].[ext]'
             },
             {
                 test: /\.(css|sass|scss)$/,
@@ -142,7 +142,8 @@ module.exports = {
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {
-                'NODE_ENV': JSON.stringify(isProd ? 'production' : isTest ? 'testing' : 'development')
+                'NODE_ENV': JSON.stringify(isProd ? 'production' : isTest ? 'testing' : 'development'),
+                'API_URL': JSON.stringify(!isProd ? "http://localhost:9999/api/" : "https://cardtest.sacombank.com.vn:9443/Apps/CardProHost/api/")
             }
         }),
         ...when(!isTest, [
