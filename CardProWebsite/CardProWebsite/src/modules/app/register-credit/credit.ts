@@ -45,6 +45,10 @@ export class CreditComponent implements OnInit {
     private registerInfo: CreditCardForm = new CreditCardForm();
     formIsSubmitting: boolean;
 
+    titleResultFormCheck: boolean = false;
+    titleForm: string = "Thông tin khách hàng";
+    ResultRegister: string;
+
     registerForm: FormGroup;
     name: FormControl;
     email: FormControl;
@@ -123,7 +127,8 @@ export class CreditComponent implements OnInit {
         { id: 19, content: 'DAK LAK' },
         { id: 20, content: 'DAK NONG' },
         { id: 21, content: 'Điện Biên' },
-        { id: 22, content: 'Hà Nội' }
+        { id: 22, content: 'Hà Nội' },
+        {id : 23,content : 'Thành phố HCM'}
     ];
 
     constructor(
@@ -323,10 +328,29 @@ export class CreditComponent implements OnInit {
         this.agree = new FormControl('', Validators.requiredTrue);
     }
 
+    
     submitForm(): void {
         this.formIsSubmitting = true;
+        if ((this.salary.value == "1") && (this.address.value == "23" || this.address.value == "22")) {
+            this.ResultRegister = "Cảm ơn bạn đã quan tâm đến thẻ tín dụng Sacombank. Chúng tôi rất tiếc không thể xử lý đơn đăng ký do bạn chưa đủ điều kiện tham gia. Vui lòng quay lại sau.";
+        }
+        else {
+            this.ResultRegister = "Chúc mừng bạn đã đăng ký thành công, vui lòng chờ nhân viên gọi hỗ trợ";
+        }
         setTimeout(() => {
             this.formIsSubmitting = false;
+            if (this.titleResultFormCheck = false) {
+                this.titleForm = "Thông tin khách hàng";
+            } else {
+                this.titleForm = "Kết quả đăng ký";
+            }
+            this.titleResultFormCheck = true;
         }, 5000);
+       
+    }
+    ClearInput() {
+        this.titleResultFormCheck = !this.titleResultFormCheck;
+        this.titleForm = "Thông tin khách hàng";
+        this.registerForm.reset();
     }
 }

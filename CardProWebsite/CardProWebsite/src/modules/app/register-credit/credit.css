@@ -930,3 +930,12 @@ left-content {
 .icon-right {
     right: 25%;
 }
+.title-result-register {
+    font-size: 20px;
+    padding: 5px 0 7px 5px;
+    color: #002C73
+}
+.content-result {
+    padding: 5px 0 7px 5px;
+    font-size : 12px !important; 
+}
