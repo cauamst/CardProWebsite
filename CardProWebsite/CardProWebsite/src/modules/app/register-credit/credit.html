@@ -236,16 +236,17 @@
                         <div class="text-jutify">
                             <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-checkbox"
                                    for="checkbox2">
-
                                 <input type="checkbox" id="checkbox2" class="mdl-checkbox__input" formControlName="agree">
-                                <span class="mdl-checkbox__label">Tôi đồng ý rằng Sacombank có thể sử dụng thông tin trên đây để liên hệ với tôi nhằm giới thiệu những sản phẩm, dịch vụ và chương trình khuyến mãi của Sacombank từ nay trở về sau.</span>
                             </label>
+                            <span class="mdl-checkbox__label text-checkbox">Tôi đồng ý rằng Sacombank có thể sử dụng thông tin trên đây để liên hệ với tôi nhằm giới thiệu những sản phẩm, dịch vụ và chương trình khuyến mãi của Sacombank từ nay trở về sau.</span>
                         </div>
-
                         <div class="fix"></div>
                         <div>
+                            
                             <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-register" [disabled]="!registerForm.valid" (click)="submitForm()">Đăng ký</button>
+                            <div class="fix"></div>
                         </div>
+                            
                     </form>
                     <div *ngIf="titleResultFormCheck">
                         <p class="title-result-register">Cảm ơn Quý khách đã tin tưởng và lựa chọn Sacombank</p>

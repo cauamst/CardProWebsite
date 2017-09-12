@@ -48,7 +48,6 @@
 
 .button-register {
     float: right;
-    margin-top: 80px;
 }
 
 .send-button {
@@ -960,4 +959,10 @@ left-content {
 }
 .text-jutify {
     text-align :justify;
+}
+.margin-checkbox {
+    position : absolute;
+}
+.text-checkbox {
+    margin-left : 20px;
 }
