@@ -1,7 +1,7 @@
 ﻿<div class="mdl-grid">
     <div class="mdl-cell--12-col">
-        <div class="mdl-textfield mdl-js-textfield">
-            <label class="" for="amounts">{{transformTitle}} :</label>
+        <div class="mdl-textfield mdl-js-textfield transform-width">
+            <label class="label-color" for="amounts">{{transformTitle}} :</label>
             <input #textInput class="mdl-textfield__input text-center" type="text" id="amounts" [(ngModel)]="formattedAmount" (ngModelChange)="onInputChange($event)"/>
         </div>
         <input #sliderInput class="mdl-slider mdl-js-slider" type="range"
@@ -12,13 +12,13 @@
             <span class="max-value">100.000.000 VNĐ</span>
         </div>
     </div>
-    <div class="mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-phone" style="width: 100%;">
+    <div class="mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone transform-top">
         
-        <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet mdl-cell-border}">{{transformLabel}}</div>
+        <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet mdl-cell-border">{{transformLabel}}</div>
         <div class="row mdl-cell-border" style="width: 100%">
-            <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--3-col-tablet transform-left">{{transformLabel}}</div>
-            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet color-text">{{firstCardPoints |number :'.0-3'}}</div>
-            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--3-col-tablet color-text">{{secondCardPoints |number :'.0-3'}}</div>
+            <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--4-col-tablet transform-left">{{transformLabel}}</div>
+            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet color-text">{{firstCardPoints |number :'.0-3'}}</div>
+            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet color-text">{{secondCardPoints |number :'.0-3'}}</div>
         </div>
     </div>
    

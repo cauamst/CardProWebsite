@@ -946,7 +946,7 @@ left-content {
 }
 .captcha-input {
     float: left;
-    max-width: 105px;
+    max-width: 100px;
     margin-right: 20px;
 }
 
@@ -965,4 +965,9 @@ left-content {
 }
 .text-checkbox {
     margin-left : 20px;
+}
+@media screen and (max-width: 839px) {
+    .captcha-image {
+        float : none;
+    }
 }

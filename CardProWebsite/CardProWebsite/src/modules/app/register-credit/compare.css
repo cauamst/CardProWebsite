@@ -9,7 +9,6 @@
 .square {
     overflow: hidden;
 }
-
 .card-compare {
     max-height: 100px;
     overflow: hidden;
@@ -24,18 +23,21 @@
     text-align: justify;
 }
 
-.none-border {
+.none-border.row div {
     border: none !important;
+}
+.none-border-bottom {
+    border-bottom : none !important;
 }
 
 .text-center {
     text-align: center;
-    font-weight : bold;
+    color: #0066b3;
 }
 
 .mdl-text-left {
     text-align: left;
-    font-weight: bold;
+    color: #0066b3;
 }
 
 img {
@@ -85,9 +87,8 @@ img {
         border-top: solid 1px #ececec;
         border-left: solid 1px #ececec;
     }
-
-.bgr {
-    background: #f9f9f9;
+.mdl-grid-full {
+    width : 100%;
 }
 
 .dialog-content {
@@ -121,7 +122,7 @@ img {
 }
 
 .mdl-button-pickcard {
-    margin-top: 28px !important;
+    margin-top: 43px !important;
 }
 
 .image {
@@ -164,4 +165,10 @@ img {
 
 .text-align {
     text-align: justify !important;
+}
+.btn-add1 {
+    background: rgb(234, 135, 10) !important;
+}
+.btn-add2 {
+    background: rgb(234, 135, 10) !important;
 }

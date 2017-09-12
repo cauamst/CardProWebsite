@@ -6,6 +6,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Location } from '@angular/common';
 import { Accordion, AccordionGroup } from './accordion';
 import { CreditCardForm } from '../models/creditCardForm';
+import { NotificationService } from '../../../shared/utils';
 
 import {
     ReactiveFormsModule,
@@ -136,7 +137,8 @@ export class CreditComponent implements OnInit {
         private CardService: CardService,
         private route: ActivatedRoute,
         private location: Location,
-        private zone: NgZone
+        private zone: NgZone,
+        private NotificationService: NotificationService
     ) {
         this.initialWidth = window.innerWidth; 
         this.addNewSlide();
@@ -300,13 +302,12 @@ export class CreditComponent implements OnInit {
         this.selectedImage = card;
     }
 
-    ScrollToTop() {
-        window.scrollTo(0, 0);
+    moveToTopButton() {
+        this.NotificationService.needToTop(true);
     }
 
     addCardToForm(card: CARD) {
         this.selectedImage = card;
-        console.log(card);
     }
 
     CreateRegisterForm() {
@@ -328,7 +329,7 @@ export class CreditComponent implements OnInit {
         this.address = new FormControl('', Validators.required);
         this.salary = new FormControl('', Validators.required);
         this.agree = new FormControl('', Validators.requiredTrue);
-        this.captcha = new FormControl('', [Validators.pattern("-?[0-9]*(\.[0-9]+)?")]);
+        this.captcha = new FormControl('', [Validators.required]);
     }
 
     
