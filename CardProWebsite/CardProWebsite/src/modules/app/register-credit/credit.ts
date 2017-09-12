@@ -33,7 +33,7 @@ export class CreditComponent implements OnInit {
     showDialog = false;
     contents: Content[];
     currentContentType: number = 1;
-
+    captchaImgUrl = require("../../../assets/img/input-black.jpg")
     // Slider Region
     private maximumActive: number = 4;
     private leftMostIndex: number;
