@@ -18,10 +18,14 @@
 .mdl-layout__header {
     z-index: 1 !important;
 }
+
 /*Template Android*/
-@media screen and (min-width: 901px) {
+.mdl-layout__drawer-button {
+    display: none !important;
+}
+@media screen and (max-width: 900px) {
     .mdl-layout__drawer-button {
-        display: none;
+        display: block !important;
     }
 }
 .is-loading-state{
