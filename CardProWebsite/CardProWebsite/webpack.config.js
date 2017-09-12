@@ -114,7 +114,7 @@ module.exports = {
             },
             {
                 test: /\.(eot|ttf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-                loader: isProd ? 'url-loader?limit=10000&name=fonts/[name].[hash].[ext]' : 'file-loader?name=fonts/[name].[ext]'
+                loader: isProd ? 'file-loader?name=fonts/[name].[hash].[ext]' : 'file-loader?name=fonts/[name].[ext]'
             },
             {
                 test: /\.(css|sass|scss)$/,

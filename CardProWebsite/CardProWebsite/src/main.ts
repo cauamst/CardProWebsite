@@ -1,6 +1,8 @@
-//import "material-design-lite/dist/material.deep_purple-pink.min.css";       
 import "./app.css";
-//import "material-design-lite/material.min.js";
+import './assets/css/material-design-icons.css';
+import "./assets/css/material.min.css";
+import "./assets/css/styles.css";
+import "material-design-lite/material.min.js";
 
 import 'zone.js';
 import 'reflect-metadata';
