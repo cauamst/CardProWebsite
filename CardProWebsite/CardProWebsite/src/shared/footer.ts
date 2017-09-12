@@ -4,34 +4,43 @@
     selector: 'app-footer',
     template: `
         <footer class="android-footer mdl-mega-footer">
-            <div class="mdl-mega-footer--middle-section">
-                <p class="mdl-typography--font-light"> 266-268, Nam Kỳ Khởi Nghĩa, Phường 8, Quận 3, Hồ Chí Minh: Ngân hàng Sacombank, Trung tâm thẻ Sacombank.</p>
+            <div class="mdl-mega-footer--top-section">
+            <div class="mdl-mega-footer--left-section">
+              <button class="mdl-mega-footer--social-btn"></button>
+              &nbsp;
+              <button class="mdl-mega-footer--social-btn"></button>
+              &nbsp;
+              <button class="mdl-mega-footer--social-btn"></button>
             </div>
+          </div>
             <div class="mdl-mega-footer--bottom-section">
- <a class="android-link mdl-typography--font-light" href="__">Trang chủ</a>
-                <a class="android-link mdl-typography--font-light" href="__">Privacy Policy</a>
+                <a class="android-link mdl-typography--font-light" href="__">Trang chủ</a>
+                <a class="android-link mdl-typography--font-light" href="__">Liên hệ</a>
                 <a class="android-link android-link-menu mdl-typography--font-light" id="version-dropdown">
-                    Versions
+                   Trợ giúp
                     <i class="material-icons">arrow_drop_up</i>
                 </a>
                
                 <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="version-dropdown">
-                    <li class="mdl-menu__item">5.0 Lollipop</li>
-                    <li class="mdl-menu__item">4.4 KitKat</li>
-                    <li class="mdl-menu__item">4.3 Jelly Bean</li>
-                    <li class="mdl-menu__item">Android History</li>
+                    <li class="mdl-menu__item">Trang chủ</li>
+                    <li class="mdl-menu__item">Đăng ký nhanh</li>
+                    <li class="mdl-menu__item">Khuyến mãi</li>
+                    <li class="mdl-menu__item">Sản phẩm</li>
                 </ul>
                 <a class="android-link android-link-menu mdl-typography--font-light" id="developers-dropdown">
-                    For Developers
+                    Điều hướng nhanh
                     <i class="material-icons">arrow_drop_up</i>
                 </a>
                 <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="developers-dropdown">
-                    <li class="mdl-menu__item">App developer resources</li>
-                    <li class="mdl-menu__item">Android Open Source Project</li>
-                    <li class="mdl-menu__item">Android SDK</li>
-                    <li class="mdl-menu__item">Android for Work</li>
+                    <li class="mdl-menu__item">Trang chủ</li>
+                    <li class="mdl-menu__item">Đăng ký thẻ</li>
+                    <li class="mdl-menu__item">Trợ giúp</li>
+                    <li class="mdl-menu__item">Liên hệ</li>
                 </ul>
                
+            </div>
+            <div class="mdl-mega-footer--middle-section">
+                <p class="mdl-typography--font-light">Địa chỉ hội sở: 266-268, Nam Kỳ Khởi Nghĩa, Phường 8, Quận 3, Hồ Chí Minh: Ngân hàng Sacombank, Trung tâm thẻ Sacombank.</p>
             </div>
         </footer>
     `,

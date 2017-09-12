@@ -48,7 +48,6 @@
 
 .button-register {
     float: right;
-    margin-top: 80px;
 }
 
 .send-button {
@@ -63,6 +62,9 @@
 .mdl-card__media {
     margin: 5px;
     background-color: none !important;
+}
+.mdl-icon-comback {
+    margin-bottom: 2px;
 }
 
 .mdl-card-margin {
@@ -528,6 +530,7 @@ ul {
     color: white;
     margin-top: 5px;
     margin-bottom: 5px;
+    margin-right : 10px;
 }
 
 .curl-top-left {
@@ -672,6 +675,7 @@ ul.thumbs {
     clear: both;
     padding-left: 0px;
     margin: 0 auto;
+    text-align:center;
 }
 
     ul.thumbs li {
@@ -745,8 +749,6 @@ ul.thumbs img {
 
 .small-slider {
     position: relative;
-    padding-left: 40px;
-    margin-top: 10px;
 }
 
     .small-slider .carousel-control {
@@ -763,11 +765,23 @@ ul.thumbs img {
 
     .small-slider .mdl-icon-toggle__label {
         position: absolute;
-        top: 35%;
+        top: 32%;
         font-size: 36px;
         opacity: 1;
         color: #000;
+        right : 25%;
     }
+        .small-slider .mdl-icon-toggle__label:hover {
+            color: #2347b2;
+            font-size: 48px;
+        }
+@media screen and (max-width : 379px ) {
+    .small-slider .mdl-icon-toggle__label {
+        right: 100%;
+    }
+}
+
+
 
 @media (min-width: 840px) {
     .mdl-grid {
@@ -839,9 +853,121 @@ left-content {
 
 .compare-button-block {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
     .compare-button-block button {
         background-color: #4490c7;
     }
+
+.card-radio-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.card-radio-li {
+    display: inline-block;
+}
+@media screen and (min-width: 980px) {
+    .card-radio-li {
+        margin-left: 30px;
+        padding-left: 30px;
+    }
+}
+@media screen and (min-width: 840px) and (max-width: 979px) {
+    .card-radio-li {
+        margin-left: 10px;
+        padding-left: 30px;
+    }
+}
+@media screen and (min-width:714px) and (max-width: 839px) {
+    .card-radio-li {
+        margin-left: 50px;
+        padding-left: 30px;
+    }
+}
+@media screen and (min-width:613px) and (max-width: 713px) {
+    .card-radio-li {
+        margin-left: 20px;
+        padding-left: 30px;
+    }
+}
+@media screen and (max-width: 612px) and (min-width:350px) {
+    .card-media-cell {
+        width: 50%;
+    }
+    .card-radio-ul {
+        padding-left : 30px;
+    }
+}
+@media screen and (max-width: 611px) and (min-width:500px) {
+    .card-media-cell {
+        width: 50%;
+    }
+
+    .card-radio-ul {
+       margin-left : 60px;
+    }
+}
+
+@media (max-width: 499px) {
+    .card-media-cell {
+        width: 50%;
+    }
+    .card-radio-li {
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .card-radio-ul {
+        margin-left: 20px;
+    }
+}
+.icon-left {
+    left : 0 !important;
+}
+.icon-right {
+    right: 25%;
+}
+.title-result-register {
+    font-size: 20px;
+    padding: 5px 0 7px 5px;
+    color: #002C73
+}
+.content-result {
+    padding: 5px 0 7px 5px;
+    font-size : 12px !important; 
+}
+.captcha-image {
+    max-width: 110px;
+    max-height: 40px;
+    margin-top: 20px;
+    float: right;
+}
+.captcha-input {
+    float: left;
+    max-width: 100px;
+    margin-right: 20px;
+}
+
+    .captcha-input .mdl-textfield__input {
+        width: 100px;
+        margin-left: 30px;
+    }
+.captcha-input.is-focused .mdl-textfield__label:after {
+    width: 100%;
+}
+.text-jutify {
+    text-align :justify;
+}
+.margin-checkbox {
+    position : absolute;
+}
+.text-checkbox {
+    margin-left : 20px;
+}
+@media screen and (max-width: 839px) {
+    .captcha-image {
+        float : none;
+    }
+}

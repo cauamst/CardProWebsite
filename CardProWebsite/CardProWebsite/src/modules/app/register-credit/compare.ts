@@ -28,6 +28,14 @@ export class CompareComponent implements OnInit {
     ShowimageCompare1 = true;
     ShowimageCompare2 = true;
 
+    isAddClass: boolean = false;
+    isAddClass1: boolean = false;
+    isAddClass2: boolean = false;
+    textPickCard1: string = "Chọn thẻ này";
+    textPickCard2: string = "Chọn thẻ này";
+
+    initialWidth: number;
+
     selectedCard1ToForm: CARD;
     selectedCard2ToForm: CARD;
 
@@ -39,6 +47,7 @@ export class CompareComponent implements OnInit {
         private CardService: CardService,
         private NotificationService: NotificationService
     ) {
+        this.initialWidth = window.innerWidth;
     }
 
 
@@ -51,24 +60,6 @@ export class CompareComponent implements OnInit {
         this.ShowimageCompare1;
         this.ShowimageCompare2;
     }
-    groups: Array<any> = [
-        {
-            heading: 'Tiện ích chung',
-            content: ' I’m a dynamic content to show in angular 2 accordion : )'
-        },
-        {
-            heading: 'Quy đổi điểm thưởng',
-            content: 'I’m a dynamic content to show in angular 2 accordion : )'
-        },
-        {
-            heading: 'Quy đổi hoàn tiền',
-            content: 'I’m a dynamic content to show in angular 2 accordion : ) '
-        },
-        {
-            heading: 'Quy đổi dặm bay',
-            content: 'I’m a dynamic content to show in angular 2 accordion : '
-        }
-    ];
     benefit1 = [
         { currentCatId: 1, director: 'Dặm bay' },
         { currentCatId: 2, director: 'Hoàn tiền' },
@@ -139,7 +130,37 @@ export class CompareComponent implements OnInit {
         this.selectedCardToFormEvent.emit(card);
     }
     moveToTopButton() {
-        this.NotificationService.needToTop(true);
+        let width = window.innerWidth;
+        this.initialWidth = width;
+        if (width >= 839) {
+            this.NotificationService.needToTop(true);
+        }
     }
-
+    addClassbutton(n: number) {
+        switch (n) {
+            case 1:
+                this.isAddClass1 = !this.isAddClass1;
+                if (this.isAddClass1) {
+                    this.isAddClass2 = false;
+                }
+                break;
+            case 2:
+                this.isAddClass2 = !this.isAddClass2;
+                if (this.isAddClass2) {
+                    this.isAddClass1 = false;
+                }
+                break;
+            default:
+                break;
+        }
+        if (this.isAddClass1) {
+            this.selectCard(this.card1);
+        }
+        else if (this.isAddClass2) {
+            this.selectCard(this.card2);
+        } else {
+            this.selectCard(null);
+        }
+       
+    }
 }

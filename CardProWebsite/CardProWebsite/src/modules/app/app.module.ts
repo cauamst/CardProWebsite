@@ -45,6 +45,7 @@ import { Loader } from './directives/loader.directive';
         Accordion,
         AccordionGroup,
         TransformSlider
+        
     ],
     providers: [
         AuthGuard,
@@ -61,6 +62,7 @@ import { Loader } from './directives/loader.directive';
         FormsModule,
         routing,
         ReactiveFormsModule
+        
     ]
 })
 export class AppModule { }

@@ -6,6 +6,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Location } from '@angular/common';
 import { Accordion, AccordionGroup } from './accordion';
 import { CreditCardForm } from '../models/creditCardForm';
+import { NotificationService } from '../../../shared/utils';
 
 import {
     ReactiveFormsModule,
@@ -32,7 +33,7 @@ export class CreditComponent implements OnInit {
     showDialog = false;
     contents: Content[];
     currentContentType: number = 1;
-
+    captchaImgUrl = require("../../../assets/img/input-black.jpg")
     // Slider Region
     private maximumActive: number = 4;
     private leftMostIndex: number;
@@ -45,6 +46,10 @@ export class CreditComponent implements OnInit {
     private registerInfo: CreditCardForm = new CreditCardForm();
     formIsSubmitting: boolean;
 
+    titleResultFormCheck: boolean = false;
+    titleForm: string = "Thông tin khách hàng";
+    ResultRegister: string;
+
     registerForm: FormGroup;
     name: FormControl;
     email: FormControl;
@@ -52,6 +57,7 @@ export class CreditComponent implements OnInit {
     address: FormControl;
     salary: FormControl;
     agree: FormControl;
+    captcha:FormControl;
 
     showCompare = true;
     showButtonBack = false;
@@ -72,13 +78,13 @@ export class CreditComponent implements OnInit {
         { id: 1, director: 'Dặm bay' },
         { id: 2, director: 'Hoàn tiền' },
         { id: 3, director: 'Điểm thưởng' },
-        { id: 4, director: 'Rút tiền mặt miễn phí' },
+        { id: 4, director: 'Rút tiền miễn phí' },
     ];
     button = [
         { id: 1, name: 'Dặm bay', ContentType: 1, idTT: 'Xem ưu điểm tiện ích dặm bay', option: "b1", for: "b1" },
         { id: 2, name: 'Hoàn tiền', ContentType: 2, idTT: 'Xem ưu điểm tiện ích hoàn tiền', option: "b2", for: "b2" },
         { id: 3, name: 'Điểm thưởng', ContentType: 3, idTT: 'xem ưu điểm tiện ích điểm thưởng', option: "b3", for: "b3" },
-        { id: 4, name: 'Rút tiền mặt miễn phí', ContentType: 4, idTT: 'Xem ưu điểm tiện ích rút tiền mặt miễn phí', option: "b4", for: "b4" }
+        { id: 4, name: 'Rút tiền miễn phí', ContentType: 4, idTT: 'Xem ưu điểm tiện ích rút tiền mặt miễn phí', option: "b4", for: "b4" }
     ];
     CardView = [
         { Id: 1, url: require("../../../assets/img/FamilyCard.jpg") },
@@ -123,14 +129,16 @@ export class CreditComponent implements OnInit {
         { id: 19, content: 'DAK LAK' },
         { id: 20, content: 'DAK NONG' },
         { id: 21, content: 'Điện Biên' },
-        { id: 22, content: 'Hà Nội' }
+        { id: 22, content: 'Hà Nội' },
+        {id : 23,content : 'Thành phố HCM'}
     ];
 
     constructor(
         private CardService: CardService,
         private route: ActivatedRoute,
         private location: Location,
-        private zone: NgZone
+        private zone: NgZone,
+        private NotificationService: NotificationService
     ) {
         this.initialWidth = window.innerWidth; 
         this.addNewSlide();
@@ -294,13 +302,12 @@ export class CreditComponent implements OnInit {
         this.selectedImage = card;
     }
 
-    ScrollToTop() {
-        window.scrollTo(0, 0);
+    moveToTopButton() {
+        this.NotificationService.needToTop(true);
     }
 
     addCardToForm(card: CARD) {
         this.selectedImage = card;
-        console.log(card);
     }
 
     CreateRegisterForm() {
@@ -310,7 +317,8 @@ export class CreditComponent implements OnInit {
             phone: this.phone,
             address: this.address,
             salary: this.salary,
-            agree: this.agree
+            agree: this.agree,
+            captcha: this.captcha
         });
     }
 
@@ -321,12 +329,32 @@ export class CreditComponent implements OnInit {
         this.address = new FormControl('', Validators.required);
         this.salary = new FormControl('', Validators.required);
         this.agree = new FormControl('', Validators.requiredTrue);
+        this.captcha = new FormControl('', [Validators.required]);
     }
 
+    
     submitForm(): void {
         this.formIsSubmitting = true;
+        if ((this.salary.value == "1") && (this.address.value == "23" || this.address.value == "22")) {
+            this.ResultRegister = "Cảm ơn bạn đã quan tâm đến thẻ tín dụng Sacombank. Chúng tôi rất tiếc không thể xử lý đơn đăng ký do bạn chưa đủ điều kiện tham gia. Vui lòng quay lại sau.";
+        }
+        else {
+            this.ResultRegister = "Chúc mừng bạn đã đăng ký thành công, vui lòng chờ nhân viên gọi hỗ trợ";
+        }
         setTimeout(() => {
             this.formIsSubmitting = false;
+            if (this.titleResultFormCheck = false) {
+                this.titleForm = "Thông tin khách hàng";
+            } else {
+                this.titleForm = "Kết quả đăng ký";
+            }
+            this.titleResultFormCheck = true;
         }, 5000);
+       
+    }
+    ClearInput() {
+        this.titleResultFormCheck = !this.titleResultFormCheck;
+        this.titleForm = "Thông tin khách hàng";
+        this.registerForm.reset();
     }
 }

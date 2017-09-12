@@ -136,6 +136,7 @@
     <Content Include="src\assets\img\img18.jpg" />
     <Content Include="src\assets\img\imgwelcome.jpg" />
     <Content Include="src\assets\img\Infinitecard_Front.jpg" />
+    <Content Include="src\assets\img\input-black.jpg" />
     <Content Include="src\assets\img\left-arrow.png" />
     <Content Include="src\assets\img\logo-ngan-hang-sacombank.png" />
     <Content Include="src\assets\img\Logo_Sacombank.png" />
@@ -217,8 +218,6 @@
     <TypeScriptCompile Include="src\app.config.ts" />
     <TypeScriptCompile Include="src\main.module.ts" />
     <TypeScriptCompile Include="src\app.component.ts" />
-    <TypeScriptCompile Include="src\app.component.spec.ts" />
-    <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\modules\app\app.module.ts" />
     <TypeScriptCompile Include="src\modules\app\app.routing.ts" />
     <TypeScriptCompile Include="src\modules\app\cardRegistration\cardRegistration.component.ts" />
@@ -261,6 +260,7 @@
     <TypeScriptCompile Include="src\modules\app\transformSlider\TransformSlider.ts" />
     <TypeScriptCompile Include="src\common.d.ts" />
     <TypeScriptCompile Include="src\dtos.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\modules\app\_login\login.ts" />
     <TypeScriptCompile Include="src\shared\footer.ts" />
     <TypeScriptCompile Include="src\shared\header.ts" />
