@@ -195,6 +195,9 @@
     <Content Include="src\modules\app\transformSlider\transformSlider.scss" />
     <Content Include="src\modules\app\cardRegistration\cardRegistration.component.scss" />
     <Content Include="src\modules\app\products\product.scss" />
+    <Content Include="src\assets\fonts\MaterialIcons-Regular.eot" />
+    <Content Include="src\assets\fonts\MaterialIcons-Regular.woff" />
+    <Content Include="src\assets\fonts\MaterialIcons-Regular.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
