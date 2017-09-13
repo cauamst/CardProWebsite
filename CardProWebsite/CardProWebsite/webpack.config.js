@@ -143,7 +143,8 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify(isProd ? 'production' : isTest ? 'testing' : 'development'),
-                'API_URL': JSON.stringify(!isProd ? "http://localhost:9999/api/" : "https://cardtest.sacombank.com.vn:9443/Apps/CardProHost/api/")
+                'API_URL': JSON.stringify(!isProd ? "http://localhost:9999/api/" : "https://cardtest.sacombank.com.vn:9443/Apps/CardProHost/api/"),
+                'BASE_URL': JSON.stringify(!isProd ? "/" : "/Apps/cardProWebsite/")
             }
         }),
         ...when(!isTest, [
