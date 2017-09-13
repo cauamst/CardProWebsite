@@ -160,8 +160,17 @@ module.exports = {
             }),
             new HtmlWebpackPlugin({
                 template: 'index.template.ejs',                filename: '../index.html',
-                inject: true
-            }),
+                inject: true,
+                chunksSortMode: function (a, b)  {
+                    if (a.names[0] > b.names[0]) {
+                        return -1;
+                    }
+                    if (a.names[0] < b.names[0]) {
+                        return 1;
+                    }
+                    return 0;
+                }
+            }),                               
         ]),
         ...when(isDev, [
             new ExtractTextPlugin({ filename: '[name].css', allChunks: true }),
