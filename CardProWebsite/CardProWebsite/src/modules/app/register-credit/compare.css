@@ -36,7 +36,7 @@
 }
 
 .mdl-text-left {
-    text-align: left;
+    text-align: left !important;
     color: #0066b3;
 }
 
@@ -52,11 +52,16 @@ img {
     font-size: 10px !important;
 }
 
-.dialog-button {
+.dialog-button  {
     float: right;
     margin-right: 30px;
 }
-
+.text-transform {
+    text-align: end;
+    font-size: 12px !important;
+    color: #000;
+    margin-bottom: 0;
+}
 .row {
     max-width: 85.7142857143em;
     margin-left: auto;
@@ -86,7 +91,9 @@ img {
         padding: 10px;
         border-top: solid 1px #ececec;
         border-left: solid 1px #ececec;
+        text-align : center;
     }
+
 .mdl-grid-full {
     width : 100%;
 }
@@ -142,10 +149,6 @@ img {
     font-size: 1.2em;
 }
 
-.text-center-compare {
-    margin-top: 7%;
-}
-
 .remove-button {
     background: #da4a4a !important;
     color: #fff;
@@ -162,13 +165,22 @@ img {
 .none-margin {
     margin: 0 0 0;
 }
-
-.text-align {
-    text-align: justify !important;
-}
 .btn-add1 {
     background: rgb(234, 135, 10) !important;
 }
 .btn-add2 {
     background: rgb(234, 135, 10) !important;
+}
+.title-compare {
+    width : 100%;
+}
+.text-title-compare {
+    font-size: 18px !important;
+}
+.font-icons {
+    font-size: 18px !important;
+}
+.title-compare-padding {
+    padding-bottom: 7px;
+    padding-top: 6px;
 }

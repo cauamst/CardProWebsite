@@ -248,6 +248,11 @@ img {
     overflow: hidden;
     padding: 0 10px 15px;
     font-size: 12px !important;
+    margin-left: 10px;
+}
+.title-form {
+    padding-bottom: 5px !important;
+    padding-top: 8px !important;
 }
 
 .note {
@@ -515,8 +520,9 @@ h4.lvn {
 }
 
 .mdl-additiona {
-    margin-top: 20px;
+    list-style: none;
 }
+
 
 ul {
     margin-top: 20px;
@@ -852,7 +858,7 @@ left-content {
 }
 
 .compare-button-block {
-    text-align: center;
+    text-align: end;
     margin-bottom: 5px;
 }
 
@@ -959,6 +965,7 @@ left-content {
 }
 .text-jutify {
     text-align :justify;
+    color : rgb(0,0,0) !important;
 }
 .margin-checkbox {
     position : absolute;
