@@ -1,6 +1,6 @@
 ﻿
 <div class="mdl-cell--12-col mdl-cell--8-tablet mdl-cell--4-col-phone title-compare">
-    <div class="mdl-card__title mdl-color--primary mdl-color-text--white title-compare-padding">
+    <div class="mdl-card__title mdl-color-text--white title-compare-padding mdl-color-sacombank">
         <h5 class="mdl-card__title-text text-title-compare" id="size18">Lựa chọn thẻ và so sánh thẻ Sacombank phù hợp nhất với bạn.</h5>
     </div>
 </div>
@@ -182,8 +182,8 @@
     <div class="mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
         <div class="row none-border none-border-bottom">
             <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--4-col-tablet none-border"></div>
-            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet none-border"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small" *ngIf="card1" (click)="moveToTopButton();addClassbutton(1)" [ngClass]="{ 'btn-add1': isAddClass1}">{{isAddClass1 ? 'Đã chọn' : 'Chọn thẻ này'}}</button></div>
-            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet none-border"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small" *ngIf="card2" (click)="moveToTopButton();addClassbutton(2)" [ngClass]="{ 'btn-add2': isAddClass2}">{{isAddClass2 ? 'Đã chọn' : 'Chọn thẻ này'}}</button></div>
+            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet none-border"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small mdl-color-sacombank" *ngIf="card1" (click)="moveToTopButton();addClassbutton(1)" [ngClass]="{ 'btn-add1': isAddClass1}">{{isAddClass1 ? 'Đã chọn' : 'Chọn thẻ này'}}</button></div>
+            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet none-border"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small mdl-color-sacombank" *ngIf="card2" (click)="moveToTopButton();addClassbutton(2)" [ngClass]="{ 'btn-add2': isAddClass2}">{{isAddClass2 ? 'Đã chọn' : 'Chọn thẻ này'}}</button></div>
         </div>
     </div>
     <div class="mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
@@ -205,6 +205,7 @@
                 <div class="mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-margin">
                         <select class="mdl-textfield__input" id="octane" [(ngModel)]="currentCatId1" (ngModelChange)="getCardType1($event)">
+                            <option>Chọn tiện ích</option>
                             <option [ngValue]="c.currentCatId" *ngFor="let c of benefit1">{{c.director}}</option>
                         </select>
                         <label class="mdl-textfield__label" for="octane">Chọn tiện ích</label>
@@ -213,6 +214,7 @@
                 <div class="mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-margin" *ngIf="currentCatId1">
                         <select class="mdl-textfield__input" id="octane" name="octane" (ngModelChange)="getCard1($event)" [(ngModel)]="selectCardId1">
+                            <option>Chọn thẻ so sánh</option>
                             <option *ngFor="let ca of cardes1" [ngValue]="ca.Id" [hidden]="ca == card2">{{ca.Name}}</option>
                         </select>
                         <label class="mdl-textfield__label" for="octane">Chọn thẻ</label>
@@ -236,6 +238,7 @@
             <div class="mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-margin">
                     <select class="mdl-textfield__input" id="octane" [(ngModel)]="currentCatId2" (ngModelChange)="getCardType2($event)">
+                        <option>Chọn tiện ích</option>
                         <option [ngValue]="c.currentCatId" *ngFor="let c of benefit2">{{c.director}}</option>
                     </select>
                     <label class="mdl-textfield__label" for="octane">Chọn tiện ích</label>
@@ -244,6 +247,7 @@
             <div class="mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-margin" *ngIf="currentCatId2">
                     <select class="mdl-textfield__input" id="octane" name="octane" (ngModelChange)="getCard2($event)" [(ngModel)]="selectCardId2">
+                        <option>Chọn thẻ so sánh</option>
                         <option *ngFor="let ca of cardes2" [ngValue]="ca.Id" [hidden]="ca == card1">{{ca.Name}}</option>
                     </select>
                     <label class="mdl-textfield__label" for="octane">Chọn thẻ</label>

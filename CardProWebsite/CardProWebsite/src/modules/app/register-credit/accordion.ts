@@ -59,7 +59,7 @@ a {
     font-weight: 600;
     line-height: 49px;
     cursor: pointer;
-    background: #0066b3;
+    background: #4490c7;
     color: #fff;
     padding-left: 15px;
     margin-top: 0;
