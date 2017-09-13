@@ -250,6 +250,10 @@ img {
     font-size: 12px !important;
     margin-left: 10px;
 }
+.title-form {
+    padding-bottom: 5px !important;
+    padding-top: 8px !important;
+}
 
 .note {
     margin: 8px 20px;

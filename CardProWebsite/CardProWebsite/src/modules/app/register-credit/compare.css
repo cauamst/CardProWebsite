@@ -143,10 +143,6 @@ img {
     font-size: 1.2em;
 }
 
-.text-center-compare {
-    margin-top: 7%;
-}
-
 .remove-button {
     background: #da4a4a !important;
     color: #fff;
@@ -168,4 +164,15 @@ img {
 }
 .btn-add2 {
     background: rgb(234, 135, 10) !important;
+}
+.title-compare {
+    width : 100%;
+}
+.text-title-compare {
+    margin-left: 10px;
+    font-size: 18px !important;
+}
+.title-compare-padding {
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
