@@ -113,10 +113,16 @@
                     <div id="Lnav">
                         <h4 class="lvn">Điều kiện đăng ký</h4>
                     </div>
-                    <div class="mdl-additiona">
-                        <ul>
-                            <li>Cá nhân trên 18 tuổi</li>
-                            <li>Thu nhập hàng tháng từ 5 triệu VND trở lên (từ 7 triệu đối với Hà Nội và Hồ Chí Minh)</li>
+                    <div>
+                        <ul class="mdl-additiona">
+                            <li>
+                                <div class="iconbenefit"><i class="mdl-textfield__icon material-icons">person</i></div>
+                                <div class="textbenefit">Cá nhân phải trên 18 tuổi.</div>
+                            </li>
+                            <li>
+                                <div class="iconbenefit"><i class="mdl-textfield__icon material-icons">local_atm</i></div>
+                                <div class="textbenefit">Thu nhập hàng tháng từ 5 triệu VND trở lên (từ 7 triệu đối với Hà Nội và Hồ Chí Minh).</div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -185,7 +191,7 @@
                              }">
                             <i class="mdl-textfield__icon material-icons">location_city</i>
                             <select class="mdl-textfield__input" id="Address" name="address" formControlName="address">
-                                <option></option>
+                                <option>Chọn tỉnh/ thành phố</option>
                                 <option [value]="ci.id" *ngFor="let ci of City">{{ci.content}}</option>
                             </select>
                             <label class="mdl-textfield__label" for="Address">Chọn thành phố</label>
@@ -201,7 +207,7 @@
                              }">
                             <i class="mdl-textfield__icon material-icons">local_atm</i>
                             <select class="mdl-textfield__input" id="salary" name="salary" formControlName="salary">
-                                <option></option>
+                                <option>Chọn mức thu nhập</option>
                                 <option *ngFor="let sala of Salary" [value]="sala.id">{{sala.content}}</option>
                             </select>
                             <label class="mdl-textfield__label" for="salary">Mức thu nhập hàng tháng</label>

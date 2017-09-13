@@ -37,9 +37,7 @@ export class Accordion {
                     </h4>
                   </div>
                   <div class="panel-collapse" [hidden]="!isOpen">
-                    <div class="panel-body">
                         <ng-content></ng-content>
-                    </div>
                   </div>
                 </div>
           `,
@@ -64,6 +62,7 @@ a {
     background: #0066b3;
     color: #fff;
     padding-left: 15px;
+    margin-top: 0;
 }
 i {
     position: absolute;

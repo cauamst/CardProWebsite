@@ -36,7 +36,7 @@
 }
 
 .mdl-text-left {
-    text-align: left;
+    text-align: left !important;
     color: #0066b3;
 }
 
@@ -86,6 +86,7 @@ img {
         padding: 10px;
         border-top: solid 1px #ececec;
         border-left: solid 1px #ececec;
+        text-align : center;
     }
 .mdl-grid-full {
     width : 100%;
@@ -161,10 +162,6 @@ img {
 
 .none-margin {
     margin: 0 0 0;
-}
-
-.text-align {
-    text-align: justify !important;
 }
 .btn-add1 {
     background: rgb(234, 135, 10) !important;

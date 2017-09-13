@@ -1,6 +1,6 @@
 ﻿<div class="mdl-grid">
     <div class="mdl-cell--12-col">
-        <div class="mdl-textfield mdl-js-textfield transform-width">
+        <div class="mdl-textfield mdl-js-textfield transform-width mdl-cell--hide-desktop mdl-cell--hide-tablet mdl-cell-border">
             <label class="label-color" for="amounts">{{transformTitle}} :</label>
             <input #textInput class="mdl-textfield__input text-center" type="text" id="amounts" [(ngModel)]="formattedAmount" (ngModelChange)="onInputChange($event)"/>
         </div>
@@ -14,9 +14,12 @@
     </div>
     <div class="mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone transform-top">
         
-        <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet mdl-cell-border">{{transformLabel}}</div>
+        <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet mdl-cell-border color-text">{{transformLabel}}</div>
         <div class="row mdl-cell-border" style="width: 100%">
-            <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--4-col-tablet transform-left">{{transformLabel}}</div>
+            <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--4-col-tablet transform-left">
+                <label class="label-color" for="amounts">{{transformTitle}} :</label>
+                <input #textInput class="mdl-textfield__input text-center" type="text" id="amounts" [(ngModel)]="formattedAmount" (ngModelChange)="onInputChange($event)" />
+            </div>
             <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet color-text">{{firstCardPoints |number :'.0-3'}}</div>
             <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet color-text">{{secondCardPoints |number :'.0-3'}}</div>
         </div>
