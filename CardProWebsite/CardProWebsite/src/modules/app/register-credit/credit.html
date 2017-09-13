@@ -145,7 +145,7 @@
                 <div class="mdl-card__supporting-text cardPro-form-block" loader [isLoading]="formIsSubmitting">
                     <form [formGroup]="registerForm" name="registerForm" novalidate (ngSubmit)="submitForm($event)" *ngIf="!titleResultFormCheck">
                         <!--<p>Hãy điền đầy đủ thông tin của bạn bên dưới và chúng tôi sẽ gọi lại để hỗ trợ bạn đăng ký.</p>-->
-                        <div class="mdl-textfield mdl-js-textfield"
+                        <div class="mdl-textfield mdl-js-textfield mdl-cell--4-col-tablet mdl-cell--4-col-phone"
                              [ngClass]="{
                                     'has-error': name.invalid && (name.dirty || name.touched)
                              }">
@@ -159,7 +159,7 @@
                                 <span class="mdl-textfield__error" *ngIf="name.errors.maxlength">Họ Tên không quá 24 ký tự.</span>
                             </span>
                         </div>
-                        <div class="mdl-textfield mdl-js-textfield"
+                        <div class="mdl-textfield mdl-js-textfield mdl-cell--4-col-tablet mdl-cell--4-col-phone"
                              [ngClass]="{
                                     'has-error': email.invalid && (email.dirty || email.touched)
                              }">
@@ -172,7 +172,7 @@
                             </span>
                         </div>
 
-                        <div class="mdl-textfield mdl-js-textfield"
+                        <div class="mdl-textfield mdl-js-textfield mdl-cell--4-col-tablet mdl-cell--4-col-phone"
                              [ngClass]="{
                                     'has-error': phone.invalid && (phone.dirty || phone.touched)
                              }">
@@ -185,7 +185,7 @@
                             </span>
                         </div>
 
-                        <div class="mdl-textfield mdl-js-textfield"
+                        <div class="mdl-textfield mdl-js-textfield mdl-cell--4-col-tablet mdl-cell--4-col-phone"
                              [ngClass]="{
                                     'has-error': address.invalid && (address.dirty || address.touched)
                              }">
@@ -201,7 +201,7 @@
                             </span>
                         </div>
 
-                        <div class="mdl-textfield mdl-js-textfield"
+                        <div class="mdl-textfield mdl-js-textfield mdl-cell--4-col-tablet mdl-cell--4-col-phone"
                              [ngClass]="{
                                     'has-error': salary.invalid && (salary.dirty || salary.touched)
                              }">
@@ -217,13 +217,13 @@
                             </span>
                         </div>
 
-                        <div class="mdl-textfield mdl-js-textfield" *ngIf="selectedImage">
+                        <div class="mdl-textfield mdl-js-textfield mdl-cell--4-col-tablet mdl-cell--4-col-phone" *ngIf="selectedImage">
                             <i class="mdl-textfield__icon material-icons">credit_card</i>
                             <input class="mdl-textfield__input" type="text" id="card" name="selectedCard" [value]="selectedImage.Name" disabled />
                             <!--<label class="mdl-textfield__label" for="card">Thẻ tín dụng bạn chọn</label>-->
                         </div>
                         <div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label captcha-input"
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label captcha-input mdl-cell--4-col-tablet mdl-cell--4-col-phone"
                                  [ngClass]="{
                                     'has-error': captcha.invalid && (captcha.dirty || captcha.touched)
                              }">
