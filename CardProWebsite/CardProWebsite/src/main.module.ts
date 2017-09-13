@@ -1,4 +1,4 @@
-﻿import { NgModule } from '@angular/core';
+﻿import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header';
 import { FooterComponent } from './shared/footer';
 import { AppModule } from './modules/app/app.module';
-import { MDL, NotificationService } from './shared/utils';
+import { MDL, NotificationService, CardProErrorHandler } from './shared/utils';
 import { ToTopComponent } from './modules/app/toTop/toTop';
 const routes: Routes = [
     { path: '', redirectTo: 'main/0', pathMatch: 'full' },

@@ -4,9 +4,6 @@ import "./assets/css/material.min.css";
 import "./assets/css/styles.css";
 import "material-design-lite/material.min.js";
 
-import 'zone.js';
-import 'reflect-metadata';
-
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { MainModule } from './main.module';
@@ -17,4 +14,5 @@ if (process.env.NODE_ENV === 'production') {
     enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(MainModule);
+platformBrowserDynamic()
+    .bootstrapModule(MainModule);
