@@ -175,13 +175,12 @@ img {
     width : 100%;
 }
 .text-title-compare {
-    margin-left: 10px;
     font-size: 18px !important;
 }
 .font-icons {
     font-size: 18px !important;
 }
 .title-compare-padding {
-    padding-bottom: 5px;
-    padding-top: 5px;
+    padding-bottom: 7px;
+    padding-top: 6px;
 }
