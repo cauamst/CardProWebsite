@@ -1,7 +1,7 @@
 ﻿
 <div class="mdl-cell--12-col mdl-cell--8-tablet mdl-cell--4-col-phone title-compare">
     <div class="mdl-card__title mdl-color--primary mdl-color-text--white title-compare-padding">
-        <i class="material-icons">reorder</i>
+        <i class="material-icons font-icons">reorder</i>
         <h5 class="mdl-card__title-text text-title-compare" id="size18">Lựa chọn thẻ và so sánh thẻ Sacombank phù hợp nhất với bạn.</h5>
     </div>
 </div>
@@ -187,6 +187,10 @@
             <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet none-border"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small" *ngIf="card2" (click)="moveToTopButton();addClassbutton(2)" [ngClass]="{ 'btn-add2': isAddClass2}">{{isAddClass2 ? 'Đã chọn' : 'Chọn thẻ này'}}</button></div>
         </div>
     </div>
+    <div class="mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+           <p class="text-transform">( Công cụ quy đổi chỉ mang tính chất tham khảo )</p>
+    </div>
+    <div class="fix"></div>
 
 
 </accordion>

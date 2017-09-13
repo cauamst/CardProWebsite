@@ -129,11 +129,13 @@
             </div>
 
             <ng-template #loadingCompare> <compare (AddCardToFormEvent)="addCardToForm($event)"></compare></ng-template>
-            <a class="mdl-button mdl-js-button mdl-typography--text-uppercase send-button" *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack">
+            <div>
+                <a class="mdl-button mdl-js-button mdl-typography--text-uppercase send-button" *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack">
 
-                <i class="material-icons mdl-icon-comback ">chevron_left</i>
-                Trở về trước
-            </a>
+                    <i class="material-icons mdl-icon-comback ">chevron_left</i>
+                    Trở về trước
+                </a>
+            </div>
         </div>
         <div class="right-content mdl-cell--4-col mdl-cell--4-col-phone mdl-cell--8-col-tablet">
             <!-- REGISTER FORM -->

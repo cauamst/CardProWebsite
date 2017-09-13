@@ -52,11 +52,16 @@ img {
     font-size: 10px !important;
 }
 
-.dialog-button {
+.dialog-button  {
     float: right;
     margin-right: 30px;
 }
-
+.text-transform {
+    text-align: end;
+    font-size: 12px !important;
+    color: #000;
+    margin-bottom: 0;
+}
 .row {
     max-width: 85.7142857143em;
     margin-left: auto;
@@ -88,6 +93,7 @@ img {
         border-left: solid 1px #ececec;
         text-align : center;
     }
+
 .mdl-grid-full {
     width : 100%;
 }
@@ -170,6 +176,9 @@ img {
 }
 .text-title-compare {
     margin-left: 10px;
+    font-size: 18px !important;
+}
+.font-icons {
     font-size: 18px !important;
 }
 .title-compare-padding {
