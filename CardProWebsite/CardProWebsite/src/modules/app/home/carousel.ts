@@ -89,26 +89,31 @@ a {
         -webkit-transform: translate3d(0,0,0);
         transform: translate3d(0,0,0);
     }
-.mdl-icon-toggle__label{
+
+.left-icon, .media-icon-right {
+     position: absolute;
+}
+
+.carousel-control .mdl-icon-toggle__label{
     font-size: 44px !important;
     top : 43%;
     color: #e0e0e0;
-    right: -15%;
-}
-@media (max-width: 600px){
-    .left-icon {
-        left : 0;
-}
 }
 @media (min-width:600px) {
+    .left-icon {
+        left: 15%;    
+     }
     .media-icon-right {
         left: 15%;    
-}
+     }
 }
 @media screen and (max-width: 599px) {
     .media-icon-right {
-        right: 10%;    
-}
+        right: 5px;    
+    }
+    .left-icon {
+        left: -5px;    
+     }
 }
 
 `]

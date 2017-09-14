@@ -1,4 +1,4 @@
-import { Directive, AfterViewChecked, Injectable } from '@angular/core';
+import { Directive, AfterViewChecked, Injectable, ErrorHandler } from '@angular/core';
 import { JsonServiceClient } from 'servicestack-client';
 import { Subject } from "rxjs/Subject";
 
@@ -42,5 +42,12 @@ export class NotificationService {
         if (data) {
             this.needToTopNotify.next(data);
         }
+    }
+}
+
+export class CardProErrorHandler implements ErrorHandler {
+    handleError(error) {
+        alert(error);
+        throw error;
     }
 }

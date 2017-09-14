@@ -143,7 +143,8 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify(isProd ? 'production' : isTest ? 'testing' : 'development'),
-                'API_URL': JSON.stringify(!isProd ? "http://localhost:9999/api/" : "https://cardtest.sacombank.com.vn:9443/Apps/CardProHost/api/")
+                'API_URL': JSON.stringify(!isProd ? "http://localhost:9999/api/" : "https://cardtest.sacombank.com.vn:9443/Apps/CardProHost/api/"),
+                'BASE_URL': JSON.stringify(!isProd ? "/" : "/Apps/cardProWebsite/")
             }
         }),
         ...when(!isTest, [
@@ -160,8 +161,17 @@ module.exports = {
             }),
             new HtmlWebpackPlugin({
                 template: 'index.template.ejs',                filename: '../index.html',
-                inject: true
-            }),
+                inject: true,
+                chunksSortMode: function (a, b)  {
+                    if (a.names[0] > b.names[0]) {
+                        return -1;
+                    }
+                    if (a.names[0] < b.names[0]) {
+                        return 1;
+                    }
+                    return 0;
+                }
+            }),                               
         ]),
         ...when(isDev, [
             new ExtractTextPlugin({ filename: '[name].css', allChunks: true }),
