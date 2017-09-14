@@ -380,6 +380,7 @@ section {
 
 .padding-top {
     margin-top: 20px;
+    margin-bottom : 50px
 }
 
 #toggle:checked ~ #expand {

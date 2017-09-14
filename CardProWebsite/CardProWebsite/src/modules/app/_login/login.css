@@ -302,7 +302,9 @@
 #font-title {
     font-size: 18px !important;
 }
-
+.section-bottom {
+    margin-bottom : 30px;
+}
 .login-button {
     margin-bottom: 20px;
     margin-top: 20px;
