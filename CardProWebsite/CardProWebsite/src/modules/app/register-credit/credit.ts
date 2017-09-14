@@ -31,7 +31,7 @@ export class CreditComponent implements OnInit {
     selectCardId: number;
     cards: CARD[] = [];
     showDialog = false;
-    contents: Content[];
+    content: Content;
     currentContentType: number = 1;
     captchaImgUrl = require("../../../assets/img/input-black.jpg")
     // Slider Region
@@ -48,7 +48,7 @@ export class CreditComponent implements OnInit {
 
     titleResultFormCheck: boolean = false;
     titleForm: string = "Thông tin khách hàng";
-    ResultTitle: string ="";
+    ResultTitle: string = "";
     ResultRegister: string;
 
     registerForm: FormGroup;
@@ -58,7 +58,7 @@ export class CreditComponent implements OnInit {
     address: FormControl;
     salary: FormControl;
     agree: FormControl;
-    captcha:FormControl;
+    captcha: FormControl;
 
     showCompare = true;
     showButtonBack = false;
@@ -131,7 +131,7 @@ export class CreditComponent implements OnInit {
         { id: 20, content: 'DAK NONG' },
         { id: 21, content: 'Điện Biên' },
         { id: 22, content: 'Hà Nội' },
-        {id : 23,content : 'Thành phố HCM'}
+        { id: 23, content: 'Thành phố HCM' }
     ];
 
     constructor(
@@ -141,7 +141,7 @@ export class CreditComponent implements OnInit {
         private zone: NgZone,
         private NotificationService: NotificationService
     ) {
-        this.initialWidth = window.innerWidth; 
+        this.initialWidth = window.innerWidth;
         this.addNewSlide();
         this.showDetailCard();
         this.showbenefit();
@@ -171,7 +171,7 @@ export class CreditComponent implements OnInit {
         this.slides.pop();
 
     }
-    
+
     goBack(): void {
         this.location.back();
     }
@@ -190,7 +190,7 @@ export class CreditComponent implements OnInit {
     }
 
     // ---- slider Region -------------------
-    private getNbOfActiveByWindowWidth(wWidth: number) : number {
+    private getNbOfActiveByWindowWidth(wWidth: number): number {
         let nbOfActive: number;
         if (wWidth < 380) {
             nbOfActive = 1;
@@ -216,7 +216,7 @@ export class CreditComponent implements OnInit {
             this.rightMostIndex = this.maximumActive - 1;
             this.updatePrevAndNext();
         }
-       
+
     }
 
     private updatePrevAndNext() {
@@ -284,8 +284,8 @@ export class CreditComponent implements OnInit {
     }
     //get contentCard
     getContentCard(ContentType: number): void {
-        this.CardService.getTypeContent(ContentType).then(contents => {
-            this.contents = contents;
+        this.CardService.getTypeContent(ContentType).then(content => {
+            this.content = content;
         });
     }
 
@@ -300,7 +300,15 @@ export class CreditComponent implements OnInit {
     }
 
     onSelected(card: CARD): void {
-        this.selectedImage = card;
+        this.selectedImage = this.selectedImage === card
+            ? null
+            : card;
+        if (this.selectedImage) {
+            this.showDetailCard();
+        } else {
+            this.showbenefit();
+        }
+       
     }
 
     moveToTopButton() {
@@ -333,7 +341,7 @@ export class CreditComponent implements OnInit {
         this.captcha = new FormControl('', [Validators.required]);
     }
 
-    
+
     submitForm(): void {
         this.formIsSubmitting = true;
         if ((this.salary.value == "1") && (this.address.value == "23" || this.address.value == "22")) {
@@ -353,7 +361,7 @@ export class CreditComponent implements OnInit {
             }
             this.titleResultFormCheck = true;
         }, 5000);
-       
+
     }
     ClearInput() {
         this.titleResultFormCheck = !this.titleResultFormCheck;

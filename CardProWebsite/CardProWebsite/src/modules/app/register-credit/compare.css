@@ -8,6 +8,8 @@
 
 .square {
     overflow: hidden;
+    width: 150px;
+    height: 115px;
 }
 .card-compare {
     max-height: 100px;
@@ -130,7 +132,7 @@ img {
 }
 
 .mdl-button-pickcard {
-    margin-top: 43px !important;
+    margin-top: 9px !important;
     background-color: #4490c7;
 }
 
