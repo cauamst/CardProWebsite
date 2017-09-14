@@ -14,7 +14,7 @@ import { routes } from '../modules/app/app.routing';
 export class HeaderComponent {
     title = 'CARD PRO';
     routes = routes.filter((val) => val.path != '' && val.path != 'login' && val.path != 'products' && val.path !='cardRegistration');
-    logoUrl = require("../assets/img/Logo_Sacombank.png")
+    logoUrl = require("../assets/img/logo-ngan-hang-sacombank.png")
     constructor(private route: ActivatedRoute, private router: Router) {}
 
     isActive(path: string): boolean {
