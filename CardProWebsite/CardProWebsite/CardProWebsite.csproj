@@ -165,7 +165,6 @@
     <Content Include="src\modules\app\products\products.html" />
     <Content Include="src\modules\app\register-credit\compare.css" />
     <Content Include="src\modules\app\register-credit\compare.html" />
-    <Content Include="src\modules\app\register-credit\credit-detail.html" />
     <Content Include="src\modules\app\register-credit\credit.css" />
     <Content Include="src\modules\app\register-credit\credit.html" />
     <Content Include="src\modules\app\register-credit\dialog.css" />
@@ -248,7 +247,6 @@
     <TypeScriptCompile Include="src\modules\app\products\products.ts" />
     <TypeScriptCompile Include="src\modules\app\register-credit\accordion.ts" />
     <TypeScriptCompile Include="src\modules\app\register-credit\compare.ts" />
-    <TypeScriptCompile Include="src\modules\app\register-credit\credit-detail.ts" />
     <TypeScriptCompile Include="src\modules\app\register-credit\credit.ts" />
     <TypeScriptCompile Include="src\modules\app\register-credit\dialog.ts" />
     <TypeScriptCompile Include="src\modules\app\services\alert.service.ts" />

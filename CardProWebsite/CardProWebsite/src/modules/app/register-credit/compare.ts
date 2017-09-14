@@ -31,10 +31,10 @@ export class CompareComponent implements OnInit {
     selectedCardToFormEvent = new EventEmitter();
 
     readonly benefits = [
-        { currentCatId: 1, director: 'Dặm bay' },
-        { currentCatId: 2, director: 'Hoàn tiền' },
+        { currentCatId: 1, director: 'Hoàn tiền'},
+        { currentCatId: 2, director: 'Dặm bay'},
         { currentCatId: 3, director: 'Điểm thưởng' },
-        { currentCatId: 4, director: 'Rút tiền mặt miễn phí' },
+        { currentCatId: 4, director: 'Rút tiền miễn phí' },
     ]
 
     constructor(
