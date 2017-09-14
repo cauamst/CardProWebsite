@@ -61,6 +61,7 @@ img {
     font-size: 12px !important;
     color: #000;
     margin-bottom: 0;
+    opacity: .5;
 }
 .row {
     max-width: 85.7142857143em;
@@ -130,6 +131,7 @@ img {
 
 .mdl-button-pickcard {
     margin-top: 43px !important;
+    background-color: #4490c7;
 }
 
 .image {
@@ -183,4 +185,10 @@ img {
 .title-compare-padding {
     padding-bottom: 7px;
     padding-top: 6px;
+}
+.mdl-color-sacombank {
+    background-color: #4490c7 ;
+}
+h4 {
+    margin-bottom : 0 !important;
 }

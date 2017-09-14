@@ -380,12 +380,24 @@ section {
 
 .padding-top {
     margin-top: 20px;
+    margin-bottom : 50px
 }
 
 #toggle:checked ~ #expand {
     height: 250px;
 }
-
+.result-title {
+    margin-left: 5px;
+    font-size: 16px;
+}
+.footer-result {
+    font-size: 12px;
+    margin-right: 16px;
+}
+.div-result {
+    float : right;
+    margin-bottom : 5px;
+}
 #toggle:checked ~ label::before {
     content: "-";
 }
@@ -832,10 +844,6 @@ left-content {
 }
 
 @media (min-width: 840px) {
-    .mdl-grid {
-        padding: 0px !important;
-    }
-
     .left-content {
         margin-right: 15px;
     }
@@ -845,6 +853,9 @@ left-content {
     .right-content {
         margin-top: 15px;
     }
+}
+.mdl-color {
+    background-color: #4490c7;
 }
 
 .card-pro-radio {
