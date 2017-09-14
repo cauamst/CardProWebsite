@@ -44,7 +44,7 @@ export class CardService {
         return Promise.resolve(CONTENT);
     }
     getTypeContent(contentType: number) {
-        return this.getAllContent().then(Contents => Contents.filter(Content => Content.ContentType === contentType));
+        return this.getAllContent().then(Contents => Contents.find(Content => Content.ContentType === contentType));
     }
 
 

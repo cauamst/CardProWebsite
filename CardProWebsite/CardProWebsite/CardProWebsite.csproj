@@ -194,7 +194,6 @@
     <Content Include="src\assets\img\android-desktop.png" />
     <Content Include="src\assets\img\ios-desktop.png" />
     <Content Include="src\assets\img\logo.png" />
-    <Content Include="src\modules\app\products\products.scss" />
     <Content Include="src\app.css" />
   </ItemGroup>
   <ItemGroup>
@@ -252,8 +251,6 @@
     <TypeScriptCompile Include="src\modules\app\home\home.ts" />
     <TypeScriptCompile Include="src\modules\app\home\home.spec.ts" />
     <TypeScriptCompile Include="src\modules\app\products\products.ts" />
-    <TypeScriptCompile Include="src\modules\app\technology\technology.ts" />
-    <TypeScriptCompile Include="src\modules\app\technology\technology.spec.ts" />
     <TypeScriptCompile Include="src\main.ts" />
   </ItemGroup>
   <ItemGroup>
