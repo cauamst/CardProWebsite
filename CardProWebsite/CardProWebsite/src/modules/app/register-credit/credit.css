@@ -455,10 +455,14 @@ section {
 }
 
 #width100PercentTest {
-    margin-left: 20px;
     margin-right: 15px;
 }
-
+.mdl-li-icon {
+    margin-left: -20px;
+}
+.mdl-li-text {
+    margin-left: -20px;
+}
 #Lnav-heading {
     /*float: left;*/
     font-family: Verdana, arial, helvetica, sans-serif;
