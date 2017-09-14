@@ -386,7 +386,18 @@ section {
 #toggle:checked ~ #expand {
     height: 250px;
 }
-
+.result-title {
+    margin-left: 5px;
+    font-size: 16px;
+}
+.footer-result {
+    font-size: 12px;
+    margin-right: 16px;
+}
+.div-result {
+    float : right;
+    margin-bottom : 5px;
+}
 #toggle:checked ~ label::before {
     content: "-";
 }

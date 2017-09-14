@@ -258,11 +258,18 @@
                     </form>
                     <div *ngIf="titleResultFormCheck">
                         <p class="title-result-register">Cảm ơn Quý khách đã tin tưởng và lựa chọn Sacombank</p>
+                        <h5 class="result-title">{{ResultTitle}}</h5>
                         <p class="content-result">{{ResultRegister}}</p>
-                        <a class="mdl-button mdl-js-button mdl-typography--text-uppercase send-button" (click)="ClearInput()">
-                            <i class="material-icons">chevron_left</i>
-                            Trở về
-                        </a>
+                        <div class="div-result">
+                            <span class="footer-result">Hotline hỗ trợ: 19001800</span>
+                        </div>
+                        <div class="fix"></div>
+                        <div>
+                            <a class="mdl-button mdl-js-button mdl-typography--text-uppercase send-button" (click)="ClearInput()">
+                                <i class="material-icons">chevron_left</i>
+                                Trở về
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

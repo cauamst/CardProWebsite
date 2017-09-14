@@ -48,6 +48,7 @@ export class CreditComponent implements OnInit {
 
     titleResultFormCheck: boolean = false;
     titleForm: string = "Thông tin khách hàng";
+    ResultTitle: string ="";
     ResultRegister: string;
 
     registerForm: FormGroup;
@@ -336,9 +337,11 @@ export class CreditComponent implements OnInit {
     submitForm(): void {
         this.formIsSubmitting = true;
         if ((this.salary.value == "1") && (this.address.value == "23" || this.address.value == "22")) {
+            this.ResultTitle = "Đăng ký thất bại!";
             this.ResultRegister = "Cảm ơn bạn đã quan tâm đến thẻ tín dụng Sacombank. Chúng tôi rất tiếc không thể xử lý đơn đăng ký do bạn chưa đủ điều kiện tham gia. Vui lòng quay lại sau.";
         }
         else {
+            this.ResultTitle = "Đăng ký thành công!"
             this.ResultRegister = "Chúc mừng bạn đã đăng ký thành công, vui lòng chờ nhân viên gọi hỗ trợ";
         }
         setTimeout(() => {
