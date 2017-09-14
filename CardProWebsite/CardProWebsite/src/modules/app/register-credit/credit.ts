@@ -300,7 +300,15 @@ export class CreditComponent implements OnInit {
     }
 
     onSelected(card: CARD): void {
-        this.selectedImage = card;
+        if (this.selectedImage) {
+            card = null;
+            this.selectedImage = null;
+            this.showbenefit();
+        }
+        else
+        {
+            this.selectedImage = card;
+        }
     }
 
     moveToTopButton() {

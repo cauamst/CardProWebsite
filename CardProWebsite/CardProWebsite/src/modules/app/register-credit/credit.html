@@ -52,9 +52,9 @@
                 </div>
                 <!-- show card benefit -->
                 <div id="container">
-                    <div id="left" *ngIf="showBenefit">
+                    <div id="left" *ngIf="showBenefit && contents">
                         <div id="Lnav">
-                            <h4 class="lvn">Ưu điểm tiện ích</h4>
+                            <h4 class="lvn">Ưu điểm tiện ích {{contents.title}}</h4>
                         </div>
                         <div id="width100PercentTest" *ngFor="let conte of contents">
                             <ul class="ul">
@@ -83,7 +83,7 @@
                     </div>
                     <div id="left" *ngIf="showDetail && card">
                         <div id="Lnav">
-                            <h4 class="lvn">Thông tin chi tiết thẻ {{card.Name}}</h4>
+                            <h4 class="lvn">Thông tin thẻ {{card.Name}}</h4>
                         </div>
                         <div id="width100PercentTest">
                             <ul class="ul">

@@ -129,13 +129,25 @@
     width: 220px;
     box-sizing: border-box;
     max-width: 100%;
+    border: solid 1px #bedad6;
+}
+.card-image-contact {
+    border: solid 1px #bedad6;
 }
 .description-image {
     font-size :12px;
     line-height : 1.6;
 }
+.mdl-card {
+    border-radius : 10px !important;
+}
 .description-center {
     text-align: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.sacombank-icon {
+    margin-bottom: 2px;
 }
 .mdl-p {
     float: right;
@@ -365,4 +377,7 @@ nav {
 }
 .section-bottom {
     margin-bottom : 40px;
+}
+.effect {
+    padding : 16px;
 }
