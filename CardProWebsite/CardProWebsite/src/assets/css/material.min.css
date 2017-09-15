@@ -5426,10 +5426,11 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
             background: linear-gradient(to left,transparent,transparent 16px,rgba(0,0,0,.26)16px,rgba(0,0,0,.26)0)
         }
 
-        .mdl-slider.is-upgraded::-webkit-slider-thumb {
+        .mdl-slider.is-upgraded::-webkit-slider-
+        b {
             -webkit-appearance: none;
-            width: 16px;
-            height: 16px;
+            width: 15px;
+            height: 15px;
             box-sizing: border-box;
             border-radius: 50%;
             background: #3f51b5;
@@ -5440,8 +5441,8 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
 
         .mdl-slider.is-upgraded::-moz-range-thumb {
             -moz-appearance: none;
-            width: 16px;
-            height: 16px;
+            width: 15px;
+            height: 15px;
             box-sizing: border-box;
             border-radius: 50%;
             background-image: none;
