@@ -52,7 +52,7 @@ export class AppComponent {
     public scrollToTop() {
         let scrollPosition = this.cardProMain.nativeElement.scrollTop;
         let id = setInterval(() => {
-            scrollPosition = scrollPosition - 10;
+            scrollPosition = scrollPosition - 20;
             this.cardProMain.nativeElement.scrollTop = scrollPosition < 0
                 ? 0
                 : scrollPosition;
