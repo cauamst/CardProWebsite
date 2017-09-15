@@ -26,6 +26,12 @@ export class CardService {
         return this.http.post(appConfig.registerCard, { Data: data }, opts)
             .map((response: Response) => response.json());
     }
+
+    anonymousRegister(data: object) {
+        return this.http.post(appConfig.anonymousRegister, data)
+            .map((response: Response) => response.json());
+    }
+
     getAllCard(): Promise<CARD[]>
     {
         return Promise.resolve(CARDES);

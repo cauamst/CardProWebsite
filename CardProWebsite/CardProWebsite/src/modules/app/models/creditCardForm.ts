@@ -5,4 +5,5 @@
     cityId: number;
     incomeRangeId: number;
     selectedCardId?: number;
+    captcha: string;
 }

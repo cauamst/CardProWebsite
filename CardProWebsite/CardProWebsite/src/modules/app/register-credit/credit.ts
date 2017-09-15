@@ -46,10 +46,8 @@ export class CreditComponent implements OnInit {
     private registerInfo: CreditCardForm = new CreditCardForm();
     formIsSubmitting: boolean;
 
-    titleResultFormCheck: boolean = false;
-    titleForm: string = "Thông tin khách hàng";
-    ResultTitle: string = "";
-    ResultRegister: string;
+    titleResultFormCheck: boolean;
+    successResult: boolean;
 
     registerForm: FormGroup;
     name: FormControl;
@@ -135,7 +133,7 @@ export class CreditComponent implements OnInit {
     ];
 
     constructor(
-        private CardService: CardService,
+        private cardService: CardService,
         private route: ActivatedRoute,
         private location: Location,
         private zone: NgZone,
@@ -178,7 +176,7 @@ export class CreditComponent implements OnInit {
 
     // get card by type for textfield compare
     getCardType(type: number): void {
-        this.CardService.getCardType(type).then(cardes => {
+        this.cardService.getCardType(type).then(cardes => {
             this.cardes = cardes;
             this.nbOfCards = cardes.length;
             this.maximumActive = this.getNbOfActiveByWindowWidth(this.initialWidth);
@@ -278,13 +276,13 @@ export class CreditComponent implements OnInit {
     }
     //get all card table compare
     GetCards(): void {
-        this.CardService.getAllCard().then(cards => {
+        this.cardService.getAllCard().then(cards => {
             this.cards = cards;
         });
     }
     //get contentCard
     getContentCard(ContentType: number): void {
-        this.CardService.getTypeContent(ContentType).then(content => {
+        this.cardService.getTypeContent(ContentType).then(content => {
             this.content = content;
         });
     }
@@ -308,7 +306,7 @@ export class CreditComponent implements OnInit {
         } else {
             this.showbenefit();
         }
-       
+
     }
 
     moveToTopButton() {
@@ -341,31 +339,37 @@ export class CreditComponent implements OnInit {
         this.captcha = new FormControl('', [Validators.required]);
     }
 
-
     submitForm(): void {
-        this.formIsSubmitting = true;
-        if ((this.salary.value == "1") && (this.address.value == "23" || this.address.value == "22")) {
-            this.ResultTitle = "Đăng ký thất bại!";
-            this.ResultRegister = "Cảm ơn bạn đã quan tâm đến thẻ tín dụng Sacombank. Chúng tôi rất tiếc không thể xử lý đơn đăng ký do bạn chưa đủ điều kiện tham gia. Vui lòng quay lại sau.";
-        }
-        else {
-            this.ResultTitle = "Đăng ký thành công!"
-            this.ResultRegister = "Chúc mừng bạn đã đăng ký thành công, vui lòng chờ nhân viên gọi hỗ trợ";
-        }
-        setTimeout(() => {
-            this.formIsSubmitting = false;
-            if (this.titleResultFormCheck = false) {
-                this.titleForm = "Thông tin khách hàng";
-            } else {
-                this.titleForm = "Kết quả đăng ký";
-            }
-            this.titleResultFormCheck = true;
-        }, 5000);
+        if (!this.formIsSubmitting) {
+            this.formIsSubmitting = true;
 
+            this.registerInfo.name = this.name.value;
+            this.registerInfo.email = this.email.value;
+            this.registerInfo.phoneNumber = this.phone.value;
+            this.registerInfo.cityId = this.address.value;
+            this.registerInfo.incomeRangeId = this.salary.value;
+            this.registerInfo.selectedCardId = this.selectedImage != null
+                ? this.selectedImage.Id
+                : null
+                ;
+
+            this.cardService
+                .anonymousRegister(this.registerInfo)
+                .subscribe((result) => {
+                    this.formIsSubmitting = false;
+                    this.titleResultFormCheck = true;
+
+                    if (result.ok) {
+                        this.successResult = true;
+                    } else {
+                        this.successResult = false;
+                    }
+            });
+        }
     }
+
     ClearInput() {
-        this.titleResultFormCheck = !this.titleResultFormCheck;
-        this.titleForm = "Thông tin khách hàng";
+        this.titleResultFormCheck = false;
         this.registerForm.reset();
     }
 }

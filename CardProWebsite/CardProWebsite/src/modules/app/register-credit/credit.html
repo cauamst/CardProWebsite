@@ -142,7 +142,7 @@
             <div class="mdl-shadow--6dp">
                 <div class="mdl-card__title mdl-color-text--white title-form mdl-color">
                     <i class="material-icons">mode_edit</i>
-                    <h3 class="mdl-card__title-text" id="size18">&nbsp; {{titleForm}}</h3>
+                    <h3 class="mdl-card__title-text" id="size18">&nbsp; {{titleResultFormCheck? "Kết quả đăng ký" : "Thông tin khách hàng"}}</h3>
                 </div>
                 <div class="mdl-card__supporting-text cardPro-form-block" loader [isLoading]="formIsSubmitting">
                     <form [formGroup]="registerForm" name="registerForm" novalidate (ngSubmit)="submitForm($event)" *ngIf="!titleResultFormCheck">
@@ -193,10 +193,10 @@
                              }">
                             <i class="mdl-textfield__icon material-icons">location_city</i>
                             <select class="mdl-textfield__input" id="Address" name="address" formControlName="address">
-                                <option>Chọn tỉnh/ thành phố</option>
+                                <option></option>
                                 <option [value]="ci.id" *ngFor="let ci of City">{{ci.content}}</option>
                             </select>
-                            <label class="mdl-textfield__label" for="Address">Chọn thành phố</label>
+                            <label class="mdl-textfield__label" for="Address">Chọn tỉnh/ thành phố</label>
                             <span class="form-control-feedback"
                                   *ngIf="address.errors && (address.dirty || address.touched)">
                                 <span class="mdl-textfield__error" *ngIf="address.errors.required">Bạn chưa chọn địa chỉ cư trú.</span>
@@ -209,7 +209,7 @@
                              }">
                             <i class="mdl-textfield__icon material-icons">local_atm</i>
                             <select class="mdl-textfield__input" id="salary" name="salary" formControlName="salary">
-                                <option>Chọn mức thu nhập</option>
+                                <option></option>
                                 <option *ngFor="let sala of Salary" [value]="sala.id">{{sala.content}}</option>
                             </select>
                             <label class="mdl-textfield__label" for="salary">Mức thu nhập hàng tháng</label>
@@ -258,8 +258,10 @@
                     </form>
                     <div *ngIf="titleResultFormCheck">
                         <p class="title-result-register">Cảm ơn Quý khách đã tin tưởng và lựa chọn Sacombank</p>
-                        <h5 class="result-title">{{ResultTitle}}</h5>
-                        <p class="content-result">{{ResultRegister}}</p>
+                        <h5 class="result-title">{{successResult ? "Đăng ký thành công!":"Đăng ký thất bại!"}}</h5>
+                        <p class="content-result">
+                            {{successResult ? "Chúc mừng bạn đã đăng ký thành công, vui lòng chờ nhân viên gọi hỗ trợ" : "Cảm ơn bạn đã quan tâm đến thẻ tín dụng Sacombank. Chúng tôi rất tiếc không thể xử lý đơn đăng ký do bạn chưa đủ điều kiện tham gia. Vui lòng quay lại sau."}}
+                        </p>
                         <div class="div-result">
                             <span class="footer-result">Hotline hỗ trợ: 19001800</span>
                         </div>
