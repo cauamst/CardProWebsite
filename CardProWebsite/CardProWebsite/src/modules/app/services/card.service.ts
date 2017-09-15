@@ -5,6 +5,7 @@ import { DtoWrapper } from '../models/DtoWrapper';
 import { appConfig } from '../../../app.config';
 import { CARDES, CONTENT } from '../models/Card-Data';
 import { CARD, Content } from '../models/interface-card';
+import { Observable } from "rxjs/Observable";
 @Injectable()
 export class CardService {
     constructor(private http: Http) { }
@@ -29,7 +30,10 @@ export class CardService {
 
     anonymousRegister(data: object) {
         return this.http.post(appConfig.anonymousRegister, data)
-            .map((response: Response) => response.json());
+            .map((response: Response) => response.json())
+            .catch((err) => {
+                return Observable.throw(err);
+            });
     }
 
     getAllCard(): Promise<CARD[]>

@@ -6,7 +6,7 @@
     logoutUrl: 'auth/logout',
     getCardsUrl: 'cards',
     registerCard: "/card/register",
-    anonymousRegister: "/card/anonymousRegister",
+    anonymousRegister: "card/anonymousRegister",
     //lazy load
     minimumHeight: 300, //px to top
     numberOfResults: 5, //for every loading time

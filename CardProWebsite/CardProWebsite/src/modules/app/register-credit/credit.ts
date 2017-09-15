@@ -48,6 +48,7 @@ export class CreditComponent implements OnInit {
 
     titleResultFormCheck: boolean;
     successResult: boolean;
+    hasErrorResult: boolean;
 
     registerForm: FormGroup;
     name: FormControl;
@@ -356,15 +357,24 @@ export class CreditComponent implements OnInit {
             this.cardService
                 .anonymousRegister(this.registerInfo)
                 .subscribe((result) => {
-                    this.formIsSubmitting = false;
-                    this.titleResultFormCheck = true;
-
-                    if (result.ok) {
+                    if (result.IsSuccess) {
                         this.successResult = true;
                     } else {
                         this.successResult = false;
                     }
-            });
+                },
+                (err) => {
+                    if (err) {
+                        this.hasErrorResult = true;
+                    }
+                    this.formIsSubmitting = false;
+                    this.titleResultFormCheck = true;
+                },
+                () => {
+                    this.formIsSubmitting = false;
+                    this.titleResultFormCheck = true;
+                }
+                );
         }
     }
 
