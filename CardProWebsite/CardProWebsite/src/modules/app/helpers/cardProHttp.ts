@@ -53,10 +53,6 @@ export class CardProHttp extends Http {
 		return options;
 	}
     private handleError(error: any) {
-        if (error.status === 401) {
-			// TODO: remove
-            alert("connect to server failed");
-        }
         return Observable.throw(error._body);
     }
 }
