@@ -728,6 +728,7 @@ ul.thumbs img {
     width: 140px;
     margin: 0px auto;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .span-left {
