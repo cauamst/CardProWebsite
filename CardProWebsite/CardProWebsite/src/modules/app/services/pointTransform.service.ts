@@ -2,7 +2,7 @@
 
 @Injectable()
 export class PointTransformService {
-   
+
     constructor() { }
     private static factor: number = 33000;
     private static monthsInYear = 12;
@@ -32,23 +32,24 @@ export class PointTransformService {
         const constAmount = 100000;
 
         switch (cardId) {
-            case 2:
-            case 3:
-            case 4:
-            case 5:
             case 6:
+            case 8:
+            case 10:
+            case 12:
+            case 13:
                 coEfficient = 1;
                 minAmount = 1170;
                 break;
             case 7:
             case 8:
+            case 5:
             case 9:
                 coEfficient = 0.95;
                 minAmount = 1170;
                 break;
-            case 10:
-            case 12:
-            case 13:
+            case 2:
+            case 3:
+            case 4:
                 coEfficient = 0.85;
                 minAmount = 1170;
                 break;
@@ -56,11 +57,11 @@ export class PointTransformService {
                 return Math.floor(((amount * 100) / 20000)) * this.monthsInYear;
             case 14:
                 if (isOnlineExpenses) {
-                    if (amount > 2000000) {
+                    if (amount >= 2000000) {
                         let total = amount * 0.05;
                         return total >= 300000
                             ? 300000 * this.monthsInYear
-                            : Math.floor(total)
+                            : Math.floor(total) * this.monthsInYear
                             ;
                     } else {
                         return Math.floor(amount * 0.003) * this.monthsInYear;
@@ -89,14 +90,15 @@ export class PointTransformService {
         const constAmount = 10;
 
         switch (cardId) {
-            case 2:
-            case 3:
-            case 4:
-            case 5:
             case 6:
+            case 13:
+            case 12:
+            case 10:
+            case 8:
                 coEfficient = 1;
                 minAmount = 12;
                 break;
+            case 5:
             case 7:
             case 8:
             case 9:
@@ -106,6 +108,9 @@ export class PointTransformService {
             case 10:
             case 12:
             case 13:
+            case 4:
+            case 3:
+            case 2:
                 coEfficient = 0.85;
                 minAmount = 12;
             case 11:
@@ -113,7 +118,6 @@ export class PointTransformService {
             default:
                 return 0;
         }
-
         let total = amount / (this.factor * coEfficient * minAmount);
 
         return (amount / (this.factor * coEfficient)) >= minAmount
