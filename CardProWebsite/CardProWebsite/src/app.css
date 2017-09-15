@@ -140,3 +140,7 @@
     padding-top : 30px;
 }
 
+/*prevent hana adds silly css*/ 
+body {
+    overflow-y: hidden !important;
+}
