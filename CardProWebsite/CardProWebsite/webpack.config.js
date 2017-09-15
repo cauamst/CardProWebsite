@@ -64,7 +64,7 @@ module.exports = {
 
     output: {
         path: isProd ? root('wwwroot/dist') : root('dist'),
-        publicPath: isProd?  '/Apps/cardProWebsite/dist/' : '/dist/',
+        publicPath: isProd?  '/landingpage/dist/' : '/dist/',
         filename: isProd ? '[name].[chunkhash].bundle.js' : '[name].bundle.js',
         chunkFilename: isProd ? '[name].[chunkhash].js' : '[name].js'
     },
