@@ -139,3 +139,16 @@
     border-top: solid 1px #f4e9e9;
     padding-top : 30px;
 }
+.sacombank-icons-nav {
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 10px;
+    background: #ececec;
+    color: blue;
+}
+.sacombank-route-nav {
+    padding-left: 50px !important;
+}
+.nav-drawer {
+    padding-top: 30px;
+}

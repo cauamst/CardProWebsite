@@ -13,17 +13,17 @@ export const routes: Routes = [
         redirectTo: '/home',
         pathMatch: 'full'
     },
-    { path: 'home', component: HomeComponent, data: { title: 'Trang chủ', name: 'CardProWebsite' } },
-    { path: 'products', component: ProductsComponent, data: { title: 'Products' }, canActivate: [AuthGuard] },
+    { path: 'home', component: HomeComponent, data: { title: 'Trang chủ', name: 'CardProWebsite',icon: "home" } },
+    { path: 'products', component: ProductsComponent, data: { title: 'Products', icon: ""  }, canActivate: [AuthGuard] },
     { path: 'cardRegistration', component: CardRegistrationComponent, data: { title: 'Card Registration' }, canActivate: [AuthGuard] },
     {
-        path: 'register', component: CreditComponent, data: { title: 'Dịch vụ thẻ' },
+        path: 'register', component: CreditComponent, data: { title: 'Dịch vụ thẻ',icon: "credit_card" },
 
     },
     {
-        path: 'Login', component: LoginLayoutComponent, data: { title: 'Đăng nhập' }
+        path: 'Login', component: LoginLayoutComponent, data: { title: 'Đăng nhập',icon:"vpn_key" }
     },
-    { path: 'login', component: LoginComponent},
+    { path: 'login', component: LoginComponent,data: { title: 'Đăng nhập',icon:"" } },
     
     { path: '**', redirectTo: 'home' },
 ];

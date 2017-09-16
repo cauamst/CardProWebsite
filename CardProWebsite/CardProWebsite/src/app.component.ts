@@ -1,4 +1,4 @@
-﻿import { Component, Inject, ViewChild, ElementRef } from '@angular/core';
+﻿import { Component, Inject, ViewChild, ElementRef, HostListener, Input } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from "@angular/router";
 import { routes } from './modules/app/app.routing';
 import { DOCUMENT } from "@angular/platform-browser";
@@ -24,7 +24,7 @@ export class AppComponent {
         this.logoUrl = require("./assets/img/logo.png");
         this.url = 'https://servicestack.net/vs-templates/AngularApp';
     }
-   
+
     ngOnInit() {
         this.subscription = this.notificationService.needToTopObservable$.subscribe((res) => {
             if (res) {
@@ -61,4 +61,12 @@ export class AppComponent {
             }
         }, 1)
     }
+    CloseDrawer()
+    {
+        document.querySelector('.mdl-layout__drawer').addEventListener('click', function () {
+          document.querySelector('.mdl-layout__obfuscator').classList.remove('is-visible');
+          this.classList.remove('is-visible');
+        }, false);
+    }
+    
 }
