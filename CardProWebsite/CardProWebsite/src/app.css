@@ -137,7 +137,7 @@
 
 .content-border-sacombank {
     border-top: solid 1px #f4e9e9;
-    padding-top : 30px;
+    padding-top : 20px;
 }
 
 /*prevent hana adds silly css*/ 
@@ -149,7 +149,6 @@ body {
     position: absolute;
     margin-top: 15px;
     margin-left: 10px;
-    background: #ececec;
     color: blue;
 }
 .sacombank-route-nav {
