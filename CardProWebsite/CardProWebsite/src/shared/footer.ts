@@ -38,6 +38,7 @@ h2 {
 }
 a{
     color : #fff !important;
+    cursor: pointer;
 }
 .position-arrow {
     position: absolute !important;

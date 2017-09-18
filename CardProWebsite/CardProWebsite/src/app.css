@@ -18,6 +18,9 @@
 .mdl-layout__header {
     z-index: 1 !important;
 }
+.active-link {
+   color : blue !important;
+}
 
 /*Template Android*/
 .mdl-layout__drawer-button {
@@ -173,8 +176,9 @@ body {
     }
 .resize-image {
     display: block;
-    width: auto;
+    width: 50%;
     margin: auto;
+    max-width : 400px;
 }
 #text-center {
     font-weight : 600;
@@ -196,7 +200,6 @@ body {
     width: calc(100% - 200px);
     color: #1BB1DB;
     padding: 0 100px;
-    
     text-align: center;
 }
 
