@@ -156,6 +156,7 @@
     <Content Include="src\modules\app\transformSlider\transformSlider.html" />
     <Content Include="src\modules\app\_login\login.css" />
     <Content Include="src\modules\app\_login\login.html" />
+    <Content Include="src\shared\footer.html" />
     <Content Include="src\shared\header.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

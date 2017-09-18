@@ -15,7 +15,7 @@ export class AppComponent {
     @ViewChild("cardProMain") cardProMain: ElementRef;
     private subscription: Subscription;
     title = 'CARD PRO';
-    routes = routes.filter((val) => val.path != '' && val.path != 'login' && val.path != 'products' && val.path != 'cardRegistration');
+    routes = routes.filter((val) => val.path != '' && val.path != 'login' && val.path != 'Login' && val.path != 'products' && val.path != 'cardRegistration');
 
     constructor( @Inject(DOCUMENT) private document: Document, private route: ActivatedRoute,
         private router: Router, private notificationService: NotificationService
