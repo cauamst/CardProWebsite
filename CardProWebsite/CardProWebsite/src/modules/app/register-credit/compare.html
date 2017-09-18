@@ -132,8 +132,8 @@
                 <div class="row">
                     <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--4-col-tablet mdl-text-left">Quyền lợi bảo hiểm</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet" *ngIf="!card1"></div>
-                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-align" *ngIf="card1">{{card1.TIVT1}}</div>
-                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-align" *ngIf="card2">{{card2.TIVT1}}</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-left-tivt" *ngIf="card1" [innerHTML]="card1.TIVT1"></div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-left-tivt" *ngIf="card2" [innerHTML]="card2.TIVT1"></div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet" *ngIf="!card2"></div>
                 </div>
             </div>
@@ -142,8 +142,8 @@
                 <div class="row">
                     <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--4-col-tablet mdl-text-left">Thẻ Prority Pass, phòng chờ tại hơn 1000 sân bay trên toàn thế giới</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet" *ngIf="!card1"></div>
-                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-align" *ngIf="card1">{{card1.TIVT2}}</div>
-                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-align" *ngIf="card2">{{card2.TIVT2}}</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-left-tivt" *ngIf="card1">{{card1.TIVT2}}</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-left-tivt" *ngIf="card2">{{card2.TIVT2}}</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet" *ngIf="!card2"></div>
                 </div>
             </div>
@@ -152,8 +152,8 @@
                 <div class="row">
                     <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--4-col-tablet mdl-text-left">Golf, Spa cao cấp</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet" *ngIf="!card1"></div>
-                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-align" *ngIf="card1">{{card1.TIVT3}}</div>
-                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-align" *ngIf="card2">{{card2.TIVT3}}</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-left-tivt" *ngIf="card1">{{card1.TIVT3}}</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-left-tivt" *ngIf="card2">{{card2.TIVT3}}</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet" *ngIf="!card2"></div>
                 </div>
             </div>
@@ -162,8 +162,8 @@
                 <div class="row">
                     <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--4-col-tablet mdl-text-left">Đặc quyền khác</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet" *ngIf="!card1"></div>
-                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-align" *ngIf="card1">{{card1.TIVT4}}</div>
-                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-align" *ngIf="card2">{{card2.TIVT4}}</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-left-tivt" *ngIf="card1">{{card1.TIVT4}}</div>
+                    <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-left-tivt" *ngIf="card2">{{card2.TIVT4}}</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet" *ngIf="!card2"></div>
                 </div>
             </div>

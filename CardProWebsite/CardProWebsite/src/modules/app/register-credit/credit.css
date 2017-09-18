@@ -994,3 +994,8 @@ left-content {
         float : none;
     }
 }
+@media screen and (max-width : 768px) {
+    .mdl-textfield__label {
+        left: 35px !important;
+    }
+}

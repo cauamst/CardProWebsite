@@ -47,7 +47,7 @@ export class CreditComponent implements OnInit {
     formIsSubmitting: boolean;
 
     titleResultFormCheck: boolean = false;
-    titleForm: string = "Thông tin khách hàng";
+    titleForm: string = "ĐĂNG KÝ NGAY";
     ResultTitle: string = "";
     ResultRegister: string;
 
