@@ -20,9 +20,6 @@ export class AppComponent {
     constructor( @Inject(DOCUMENT) private document: Document, private route: ActivatedRoute,
         private router: Router, private notificationService: NotificationService
     ) {
-
-        this.logoUrl = require("./assets/img/logo.png");
-        this.url = 'https://servicestack.net/vs-templates/AngularApp';
     }
 
     ngOnInit() {

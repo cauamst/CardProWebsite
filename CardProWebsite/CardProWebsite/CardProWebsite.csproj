@@ -96,7 +96,7 @@
     <Content Include="src\assets\css\google-fonts.css" />
     <Content Include="src\assets\css\material-design-icons.css" />
     <Content Include="src\assets\img\fb-art.png" />
-    <Content Include="src\assets\img\gg-logo.png" />
+    <Content Include="src\assets\img\login-with-google-plus.png" />
     <Content Include="src\assets\img\sacomhe.jpg" />
     <Content Include="src\assets\img\credit-card-sample.png" />
     <Content Include="src\assets\img\STB.jpg" />
@@ -117,13 +117,11 @@
     <Content Include="src\assets\img\DichVuKieuHoi1600x530px.jpg" />
     <Content Include="src\assets\img\DonThuSangNganQuaTang1600x530.jpg" />
     <Content Include="src\assets\img\FamilyCard.jpg" />
-    <Content Include="src\assets\img\img18.jpg" />
     <Content Include="src\assets\img\imgwelcome.jpg" />
     <Content Include="src\assets\img\Infinitecard_Front.jpg" />
     <Content Include="src\assets\img\input-black.jpg" />
     <Content Include="src\assets\img\left-arrow.png" />
     <Content Include="src\assets\img\logo-ngan-hang-sacombank.png" />
-    <Content Include="src\assets\img\Logo_Sacombank.png" />
     <Content Include="src\assets\img\MCcreditclassic.jpg" />
     <Content Include="src\assets\img\MCcreditgold.jpg" />
     <Content Include="src\assets\img\MCworld.jpg" />
@@ -193,7 +191,6 @@
   <ItemGroup>
     <Content Include="src\assets\img\android-desktop.png" />
     <Content Include="src\assets\img\ios-desktop.png" />
-    <Content Include="src\assets\img\logo.png" />
     <Content Include="src\app.css" />
   </ItemGroup>
   <ItemGroup>

@@ -2,45 +2,44 @@
     <div class="mdl-grid">
         <div class="mdl-cell--4-col-desktop mdl-cell--4-col-phone mdl-shadow--4dp mdl-cell--4-col-tablet mdl-form-center">
             <div class="mdl-card__title mdl-color-title">
-                <h2 class="mdl-card__title-text mdl-color-text--white" id="font-title">Đăng nhập</h2>
+                <h2 class="mdl-card__title-text mdl-color-text--white" id="font-title">ĐĂNG NHẬP</h2>
             </div>
             <div class="mdl-card__supporting-text mdl-grid center">
                 <form method="POST" action="">
                     <input type="hidden" name="action" value="login" />
 
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col input-login-margin">
+                        <i class="mdl-textfield__icon material-icons icon-login">person</i>
                         <label class="mdl-textfield__label mdl-color-text--grey" for="textfield_new_username">Tài khoản</label>
                         <input class="mdl-textfield__input" type="text" id="name" name="name" pattern="^[a-z0-9_-]{3,15}$" />
                     </div>
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col input-login-margin">
+                        <i class="mdl-textfield__icon material-icons icon-login">lock</i>
                         <label class="mdl-textfield__label mdl-color-text--grey" for="textfield_new_username">Mật khẩu</label>
                         <input class="mdl-textfield__input" type="password" id="password" name="password" />
                     </div>
-                    <div class="mdl-cell">
+                    <div class="login-remember">
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox1">
                             <input type="checkbox" id="checkbox1"
                                    class="mdl-checkbox__input">
-                            <span class="mdl-checkbox__label">Nhớ tài khoản</span>
+                            <span class="mdl-checkbox__label">Ghi nhớ tài khoản</span>
                         </label>
                     </div>
                 </form>
 
             </div>
-            <div>
+            <div class="login-center-button">
                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary login-button">Đăng nhập</button>
             </div>
-            <div class="social-left">
-                <button href="https://www.facebook.com/sharer/sharer.php?u=" title="Share on Facebook" target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--facebook width"><i class="fa fa-facebook fa-fw"></i> Facebook</button>
+            <hr class="style15">
+            <div class="social-center">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=" title="Share on Facebook" target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--facebook width"><img src="../../../assets/img/fb-art.png" width="36" height="36" class="position-img" />Facebook</a>
             </div>
-            <div class="social-left">
-                <button href="https://plus.google.com/share?url=" title="Share on Google+" target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--googleplus width"><i class="fa fa-google-plus fa-fw"></i> Google+</button>
+            <div class="social-center ">
+                <a href="https://plus.google.com/share?url=" title="Share on Google+" target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--googleplus width"><img src="../../../assets/img/login-with-google-plus.png" width="36" height="36"  class="position-img" />Google+</a>
             </div>
-            <div class="social-left">
-                <button href="https://plus.google.com/share?url=" title="Share on Twitter" target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--twitter width"><i class="fa fa-google-plus fa-fw"></i> Twitter</button>
-            </div>
-            <div class="mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone footer-form">
-                <a class="mdl-button--primary text-left">Quên mật khẩu?</a>
-                <a class="mdl-button--primary text-right">Đăng ký ngay!</a>
+            <div class="social-center footer-login">
+                <a href="https://plus.google.com/share?url=" title="Share on Twitter" target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--twitter width"><img src="../../../assets/img/twitter-logo-clipart-free-20.jpg" width="36" height="36"  class="position-img" />Twitter</a>
             </div>
         </div>
     </div>

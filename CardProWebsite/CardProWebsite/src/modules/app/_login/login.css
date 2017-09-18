@@ -274,7 +274,7 @@
 }
 
 .mdl-checkbox__label {
-    float: left;
+    font-size: 12px;
 }
 
 .mdl-form-center {
@@ -283,7 +283,11 @@
 }
 
 .mdl-color-title {
-    background-color: #4490c7;
+    background-color: #0072bc;
+}
+.check-box {
+    width: 14px !important;
+    height: 14px !important;
 }
 
 .text-right {
@@ -301,21 +305,66 @@
 
 #font-title {
     font-size: 18px !important;
+
+}
+.login-remember {
+    margin-left: 13px;
 }
 .section-bottom {
-    margin-bottom : 30px;
+    margin-bottom : 50px;
+}
+.login-center-button {
+    text-align : center;
 }
 .login-button {
-    margin-bottom: 20px;
-    margin-top: 20px;
-    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    width: 50%;
+    background-color: rgb(27, 177, 219) !important;
+}
+.login-or {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-.social-left {
-    margin-bottom: 7px;
-    margin-top: 7px;
-}
 
 .width {
-    width: 100%;
+    width: 50%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+hr.style15 {
+    text-align: center;
+}
+.footer-login {
+    margin-bottom : 20px;   
+}
+hr.style15:after {
+    content: 'Hoặc đăng nhập với';
+    display: inline-block;
+    position: relative;
+    top: -15px;
+    padding: 0 10px;
+    background: #f0f0f0;
+    font-size: 12px;
+}
+    .social-center 
+    {
+        text-align:center;
+    }
+
+.input-login-margin {
+    margin-left : 15px;
+}
+.icon-login {
+    position: absolute;
+    margin-left: -25px;
+    margin-top: 1px;
+    font-size: 20px;
+}
+.mdl-textfield__label {
+    font-size : 13px !important;
+}
+.position-img {
+    float : left;
 }

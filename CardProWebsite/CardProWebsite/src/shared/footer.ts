@@ -4,15 +4,6 @@
     selector: 'app-footer',
     template: `
         <footer class="android-footer mdl-mega-footer">
-            <div class="mdl-mega-footer--top-section">
-            <div class="mdl-mega-footer--left-section">
-              <button class="mdl-mega-footer--social-btn"></button>
-              &nbsp;
-              <button class="mdl-mega-footer--social-btn"></button>
-              &nbsp;
-              <button class="mdl-mega-footer--social-btn"></button>
-            </div>
-          </div>
             <div class="mdl-mega-footer--bottom-section">
                 <a class="android-link mdl-typography--font-light" href="__">Trang chủ</a>
                 <a class="android-link mdl-typography--font-light" href="__">Liên hệ</a>
