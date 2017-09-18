@@ -194,3 +194,9 @@ img {
 h4 {
     margin-bottom : 0 !important;
 }
+.mdl-textfield__input {
+    font-size : 12px !important;
+}
+.label-dialog {
+    font-size : 13px !important;
+}

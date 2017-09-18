@@ -57,6 +57,7 @@
 .mdl-textfield__input {
     margin-left: 10%;
     width: 90%;
+    font-size : 12px !important;
 }
 /*card*/
 .mdl-card__media {
@@ -728,6 +729,7 @@ ul.thumbs img {
     width: 140px;
     margin: 0px auto;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .span-left {

@@ -2,10 +2,10 @@
     <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <app-header></app-header>
     </div>
-    <div class="android-drawer mdl-layout__drawer mdl-layout--small-screen-only">
-        <nav class="mdl-navigation" *ngFor="let route of routes">
-            <a class="mdl-navigation__link" *ngIf="route.data" routerLinkActive="active-link" routerLink="{{route.path}}">{{route.data.title}}</a>
-
+    <div class="android-drawer mdl-layout__drawer mdl-layout--small-screen-only" (click)="CloseDrawer()">
+        <nav class="mdl-navigation nav-drawer" *ngFor="let route of routes">
+            <i class="mdl-textfield__icon material-icons sacombank-icons-nav" *ngIf="route.data">{{route.data.icon}}</i>
+            <a class="mdl-navigation__link sacombank-route-nav" *ngIf="route.data" routerLinkActive="active-link" routerLink="{{route.path}}">{{route.data.title}}</a>
         </nav>
     </div>
     <div class="android-content mdl-layout__content content-border-sacombank" (scroll)="scroll($event)" #cardProMain>

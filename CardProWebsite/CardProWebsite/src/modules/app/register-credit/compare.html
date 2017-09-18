@@ -208,7 +208,7 @@
                             <option [ngValue]="-1"></option>
                             <option [ngValue]="c.currentCatId" *ngFor="let c of benefits">{{c.director}}</option>
                         </select>
-                        <label class="mdl-textfield__label" for="benefit1">Chọn tiện ích</label>
+                        <label class="mdl-textfield__label label-dialog" for="benefit1">Chọn tiện ích</label>
                     </div>
                 </div>
                 <div class="mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
@@ -216,7 +216,7 @@
                         <select class="mdl-textfield__input" id="cardOpt1" [(ngModel)]="tempCard">
                             <option *ngFor="let ca of cards1" [ngValue]="ca" [hidden]="ca == card2">{{ca.Name}}</option>
                         </select>
-                        <label class="mdl-textfield__label" for="cardOpt1">Chọn thẻ</label>
+                        <label class="mdl-textfield__label label-dialog" for="cardOpt1">Chọn thẻ</label>
                     </div>
                 </div>
             </div>
@@ -240,7 +240,7 @@
                         <option [ngValue]="-1"></option>
                         <option [ngValue]="c.currentCatId" *ngFor="let c of benefits">{{c.director}}</option>
                     </select>
-                    <label class="mdl-textfield__label" for="benefit2">Chọn tiện ích</label>
+                    <label class="mdl-textfield__label label-dialog" for="benefit2">Chọn tiện ích</label>
                 </div>
             </div>
             <div class="mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
@@ -248,7 +248,7 @@
                     <select class="mdl-textfield__input" id="cardOpt2" [(ngModel)]="tempCard">
                         <option *ngFor="let ca of cards2" [ngValue]="ca" [hidden]="ca == card1">{{ca.Name}}</option>
                     </select>
-                    <label class="mdl-textfield__label" for="cardOpt2">Chọn thẻ</label>
+                    <label class="mdl-textfield__label label-dialog" for="cardOpt2">Chọn thẻ</label>
                 </div>
             </div>
         </div>

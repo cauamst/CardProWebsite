@@ -145,3 +145,16 @@ body {
     overflow-y: hidden !important;
 }
 
+.sacombank-icons-nav {
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 10px;
+    background: #ececec;
+    color: blue;
+}
+.sacombank-route-nav {
+    padding-left: 50px !important;
+}
+.nav-drawer {
+    padding-top: 30px;
+}
