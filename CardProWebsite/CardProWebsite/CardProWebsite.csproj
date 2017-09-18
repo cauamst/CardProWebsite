@@ -97,10 +97,13 @@
     <Content Include="src\assets\css\material-design-icons.css" />
     <Content Include="src\assets\img\fb-art.png" />
     <Content Include="src\assets\img\login-with-google-plus.png" />
+    <Content Include="src\assets\img\ms-securecode.png" />
+    <Content Include="src\assets\img\pci-logo.png" />
     <Content Include="src\assets\img\sacomhe.jpg" />
     <Content Include="src\assets\img\credit-card-sample.png" />
     <Content Include="src\assets\img\STB.jpg" />
     <Content Include="src\assets\img\twitter-logo-clipart-free-20.jpg" />
+    <Content Include="src\assets\img\verified-by-visa.png" />
     <Content Include="src\modules\app\cardRegistration\cardRegistration.component.html" />
     <Content Include="src\modules\app\cardRegistration\cardRegistration.component.ts" />
     <Content Include="src\assets\css\material.min.css" />
