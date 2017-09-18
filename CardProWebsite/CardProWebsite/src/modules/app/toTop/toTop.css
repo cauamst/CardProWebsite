@@ -1,8 +1,8 @@
 ﻿.toTop_part {
     position: fixed;
-    bottom: 50px;
+    bottom: 80px;
     right: 30px;
-    z-index: 100000;
+    z-index: 10000000;
 }
 
 .mdl-button--fab {
