@@ -105,14 +105,13 @@ export class CreditComponent implements OnInit {
     Salary = [
         { id: 1, content: 'Thấp hơn 7 triệu' },
         { id: 2, content: 'Từ 7 - 20 triệu' },
-        { id: 3, content: 'Trên 20 triệu' }
+        { id: 3, content: 'A' }
     ];
     City = [
         { id: 1, content: 'An Giang' },
         { id: 2, content: 'Bà rịa - Vũng tàu' },
         { id: 3, content: 'Bắc Cạn' },
         { id: 4, content: 'Bắc Giang' },
-        { id: 5, content: 'Bắc Kan' },
         { id: 6, content: 'Bạc Liêu' },
         { id: 7, content: 'Bắc Ninh' },
         { id: 8, content: 'Bến Tre' },
@@ -126,7 +125,6 @@ export class CreditComponent implements OnInit {
         { id: 16, content: 'Đà Nẵng' },
         { id: 17, content: 'Đắc Lắc' },
         { id: 18, content: 'Đắc Nông' },
-        { id: 19, content: 'DAK LAK' },
         { id: 20, content: 'DAK NONG' },
         { id: 21, content: 'Điện Biên' },
         { id: 22, content: 'Hà Nội' },
