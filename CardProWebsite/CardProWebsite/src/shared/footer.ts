@@ -20,17 +20,14 @@ ul {
 .sacombank-width-li{
     width: 85%;
 }
-li{
-    border-bottom : solid 1px #353535;
-}
 address{
     line-height: 23px;
     color: #eee;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-style: normal;
 }
 h2 {
-    border-bottom: 2px solid #3498db !important;
+    border-bottom: 2px solid #faddd5 !important;
     color: #eee;
     font-weight: 200;
     font-size: 1.4em !important;
@@ -52,15 +49,18 @@ li i {
     vertical-align: middle;
     border: 0;
 }
-.none-border {
-    border-bottom : 0 !important;
+.content-ul-inline{
+    display : -webkit-box;
 }
 .span-footer-address {
     margin-left: 30px !important;
 }   
 .sacombank-footer{
     text-align: center !important;
-    background-color :#3e4753 !important;
+    background-color : rgba(109, 207, 246, 0.48) !important !important;
+    margin-top: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 `]
 })
