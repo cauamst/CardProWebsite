@@ -33,7 +33,7 @@ export class CreditComponent implements OnInit {
     showDialog = false;
     content: Content;
     currentContentType: number = 1;
-    captchaImgUrl = require("../../../assets/img/input-black.jpg")
+    sampleCaptchaImg = require("../../../assets/img/input-black.jpg")
     // Slider Region
     private maximumActive: number = 4;
     private leftMostIndex: number;
@@ -49,6 +49,7 @@ export class CreditComponent implements OnInit {
     titleResultFormCheck: boolean;
     successResult: boolean;
     hasErrorResult: boolean;
+    invalidCaptcha: boolean;
 
     registerForm: FormGroup;
     name: FormControl;
@@ -58,6 +59,7 @@ export class CreditComponent implements OnInit {
     salary: FormControl;
     agree: FormControl;
     captcha: FormControl;
+    captchaBase64Img: string = this.sampleCaptchaImg;
 
     showCompare = true;
     showButtonBack = false;
@@ -112,7 +114,6 @@ export class CreditComponent implements OnInit {
         { id: 2, content: 'Bà rịa - Vũng tàu' },
         { id: 3, content: 'Bắc Cạn' },
         { id: 4, content: 'Bắc Giang' },
-        { id: 5, content: 'Bắc Kan' },
         { id: 6, content: 'Bạc Liêu' },
         { id: 7, content: 'Bắc Ninh' },
         { id: 8, content: 'Bến Tre' },
@@ -126,11 +127,9 @@ export class CreditComponent implements OnInit {
         { id: 16, content: 'Đà Nẵng' },
         { id: 17, content: 'Đắc Lắc' },
         { id: 18, content: 'Đắc Nông' },
-        { id: 19, content: 'DAK LAK' },
-        { id: 20, content: 'DAK NONG' },
         { id: 21, content: 'Điện Biên' },
         { id: 22, content: 'Hà Nội' },
-        { id: 23, content: 'Thành phố HCM' }
+        { id: 23, content: 'Tp.Hồ Chí Minh ' }
     ];
 
     constructor(
@@ -153,6 +152,7 @@ export class CreditComponent implements OnInit {
         this.getContentCard(this.currentContentType);
         this.CreateValidatorForm();
         this.CreateRegisterForm();
+        this.updateCaptcha();
     }
 
     private addNewSlide() {
@@ -265,6 +265,17 @@ export class CreditComponent implements OnInit {
 
     // ---- slider Region ------------------
 
+    updateCaptcha() {
+        this.cardService.getCaptcha().subscribe((res) =>
+            this.captchaBase64Img = `data:image/png;base64,${res}`,
+            (err) => {
+                if (err) {
+                    this.captchaBase64Img = this.sampleCaptchaImg;
+                }
+            }
+        );
+    }
+
     chooseOption(btn: any) {
         this.getContentCard(btn.ContentType);
         this.getCardType(btn.id);
@@ -342,8 +353,10 @@ export class CreditComponent implements OnInit {
 
     submitForm(): void {
         if (!this.formIsSubmitting) {
+            this.invalidCaptcha = false;
             this.formIsSubmitting = true;
 
+            this.registerInfo.captcha = this.captcha.value;
             this.registerInfo.name = this.name.value;
             this.registerInfo.email = this.email.value;
             this.registerInfo.phoneNumber = this.phone.value;
@@ -357,10 +370,17 @@ export class CreditComponent implements OnInit {
             this.cardService
                 .anonymousRegister(this.registerInfo)
                 .subscribe((result) => {
-                    if (result.IsSuccess) {
-                        this.successResult = true;
-                    } else {
-                        this.successResult = false;
+                    if (result) {
+                        this.successResult = result.IsSuccess;
+                        this.hasErrorResult = result.HasErrors;
+                        this.invalidCaptcha = result.InvalidCaptcha;
+                    }
+                    this.formIsSubmitting = false;
+                    this.titleResultFormCheck = !this.invalidCaptcha;
+
+                    if (this.invalidCaptcha) {
+                        this.captcha.setErrors({ "verificationFailed": true });
+                        this.updateCaptcha();
                     }
                 },
                 (err) => {
@@ -369,17 +389,15 @@ export class CreditComponent implements OnInit {
                     }
                     this.formIsSubmitting = false;
                     this.titleResultFormCheck = true;
-                },
-                () => {
-                    this.formIsSubmitting = false;
-                    this.titleResultFormCheck = true;
                 }
                 );
         }
     }
 
     ClearInput() {
+        this.invalidCaptcha = false;
         this.titleResultFormCheck = false;
         this.registerForm.reset();
+        this.updateCaptcha();
     }
 }

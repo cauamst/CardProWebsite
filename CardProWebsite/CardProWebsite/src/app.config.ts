@@ -6,6 +6,7 @@
     logoutUrl: 'auth/logout',
     getCardsUrl: 'cards',
     registerCard: "/card/register",
+    getCaptchaUrl: "captchas",
     anonymousRegister: "card/anonymousRegister",
     //lazy load
     minimumHeight: 300, //px to top
