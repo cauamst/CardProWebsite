@@ -28,6 +28,11 @@ export class CardService {
             .map((response: Response) => response.json());
     }
 
+    getCaptcha() {
+        return this.http.post(appConfig.getCaptchaUrl, {})
+            .map((response: Response) => response.json());
+    }
+
     anonymousRegister(data: object) {
         return this.http.post(appConfig.anonymousRegister, data)
             .map((response: Response) => response.json())

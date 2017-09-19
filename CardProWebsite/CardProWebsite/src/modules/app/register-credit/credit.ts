@@ -33,7 +33,7 @@ export class CreditComponent implements OnInit {
     showDialog = false;
     content: Content;
     currentContentType: number = 1;
-    captchaImgUrl = require("../../../assets/img/input-black.jpg")
+    sampleCaptchaImg = require("../../../assets/img/input-black.jpg")
     // Slider Region
     private maximumActive: number = 4;
     private leftMostIndex: number;
@@ -58,6 +58,7 @@ export class CreditComponent implements OnInit {
     salary: FormControl;
     agree: FormControl;
     captcha: FormControl;
+    captchaBase64Img: string = this.sampleCaptchaImg;
 
     showCompare = true;
     showButtonBack = false;
@@ -150,6 +151,7 @@ export class CreditComponent implements OnInit {
         this.getContentCard(this.currentContentType);
         this.CreateValidatorForm();
         this.CreateRegisterForm();
+        this.updateCaptcha();
     }
 
     private addNewSlide() {
@@ -262,6 +264,17 @@ export class CreditComponent implements OnInit {
 
     // ---- slider Region ------------------
 
+    updateCaptcha() {
+        this.cardService.getCaptcha().subscribe((res) =>
+            this.captchaBase64Img = `data:image/png;base64,${res}`,
+            (err) => {
+                if (err) {
+                    this.captchaBase64Img = this.sampleCaptchaImg;
+                }
+            }
+        );
+    }
+
     chooseOption(btn: any) {
         this.getContentCard(btn.ContentType);
         this.getCardType(btn.id);
@@ -341,6 +354,7 @@ export class CreditComponent implements OnInit {
         if (!this.formIsSubmitting) {
             this.formIsSubmitting = true;
 
+            this.registerInfo.captcha = this.captcha.value;
             this.registerInfo.name = this.name.value;
             this.registerInfo.email = this.email.value;
             this.registerInfo.phoneNumber = this.phone.value;
@@ -378,5 +392,6 @@ export class CreditComponent implements OnInit {
     ClearInput() {
         this.titleResultFormCheck = false;
         this.registerForm.reset();
+        this.updateCaptcha();
     }
 }
