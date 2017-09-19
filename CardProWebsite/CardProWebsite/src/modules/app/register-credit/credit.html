@@ -234,7 +234,7 @@
                                 <label class="mdl-textfield__label" for="captcha">Mã xác nhận</label>
                                 <span class="form-control-feedback"
                                       *ngIf="captcha.errors && (captcha.dirty || captcha.touched)">
-                                    <span class="mdl-textfield__error" *ngIf="captcha.errors.pattern">Nhập sai mã xác nhận</span>
+                                    <span class="mdl-textfield__error">Sai mã xác nhận</span>
                                 </span>
                             </div>
                             <img [src]="captchaBase64Img" class="captcha-image" />
@@ -250,7 +250,6 @@
                         </div>
                         <div class="fix"></div>
                         <div>
-                            
                             <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-register" [disabled]="!registerForm.valid" (click)="submitForm()">Đăng ký</button>
                             <div class="fix"></div>
                         </div>

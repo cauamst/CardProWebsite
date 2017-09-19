@@ -49,6 +49,7 @@ export class CreditComponent implements OnInit {
     titleResultFormCheck: boolean;
     successResult: boolean;
     hasErrorResult: boolean;
+    invalidCaptcha: boolean;
 
     registerForm: FormGroup;
     name: FormControl;
@@ -352,6 +353,7 @@ export class CreditComponent implements OnInit {
 
     submitForm(): void {
         if (!this.formIsSubmitting) {
+            this.invalidCaptcha = false;
             this.formIsSubmitting = true;
 
             this.registerInfo.captcha = this.captcha.value;
@@ -368,10 +370,17 @@ export class CreditComponent implements OnInit {
             this.cardService
                 .anonymousRegister(this.registerInfo)
                 .subscribe((result) => {
-                    if (result.IsSuccess) {
-                        this.successResult = true;
-                    } else {
-                        this.successResult = false;
+                    if (result) {
+                        this.successResult = result.IsSuccess;
+                        this.hasErrorResult = result.HasErrors;
+                        this.invalidCaptcha = result.InvalidCaptcha;
+                    }
+                    this.formIsSubmitting = false;
+                    this.titleResultFormCheck = !this.invalidCaptcha;
+
+                    if (this.invalidCaptcha) {
+                        this.captcha.setErrors({ "verificationFailed": true });
+                        this.updateCaptcha();
                     }
                 },
                 (err) => {
@@ -380,16 +389,13 @@ export class CreditComponent implements OnInit {
                     }
                     this.formIsSubmitting = false;
                     this.titleResultFormCheck = true;
-                },
-                () => {
-                    this.formIsSubmitting = false;
-                    this.titleResultFormCheck = true;
                 }
                 );
         }
     }
 
     ClearInput() {
+        this.invalidCaptcha = false;
         this.titleResultFormCheck = false;
         this.registerForm.reset();
         this.updateCaptcha();
