@@ -127,7 +127,7 @@ export class CreditComponent implements OnInit {
         { id: 18, content: 'Đắc Nông' },
         { id: 21, content: 'Điện Biên' },
         { id: 22, content: 'Hà Nội' },
-        { id: 23, content: 'Thành phố HCM' }
+        { id: 23, content: 'Tp.Hồ Chí Minh ' }
     ];
 
     constructor(
