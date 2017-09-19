@@ -24,7 +24,9 @@
     margin-left: 40px;
     margin-right: 40px;
 }
-
+.span-error {
+    width: max-content;
+}
 .border-left-bottom {
     border-bottom: 1px solid #0094ff;
     border-left: 1px solid #0094ff;
@@ -961,7 +963,7 @@ left-content {
     font-size : 12px !important; 
 }
 .captcha-image {
-    max-width: 110px;
+    max-width: 105px;
     max-height: 40px;
     margin-top: 20px;
     float: right;

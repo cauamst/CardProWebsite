@@ -234,7 +234,7 @@
                                 <label class="mdl-textfield__label" for="captcha">Mã xác nhận</label>
                                 <span class="form-control-feedback"
                                       *ngIf="captcha.errors && (captcha.dirty || captcha.touched)">
-                                    <span class="mdl-textfield__error">Sai mã xác nhận</span>
+                                    <span class="mdl-textfield__error span-error">Sai mã xác nhận</span>
                                 </span>
                             </div>
                             <img [src]="captchaBase64Img" class="captcha-image" />
