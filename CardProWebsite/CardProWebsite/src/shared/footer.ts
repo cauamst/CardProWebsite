@@ -57,10 +57,10 @@ li i {
 }   
 .sacombank-footer{
     text-align: center !important;
-    background-color : rgba(109, 207, 246, 0.48) !important !important;
+    background-color : rgba(109, 189, 246, 0.2) !important;
     margin-top: 15px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-bottom: 1px;
+    padding-top: 18px;
 }
 `]
 })
