@@ -9,9 +9,10 @@ import { routes } from '../modules/app/app.routing';
     .mdl-layout__header {
         z-index : 1 !important;
     }
-.active-link {
-    border-bottom: 4px solid #3f51b5 !important;
-}
+    .active-link {
+        border-bottom: 4px solid #3f51b5 !important;
+    }
+    
 `]
 })
 export class HeaderComponent {

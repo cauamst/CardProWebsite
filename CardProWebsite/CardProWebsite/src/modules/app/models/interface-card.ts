@@ -6,7 +6,6 @@
     TIVT1: string;
     TIVT2: string;
     TIVT3: string;
-    TIVT4: string;
     TIC1: string;
     TIC2: string;
     TIC3: string;
