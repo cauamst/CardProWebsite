@@ -16,9 +16,9 @@ export class CarouselComponent implements OnInit {
 }
 // add image -> binding to view 
 var IMAGES: Image[] = [
-    { "title": "Chứng chỉ tiền gửi, An tâm đầu tư sinh", "url": require("../../../assets/img/ChungChiTienGui1600x530px_1.jpg") },
-    { "title": "Đón thu sang, Ngàn quà tặng", "url": require("../../../assets/img/DonThuSangNganQuaTang1600x530.jpg") },
-    { "title": "Top 40", "url": require("../../../assets/img/Top40ThuongHIeu2017_1600x530.jpg") },
-    { "title": "Dịch vụ kiều hối Sacombank", "url": require("../../../assets/img/DichVuKieuHoi1600x530px.jpg") },
-    { "title": "Đơn giản chỉ là chạm", "url": require("../../../assets/img/CTKM-Contactless1600x530.jpg") }
+    { "title": "Chương trình khuyến mãi ContactLess", "url": require("../../../assets/img/1600x660-ctkm-contactless.jpg") },
+    { "title": "Khuyến mãi GrabBike/ GrabCar", "url": require("../../../assets/img/grab1660x660.jpg") },
+    { "title": "Chạm là thanh toán - Thanh toán thời thượng", "url": require("../../../assets/img/banner-1600-x-600-px.jpg") },
+    { "title": "Ưu đãi thẻ sacombank", "url": require("../../../assets/img/banner-web-km-sacombank_1600x660px.jpg") },
+    { "title": "Chương trình thẻ quà tặng khi dùng MOMO", "url": require("../../../assets/img/momo.jpg") }
 ];

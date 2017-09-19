@@ -95,8 +95,13 @@
     <Content Include="src\app.component.html" />
     <Content Include="src\assets\css\google-fonts.css" />
     <Content Include="src\assets\css\material-design-icons.css" />
+    <Content Include="src\assets\img\1600x660-ctkm-contactless.jpg" />
+    <Content Include="src\assets\img\grab1660x660.jpg" />
+    <Content Include="src\assets\img\banner-1600-x-600-px.jpg" />
+    <Content Include="src\assets\img\banner-web-km-sacombank_1600x660px.jpg" />
     <Content Include="src\assets\img\fb-art.png" />
     <Content Include="src\assets\img\login-with-google-plus.png" />
+    <Content Include="src\assets\img\momo.jpg" />
     <Content Include="src\assets\img\ms-securecode.png" />
     <Content Include="src\assets\img\pci-logo.png" />
     <Content Include="src\assets\img\sacomhe.jpg" />
