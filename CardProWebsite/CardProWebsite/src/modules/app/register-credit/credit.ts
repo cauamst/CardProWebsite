@@ -105,7 +105,7 @@ export class CreditComponent implements OnInit {
     Salary = [
         { id: 1, content: 'Thấp hơn 7 triệu' },
         { id: 2, content: 'Từ 7 - 20 triệu' },
-        { id: 3, content: 'A' }
+        { id: 3, content: 'Trên 20 triệu' }
     ];
     City = [
         { id: 1, content: 'An Giang' },
