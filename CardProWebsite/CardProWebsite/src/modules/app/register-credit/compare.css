@@ -58,12 +58,20 @@ img {
     float: right;
     margin-right: 30px;
 }
-.text-transform {
+.text-transform-first {
+    font-size: 12px !important;
+    color: red;
+    margin-bottom: 0;
+    opacity: .5;
+    padding-left : 8px;
+}
+.text-transform-second {
     text-align: end;
     font-size: 12px !important;
     color: #000;
     margin-bottom: 0;
     opacity: .5;
+
 }
 .row {
     max-width: 85.7142857143em;
@@ -202,4 +210,22 @@ h4 {
 }
 .text-left-tivt {
     text-align : left !important;
+}
+.relative {
+    position: relative;
+}
+@media screen and (max-width : 423px) {
+    .set-up-position {
+        height: 48px;
+    }
+}
+@media screen and (min-width:480px) and (max-width: 616px) {
+    .set-up-position {
+        height: 48px;
+    }
+}
+@media screen and (min-width:840px) and (max-width: 925px) {
+    .set-up-position {
+        height: 48px;
+    }
 }

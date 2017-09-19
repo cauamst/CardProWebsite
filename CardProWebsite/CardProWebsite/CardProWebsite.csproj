@@ -96,6 +96,7 @@
     <Content Include="src\assets\css\google-fonts.css" />
     <Content Include="src\assets\css\material-design-icons.css" />
     <Content Include="src\assets\img\1600x660-ctkm-contactless.jpg" />
+    <Content Include="src\assets\img\bt-send-info.jpg" />
     <Content Include="src\assets\img\grab1660x660.jpg" />
     <Content Include="src\assets\img\banner-1600-x-600-px.jpg" />
     <Content Include="src\assets\img\banner-web-km-sacombank_1600x660px.jpg" />

@@ -11,6 +11,17 @@
 .demo-card-square > .mdl-card__title {
     color: #fff;
     margin-left: 25px;
+    
+}
+.sacombank-card-title {
+    padding: 10px 16px 0px 16px !important;
+    font-size : 22px !important;
+}
+ul {
+    font-size : 12px !important;
+}
+.sacombank-card-content {
+    padding: 3px 16px 45px 16px !important;
 }
 
 .demo-card-square > .mdl-card__accent {
@@ -24,6 +35,8 @@
 
 .card-full-width {
     width: 100%;
+    border-radius: 0.3em;
+    display: inline-flex !important;
 }
 
 .card-promotion {
@@ -43,6 +56,9 @@
     -webkit-transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+.grid-section {
+    margin-top :30px;
+}
 
 .card-header-blue {
     background-color: transparent;
@@ -56,7 +72,7 @@
     display: block;
     margin: 10px 0 25px 0;
     border-bottom: 1px dotted #e4e9f0;
-    height: 50px !important;
+    height: 60px !important;
 }
 
 .card-heading {
@@ -122,6 +138,7 @@
     margin-right: 60px;
 }
 .text-promotion {
+    margin-left :10px;
     text-align : justify;
 }
 .imghome-card {
@@ -320,7 +337,7 @@ nav {
     }
 }
 .font-size-heading {
-    font-size : 24px !important;
+    font-size : 22px !important;
 }
 .thumbs-image {
     width : 100%;
@@ -331,7 +348,7 @@ nav {
 
 }
 .font-size-content {
-    font-size : 14px !important;
+    font-size : 12px !important;
 }
 .row {
     position: relative;
@@ -378,6 +395,34 @@ nav {
 .section-bottom {
     margin-bottom : 40px;
 }
-.effect {
-    padding : 16px;
+.shape-contact-framwork {
+    float: right;
+    margin: 0.4em 0.5em 0.4em 0.4em;
+}
+.shape-contact-content {
+    height: 32px;
+    width: 265px;
+    border-width: 0px;
+}
+
+
+@media (min-width: 840px) {
+    .mdl-cell--8-col, .mdl-cell--8-col-desktop.mdl-cell--8-col-desktop {
+        width: calc(66.6666666667% - 1px) !important;
+    }
+}
+
+#contact {
+    font-size : 18px;
+}
+.icons-contact {
+    position : absolute;
+    margin-left : 5px;
+}
+.span-contact {
+    margin-left : 35px;
+}
+.div-margin {
+    margin-top : 13px;
+    position: relative;
 }
