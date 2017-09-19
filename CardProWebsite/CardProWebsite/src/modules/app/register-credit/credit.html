@@ -237,7 +237,7 @@
                                     <span class="mdl-textfield__error" *ngIf="captcha.errors.pattern">Nhập sai mã xác nhận</span>
                                 </span>
                             </div>
-                            <img src={{captchaImgUrl}} class="captcha-image" />
+                            <img [src]="captchaBase64Img" class="captcha-image" />
                             <div class="fix"></div>
                         </div>
 
