@@ -413,14 +413,18 @@ nav {
 }
 
 #contact {
-    font-size : 18px;
+    font-size: 22px;
+    color: #767676;
 }
 .icons-contact {
     position : absolute;
     margin-left : 5px;
+    font-size : 21px !important;
+
 }
 .span-contact {
     margin-left : 35px;
+    font-size : 12px !important;
 }
 .div-margin {
     margin-top : 13px;
