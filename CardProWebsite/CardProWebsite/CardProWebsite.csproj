@@ -217,7 +217,6 @@
     <TypeScriptCompile Include="src\modules\app\helpers\cardProHttp.ts" />
     <TypeScriptCompile Include="src\modules\app\helpers\cryptoUtils.ts" />
     <TypeScriptCompile Include="src\modules\app\home\carousel.ts" />
-    <TypeScriptCompile Include="src\modules\app\home\home.spec.ts" />
     <TypeScriptCompile Include="src\modules\app\home\home.ts" />
     <TypeScriptCompile Include="src\modules\app\home\slide.ts" />
     <TypeScriptCompile Include="src\modules\app\login\login.ts" />
@@ -255,8 +254,6 @@
     <TypeScriptCompile Include="src\shared\utils.ts" />
     <TypeScriptCompile Include="src\common.d.ts" />
     <TypeScriptCompile Include="src\dtos.ts" />
-    <TypeScriptCompile Include="src\modules\app\home\home.ts" />
-    <TypeScriptCompile Include="src\modules\app\home\home.spec.ts" />
     <TypeScriptCompile Include="src\modules\app\products\products.ts" />
     <TypeScriptCompile Include="src\main.ts" />
   </ItemGroup>

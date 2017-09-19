@@ -1,4 +1,4 @@
 export interface Image {
-	title: string;
+    url_blank: string;
 	url: string;
 }

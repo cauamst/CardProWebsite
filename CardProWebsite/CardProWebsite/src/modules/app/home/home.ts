@@ -38,10 +38,10 @@ export class HomeComponent {
         this.slides.pop();
     }
     cardhome = [
-        { id: 1, url: require("../../../assets/img/Infinitecard_Front.jpg"), Name: 'Thẻ tín dụng', content: 'Tận hưởng cuộc sống thú vị và ngập tràn ưu đãi với thẻ tín dụng Sacombank - nguồn tài chính dự phòng thiết yếu cho mọi nhu cầu chi tiêu, mua sắm', linkRoute : 'Đăng ký' },
-        { id: 2, url: require("../../../assets/img/MCworld.jpg"), Name: 'Thẻ thanh toán', content: 'Hơn cả tiền mặt, thẻ thanh toán Sacombank là phương tiện tài chính hiện đại được liên kết với tài khoản tiền gửi thanh toán của bạn để thực hiện nhiều chức năng: rút tiền, thanh toán, giao dịch trực tuyến...', linkRoute: 'Đăng ký' },
-        { id: 3, url: require("../../../assets/img/VisaCreditGold.jpg"), Name: 'Thẻ in hình', content: 'Thỏa sức sáng tạo chiếc thẻ độc đáo của riêng bạn và lưu giữ mọi khoảnh khắc tuyệt vời', linkRoute: 'Đăng ký' },
-        { id: 4, url: require("../../../assets/img/STB.jpg"), Name: 'Giới thiệu bạn bè', content: 'Thêm bạn - Thêm vui', linkRoute: 'Xem chi tiết' },
+        { id: 1, url: require("../../../assets/img/Infinitecard_Front.jpg"), Name: 'Thẻ tín dụng', content: 'Mua trước trả sau miễn đến lãi 55 ngày', linkRoute : 'Đăng ký',linkactive:'register'},
+        { id: 2, url: require("../../../assets/img/MCworld.jpg"), Name: 'Thẻ thanh toán', content: 'Phá bỏ giới hạn không gian và thỏa sức chi tiêu trên toàn thế giới', linkRoute: 'Đăng ký', linkactive:'register' },
+        { id: 3, url: require("../../../assets/img/VisaCreditGold.jpg"), Name: 'Thẻ in hình', content: 'Thỏa sức sáng tạo theo phong cách của riêng bạn', linkRoute: 'Đăng ký', linkactive: 'register' },
+        { id: 4, url: require("../../../assets/img/STB.jpg"), Name: 'Giới thiệu bạn bè', content: 'Thêm bạn - Thêm vui', linkRoute: 'Xem chi tiết', linkactive: 'register' },
     ];
 
 

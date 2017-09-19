@@ -21,7 +21,7 @@ ul {
     font-size : 12px !important;
 }
 .sacombank-card-content {
-    padding: 3px 16px 45px 16px !important;
+    padding: 3px 16px 40px 16px !important;
 }
 
 .demo-card-square > .mdl-card__accent {
@@ -138,12 +138,11 @@ ul {
     margin-right: 60px;
 }
 .text-promotion {
-    margin-left :10px;
     text-align : justify;
 }
 .imghome-card {
-    height: 220px;
-    width: 220px;
+    height: 210px;
+    width: 210px;
     box-sizing: border-box;
     max-width: 100%;
     border: solid 1px #bedad6;
@@ -168,8 +167,6 @@ ul {
 }
 .mdl-p {
     float: right;
-    margin-right: 10px;
-    padding-right: 5px;
 }
 
 .snippet-group .snippet-code code {
@@ -341,6 +338,7 @@ nav {
 }
 .thumbs-image {
     width : 100%;
+    margin-left : 5px;
 }
 .image-mdl {
     display: block;
@@ -413,20 +411,31 @@ nav {
 }
 
 #contact {
-    font-size: 22px;
+    font-size: 18px;
     color: #767676;
+    float :left;
 }
 .icons-contact {
     position : absolute;
-    margin-left : 5px;
-    font-size : 21px !important;
+    font-size : 19px !important;
+    margin-left: -25px;
 
 }
 .span-contact {
-    margin-left : 35px;
     font-size : 12px !important;
 }
 .div-margin {
-    margin-top : 13px;
     position: relative;
 }
+@media (min-width: 840px) {.mdl-cell--4-col, .mdl-cell--4-col-desktop.mdl-cell--4-col-desktop {
+    width: calc(33.3333333333% - 1px) !important;
+}}
+
+@media screen and (max-width: 479px) {
+    .span-contact {
+        margin-left : 30px;
+    }
+    .icons-contact {
+        margin-left : 0px;
+    }
+    }
