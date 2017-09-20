@@ -6,7 +6,7 @@
     styles: [`
 
 .headline{
-    width: 85%;
+    width: 100%;
     border: 0 !important;
     display: block;
     margin: -10px 0;
@@ -16,9 +16,6 @@ ul {
     padding-left: 0 !important;
     list-style: none;
     margin-bottom: 10px;
-}
-.sacombank-width-li{
-    width: 85%;
 }
 address{
     line-height: 23px;
@@ -52,6 +49,9 @@ li i {
 .content-ul-inline{
     display : -webkit-box;
 }
+.content-ul-inline li {
+    margin : 15px;
+}
 .span-footer-address {
     margin-left: 30px !important;
 }   
@@ -62,6 +62,20 @@ li i {
     padding-bottom: 1px;
     padding-top: 18px;
 }
+@media (min-width: 840px) {
+    .mdl-cell--4-col .mdl-cell--4-col-desktop. mdl-cell--4-col-desktop {
+        width: calc(33.3333333333% - 1px) !important;
+    }
+}
+@media screen and (max-width: 839px )
+    .headline{
+        width : 100%;
+    }
+    .content-ul-inline li {
+        margin : 10px;
+    }
+}
+
 `]
 })
 export class FooterComponent { }

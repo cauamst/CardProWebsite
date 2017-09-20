@@ -15,7 +15,10 @@
 }
 .sacombank-card-title {
     padding: 10px 16px 0px 16px !important;
-    font-size : 22px !important;
+   
+}
+#id22 {
+    font-size: 20px !important;
 }
 ul {
     font-size : 12px !important;
@@ -78,7 +81,7 @@ ul {
     transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: block;
     margin: 10px 0 25px 0;
-    border-bottom: 1px dotted #e4e9f0;
+    border-bottom: 1px solid #e4e9f0;
     height: 60px !important;
 }
 
@@ -153,6 +156,7 @@ ul {
     box-sizing: border-box;
     max-width: 100%;
     border: solid 1px #bedad6;
+    margin-top : 5px;
 }
 .card-image-contact {
     border: solid 1px #bedad6;
@@ -472,5 +476,6 @@ nav {
     }
 
 .style-none-list {
-    list-style :none;
+    list-style: none;
+    margin-top: 2px;
 }

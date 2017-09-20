@@ -8,10 +8,20 @@
     <!-- Navigation -->
     <div class="android-navigation-container">
         <nav class="android-navigation mdl-navigation">
-            <span *ngFor="let route of routes">
+            <div *ngFor="let route of routes">
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" *ngIf="route.data" routerLinkActive="active-link" routerLink="{{route.path}}">{{route.data.title}}</a>
-            </span>
+            </div>
+            <a class="android-link android-link-menu mdl-typography--font-light mdl-navigation__link mdl-typography--text-uppercase" id="version-dropdown">
+                DỊCH VỤ THẺ
+                <i class="material-icons">arrow_drop_down</i>
+            </a>
+            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-left mdl-js-ripple-effect" for="version-dropdown">
+                <li class="mdl-menu__item">Thẻ tín dụng</li>
+                <li class="mdl-menu__item">Thẻ thanh toán</li>
+                <li class="mdl-menu__item">Thẻ in hình</li>
+            </ul>
         </nav>
+
     </div>
     <span class="android-mobile-title mdl-layout-title">
         <a routerLink="home"><img class="android-logo-image" src="../assets/img/logo-ngan-hang-sacombank.png"></a>
