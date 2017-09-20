@@ -1,6 +1,6 @@
 ﻿import { Injectable } from "@angular/core";
 import { ConnectionBackend, XHRBackend, RequestOptions, Request, RequestOptionsArgs, Response, Http, Headers } from "@angular/http";
-import { appConfig } from '../../../app.config';
+import { appConfig, HandShakeConfig } from '../../../app.config';
 
 import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/catch';
@@ -14,7 +14,7 @@ export class CardProHttp extends Http {
     }
 
     get(url: string, options?: RequestOptionsArgs): Observable<Response> {
-        return super.get(appConfig.apiUrl + url, options).catch(this.handleError);
+        return super.get(appConfig.apiUrl + url, this.addCookiesToRequest(options)).catch(this.handleError);
     }
 
     post(url: string, body: any, options?: RequestOptionsArgs): Observable<Response> {
@@ -22,11 +22,11 @@ export class CardProHttp extends Http {
     }
 
     put(url: string, body: any, options?: RequestOptionsArgs): Observable<Response> {
-        return super.put(appConfig.apiUrl + url, body, options).catch(this.handleError);
+        return super.put(appConfig.apiUrl + url, body, this.addCookiesToRequest(options)).catch(this.handleError);
     }
 
     delete(url: string, options?: RequestOptionsArgs): Observable<Response> {
-        return super.delete(appConfig.apiUrl + url, options).catch(this.handleError);
+        return super.delete(appConfig.apiUrl + url, this.addCookiesToRequest(options)).catch(this.handleError);
     }
 
     // private helper methods
@@ -48,7 +48,10 @@ export class CardProHttp extends Http {
 
 	private addCookiesToRequest(options?: RequestOptionsArgs) : RequestOptionsArgs {
 		options = options || new RequestOptions();
-		options.withCredentials = true;
+        options.withCredentials = true;
+
+        options.headers = options.headers || new Headers();
+        options.headers.append('Signature', HandShakeConfig.signature);
 
 		return options;
 	}
