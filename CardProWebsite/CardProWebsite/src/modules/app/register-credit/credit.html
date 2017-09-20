@@ -166,27 +166,28 @@
                                  [ngClass]="{
                                     'has-error': email.invalid && (email.dirty || email.touched)
                              }">
-                                <i class="mdl-textfield__icon material-icons">email</i>
-                                <input class="mdl-textfield__input" type="email" id="email" name="email" formControlName="email" />
-                                <label class="mdl-textfield__label" for="email">Email</label>
-                                <span class="form-control-feedback"
-                                      *ngIf="email.errors && (email.dirty || email.touched)">
-                                    <span class="mdl-textfield__error" *ngIf="email.errors.pattern">Vui lòng nhập đúng định dạng như example@domain.com</span>
-                                </span>
-                            </div>
+                            <i class="mdl-textfield__icon material-icons">email</i>
+                            <input class="mdl-textfield__input" type="email" id="email" name="email" formControlName="email" />
+                            <label class="mdl-textfield__label" for="email">Email</label>
+                            <span class="form-control-feedback"
+                                  *ngIf="email.errors && (email.dirty || email.touched)">
+                                <span class="mdl-textfield__error" *ngIf="email.errors.pattern">Vui lòng nhập đúng định dạng như example@domain.com</span>
+                                <span class="mdl-textfield__error" *ngIf="email.errors.existed">Email đã tồn tại</span>
+                            </span>
+                        </div>
 
                             <div class="mdl-textfield mdl-js-textfield mdl-cell--4-col-tablet mdl-cell--4-col-phone"
                                  [ngClass]="{
                                     'has-error': phone.invalid && (phone.dirty || phone.touched)
                              }">
-                                <i class="mdl-textfield__icon material-icons">phone</i>
-                                <input class="mdl-textfield__input" type="text" id="phone" name="phone" formControlName="phone" />
-                                <label class="mdl-textfield__label" for="phone">Số điện thoại</label>
-                                <span class="form-control-feedback"
-                                      *ngIf="phone.errors && (phone.dirty || phone.touched)">
-                                    <span class="mdl-textfield__error" *ngIf="phone.errors.pattern">Bạn chưa nhập đúng định dạng số điện thoại độ dài 10 hoặc 11.</span>
-                                </span>
-                            </div>
+                            <i class="mdl-textfield__icon material-icons">phone</i>
+                            <input class="mdl-textfield__input" type="text" id="phone" name="phone" formControlName="phone" />
+                            <label class="mdl-textfield__label" for="phone">Số điện thoại</label>
+                            <span class="form-control-feedback"
+                                  *ngIf="phone.errors && (phone.dirty || phone.touched)">
+                                <span class="mdl-textfield__error" *ngIf="phone.errors.pattern">Bạn chưa nhập đúng số điện thoại của các mạng di động Việt Nam.</span>
+                            </span>
+                        </div>
 
                             <div class="mdl-textfield mdl-js-textfield mdl-cell--4-col-tablet mdl-cell--4-col-phone"
                                  [ngClass]="{
