@@ -55,7 +55,7 @@
                     <div id="container">
                         <div id="left" *ngIf="showBenefit && content">
                             <div id="Lnav">
-                                <h4 class="lvn">Ưu điểm tiện ích {{content.title}}</h4>
+                                <h4 class="lvn">Ưu đãi nổi bật {{content.title}}</h4>
                             </div>
                             <div id="width100PercentTest">
                                 <ul class="ul">
@@ -157,7 +157,7 @@
                                 <label class="mdl-textfield__label" for="name">Họ Tên</label>
                                 <span class="form-control-feedback"
                                       *ngIf="name.errors && (name.dirty || name.touched)">
-                                    <span class="mdl-textfield__error" *ngIf="name.errors.required">Bạn chưa nhập Họ Tên.</span>
+                                    <span class="mdl-textfield__error" *ngIf="name.errors.required">Họ tên không được để trống.</span>
                                     <span class="mdl-textfield__error" *ngIf="name.errors.minlength">Họ Tên không được ngắn hơn 3 ký tự.</span>
                                     <span class="mdl-textfield__error" *ngIf="name.errors.maxlength">Họ Tên không quá 24 ký tự.</span>
                                 </span>
@@ -231,7 +231,7 @@
                                      [ngClass]="{
                                     'has-error': captcha.invalid && (captcha.dirty || captcha.touched)
                              }">
-                                    <i class="mdl-textfield__icon material-icons">credit_card</i>
+                                    <i class="mdl-textfield__icon material-icons">graphic_eq</i>
                                     <input class="mdl-textfield__input" type="text" name="captcha" formControlName="captcha" id="captcha">
                                     <label class="mdl-textfield__label" for="captcha">Mã xác nhận</label>
                                     <span class="form-control-feedback"

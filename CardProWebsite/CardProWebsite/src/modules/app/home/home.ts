@@ -26,11 +26,11 @@ export class HomeComponent {
     }
     private addNewSlide() {
         this.slides.push(
-            { image: require("../../../assets/img/ChungChiTienGui1600x530px_1.jpg") },
-            { image: require("../../../assets/img/ComboDoanhNGhiep-1600x530px.jpg") },
+            { image: require("../../../assets/img/grab1660x660.jpg") },
+            { image: require("../../../assets/img/banner-1600-x-600-px.jpg") },
             { image: require("../../../assets/img/CTKM-Contactless1600x530.jpg") },
-            { image: require("../../../assets/img/DichVuKieuHoi1600x530px.jpg") },
-            { image: require("../../../assets/img/DonThuSangNganQuaTang1600x530.jpg") },
+            { image: require("../../../assets/img/Banner-1200x350px.jpg") },
+            { image: require("../../../assets/img/banner-web-km-sacombank_1600x660px.jpg") },
             { image: require("../../../assets/img/Top40ThuongHIeu2017_1600x530.jpg") }
         );
     }

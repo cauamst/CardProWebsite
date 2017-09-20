@@ -8,8 +8,8 @@
 
 .square {
     overflow: hidden;
-    width: 150px;
-    height: 115px;
+    width: 140px;
+    height: 100px;
 }
 .card-compare {
     max-height: 100px;
@@ -214,18 +214,6 @@ h4 {
 .relative {
     position: relative;
 }
-@media screen and (max-width : 423px) {
-    .set-up-position {
-        height: 48px;
+.set-up-position {
+        height: 48px !important;
     }
-}
-@media screen and (min-width:480px) and (max-width: 616px) {
-    .set-up-position {
-        height: 48px;
-    }
-}
-@media screen and (min-width:840px) and (max-width: 925px) {
-    .set-up-position {
-        height: 48px;
-    }
-}

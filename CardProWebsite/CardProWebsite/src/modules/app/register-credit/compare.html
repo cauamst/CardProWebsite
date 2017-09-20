@@ -1,7 +1,7 @@
 ﻿
 <div class="mdl-cell--12-col mdl-cell--8-tablet mdl-cell--4-col-phone title-compare">
     <div class="mdl-card__title mdl-color-text--white title-compare-padding mdl-color-sacombank">
-        <h5 class="mdl-card__title-text text-title-compare" id="size18">Lựa chọn thẻ và so sánh thẻ Sacombank phù hợp nhất với bạn.</h5>
+        <h5 class="mdl-card__title-text text-title-compare" id="size18">Chọn và so sánh thẻ</h5>
     </div>
 </div>
 <div class="mdl-grid-full">
@@ -16,30 +16,31 @@
                     <a (click)="showDialog1 = true"><img src="../../../assets/img/CardCompare.png" class="square" /></a>
                 </div>
                 <ng-template #loadingImage1>
-                    <div *ngIf="card1" class="container-image">
-                        <img src="{{card1.url}}" class="card-compare image"/>
-                        <p class="none-margin set-up-position">{{card1.Name}}</p>
+                    <div  class="container-image">
+                        <img *ngIf="card1" src="{{card1.url}}" class="card-compare image"/>
+                        <p *ngIf="card1" class="none-margin set-up-position">{{card1.Name}}</p>
                     </div>
                 </ng-template>
                 <div>
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small mdl-button-pickcard media-position1" *ngIf="!card1" (click)="showDialog1 = true">Chọn thẻ</button>
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small remove-button media-position1" *ngIf="card1" (click)="removeCard(true)">Hủy chọn</button>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small " *ngIf="!card1" (click)="showDialog1 = true">Chọn thẻ</button>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small remove-button " *ngIf="card1" (click)="removeCard(true)">Hủy chọn</button>
                 </div>
                 
             </div>
             <div class="mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone text-center" *ngIf="card1">
                 <div *ngIf="!card2;else loadingImage2">
                     <a (click)="showDialog2 = true"><img src="../../../assets/img/CardCompare.png" class="square" /></a>
+                    <p *ngIf="card1" class="none-margin set-up-position"></p>
                 </div>
                 <ng-template #loadingImage2>
-                    <div *ngIf="card2" class="container-image">
-                        <img src="{{card2.url}}" class="image card-compare"/>
-                        <p class="none-margin set-up-position">{{card2.Name}}</p>
+                    <div class="container-image">
+                        <img *ngIf="card2" src="{{card2.url}}" class="image card-compare"/>
+                        <p *ngIf="card2" class="none-margin set-up-position">{{card2.Name}}</p>
                     </div>
                 </ng-template>
                 <div>
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small mdl-button-pickcard media-position2" *ngIf="!card2" (click)="showDialog2 = !showDialog2">Chọn thẻ</button>
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small remove-button media-position2" *ngIf="card2" (click)="removeCard()">Hủy chọn</button>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small" *ngIf="!card2" (click)="showDialog2 = !showDialog2">Chọn thẻ</button>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small remove-button " *ngIf="card2" (click)="removeCard()">Hủy chọn</button>
                 </div>
             </div>
             <div class="mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone text-center" *ngIf="!card1">
@@ -152,9 +153,9 @@
                 </div>
             </div>
             <div class="mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell-border">
-                <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet text-center">Đặc quyền nỗi bật</div>
+                <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet text-center">Đặc quyền nổi bật</div>
                 <div class="row">
-                    <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--4-col-tablet mdl-text-left">Đặc quyền nỗi bật</div>
+                    <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--4-col-tablet mdl-text-left">Đặc quyền nổi bật</div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet" *ngIf="!card1"></div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-left-tivt" *ngIf="card1" [innerHTML]="card1.TIVT3"></div>
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet text-left-tivt" *ngIf="card2" [innerHTML]="card2.TIVT3"></div>
@@ -181,8 +182,8 @@
         </div>
     </div>
     <div class="mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-           <p class="text-transform-first">Trừ thẻ <strong>Visa Platium Cashback</strong> và thẻ <strong>Visa Signature</strong> đối với tất cả thẻ tín dụng quốc tế sẽ được tích lũy điểm thưởng và quy đổi sang hoàn tiền, dặm bay ...</p>
-           <p class="text-transform-second">( Công cụ quy đổi chỉ mang tính chất tham khảo )</p>
+           <p class="text-transform-first">Tất cả thẻ tín dụng quốc tế Sacombank đều được tích lũy điểm thưởng để quy đổi sang hoàn tiền, dặm bay và nhiều quà tặng giá trị (không áp dụng cho thẻ Visa Platinum Cashback và thẻ Visa Signature)</p>
+           <p class="text-transform-second">( Công cụ quy đổi chỉ mang tính chất tham khảo)</p>
     </div>
     <div class="fix"></div>
 

@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-
+body, html {
+    font-family: arial,verdana,times New Roman;
+}
 .mdl-layout__header {
     z-index: 2 !important;
 }

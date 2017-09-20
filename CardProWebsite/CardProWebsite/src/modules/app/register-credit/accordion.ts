@@ -33,7 +33,7 @@ export class Accordion {
                   <div class="panel-heading" (click)="toggleOpen($event);ChangeArrow()">
                     <h4 class="panel-title">
                         <i class="material-icons accordion-icon">{{changeArrow}}</i> 
-                      <p href tabindex="0" class="accordion-margin">{{heading}}</p>
+                      <h6 href tabindex="0" class="accordion-margin">{{heading}}</h6>
                     </h4>
                   </div>
                   <div class="panel-collapse" [hidden]="!isOpen">
@@ -50,6 +50,7 @@ a {
     padding-left: 30px;
     padding-bottom: 5px;
     padding-top: 5px;
+    font-size : 15px !important;
 }
 .accordion-icon {
     margin-top: 5px;

@@ -39,7 +39,6 @@ ul {
 .card-full-width {
     width: 100%;
     border-radius: 0.3em;
-    display: inline-flex !important;
 }
 .contact {
     padding-left : 15px;
@@ -349,6 +348,13 @@ nav {
 }
 .font-size-heading {
     font-size: 22px !important;
+}
+.slide-image {
+    min-height : 200px;
+}
+.register-online {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ececec;
 }
 .thumbs-contact {
     margin: 0 0 10px;

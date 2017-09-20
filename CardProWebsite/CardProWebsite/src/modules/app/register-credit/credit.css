@@ -990,3 +990,6 @@ left-content {
         left: 35px !important;
     }
 }
+.mdl-textfield__label {
+    color : #000 !important;
+}
