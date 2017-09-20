@@ -171,6 +171,7 @@
                             <span class="form-control-feedback"
                                   *ngIf="email.errors && (email.dirty || email.touched)">
                                 <span class="mdl-textfield__error" *ngIf="email.errors.pattern">Vui lòng nhập đúng định dạng như example@domain.com</span>
+                                <span class="mdl-textfield__error" *ngIf="email.errors.existed">Email đã tồn tại</span>
                             </span>
                         </div>
 

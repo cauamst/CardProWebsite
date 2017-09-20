@@ -50,6 +50,7 @@ export class CreditComponent implements OnInit {
     successResult: boolean;
     hasErrorResult: boolean;
     invalidCaptcha: boolean;
+    emailExisted: boolean;
 
     registerForm: FormGroup;
     name: FormControl;
@@ -374,14 +375,21 @@ export class CreditComponent implements OnInit {
                         this.successResult = result.IsSuccess;
                         this.hasErrorResult = result.HasErrors;
                         this.invalidCaptcha = result.InvalidCaptcha;
+                        this.emailExisted = result.EmailExisted;
                     }
                     this.formIsSubmitting = false;
-                    this.titleResultFormCheck = !this.invalidCaptcha;
+                    this.titleResultFormCheck = !(this.invalidCaptcha || this.emailExisted);
 
                     if (this.invalidCaptcha) {
                         this.captcha.setErrors({ "verificationFailed": true });
                         this.updateCaptcha();
                     }
+
+                    if (this.emailExisted) {
+                        this.email.setErrors({ "existed": true });
+                        this.updateCaptcha();
+                    }
+                   
                 },
                 (err) => {
                     if (err) {
@@ -389,6 +397,7 @@ export class CreditComponent implements OnInit {
                     }
                     this.formIsSubmitting = false;
                     this.titleResultFormCheck = true;
+
                 }
                 );
         }
