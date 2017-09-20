@@ -38,7 +38,14 @@ ul {
     border-radius: 0.3em;
     display: inline-flex !important;
 }
-
+.contact {
+    padding-left : 15px;
+}
+@media screen and (max-width: 839px ) {
+    .contact {
+        padding-left: 0;
+    }
+}
 .card-promotion {
     margin-left: auto;
 }
@@ -336,9 +343,33 @@ nav {
 .font-size-heading {
     font-size : 22px !important;
 }
-.thumbs-image {
-    width : 100%;
-    margin-left : 5px;
+.thumbs-contact {
+    margin: 0 0 10px;
+    padding: 0;
+    line-height: 1.4;
+    position: relative;
+    min-height: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+    .thumbs-contact h2 {
+        border-bottom: none;
+        border: 1px solid #ddd;
+        border-radius: 2px 2px 0 0;
+        color: #878787;
+        text-shadow: 1px 1px 1px #fff;
+        font-weight: 700;
+        font-size: 14px;
+        padding: 5px 15px;
+        margin : 0 !important;
+    }
+.content-contact {
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 2px 2px;
+    padding: 10px 10px 15px;
 }
 .image-mdl {
     display: block;
@@ -417,12 +448,12 @@ nav {
 }
 .icons-contact {
     position : absolute;
-    font-size : 19px !important;
-    margin-left: -25px;
+    font-size : 22px !important;
+    margin-left: -28px;
 
 }
 .span-contact {
-    font-size : 12px !important;
+    font-size : 14px !important;
 }
 .div-margin {
     position: relative;
@@ -439,3 +470,7 @@ nav {
         margin-left : 0px;
     }
     }
+
+.style-none-list {
+    list-style :none;
+}
