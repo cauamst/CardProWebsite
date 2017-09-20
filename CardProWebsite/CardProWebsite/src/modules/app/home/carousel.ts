@@ -101,15 +101,16 @@ a {
 }
 @media (min-width:600px) {
     .left-icon {
-        left: 15%;    
+        left: 5px;    
      }
     .media-icon-right {
-        left: 15%;    
+        right: 15px;    
      }
+    
 }
 @media screen and (max-width: 599px) {
     .media-icon-right {
-        right: 5px;    
+        right: 15%;    
     }
     .left-icon {
         left: -5px;    

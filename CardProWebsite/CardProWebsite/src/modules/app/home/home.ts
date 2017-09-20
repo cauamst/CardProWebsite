@@ -43,7 +43,4 @@ export class HomeComponent {
         { id: 3, url: require("../../../assets/img/VisaCreditGold.jpg"), Name: 'Thẻ in hình', content: 'Thỏa sức sáng tạo theo phong cách của riêng bạn', linkRoute: 'Đăng ký', linkactive: 'register' },
         { id: 4, url: require("../../../assets/img/STB.jpg"), Name: 'Giới thiệu bạn bè', content: 'Thêm bạn - Thêm vui', linkRoute: 'Xem chi tiết', linkactive: 'register' },
     ];
-
-
-    
 }

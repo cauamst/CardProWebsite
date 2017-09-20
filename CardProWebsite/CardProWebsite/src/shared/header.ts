@@ -9,6 +9,9 @@ import { routes } from '../modules/app/app.routing';
     .active-link {
         border-bottom: 4px solid #3f51b5 !important;
     }
+    a {
+    color : #757575 !important;    
+    }
     
 `]
 })

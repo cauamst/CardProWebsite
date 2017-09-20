@@ -1,15 +1,23 @@
 ﻿
-<app-carousel></app-carousel>
-
+<!--<app-carousel></app-carousel>-->
+<div class="mdl-shadow--6dp">
+    <carousel [interval]="NextPhotoInterval" [noWrap]="false">
+        <slide *ngFor="let slidez of slides"
+               [active]="slidez.active">
+            <img [src]="slidez.image" style="width : 100%">
+        </slide>
+    </carousel>
+</div>
+<div class="fix"></div>
 <div class="android-more-section section-bottom">
     <div class="android-section-title mdl-typography--display-1-color-contrast font-size-heading">Đăng ký trực tuyến</div>
     <div class="android-card-container mdl-grid">
         <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp" *ngFor="let card of cardhome">
             <div class="mdl-card__media">
-                <img src="{{card.url}}">
+                <a routerLink="/{{card.linkactive}}"> <img src="{{card.url}}"></a>
             </div>
             <div class="mdl-card__title sacombank-card-title">
-                <h4 class="mdl-card__title-text" id="id22">{{card.Name}}</h4>
+                <a  class="none-color" routerLink="/{{card.linkactive}}"> <h4 class="mdl-card__title-text" id="id22">{{card.Name}}</h4></a>
             </div>
 
             <div class="mdl-card__supporting-text sacombank-card-content">
@@ -50,20 +58,20 @@
         </div>
         <div class="mdl-cell--4-col mdl-cell--8-col-tablet mdl-media-promotion">
             <div class="mdl-layout__header-row card_pro_header_row card-header-blue card-full-width">
-                    <span class="mdl-typography--display-1-color-contrast font-size-heading contact">Liên hệ</span>
+                <span class="mdl-typography--display-1-color-contrast font-size-heading contact">Liên hệ</span>
             </div>
 
             <div class="thumbs-contact">
-                    <ul class="style-none-list">
-                        <li>
-                            <i class="material-icons icons-contact">phone</i>
-                            <div class="span-contact">Dịch vụ khách hàng: 1900 5555 88</div><br />
-                        </li>
-                        <li>
-                            <i class="material-icons icons-contact">mail_outline</i>
-                            <div class="span-contact">Gửi thư điện tử</div>
-                        </li>
-                    </ul>
+                <ul class="style-none-list">
+                    <li>
+                        <i class="material-icons icons-contact">phone</i>
+                        <a class="color-telephone" href="tel:+1900555588"> <div class="span-contact">Dịch vụ khách hàng: 1900 5555 88</div></a><br />
+                    </li>
+                    <li>
+                        <i class="material-icons icons-contact">mail_outline</i>
+                        <a  class="color-telephone" href="mailto:ask@sacombank.com"><div class="span-contact">Gửi thư điện tử</div></a>
+                    </li>
+                </ul>
             </div>
 
         </div>
