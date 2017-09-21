@@ -2,17 +2,17 @@
     <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <app-header></app-header>
     </div>
-    <div class="android-drawer mdl-layout__drawer mdl-layout--small-screen-only">
+    <div class="android-drawer mdl-layout__drawer mdl-layout--small-screen-only" (click)="CloseDrawer(n)">
         <nav class="mdl-navigation nav-drawer">
-            <a class="mdl-navigation__link sacombank-border-top" routerLinkActive="active-drawer" routerLink="/home">Trang Chủ</a>
+            <a class="mdl-navigation__link sacombank-border-top" routerLinkActive="active-drawer" routerLink="/home" (click)="CloseDrawer(2)">Trang Chủ</a>
             
             <a class="mdl-navigation__link sacombank-border-top" (click)="ChangeArrow()">Dịch vụ thẻ</a>
             <i class="material-icons drawer-submenu-icon">{{changeArrow}}</i>
             <div *ngIf="showSubmenu">
-                <a class="mdl-navigation__link sacombank-border-top drawer-submenu" routerLinkActive="active-drawer" routerLink="/register">Thẻ tín dụng</a>
-                <a class="mdl-navigation__link sacombank-border-top drawer-submenu" routerLinkActive="active-drawer">Thẻ thanh toán</a>
-                <a class="mdl-navigation__link sacombank-border-top drawer-submenu" routerLinkActive="active-drawer">Thẻ in hình</a>
-                <a class="mdl-navigation__link sacombank-border-top drawer-submenu" routerLinkActive="active-drawer">Giới thiệu bạn bè</a>
+                <a class="mdl-navigation__link sacombank-border-top drawer-submenu" routerLinkActive="active-drawer" routerLink="/register" (click)="CloseDrawer(1)">Thẻ tín dụng</a>
+                <a href="https://card.sacombank.com.vn/DebitCardForm.aspx" target="_blank" class="mdl-navigation__link sacombank-border-top drawer-submenu" routerLinkActive="active-drawer">Thẻ thanh toán</a>
+                <a href="https://card.sacombank.com.vn/the/PictureCard?s=PC01" target="_blank"  class="mdl-navigation__link sacombank-border-top drawer-submenu" routerLinkActive="active-drawer">Thẻ in hình</a>
+                <a href="https://card.sacombank.com.vn/RecommenderInfo.aspx" target="_blank"  class="mdl-navigation__link sacombank-border-top drawer-submenu" routerLinkActive="active-drawer">Giới thiệu bạn bè</a>
             </div>
         </nav>
     </div>

@@ -202,7 +202,7 @@
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-margin">
                         <select class="mdl-textfield__input" id="benefit1" [(ngModel)]="cat1Id" (ngModelChange)="getCardByType($event, true)">
                             <option [ngValue]="-1"></option>
-                            <option [ngValue]="c.currentCatId" *ngFor="let c of benefits">{{c.director}}</option>
+                            <option [ngValue]="c.currentCatId" *ngFor="let c of benefits" [hidden]="c.currentCatId == cat1HiddenId">{{c.director}}</option>
                         </select>
                         <label class="mdl-textfield__label label-dialog" for="benefit1">Chọn tiện ích</label>
                     </div>
@@ -235,7 +235,7 @@
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-margin">
                     <select class="mdl-textfield__input" id="benefit2" [(ngModel)]="cat2Id" (ngModelChange)="getCardByType($event)">
                         <option [ngValue]="-1"></option>
-                        <option [ngValue]="c.currentCatId" *ngFor="let c of benefits">{{c.director}}</option>
+                        <option [ngValue]="c.currentCatId" *ngFor="let c of benefits"  [hidden]="c.currentCatId == cat2HiddenId">{{c.director}}</option>
                     </select>
                     <label class="mdl-textfield__label label-dialog" for="benefit2">Chọn tiện ích</label>
                 </div>

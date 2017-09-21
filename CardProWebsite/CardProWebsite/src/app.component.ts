@@ -61,12 +61,20 @@ export class AppComponent {
             }
         }, 1)
     }
-    CloseDrawer()
-    {
-        document.querySelector('.mdl-layout__drawer').addEventListener('click', function () {
-          document.querySelector('.mdl-layout__obfuscator').classList.remove('is-visible');
-          this.classList.remove('is-visible');
-        }, false);
+    CloseDrawer(n : number): void
+    {   
+        if (n == 1 || n == 2) {
+            document.querySelector('.mdl-layout__drawer').addEventListener('click', function () {
+                document.querySelector('.mdl-layout__obfuscator').classList.remove('is-visible');
+                this.classList.remove('is-visible');
+            }, false);
+        }
+        else {
+            document.querySelector('.mdl-layout__drawer').addEventListener('click', function () {
+                document.querySelector('.mdl-layout__obfuscator').classList.add('is-visible');
+                this.classList.add('is-visible');
+            }, false);
+        }
     }
     ChangeArrow(): void {
         if (this.changeArrow === 'keyboard_arrow_right') {

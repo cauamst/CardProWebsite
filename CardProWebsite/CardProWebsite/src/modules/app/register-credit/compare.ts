@@ -18,6 +18,8 @@ export class CompareComponent implements OnInit {
     showDialog2: boolean;
     cat1Id: number;
     cat2Id: number;
+    cat1HiddenId: number;
+    cat2HiddenId: number;
     card1: CARD;
     card2: CARD;
     cards1: CARD[];
@@ -31,8 +33,8 @@ export class CompareComponent implements OnInit {
     selectedCardToFormEvent = new EventEmitter();
 
     benefits = [
-        { currentCatId: 1, director: 'Hoàn tiền'},
-        { currentCatId: 2, director: 'Dặm bay'},
+        { currentCatId: 1, director: 'Hoàn tiền' },
+        { currentCatId: 2, director: 'Dặm bay' },
         { currentCatId: 3, director: 'Điểm thưởng' },
         { currentCatId: 4, director: 'Rút tiền miễn phí' },
     ]
@@ -86,10 +88,17 @@ export class CompareComponent implements OnInit {
     removeCard(firstCard = false): void {
         if (firstCard) {
             this.card1 = this.card2;
-            this.card2 = null;
-        } else {
-            this.card2 = null;
+            this.cat1Id = this.cat2Id;
         }
+        if (this.card1 && (this.cat1Id == 1 || this.cat1Id == 2)) {
+            this.cat2HiddenId = this.cat1Id;
+        } else if (firstCard){
+            this.cat2HiddenId = null;
+        }
+        this.card2 = null;
+        this.cat1HiddenId = null;
+        this.cat1Id = null;
+        this.cat2Id = null;
     }
 
     selectCard(card: CARD) {
@@ -99,11 +108,15 @@ export class CompareComponent implements OnInit {
     confirm(isFirstCard: boolean, isOk = false) {
         if (isFirstCard) {
             this.card1 = isOk ? this.tempCard : null;
+            if (this.card1 && (this.cat1Id == 1 || this.cat1Id == 2)) {
+                this.cat2HiddenId = this.cat1Id;
+            }
         } else {
             this.card2 = isOk ? this.tempCard : null;
+            if (this.card2 && (this.cat2Id == 1 || this.cat2Id == 2)) {
+                this.cat1HiddenId = this.cat2Id;
+            }
         }
-        this.cat1Id = undefined;
-        this.cat2Id = undefined;
         this.tempCard = null;
         this.cards1 = null;
         this.cards2 = null;
