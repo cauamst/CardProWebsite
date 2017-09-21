@@ -244,6 +244,7 @@
     <TypeScriptCompile Include="src\modules\app\services\handshake.service.ts" />
     <TypeScriptCompile Include="src\modules\app\services\pointTransform.service.ts" />
     <TypeScriptCompile Include="src\modules\app\toTop\toTop.ts" />
+    <TypeScriptCompile Include="src\modules\app\transformSlider\point-replace.ts" />
     <TypeScriptCompile Include="src\modules\app\transformSlider\TransformSlider.ts" />
     <TypeScriptCompile Include="src\common.d.ts" />
     <TypeScriptCompile Include="src\dtos.ts" />

@@ -18,8 +18,8 @@
                 <label class="label-color" for="amounts">{{transformTitle}} :</label>
                 <input #textInput class="mdl-textfield__input text-center" type="text" id="amounts" [(ngModel)]="formattedAmount" (ngModelChange)="onInputChange($event)" />
             </div>
-            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet color-text card-media-top">{{firstCardPoints |number :'.0-3'}}</div>
-            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet color-text card-media-top">{{secondCardPoints |number :'.0-3'}}</div>
+            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet color-text card-media-top">{{firstCardPoints |number :'.'}}</div>
+            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet color-text card-media-top">{{secondCardPoints |changedots :'.0-3'}}</div>
         </div>
     </div>
    

@@ -30,7 +30,7 @@ export class CompareComponent implements OnInit {
     @Output('AddCardToFormEvent')
     selectedCardToFormEvent = new EventEmitter();
 
-    readonly benefits = [
+    benefits = [
         { currentCatId: 1, director: 'Hoàn tiền'},
         { currentCatId: 2, director: 'Dặm bay'},
         { currentCatId: 3, director: 'Điểm thưởng' },
@@ -80,6 +80,14 @@ export class CompareComponent implements OnInit {
             }
         }
         this.tempCard = null;
+
+        //if (typeId == 1) {
+        //    this.benefits = this.benefits.filter(item => item.currentCatId !== this.cat1Id);
+
+        //}
+        //else if (typeId == 2) {
+        //    this.benefits = this.benefits.filter(item => item.currentCatId !== this.cat2Id); 
+        //}
     }
 
     removeCard(firstCard = false): void {

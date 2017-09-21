@@ -2,6 +2,7 @@
 import { PointTransformService } from "../services/pointTransform.service";
 import { Input, HostListener, ViewChild, ElementRef, Output } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { PointReplacerPipe } from './point-replace';
 
 @Component({
     selector: 'transform-slider',

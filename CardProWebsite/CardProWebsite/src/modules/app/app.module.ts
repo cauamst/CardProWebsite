@@ -28,6 +28,7 @@ import { PointTransformService } from './services/pointTransform.service';
 import { TransformSlider } from './transformSlider/TransformSlider';
 
 import { Loader } from './directives/loader.directive';
+import { PointReplacerPipe } from './transformSlider/point-replace';
 @NgModule({
     declarations: [
         Loader,
@@ -44,7 +45,8 @@ import { Loader } from './directives/loader.directive';
         Slide,
         Accordion,
         AccordionGroup,
-        TransformSlider
+        TransformSlider,
+        PointReplacerPipe
         
     ],
     providers: [
@@ -55,7 +57,8 @@ import { Loader } from './directives/loader.directive';
         CardService,
         CardProHttpProvider,
         CryptoUtils,
-        PointTransformService
+        PointTransformService,
+        PointReplacerPipe
     ],
     imports: [
         BrowserModule,
