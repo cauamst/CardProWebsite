@@ -81,13 +81,6 @@ export class CompareComponent implements OnInit {
         }
         this.tempCard = null;
 
-        //if (typeId == 1) {
-        //    this.benefits = this.benefits.filter(item => item.currentCatId !== this.cat1Id);
-
-        //}
-        //else if (typeId == 2) {
-        //    this.benefits = this.benefits.filter(item => item.currentCatId !== this.cat2Id); 
-        //}
     }
 
     removeCard(firstCard = false): void {

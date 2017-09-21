@@ -2,10 +2,18 @@
     <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <app-header></app-header>
     </div>
-    <div class="android-drawer mdl-layout__drawer mdl-layout--small-screen-only" (click)="CloseDrawer()">
-        <nav class="mdl-navigation nav-drawer" *ngFor="let route of routes">
-            <i class="mdl-textfield__icon material-icons sacombank-icons-nav" *ngIf="route.data">{{route.data.icon}}</i>
-            <a class="mdl-navigation__link sacombank-route-nav" *ngIf="route.data" routerLinkActive="active-link" routerLink="{{route.path}}">{{route.data.title}}</a>
+    <div class="android-drawer mdl-layout__drawer mdl-layout--small-screen-only">
+        <nav class="mdl-navigation nav-drawer">
+            <a class="mdl-navigation__link sacombank-border-top" routerLinkActive="active-drawer" routerLink="/home">Trang Chủ</a>
+            
+            <a class="mdl-navigation__link sacombank-border-top" (click)="ChangeArrow()">Dịch vụ thẻ</a>
+            <i class="material-icons drawer-submenu-icon">{{changeArrow}}</i>
+            <div *ngIf="showSubmenu">
+                <a class="mdl-navigation__link sacombank-border-top drawer-submenu" routerLinkActive="active-drawer" routerLink="/register">Thẻ tín dụng</a>
+                <a class="mdl-navigation__link sacombank-border-top drawer-submenu" routerLinkActive="active-drawer">Thẻ thanh toán</a>
+                <a class="mdl-navigation__link sacombank-border-top drawer-submenu" routerLinkActive="active-drawer">Thẻ in hình</a>
+                <a class="mdl-navigation__link sacombank-border-top drawer-submenu" routerLinkActive="active-drawer">Giới thiệu bạn bè</a>
+            </div>
         </nav>
     </div>
     <div class="android-content mdl-layout__content" (scroll)="scroll($event)" #cardProMain>

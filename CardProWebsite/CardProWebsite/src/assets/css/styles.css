@@ -125,10 +125,12 @@ a img{
     line-height: 68px;
     background-color: transparent !important;
     border-bottom: 4px solid transparent;
+    cursor: pointer;
   }
 
     .android-navigation .mdl-navigation__link:hover {
         border-bottom: 4px solid #3f51b5;
+
     }
 
   .android-search-box {

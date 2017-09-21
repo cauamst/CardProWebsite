@@ -17,7 +17,7 @@ export const routes: Routes = [
     { path: 'products', component: ProductsComponent, data: { title: 'Products', icon: ""  }, canActivate: [AuthGuard] },
     { path: 'cardRegistration', component: CardRegistrationComponent, data: { title: 'Card Registration' }, canActivate: [AuthGuard] },
     {
-        path: 'register', component: CreditComponent, data: { title: 'Dịch vụ thẻ',icon: "credit_card" },
+        path: 'register', component: CreditComponent, data: { title: 'Dịch vụ thẻ', icon: "credit_card",submenu: ["Thẻ tín dụng","Thẻ thanh toán","Thẻ in hình","Giới thiệu bạn bè"] }, 
 
     },
     {

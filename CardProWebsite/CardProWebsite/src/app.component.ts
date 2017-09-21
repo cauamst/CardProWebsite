@@ -1,4 +1,4 @@
-﻿import { Component, Inject, ViewChild, ElementRef, HostListener, Input } from '@angular/core';
+﻿import { Component, Inject, ViewChild, ElementRef, HostListener, Input, Directive, HostBinding } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from "@angular/router";
 import { routes } from './modules/app/app.routing';
 import { DOCUMENT } from "@angular/platform-browser";
@@ -10,6 +10,8 @@ import { Subscription } from "rxjs/Subscription";
     templateUrl: 'app.component.html'
 })
 export class AppComponent {
+    changeArrow = "keyboard_arrow_right";
+    showSubmenu: boolean = false;
     url: string;
     logoUrl: string;
     @ViewChild("cardProMain") cardProMain: ElementRef;
@@ -35,6 +37,7 @@ export class AppComponent {
             }
             this.cardProMain.nativeElement.scrollTop = 0;
         });
+        this.showSubmenu = false;
     }
 
     isActive(path: string): boolean {
@@ -65,5 +68,17 @@ export class AppComponent {
           this.classList.remove('is-visible');
         }, false);
     }
+    ChangeArrow(): void {
+        if (this.changeArrow === 'keyboard_arrow_right') {
+            this.changeArrow = 'keyboard_arrow_down';
+                this.showSubmenu = true;
+        }
+        else {
+            this.changeArrow = 'keyboard_arrow_right';
+            this.showSubmenu = false;
+        }
+    }
+
     
 }
+

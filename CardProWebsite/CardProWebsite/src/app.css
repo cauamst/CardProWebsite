@@ -153,9 +153,27 @@ body {
 .sacombank-background {
     background-color : #f6f6f6;
 }
-.sacombank-route-nav {
-    padding-left: 50px !important;
+.sacombank-border-top {
+    border-top: 1px solid #eee;
+    list-style: none;
 }
+.drawer-submenu {
+    padding-left: 25px !important;
+    background-color: #fff !important;
+}
+.active-drawer {
+    background-color: #e0e0e0 !important;
+}
+.drawer-submenu-icon {
+    position: absolute !important;
+    /* float: right; */
+    margin-top: 56px;
+    margin-left: 90%;
+}
+    .sacombank-border-top li {
+        margin-left :5px;
+       
+    }
 .nav-drawer {
     padding-top: 30px;
 }
@@ -282,4 +300,5 @@ body {
     -webkit-animation: lol 3s 500ms infinite ease-in-out;
     animation: lol 3s 500ms infinite ease-in-out;
 }
+
 

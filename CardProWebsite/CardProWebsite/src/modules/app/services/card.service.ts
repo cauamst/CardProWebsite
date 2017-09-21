@@ -54,6 +54,10 @@ export class CardService {
     {
         return this.getAllCard().then(cards => cards.filter(card => card.Type === type));
     }
+
+    nbOfCards(type: number) {
+        return this.getCardType(type).then((cards) => cards.length);
+    }
     //serviceContent
     getAllContent(): Promise<Content[]> {
         return Promise.resolve(CONTENT);

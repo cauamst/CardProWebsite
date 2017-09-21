@@ -41,21 +41,21 @@ export class TransformSlider implements OnInit {
     ngOnInit(): void {
         switch (this.transformTypeId) {
             case 1:
-                this.transformLabel = "Đổi điểm thưởng (Điểm)";
-                this.transformTitle = "Số tiền chi tiêu/ tháng (VNĐ)";
+                this.transformLabel = "Đổi điểm thưởng(Điểm)";
+                this.transformTitle = "Số tiền chi tiêu/ tháng(VNĐ)";
                 break;
             case 2:
                 if (this.isOnlineExpenses == true) {
-                    this.transformLabel = "Số tiền được hoàn khi chi tiêu online (VNĐ)";
-                    this.transformTitle = "Số tiền chi tiêu oniline hoặc chi tiêu ở nước ngoài/ tháng (VNĐ)";
+                    this.transformLabel = "Số tiền được hoàn khi chi tiêu online(VNĐ)";
+                    this.transformTitle = "Số tiền chi tiêu oniline hoặc chi tiêu ở nước ngoài/ tháng(VNĐ)";
                 } else {
-                    this.transformLabel = "Số tiền được hoàn khi chi tiêu trong nước (VNĐ)";
-                    this.transformTitle = "Số tiền chi tiêu khác/ tháng (VNĐ)";
+                    this.transformLabel = "Số tiền được hoàn khi chi tiêu trong nước(VNĐ)";
+                    this.transformTitle = "Số tiền chi tiêu khác/ tháng(VNĐ)";
                 }
                 break;
             case 3:
-                this.transformLabel = "Dặm bay (Dặm)";
-                this.transformTitle = "Số tiền chi tiếu/ tháng (VNĐ)";
+                this.transformLabel = "Dặm bay(Dặm)";
+                this.transformTitle = "Số tiền chi tiếu/ tháng(VNĐ)";
                 break;
 
         }
