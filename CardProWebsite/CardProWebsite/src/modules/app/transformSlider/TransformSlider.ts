@@ -1,8 +1,9 @@
 ﻿import { Component, NgZone, OnInit, Pipe, PipeTransform, EventEmitter, Directive } from "@angular/core";
 import { PointTransformService } from "../services/pointTransform.service";
-import { Input, HostListener, ViewChild, ElementRef, Output } from "@angular/core";
+import { Input, HostListener, ViewChild, ElementRef, Output, Host, Optional } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PointReplacerPipe } from './point-replace';
+import { TransformParent } from './TransformParent';
 
 @Component({
     selector: 'transform-slider',
@@ -29,16 +30,23 @@ export class TransformSlider implements OnInit {
     public transformLabel: string;
     public transformTitle: string;
     public formattedAmount: string = "0";
-
+   
     @Input() transformTypeId: number;
     @Input() isOnlineExpenses: number;
     @Input() firstCardId: number;
     @Input() secondCardId: number;
+    @Input() hasParent: boolean;
+
     constructor(
+        @Host() @Optional() private parent: TransformParent,
         private pointTransformService: PointTransformService,
-        private zone: NgZone
+        private zone: NgZone,
+        
     ) { }
     ngOnInit(): void {
+        if (this.hasParent) {
+            this.parent.sliders.push(this);
+        }
         switch (this.transformTypeId) {
             case 1:
                 this.transformLabel = "Đổi điểm thưởng(Điểm)";
@@ -68,6 +76,10 @@ export class TransformSlider implements OnInit {
             Transform(this.transformTypeId, this.firstCardId, amount, this.isOnlineExpenses);
         this.secondCardPoints = PointTransformService.
             Transform(this.transformTypeId, this.secondCardId, amount, this.isOnlineExpenses);
+
+        if (this.hasParent) {
+            this.parent.update(true);
+        }
     }
 
     onInputChange(event, updateFromSlider = false) {

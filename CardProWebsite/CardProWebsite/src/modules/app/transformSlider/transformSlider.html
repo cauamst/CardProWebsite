@@ -2,21 +2,24 @@
     <div class="mdl-cell--12-col">
         <div class="mdl-textfield mdl-js-textfield transform-width mdl-cell--hide-desktop mdl-cell--hide-tablet mdl-cell-border">
             <label class="label-color" for="amounts">{{transformTitle}}</label>
-            <input #textInput class="mdl-textfield__input text-center" type="text" id="amounts" [(ngModel)]="formattedAmount" (ngModelChange)="onInputChange($event)"/>
+           
         </div>
-        <input #sliderInput class="mdl-slider mdl-js-slider" type="range"
-               min="{{minAmount}}" max="{{maxAmount}}" [(ngModel)]="amount" step="{{step}}"
-               (ngModelChange)="transform($event)">
-        <div class="min-max-amount">
-            <span class="min-value">0 VNĐ</span>
-            <span class="max-value">100.000.000 VNĐ</span>
-        </div>
+        
     </div>
-    <div class="mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone transform-top">
+    <div *ngIf="!hasParent" class="mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone transform-top">
         <div class="row mdl-cell-border" style="width: 100%">
-            <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--4-col-tablet transform-left">
+            <div class="mdl-cell--4-col mdl-cell--4-phone mdl-cell--4-col-tablet transform-left">
                 <label class="label-color" for="amounts">{{transformTitle}}</label>
-                <input #textInput class="mdl-textfield__input text-center" type="text" id="amounts" [(ngModel)]="formattedAmount" (ngModelChange)="onInputChange($event)" />
+                <input #sliderInput class="mdl-slider mdl-js-slider" type="range"
+                       min="{{minAmount}}" max="{{maxAmount}}" [(ngModel)]="amount" step="{{step}}"
+                       (ngModelChange)="transform($event)">
+                <div class="min-max-amount">
+                    <span class="min-value">0 VNĐ</span>
+                    <span class="max-value">
+                        <input #textInput class="mdl-textfield__input text-center" type="text" id="amounts" [(ngModel)]="formattedAmount" (ngModelChange)="onInputChange($event)" />
+                    </span>
+                    <span class="max-value-unit">VNĐ</span>
+                </div>
             </div>
             <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet color-text card-media-top"><p>{{firstCardPoints |changedots}}</p></div>
             <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet color-text card-media-top"><p>{{secondCardPoints |changedots}}</p></div>

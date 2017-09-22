@@ -10,11 +10,18 @@
 .min-value {
     position: absolute;
     font-size: 0.75em;
+    color: #1d88f7;
 }
 
 .max-value {
     float: right;
     font-size: 0.75em;
+}
+.max-value-unit {
+    position: absolute;
+    font-size: 0.75em;
+    color: #1d88f7;
+    right: 1%;
 }
 .transform-width {
     width : 100%;
@@ -28,8 +35,7 @@
     text-align: center;
     color: #1d88f7;
     font-weight: 600;
-    font-size: 0.9375em;
-    padding-top: 10px;
+    font-size: 12px;
     padding-bottom: 10px;
     
 }

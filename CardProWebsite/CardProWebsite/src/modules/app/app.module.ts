@@ -26,7 +26,7 @@ import { Accordion, AccordionGroup } from './register-credit/accordion';
 
 import { PointTransformService } from './services/pointTransform.service';
 import { TransformSlider } from './transformSlider/TransformSlider';
-
+import { TransformParent } from './transformSlider/TransformParent';
 import { Loader } from './directives/loader.directive';
 import { PointReplacerPipe } from './transformSlider/point-replace';
 @NgModule({
@@ -45,10 +45,9 @@ import { PointReplacerPipe } from './transformSlider/point-replace';
         Slide,
         Accordion,
         AccordionGroup,
+        TransformParent,
         TransformSlider,
-        PointReplacerPipe
-        
-    ],
+        PointReplacerPipe    ],
     providers: [
         AuthGuard,
         AlertService,

@@ -163,6 +163,7 @@
     <Content Include="src\modules\app\register-credit\dialog.html" />
     <Content Include="src\modules\app\toTop\toTop.css" />
     <Content Include="src\modules\app\toTop\toTop.html" />
+    <Content Include="src\modules\app\transformSlider\TransformParent.html" />
     <Content Include="src\modules\app\transformSlider\transformSlider.html" />
     <Content Include="src\modules\app\_login\login.css" />
     <Content Include="src\modules\app\_login\login.html" />
@@ -250,6 +251,7 @@
     <TypeScriptCompile Include="src\common.d.ts" />
     <TypeScriptCompile Include="src\dtos.ts" />
     <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\modules\app\transformSlider\TransformParent.ts" />
     <TypeScriptCompile Include="src\modules\app\_login\login.ts" />
     <TypeScriptCompile Include="src\shared\footer.ts" />
     <TypeScriptCompile Include="src\shared\header.ts" />
