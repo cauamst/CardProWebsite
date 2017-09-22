@@ -15,7 +15,9 @@ export class AppComponent {
     url: string;
     logoUrl: string;
     @ViewChild("cardProMain") cardProMain: ElementRef;
+    @ViewChild("target-move") formElement: ElementRef;
     private subscription: Subscription;
+    private moveToSubs: Subscription;
     title = 'CARD PRO';
     routes = routes.filter((val) => val.path != '' && val.path != 'login' && val.path != 'Login' && val.path != 'products' && val.path != 'cardRegistration');
 
@@ -30,6 +32,12 @@ export class AppComponent {
                 this.scrollToTop();
             }
         });
+        this.moveToSubs = this.notificationService.moveToObservable$.subscribe((res) => {
+            if (res) {
+                this.moveTo();
+            }
+        });
+       
 
         this.router.events.subscribe((evt) => {
             if (!(evt instanceof NavigationEnd)) {
@@ -61,6 +69,14 @@ export class AppComponent {
             }
         }, 1)
     }
+    public moveTo() {
+        let el = this.document.getElementById("target-move");
+        if (el) {
+            var formPos = el.offsetTop;
+            this.cardProMain.nativeElement.scrollTop = formPos;
+        }
+    }
+
     CloseDrawer(n : number): void
     {   
         if (n == 1 || n == 2) {

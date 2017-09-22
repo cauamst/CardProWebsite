@@ -1,4 +1,4 @@
-import { Directive, AfterViewChecked, Injectable, ErrorHandler } from '@angular/core';
+import { Directive, AfterViewChecked, Injectable, ErrorHandler, ViewChild } from '@angular/core';
 import { JsonServiceClient } from 'servicestack-client';
 import { Subject } from "rxjs/Subject";
 
@@ -24,11 +24,13 @@ export class MDL implements AfterViewChecked {
 export class NotificationService {
     private notify = new Subject<any>();
     private needToTopNotify = new Subject<any>();
+    private moveToNotify = new Subject<any>();
     /**
      * Observable string streams
      */
     notifyObservable$ = this.notify.asObservable();
     needToTopObservable$ = this.needToTopNotify.asObservable();
+    moveToObservable$ = this.moveToNotify.asObservable();
 
     constructor() { }
 
@@ -41,6 +43,12 @@ export class NotificationService {
     public needToTop(data) {
         if (data) {
             this.needToTopNotify.next(data);
+        }
+    }
+    public moveTo(data) {
+        if (data)
+        {
+            this.moveToNotify.next(data);
         }
     }
 }

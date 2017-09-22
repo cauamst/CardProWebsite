@@ -176,8 +176,8 @@
     <div class="mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
         <div class="row none-border none-border-bottom">
             <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--4-col-tablet none-border"></div>
-            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet none-border"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small mdl-color-sacombank" *ngIf="card1" (click)="moveToTopButton();addClassbutton(1)" [ngClass]="{ 'btn-add1': isAddClass1}">{{isAddClass1 ? 'Đã chọn' : 'Chọn thẻ này'}}</button></div>
-            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet none-border"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small mdl-color-sacombank" *ngIf="card2" (click)="moveToTopButton();addClassbutton(2)" [ngClass]="{ 'btn-add2': isAddClass2}">{{isAddClass2 ? 'Đã chọn' : 'Chọn thẻ này'}}</button></div>
+            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet none-border"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small mdl-color-sacombank" *ngIf="card1" (click)="addClassbutton(1);moveToTopButton(isAddClass1)" [ngClass]="{ 'btn-add1': isAddClass1}">{{isAddClass1 ? 'Đã chọn' : 'Chọn thẻ này'}}</button></div>
+            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet none-border"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-right button-small mdl-color-sacombank" *ngIf="card2" (click)="addClassbutton(2);moveToTopButton(isAddClass2)" [ngClass]="{ 'btn-add2': isAddClass2}">{{isAddClass2 ? 'Đã chọn' : 'Chọn thẻ này'}}</button></div>
         </div>
     </div>
     <div class="mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">

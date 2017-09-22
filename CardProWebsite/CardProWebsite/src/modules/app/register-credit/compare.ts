@@ -1,10 +1,11 @@
-﻿import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+﻿import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { Accordion, AccordionGroup } from './accordion';
 import { CardService } from '../services/card.service';
 import { CARDES } from '../models/Card-Data';
 import { CARD, Content } from '../models/interface-card';
 import { NotificationService } from '../../../shared/utils';
+import { CreditComponent } from './credit';
 
 
 @Component({
@@ -31,6 +32,8 @@ export class CompareComponent implements OnInit {
 
     @Output('AddCardToFormEvent')
     selectedCardToFormEvent = new EventEmitter();
+
+    @ViewChild(NotificationService) notificationService: NotificationService;
 
     benefits = [
         { currentCatId: 1, director: 'Hoàn tiền' },
@@ -122,11 +125,13 @@ export class CompareComponent implements OnInit {
         this.cards2 = null;
     }
 
-    moveToTopButton() {
+    moveToTopButton(isSelect) {
         let width = window.innerWidth;
         this.initialWidth = width;
         if (width >= 839) {
             this.NotificationService.needToTop(true);
+        } else if (isSelect) {
+            this.NotificationService.moveTo(true);
         }
     }
 
@@ -157,4 +162,5 @@ export class CompareComponent implements OnInit {
         }
 
     }
+    
 }

@@ -461,4 +461,5 @@ export class CreditComponent implements OnInit {
     RefreshCaptcha() {
         this.updateCaptcha();
     }
+    
 }
