@@ -349,6 +349,12 @@ nav {
 .font-size-heading {
     font-size: 22px !important;
 }
+.read-more {
+    text-align : end;
+}
+a {
+    color : unset !important;
+}
 .slide-image {
     min-height : 200px;
     max-height: 450px;
