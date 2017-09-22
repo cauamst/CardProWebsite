@@ -50,7 +50,6 @@
 <accordion>
 
     <accordion-group heading="Tổng quan thẻ" [isGroupOpen]="true">
-        <div class="mdl-grid">
             <div class="mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell-border mdl-grid-content">
                 <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet text-center">Phí thường niên</div>
                 <div class="row">
@@ -125,11 +124,9 @@
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet" *ngIf="!card2"></div>
                 </div>
             </div>
-        </div>
     </accordion-group>
     <accordion-group heading="Tiện ích vượt trội" [isGroupOpen]="true">
         <!--*ngIf="(card1?.class != 'Classic' || card2?.class != 'Classic')"-->
-        <div class="mdl-grid">
             <div class="mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell-border">
                 <div class="mdl-cell--4-col-phone mdl-cell--hide-desktop mdl-cell--hide-tablet text-center">Quyền lợi bảo hiểm</div>
                 <div class="row">
@@ -160,16 +157,15 @@
                     <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet" *ngIf="!card2"></div>
                 </div>
             </div>
-        </div>
     </accordion-group>
     <accordion-group heading="Quy đổi điểm thưởng trong năm" [isGroupOpen]="true" *ngIf="card1 || card2">
         <transform-slider *ngIf="card1 || card2" [transformTypeId]="1" [firstCardId]="card1 != null ? card1.Id : 0" [secondCardId]="card2 != null ? card2.Id : 0"></transform-slider>
     </accordion-group>
     <accordion-group heading="Quy đổi hoàn tiền trong năm" [isGroupOpen]="true" *ngIf="card1 || card2">
         <transform-parent>
-            <transform-slider *ngIf="card1 || card2" [transformTypeId]="2" [firstCardId]="card1 != null ? card1.Id : 0" [secondCardId]="card2 != null ? card2.Id : 0" [isOnlineExpenses]=1 [hasParent] ="true"></transform-slider>
-            <transform-slider *ngIf="card1 || card2" [transformTypeId]="2" [firstCardId]="card1 != null ? card1.Id : 0" [secondCardId]="card2 != null ? card2.Id : 0" [isOnlineExpenses]=2 [hasParent] ="true"></transform-slider>
-            <transform-slider *ngIf="card1 || card2" [transformTypeId]="2" [firstCardId]="card1 != null ? card1.Id : 0" [secondCardId]="card2 != null ? card2.Id : 0" [isOnlineExpenses]=3 [hasParent] ="true"></transform-slider>
+                <transform-slider *ngIf="card1 || card2" [transformTypeId]="2" [firstCardId]="card1 != null ? card1.Id : 0" [secondCardId]="card2 != null ? card2.Id : 0" [isOnlineExpenses]=1 [hasParent]="true"></transform-slider>
+                <transform-slider *ngIf="card1 || card2" [transformTypeId]="2" [firstCardId]="card1 != null ? card1.Id : 0" [secondCardId]="card2 != null ? card2.Id : 0" [isOnlineExpenses]=2 [hasParent]="true"></transform-slider>
+                <transform-slider *ngIf="card1 || card2" [transformTypeId]="2" [firstCardId]="card1 != null ? card1.Id : 0" [secondCardId]="card2 != null ? card2.Id : 0" [isOnlineExpenses]=3 [hasParent]="true"></transform-slider>
         </transform-parent>
        
     </accordion-group>

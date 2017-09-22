@@ -188,7 +188,7 @@ img {
     width : 100%;
 }
 .text-title-compare {
-    font-size: 18px !important;
+    font-size: 14px !important;
 }
 .font-icons {
     font-size: 18px !important;
@@ -218,3 +218,12 @@ h4 {
 .set-up-position {
         height: 31px !important;
     }
+
+@media (min-width: 320px) {
+    .mdl-cell--12-col {
+        width : 100% !important;
+    }
+    .mdl-cell--8-col-tablet {
+        width: 100% !important;
+    }
+}

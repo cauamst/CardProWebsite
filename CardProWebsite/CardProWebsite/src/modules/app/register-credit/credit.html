@@ -154,11 +154,11 @@
             <div class="right-content mdl-cell--4-col mdl-cell--4-col-phone mdl-cell--8-col-tablet">
                 <!-- REGISTER FORM -->
                 <div class="mdl-shadow--6dp">
-                    <div class="mdl-card__title mdl-color-text--white title-form mdl-color">
+                    <div class="mdl-card__title mdl-color-text--white title-form mdl-color" id="target-move">
                         <i class="material-icons">mode_edit</i>
                         <h3 class="mdl-card__title-text" id="size18">&nbsp; {{titleResultFormCheck? "KẾT QUẢ ĐĂNG KÝ" : "ĐĂNG KÝ NGAY"}}</h3>
                     </div>
-                    <div class="mdl-card__supporting-text cardPro-form-block" loader [isLoading]="formIsSubmitting" id="target-move">
+                    <div class="mdl-card__supporting-text cardPro-form-block" loader [isLoading]="formIsSubmitting">
                         <form [formGroup]="registerForm" name="registerForm" novalidate (ngSubmit)="submitForm($event)" *ngIf="!titleResultFormCheck" (click)="CheckRegister()">
                             <div class="mdl-textfield mdl-js-textfield mdl-cell--4-col-tablet mdl-cell--4-col-phone"
                                  [ngClass]="{

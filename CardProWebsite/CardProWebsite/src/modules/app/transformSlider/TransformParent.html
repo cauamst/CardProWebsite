@@ -1,12 +1,14 @@
-﻿<ng-content></ng-content>
-<div class="mdl-grid">
-    <div class="mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone transform-top">
-        <div class="row mdl-cell-border" style="width: 100%">
-            <div class="mdl-cell--4-col mdl-cell--hide-phone mdl-cell--4-col-tablet transform-left">
-            </div>
-            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet color-text card-media-top"><p>{{firstCardPoints |changedots}}</p></div>
-            <div class="mdl-cell--4-col mdl-cell-border mdl-cell--4-col-tablet color-text card-media-top"><p>{{secondCardPoints |changedots}}</p></div>
+﻿
+<!--<div class="mdl-cell--hide-desktop mdl-cell--4-col-phone mdl-cell--hide-tablet mdl-border-unset">
+    <ng-content></ng-content>
+</div>-->
+<div class="mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone fix-full-width">
+    <div class="row mdl-cell-border" style="width: 100%">
+        <div class="mdl-cell--12-col mdl-cell--hide-phone mdl-cell--8-col-tablet mdl-border-unset">
+            <ng-content></ng-content>
         </div>
+        <div class="mdl-cell--2-col mdl-cell-border mdl-cell--2-col-tablet color-text card-media-top"><p>{{firstCardPoints |changedots}}</p></div>
+        <div class="mdl-cell--2-col mdl-cell-border mdl-cell--2-col-tablet color-text card-media-top"><p>{{secondCardPoints |changedots}}</p></div>
     </div>
 </div>
 

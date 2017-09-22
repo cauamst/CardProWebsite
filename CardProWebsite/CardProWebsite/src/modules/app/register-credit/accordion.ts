@@ -50,7 +50,7 @@ a {
     padding-left: 30px;
     padding-bottom: 5px;
     padding-top: 5px;
-    font-size : 15px !important;
+    font-size : 14px !important;
 }
 .accordion-icon {
     margin-top: 5px;

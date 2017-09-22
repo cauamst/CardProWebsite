@@ -1,10 +1,12 @@
 ﻿.mdl-cell-border {
     text-align: center;
+    border: 1px solid #eee;
 }
 
 .min-max-amount {
     width: 100%;
     position: relative;
+    border : 0 !important;
 }
 
 .min-value {
@@ -21,14 +23,13 @@
     position: absolute;
     font-size: 0.75em;
     color: #1d88f7;
-    right: 1%;
+    right: 3%;
 }
 .transform-width {
     width : 100%;
 }
 .transform-top {
     width: 100%;
-    margin-top: 20px;
 }
 
 .text-center {
@@ -61,9 +62,13 @@
 .transform-left {
     text-align: left;
     color: red;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    font-size: 12px;
 }
 .label-color {
     color: #1d88f7;
+    margin-left: 20px;
 }
 
 
@@ -74,32 +79,44 @@
     word-break: break-word;
     display: flex;
     width: 100%;
-    border-bottom: solid 1px #ececec;
 }
 
 .row:before {
     content: "";
     display: table;
     box-sizing: border-box;
-    border-right: solid 1px #ececec;
 }
 
 .row:after {
     content: "";
     display: table;
     box-sizing: border-box;
-    border-right: solid 1px #ececec;
 }
-
-.row div {
-    border-right: solid 1px #ececec;
-    padding: 7px;
-    border-top: solid 1px #ececec;
-    border-left: solid 1px #ececec;
+.fix-full-width {
+    width : 100% !important;
+}
+.mdl-border-unset {
+    border : 0 !important;
 }
 @media screen and (min-width : 479px){
     .card-media-top {
-        padding-top : 5% !important;
+        padding-top : 19%;
+    }
+    .transform-media{
+        padding-top : 5%;
     }
 }
+@media (min-width : 320px){
+    .mdl-cell--12-col .mdl-cell--12-col-desktop .mdl-cell--8-col .mdl-cell--8-col-tablet .mdl-cell--12-col-tablet .mdl-cell--4-col {
+        width: 100% !important;
+    }
+}
+@media (max-width: 479px) {
+    .mdl-cell--2-col, .mdl-cell--2-col-phone.mdl-cell--2-col-phone {
+        width: 50% !important;
+    }
+    .mdl-cell--4-col-phone {
+        width : 100% !important;
+    }
 
+}
