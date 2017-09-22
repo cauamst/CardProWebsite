@@ -103,6 +103,7 @@ img {
         border-top: solid 1px #ececec;
         border-left: solid 1px #ececec;
         text-align : center;
+        font-size : 12px;
     }
 
 .mdl-grid-full {
@@ -215,5 +216,5 @@ h4 {
     position: relative;
 }
 .set-up-position {
-        height: 48px !important;
+        height: 31px !important;
     }
