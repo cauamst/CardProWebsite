@@ -22,8 +22,8 @@ import { routes } from '../modules/app/app.routing';
     }
     .card-submenu{
     padding : 0 0 !important;     
-
-}
+    }
+   s
 `]
 })
 export class HeaderComponent {

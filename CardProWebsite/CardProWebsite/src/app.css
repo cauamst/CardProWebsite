@@ -23,6 +23,9 @@ body, html {
 .active-link {
    color : blue !important;
 }
+.header-bottom {
+    border-bottom: 2px solid #ececec !important;
+}
 
 /*Template Android*/
 .mdl-layout__drawer-button {

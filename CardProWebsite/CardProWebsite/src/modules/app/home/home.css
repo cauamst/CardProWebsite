@@ -151,7 +151,7 @@ ul {
 }
 .imghome-card {
     height: 210px;
-    width: 210px;
+    width: 100%;
     box-sizing: border-box;
     max-width: 100%;
     border: solid 1px #bedad6;

@@ -36,9 +36,19 @@
 .inline {
     display: -webkit-inline-box !important;
 }
-
-
-
+.input-set-color {
+    color: #000 !important;
+}
+.refresh {
+    position: absolute;
+    margin-top: 22px;
+    margin-left: 110px;
+    font-size: 25px !important;
+    color: #4490c7;
+}
+    .refresh:hover {
+        cursor: pointer;
+    }
 /*table*/
 .mdl-data-table {
     width: 100%;
@@ -954,19 +964,18 @@ left-content {
     font-size : 12px !important; 
 }
 .captcha-image {
-    max-width: 105px;
+    max-width: 90px;
     max-height: 40px;
-    margin-top: 20px;
-    float: right;
+    margin-top: 15px;
+    margin-left:20px;
 }
 .captcha-input {
     float: left;
-    max-width: 100px;
+    max-width: 70px;
     margin-right: 20px;
 }
 
     .captcha-input .mdl-textfield__input {
-        width: 100px;
         margin-left: 30px;
     }
 .captcha-input.is-focused .mdl-textfield__label:after {

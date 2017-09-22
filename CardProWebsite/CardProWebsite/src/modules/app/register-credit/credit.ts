@@ -452,4 +452,13 @@ export class CreditComponent implements OnInit {
         this.registerForm.reset();
         this.updateCaptcha();
     }
+    CheckRegister() {
+        if ((this.address.value == 25 || this.address.value == 32) && (this.salary.value == 1))
+        {
+            this.titleResultFormCheck = true;
+        }
+    }
+    RefreshCaptcha() {
+        this.updateCaptcha();
+    }
 }

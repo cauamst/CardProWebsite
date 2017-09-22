@@ -159,13 +159,13 @@
                         <h3 class="mdl-card__title-text" id="size18">&nbsp; {{titleResultFormCheck? "KẾT QUẢ ĐĂNG KÝ" : "ĐĂNG KÝ NGAY"}}</h3>
                     </div>
                     <div class="mdl-card__supporting-text cardPro-form-block" loader [isLoading]="formIsSubmitting">
-                        <form [formGroup]="registerForm" name="registerForm" novalidate (ngSubmit)="submitForm($event)" *ngIf="!titleResultFormCheck">
+                        <form [formGroup]="registerForm" name="registerForm" novalidate (ngSubmit)="submitForm($event)" *ngIf="!titleResultFormCheck" (click)="CheckRegister()">
                             <div class="mdl-textfield mdl-js-textfield mdl-cell--4-col-tablet mdl-cell--4-col-phone"
                                  [ngClass]="{
                                     'has-error': name.invalid && (name.dirty || name.touched)
                              }">
                                 <i class="mdl-textfield__icon material-icons">person</i>
-                                <input class="mdl-textfield__input" type="text" id="name" name="name" formControlName="name" />
+                                <input class="mdl-textfield__input input-set-color" type="text" id="name" name="name" formControlName="name" />
                                 <label class="mdl-textfield__label" for="name">Họ Tên</label>
                                 <span class="form-control-feedback"
                                       *ngIf="name.errors && (name.dirty || name.touched)">
@@ -179,7 +179,7 @@
                                     'has-error': email.invalid && (email.dirty || email.touched)
                              }">
                             <i class="mdl-textfield__icon material-icons">email</i>
-                            <input class="mdl-textfield__input" type="email" id="email" name="email" formControlName="email" />
+                            <input class="mdl-textfield__input input-set-color" type="email" id="email" name="email" formControlName="email" />
                             <label class="mdl-textfield__label" for="email">Email</label>
                             <span class="form-control-feedback"
                                   *ngIf="email.errors && (email.dirty || email.touched)">
@@ -193,7 +193,7 @@
                                     'has-error': phone.invalid && (phone.dirty || phone.touched)
                              }">
                             <i class="mdl-textfield__icon material-icons">phone</i>
-                            <input class="mdl-textfield__input" type="text" id="phone" name="phone" formControlName="phone" />
+                            <input class="mdl-textfield__input input-set-color" type="text" id="phone" name="phone" formControlName="phone" />
                             <label class="mdl-textfield__label" for="phone">Số điện thoại</label>
                             <span class="form-control-feedback"
                                   *ngIf="phone.errors && (phone.dirty || phone.touched)">
@@ -206,7 +206,7 @@
                                     'has-error': address.invalid && (address.dirty || address.touched)
                              }">
                                 <i class="mdl-textfield__icon material-icons">location_city</i>
-                                <select class="mdl-textfield__input" id="Address" name="address" formControlName="address">
+                                <select class="mdl-textfield__input input-set-color" id="Address" name="address" formControlName="address">
                                     <option></option>
                                     <option [value]="ci.id" *ngFor="let ci of City">{{ci.content}}</option>
                                 </select>
@@ -222,7 +222,7 @@
                                     'has-error': salary.invalid && (salary.dirty || salary.touched)
                              }">
                                 <i class="mdl-textfield__icon material-icons">local_atm</i>
-                                <select class="mdl-textfield__input" id="salary" name="salary" formControlName="salary">
+                                <select class="mdl-textfield__input input-set-color" id="salary" name="salary" formControlName="salary">
                                     <option></option>
                                     <option *ngFor="let sala of Salary" [value]="sala.id">{{sala.content}}</option>
                                 </select>
@@ -239,18 +239,19 @@
                                 <!--<label class="mdl-textfield__label" for="card">Thẻ tín dụng bạn chọn</label>-->
                             </div>
                             <div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label captcha-input mdl-cell--4-col-tablet mdl-cell--4-col-phone"
+                                <div class="mdl-textfield mdl-js-textfield captcha-input mdl-cell--4-col-tablet mdl-cell--4-col-phone"
                                      [ngClass]="{
                                     'has-error': captcha.invalid && (captcha.dirty || captcha.touched)
                              }">
                                     <i class="mdl-textfield__icon material-icons">graphic_eq</i>
-                                    <input class="mdl-textfield__input" type="text" name="captcha" formControlName="captcha" id="captcha">
+                                    <input class="mdl-textfield__input input-set-color" type="text" name="captcha" formControlName="captcha" id="captcha">
                                     <label class="mdl-textfield__label" for="captcha">Mã xác nhận</label>
                                     <span class="form-control-feedback"
                                           *ngIf="captcha.errors && (captcha.dirty || captcha.touched)">
                                         <span class="mdl-textfield__error span-error">Sai mã xác nhận</span>
                                     </span>
                                 </div>
+                                <i class="material-icons refresh" (click)="RefreshCaptcha()">cached</i>
                                 <img [src]="captchaBase64Img" class="captcha-image" />
                                 <div class="fix"></div>
                             </div>
