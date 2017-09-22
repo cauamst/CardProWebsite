@@ -351,6 +351,7 @@ nav {
 }
 .slide-image {
     min-height : 200px;
+    max-height: 450px;
 }
 .register-online {
     margin-bottom: 15px;

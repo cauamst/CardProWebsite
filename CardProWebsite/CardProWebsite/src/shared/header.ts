@@ -23,7 +23,9 @@ import { routes } from '../modules/app/app.routing';
     .card-submenu{
     padding : 0 0 !important;     
     }
-   s
+    .none-bottom{
+        text-decoration : none;
+    }
 `]
 })
 export class HeaderComponent {

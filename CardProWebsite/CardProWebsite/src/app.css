@@ -24,7 +24,7 @@ body, html {
    color : blue !important;
 }
 .header-bottom {
-    border-bottom: 2px solid #ececec !important;
+    border-bottom: 1px solid #ececec !important;
 }
 
 /*Template Android*/
@@ -157,8 +157,11 @@ body {
     background-color : #f6f6f6;
 }
 .sacombank-border-top {
-    border-top: 1px solid #eee;
     list-style: none;
+    border-top: 1px solid #ececec;
+}
+.nav-drawer .sacombank-border-top:first-child {
+    border-top: 0;
 }
 .drawer-submenu {
     padding-left: 25px !important;

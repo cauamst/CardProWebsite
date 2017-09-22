@@ -31,7 +31,7 @@ export class TransformSlider implements OnInit {
     public formattedAmount: string = "0";
 
     @Input() transformTypeId: number;
-    @Input() isOnlineExpenses: boolean;
+    @Input() isOnlineExpenses: number;
     @Input() firstCardId: number;
     @Input() secondCardId: number;
     constructor(
@@ -45,11 +45,11 @@ export class TransformSlider implements OnInit {
                 this.transformTitle = "Số tiền chi tiêu/ tháng(VNĐ)";
                 break;
             case 2:
-                if (this.isOnlineExpenses == true) {
-                    this.transformLabel = "Số tiền được hoàn khi chi tiêu online(VNĐ)";
+                if (this.isOnlineExpenses == 1) {
                     this.transformTitle = "Số tiền chi tiêu oniline hoặc chi tiêu ở nước ngoài/ tháng(VNĐ)";
+                } else if (this.isOnlineExpenses == 2) {
+                    this.transformTitle = "Số tiền chi tiêu ở nước ngoài/ tháng(VNĐ)";
                 } else {
-                    this.transformLabel = "Số tiền được hoàn khi chi tiêu trong nước(VNĐ)";
                     this.transformTitle = "Số tiền chi tiêu khác/ tháng(VNĐ)";
                 }
                 break;

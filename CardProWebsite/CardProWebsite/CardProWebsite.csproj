@@ -105,6 +105,7 @@
     <Content Include="src\assets\img\momo.jpg" />
     <Content Include="src\assets\img\ms-securecode.png" />
     <Content Include="src\assets\img\pci-logo.png" />
+    <Content Include="src\assets\img\promotion.jpg" />
     <Content Include="src\assets\img\sacomhe.jpg" />
     <Content Include="src\assets\img\credit-card-sample.png" />
     <Content Include="src\assets\img\STB.jpg" />

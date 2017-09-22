@@ -26,7 +26,7 @@ export class PointTransformService {
         }
     }
 
-    private static Refund(cardId: number, amount: number, isOnlineExpenses = false): number {
+    private static Refund(cardId: number, amount: number, isOnlineExpenses : number): number {
         let coEfficient = 0;
         let minAmount = 0;
         const constAmount = 100000;
@@ -125,7 +125,7 @@ export class PointTransformService {
             : 0;
     }
 
-    public static Transform(type: number, cardId: number, amount: number, isOnlineExpenses = false): number {
+    public static Transform(type: number, cardId: number, amount: number, isOnlineExpenses : number): number {
         switch (type) {
             case 1:
                 return this.AwardedPoints(cardId, amount);
