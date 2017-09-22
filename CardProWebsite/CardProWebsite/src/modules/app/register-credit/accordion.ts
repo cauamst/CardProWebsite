@@ -68,6 +68,9 @@ a {
 i {
     position: absolute;
 }
+h6{
+    margin-top : 0 !important;
+}
 `]
 
 
