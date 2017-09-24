@@ -65,6 +65,9 @@ a {
     padding-left: 15px;
     margin-top: 0;
 }
+.panel-collapse {
+    padding-bottom: 20px;
+}
 i {
     position: absolute;
 }
