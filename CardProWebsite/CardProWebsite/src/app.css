@@ -171,10 +171,8 @@ body {
     background-color: #e0e0e0 !important;
 }
 .drawer-submenu-icon {
-    position: absolute !important;
+    float : right;
     /* float: right; */
-    margin-top: 56px;
-    margin-left: 90%;
 }
     .sacombank-border-top li {
         margin-left :5px;

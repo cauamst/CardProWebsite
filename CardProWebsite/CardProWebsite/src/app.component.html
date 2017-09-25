@@ -6,8 +6,8 @@
         <nav class="mdl-navigation nav-drawer">
             <a class="mdl-navigation__link sacombank-border-top" routerLinkActive="active-drawer" routerLink="/home" (click)="CloseDrawer(2)">Trang Chủ</a>
             
-            <a class="mdl-navigation__link sacombank-border-top" (click)="ChangeArrow()">Dịch vụ thẻ</a>
-            <i class="material-icons drawer-submenu-icon">{{changeArrow}}</i>
+            <a class="mdl-navigation__link sacombank-border-top" (click)="ChangeArrow()"><span>Dịch vụ thẻ</span><i class="material-icons drawer-submenu-icon">{{changeArrow}}</i></a>
+           
             <div *ngIf="showSubmenu">
                 <a class="mdl-navigation__link sacombank-border-top drawer-submenu" routerLinkActive="active-drawer" routerLink="/register" (click)="CloseDrawer(1)">Thẻ tín dụng</a>
                 <a href="https://card.sacombank.com.vn/DebitCardForm.aspx" target="_blank" class="mdl-navigation__link sacombank-border-top drawer-submenu" routerLinkActive="active-drawer">Thẻ thanh toán</a>
