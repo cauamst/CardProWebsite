@@ -39,16 +39,7 @@
 .input-set-color {
     color: #000 !important;
 }
-.refresh {
-    position: absolute;
-    margin-top: 22px;
-    margin-left: 110px;
-    font-size: 25px !important;
-    color: #4490c7;
-}
-    .refresh:hover {
-        cursor: pointer;
-    }
+    
 /*table*/
 .mdl-data-table {
     width: 100%;
@@ -64,6 +55,7 @@
 
 .send-button {
     float: right;
+    font-size: 12px !important;
 }
 
 .mdl-textfield__input {
@@ -76,6 +68,37 @@
     margin: 5px;
     background-color: none !important;
 }
+.captcha-parent {
+    position: relative;
+    float: right;
+    margin-top: 15px;
+    display: inline-block;
+}
+    .captcha-parent .refresh {
+        font-size: 25px !important;
+        color: #4490c7;
+    }
+        .captcha-parent .refresh:hover {
+            cursor: pointer;
+        }
+    .captcha-parent .captcha-image {
+        max-width: 100px;
+        max-height: 40px;
+        margin-bottom: 10px;
+    }
+@media screen and (min-width: 480px ) and (max-width:699px ) {
+    .captcha-parent {
+        float: unset;
+        margin-left: 10%;
+    }
+}
+@media screen and (min-width: 700px ) and (max-width:839px ) {
+    .captcha-parent {
+        float: unset;
+        margin-left : 15%;
+    }
+}
+
 .mdl-icon-comback {
     margin-bottom: 2px;
 }
@@ -959,16 +982,10 @@ left-content {
     padding: 5px 0 7px 5px;
     font-size : 12px !important; 
 }
-.captcha-image {
-    max-width: 90px;
-    max-height: 40px;
-    margin-top: 15px;
-    margin-left:20px;
-}
+
 .captcha-input {
     float: left;
     max-width: 70px;
-    margin-right: 20px;
 }
 
     .captcha-input .mdl-textfield__input {
@@ -986,11 +1003,6 @@ left-content {
 }
 .text-checkbox {
     margin-left : 20px;
-}
-@media screen and (max-width: 839px) {
-    .captcha-image {
-        float : none;
-    }
 }
 @media screen and (max-width : 768px) {
     .mdl-textfield__label {

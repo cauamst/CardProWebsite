@@ -251,8 +251,10 @@
                                         <span class="mdl-textfield__error span-error">Sai mã xác nhận</span>
                                     </span>
                                 </div>
-                                <i class="material-icons refresh" (click)="RefreshCaptcha()">cached</i>
-                                <img [src]="captchaBase64Img" class="captcha-image" />
+                                <div class="captcha-parent">
+                                    <i class="material-icons refresh" (click)="RefreshCaptcha()">cached</i>
+                                    <img [src]="captchaBase64Img" class="captcha-image" />
+                                </div>
                                 <div class="fix"></div>
                             </div>
 
