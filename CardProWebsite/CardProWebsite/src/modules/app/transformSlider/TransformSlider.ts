@@ -54,7 +54,7 @@ export class TransformSlider implements OnInit {
                 break;
             case 2:
                 if (this.isOnlineExpenses == 1) {
-                    this.transformTitle = "Số tiền chi tiêu oniline hoặc chi tiêu ở nước ngoài/ tháng(VNĐ)";
+                    this.transformTitle = "Số tiền chi tiêu online/ tháng(VNĐ)";
                 } else if (this.isOnlineExpenses == 2) {
                     this.transformTitle = "Số tiền chi tiêu ở nước ngoài/ tháng(VNĐ)";
                 } else {
@@ -63,7 +63,7 @@ export class TransformSlider implements OnInit {
                 break;
             case 3:
                 this.transformLabel = "Dặm bay(Dặm)";
-                this.transformTitle = "Số tiền chi tiếu/ tháng(VNĐ)";
+                this.transformTitle = "Số tiền chi tiêu/ tháng(VNĐ)";
                 break;
 
         }

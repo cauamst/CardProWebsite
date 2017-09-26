@@ -57,11 +57,21 @@ export class PointTransformService {
                 return Math.floor(((amount * 100) / 20000)) * this.monthsInYear;
             case 14:
                 if (isOnlineExpenses) {
-                    let total = ((amount * 0.05) + (amount * 0.03) + (amount * 0.005));
+                    if (amount >= 2000000) {
+                        let total = amount * 0.05;
                         return total >= 600000
                             ? 600000 * this.monthsInYear
                             : Math.floor(total) * this.monthsInYear
                             ;
+                    } else {
+                        return Math.floor(amount * 0.003) * this.monthsInYear;
+                    }
+                } else {
+                    let total = amount * 0.003;
+                    return total >= 600000
+                        ? 600000 * this.monthsInYear
+                        : Math.floor(total) * this.monthsInYear
+                        ;
                 }
             default:
                 return 0;

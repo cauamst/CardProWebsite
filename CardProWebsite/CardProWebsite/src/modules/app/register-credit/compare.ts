@@ -134,6 +134,7 @@ export class CompareComponent implements OnInit {
             this.NotificationService.moveTo(true);
         }
     }
+    
 
     addClassbutton(n: number) {
         switch (n) {

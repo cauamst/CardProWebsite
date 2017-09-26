@@ -4,7 +4,7 @@
     <carousel [interval]="NextPhotoInterval" [noWrap]="false">
         <slide *ngFor="let slidez of slides"
                [active]="slidez.active">
-            <img [src]="slidez.image" class="slide-image" style="width : 100%">
+            <a href="slidez.linkpromotion" target="_blank"><img [src]="slidez.image" class="slide-image" style="width : 100%"></a> 
         </slide>
     </carousel>
 </div>
@@ -12,30 +12,84 @@
 <div class="android-more-section section-bottom">
     <div class="android-section-title font-size-heading register-online">Đăng ký trực tuyến</div>
     <div class="android-card-container mdl-grid">
-        <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp" *ngFor="let card of cardhome">
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
             <div class="mdl-card__media">
-                <a routerLink="/{{card.linkactive}}"> <img src="{{card.url}}"></a>
+                <a routerLink="/register"> <img src="../../../assets/img/The_400x250px.jpg"></a>
             </div>
             <div class="mdl-card__title sacombank-card-title">
-                <a  class="none-color" routerLink="/{{card.linkactive}}"> <h4 class="mdl-card__title-text" id="id22">{{card.Name}}</h4></a>
+                <a  class="none-color" routerLink="/register"> <h4 class="mdl-card__title-text" id="id22">Thẻ tín dụng</h4></a>
             </div>
 
             <div class="mdl-card__supporting-text sacombank-card-content">
-                <h3 class="mdl-typography--font-light mdl-typography--subhead font-size-content">{{card.content}}</h3>
+                <h3 class="mdl-typography--font-light mdl-typography--subhead font-size-content">Mua trước trả sau miễn đến lãi 55 ngày</h3>
             </div>
             <div class="mdl-card__actions">
-                <a class="mdl-button mdl-js-button mdl-typography--text-uppercase" routerLink="/{{card.linkactive}}">
-                    {{card.linkRoute}}
+                <a class="mdl-button mdl-js-button mdl-typography--text-uppercase" routerLink="/register">
+                    Đăng ký ngay
+                    <i class="material-icons sacombank-icon">chevron_right</i>
+                </a>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media">
+                <a href="https://card.sacombank.com.vn/DebitCardForm.aspx" target="_blank"> <img src="../../../assets/img/FamilyCard.jpg"></a>
+            </div>
+            <div class="mdl-card__title sacombank-card-title">
+                <a class="none-color" href="https://card.sacombank.com.vn/DebitCardForm.aspx" target="_blank"> <h4 class="mdl-card__title-text" id="id22">Thẻ thanh toán</h4></a>
+            </div>
+
+            <div class="mdl-card__supporting-text sacombank-card-content">
+                <h3 class="mdl-typography--font-light mdl-typography--subhead font-size-content">Phá bỏ giới hạn không gian và thỏa sức chi tiêu trên toàn thế giới</h3>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://card.sacombank.com.vn/DebitCardForm.aspx" target="_blank">
+                    Đăng ký ngay
+                    <i class="material-icons sacombank-icon">chevron_right</i>
+                </a>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media">
+                <a href="https://card.sacombank.com.vn/the/PictureCard?s=PC01" target="_blank"> <img src="../../../assets/img/Visa-lucky-gift-card.png"></a>
+            </div>
+            <div class="mdl-card__title sacombank-card-title">
+                <a class="none-color" href="https://card.sacombank.com.vn/the/PictureCard?s=PC01" target="_blank"> <h4 class="mdl-card__title-text" id="id22">Thẻ in hình</h4></a>
+            </div>
+
+            <div class="mdl-card__supporting-text sacombank-card-content">
+                <h3 class="mdl-typography--font-light mdl-typography--subhead font-size-content">Thỏa sức sáng tạo theo phong cách của riêng bạn</h3>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://card.sacombank.com.vn/the/PictureCard?s=PC01" target="_blank">
+                    Đăng ký ngay
+                    <i class="material-icons sacombank-icon">chevron_right</i>
+                </a>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+            <div class="mdl-card__media">
+                <a href="https://card.sacombank.com.vn/RecommenderInfo.aspx" target="_blank"> <img src="../../../assets/img/Them-ban-them-qua_400x250px.jpg"></a>
+            </div>
+            <div class="mdl-card__title sacombank-card-title">
+                <a class="none-color" href="https://card.sacombank.com.vn/RecommenderInfo.aspx" target="_blank"> <h4 class="mdl-card__title-text" id="id22">Giới thiệu bạn bè</h4></a>
+            </div>
+
+            <div class="mdl-card__supporting-text sacombank-card-content">
+                <h3 class="mdl-typography--font-light mdl-typography--subhead font-size-content">Thêm bạn - Thêm vui</h3>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://card.sacombank.com.vn/RecommenderInfo.aspx" target="_blank">
+                    Xem thêm
                     <i class="material-icons sacombank-icon">chevron_right</i>
                 </a>
             </div>
         </div>
     </div>
     <div class="mdl-grid grid-section">
-        <div class="mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-            <div class="mdl-layout__header-row card_pro_header_row card-header-blue">
+            <div class="mdl-layout__header-row card_pro_header_row card-header-blue card-full-width">
                 <h3 class="android-section-title font-size-heading register-online">Thông tin khuyến mãi</h3>
             </div>
+        <div class="mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone promotion-content">
             <div class="mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
                 <div class="image-mdl">
                     <a href="https://khuyenmai.sacombank.com/chuong-trinh-khuyen-mai/the/plus-day/global-health-travel-giam-15-cac-goi-cham-soc-suc-khoe-cho-chu-the-sacombank-mastercard#page01" target="_blank"><img src="../../../assets/img/promotion.jpg" class="imghome-card" /></a>
@@ -48,7 +102,7 @@
                     <li>Đăng ký trực tuyến</li>
                     <li>Thực hiện nhiều chức năng: rút tiền, thanh toán,...</li>
                     <li>Nguồn tài chính dự phòng thiết yếu</li>
-                    <li><p class="read-more"><a href="https://khuyenmai.sacombank.com/chuong-trinh-khuyen-mai/the/plus-day/global-health-travel-giam-15-cac-goi-cham-soc-suc-khoe-cho-chu-the-sacombank-mastercard#page01" target="_blank">Xem thêm ...</a></p></li>
+                    <li><p class="read-more"><a href="https://khuyenmai.sacombank.com/chuong-trinh-khuyen-mai/the" target="_blank">Xem thêm ...</a></p></li>
                 </ul>
             </div>
         </div>

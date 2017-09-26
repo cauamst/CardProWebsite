@@ -44,7 +44,7 @@
 
                         </div>
                         <div class="compare-button-block">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored curls curl-top-left"
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored curls curl-top-left compare-button"
                                     (click)="showCompare = !showCompare; showButtonBack = !showButtonBack;moveToTopButton()">
                                 So sánh thẻ
                             </button>
@@ -55,7 +55,7 @@
                     <div id="container">
                         <div id="left" *ngIf="showBenefit && content">
                             <div id="Lnav">
-                                <h4 class="lvn">Ưu đãi nổi bật {{content.title}}</h4>
+                                <h4 class="lvn">ƯU ĐÃI NỔI BẬT</h4>
                             </div>
                             <div id="width100PercentTest">
                                 <ul class="ul">
@@ -92,7 +92,7 @@
                         </div>
                         <div id="left" *ngIf="showDetail && card">
                             <div id="Lnav">
-                                <h4 class="lvn">Thông tin thẻ {{card.Name}}</h4>
+                                <h4 class="lvn">THÔNG TIN THẺ {{card.Name}}</h4>
                             </div>
                             <div id="width100PercentTest">
                                 <ul class="ul">
@@ -125,7 +125,7 @@
                             </div>
                         </div>
                         <div id="Lnav">
-                            <h4 class="lvn">Điều kiện đăng ký</h4>
+                            <h4 class="lvn">ĐIỀU KIỆN ĐĂNG KÝ</h4>
                         </div>
                         <div>
                             <ul class="mdl-additiona">
@@ -144,7 +144,7 @@
 
                 <ng-template #loadingCompare> <compare (AddCardToFormEvent)="addCardToForm($event)"></compare></ng-template>
                 <div>
-                    <a class="mdl-button mdl-js-button mdl-typography--text-uppercase send-button" *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack">
+                    <a class="mdl-button mdl-js-button mdl-typography--text-uppercase send-button" *ngIf="showButtonBack" (click)="showCompare = !showCompare;showButtonBack = !showButtonBack;moveToTopButton()">
 
                         <i class="material-icons mdl-icon-comback ">chevron_left</i>
                         Trở về trước

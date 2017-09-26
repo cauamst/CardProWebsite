@@ -18,7 +18,8 @@
    
 }
 #id22 {
-    font-size: 20px !important;
+    font-size: 18px !important;
+    color: rgb(72, 71, 71) !important;
 }
 ul {
     font-size : 12px !important;
@@ -35,10 +36,17 @@ ul {
     margin-bottom: 30px;
     margin-top: 30px;
 }
-
+.grid-section .section-promotion {
+    margin-left : 5px
+}
 .card-full-width {
     width: 100%;
     border-radius: 0.3em;
+
+}
+.promotion-content {
+    display : inline-flex;
+    text-align : justify;
 }
 .contact {
     padding-left : 15px;
@@ -150,7 +158,7 @@ ul {
     text-align : justify;
 }
 .imghome-card {
-    height: 210px;
+    height: auto;
     width: 100%;
     box-sizing: border-box;
     max-width: 100%;
@@ -173,10 +181,10 @@ ul {
     margin-bottom: 5px;
 }
 .sacombank-icon {
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
 .mdl-p {
-    float: right;
+    margin-left : 10px;
 }
 
 .snippet-group .snippet-code code {
@@ -393,7 +401,6 @@ a {
 }
 .image-mdl {
     display: block;
-    float : left;
 
 }
 .font-size-content {

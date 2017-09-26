@@ -109,8 +109,11 @@
     <Content Include="src\assets\img\sacomhe.jpg" />
     <Content Include="src\assets\img\credit-card-sample.png" />
     <Content Include="src\assets\img\STB.jpg" />
+    <Content Include="src\assets\img\Them-ban-them-qua_400x250px.jpg" />
+    <Content Include="src\assets\img\The_400x250px.jpg" />
     <Content Include="src\assets\img\twitter-logo-clipart-free-20.jpg" />
     <Content Include="src\assets\img\verified-by-visa.png" />
+    <Content Include="src\assets\img\Visa-lucky-gift-card.png" />
     <Content Include="src\assets\js\material.min.js" />
     <Content Include="src\modules\app\cardRegistration\cardRegistration.component.html" />
     <Content Include="src\modules\app\cardRegistration\cardRegistration.component.ts" />

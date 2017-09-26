@@ -199,7 +199,6 @@
                 <div class="mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-margin">
                         <select class="mdl-textfield__input" id="benefit1" [(ngModel)]="cat1Id" (ngModelChange)="getCardByType($event, true)">
-                            <option [ngValue]="-1"></option>
                             <option [ngValue]="c.currentCatId" *ngFor="let c of benefits" [hidden]="c.currentCatId == cat1HiddenId">{{c.director}}</option>
                         </select>
                         <label class="mdl-textfield__label label-dialog" for="benefit1">Chọn tiện ích</label>
@@ -208,7 +207,6 @@
                 <div class="mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-margin" *ngIf="cards1">
                         <select class="mdl-textfield__input" id="cardOpt1" [(ngModel)]="tempCard">
-                            <option [ngValue]="-1"></option>
                             <option *ngFor="let ca of cards1" [ngValue]="ca" [hidden]="ca == card2">{{ca.Name}}</option>
                         </select>
                         <label class="mdl-textfield__label label-dialog" for="cardOpt1">Chọn thẻ</label>
@@ -232,7 +230,6 @@
             <div class="mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-margin">
                     <select class="mdl-textfield__input" id="benefit2" [(ngModel)]="cat2Id" (ngModelChange)="getCardByType($event)">
-                        <option [ngValue]="-1"></option>
                         <option [ngValue]="c.currentCatId" *ngFor="let c of benefits"  [hidden]="c.currentCatId == cat2HiddenId">{{c.director}}</option>
                     </select>
                     <label class="mdl-textfield__label label-dialog" for="benefit2">Chọn tiện ích</label>
@@ -241,7 +238,6 @@
             <div class="mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label dialog-field-margin" *ngIf="cards2">
                     <select class="mdl-textfield__input" id="cardOpt2" [(ngModel)]="tempCard">
-                        <option [ngValue]="-1"></option>
                         <option *ngFor="let ca of cards2" [ngValue]="ca" [hidden]="ca == card1">{{ca.Name}}</option>
                     </select>
                     <label class="mdl-textfield__label label-dialog" for="cardOpt2">Chọn thẻ</label>
