@@ -42,6 +42,7 @@ export enum Direction { UNKNOWN, NEXT, PREV }
     position: relative;
     width: 100%;
     overflow: hidden;
+    border: 1px solid rgba(27, 177, 219, 0.2);
 }
 
 

@@ -105,11 +105,6 @@ img {
         text-align : center;
         font-size : 12px;
     }
-
-.mdl-grid-full {
-    width : 100%;
-}
-
 .dialog-content {
     position: relative;
     background-color: #fefefe;
@@ -125,32 +120,38 @@ img {
 }
 
 .dialog-header {
-    padding: 5px 20px;
+    padding: 1px 10px;
     background: #0066b3;
     color: #ffffff;
 }
+    .dialog-header h4 {
+        margin-bottom: 0 !important;
+        margin : 12px 0 !important;
+    }
 
-.container-image:hover .image {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-}
+
 
 .container-image {
     overflow: hidden;
     cursor: pointer;
 }
+    .container-image .image {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: all 0.9s ease;
+        transition: all 0.9s ease;
+    }
+    .container-image:hover .image {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
 
 .mdl-button-pickcard {
     margin-top: 9px !important;
     background-color: #4490c7;
 }
 
-.image {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-transition: all 0.9s ease;
-    transition: all 0.9s ease;
-}
+
 
 .button-close-image {
     border: 0;
@@ -177,32 +178,29 @@ img {
 
 .none-margin {
     margin: 0 0 0;
+    height: 31px !important;
 }
-.btn-add1 {
+
+.row .btn-add1 {
     background: rgb(234, 135, 10) !important;
 }
-.btn-add2 {
+.row .btn-add2 {
     background: rgb(234, 135, 10) !important;
 }
 .title-compare {
     width : 100%;
 }
-.text-title-compare {
-    font-size: 14px !important;
-}
-.font-icons {
-    font-size: 18px !important;
-}
-.title-compare-padding {
-    padding-bottom: 7px;
-    padding-top: 7px;
-}
-.mdl-color-sacombank {
-    background-color: #4490c7 ;
-}
-h4 {
-    margin-bottom : 0 !important;
-}
+    .title-compare .mdl-color-sacombank {
+        background-color: #4490c7;
+    }
+    .title-compare .text-title-compare {
+        font-size: 14px !important;
+    }
+    .title-compare .title-compare-padding {
+        padding-bottom: 7px;
+        padding-top: 7px;
+    }
+
 .mdl-textfield__input {
     font-size : 12px !important;
 }
@@ -215,14 +213,8 @@ h4 {
 .relative {
     position: relative;
 }
-.set-up-position {
-        height: 31px !important;
-    }
 
 @media (min-width: 320px) {
-    .mdl-cell--12-col {
-        width : 100% !important;
-    }
     .mdl-cell--8-col-tablet {
         width: 100% !important;
     }

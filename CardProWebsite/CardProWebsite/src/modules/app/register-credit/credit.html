@@ -207,7 +207,6 @@
                              }">
                                 <i class="mdl-textfield__icon material-icons">location_city</i>
                                 <select class="mdl-textfield__input input-set-color" id="Address" name="address" formControlName="address">
-                                    <option></option>
                                     <option [value]="ci.id" *ngFor="let ci of City">{{ci.content}}</option>
                                 </select>
                                 <label class="mdl-textfield__label" for="Address">Chọn tỉnh/ thành phố</label>
@@ -223,7 +222,6 @@
                              }">
                                 <i class="mdl-textfield__icon material-icons">local_atm</i>
                                 <select class="mdl-textfield__input input-set-color" id="salary" name="salary" formControlName="salary">
-                                    <option></option>
                                     <option *ngFor="let sala of Salary" [value]="sala.id">{{sala.content}}</option>
                                 </select>
                                 <label class="mdl-textfield__label" for="salary">Mức thu nhập hàng tháng</label>
@@ -267,7 +265,7 @@
                             </div>
                             <div class="fix"></div>
                             <div>
-                                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-register" [disabled]="!registerForm.valid" (click)="submitForm()">Đăng ký</button>
+                                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored send-button" [disabled]="!registerForm.valid" (click)="submitForm()">Đăng ký</button>
                                 <div class="fix"></div>
                             </div>
 

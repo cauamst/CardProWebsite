@@ -1,5 +1,5 @@
 ﻿
-<div class="mdl-cell--12-col mdl-cell--8-tablet mdl-cell--4-col-phone title-compare">
+<div class="title-compare">
     <div class="mdl-card__title mdl-color-text--white title-compare-padding mdl-color-sacombank">
         <h5 class="mdl-card__title-text text-title-compare" id="size18">CHỌN VÀ SO SÁNH THẺ</h5>
     </div>
@@ -17,7 +17,7 @@
                 <ng-template #loadingImage1>
                     <div  class="container-image">
                         <img *ngIf="card1" src="{{card1.url}}" class="card-compare image"/>
-                        <p *ngIf="card1" class="none-margin set-up-position">{{card1.Name}}</p>
+                        <p *ngIf="card1" class="none-margin">{{card1.Name}}</p>
                     </div>
                 </ng-template>
                 <div>
@@ -29,12 +29,12 @@
             <div class="mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone text-center" *ngIf="card1">
                 <div *ngIf="!card2;else loadingImage2">
                     <a (click)="showDialog2 = true"><img src="../../../assets/img/CardCompare.png" class="square" /></a>
-                    <p *ngIf="card1" class="none-margin set-up-position"></p>
+                    <p *ngIf="card1" class="none-margin"></p>
                 </div>
                 <ng-template #loadingImage2>
                     <div class="container-image">
                         <img *ngIf="card2" src="{{card2.url}}" class="image card-compare"/>
-                        <p *ngIf="card2" class="none-margin set-up-position">{{card2.Name}}</p>
+                        <p *ngIf="card2" class="none-margin">{{card2.Name}}</p>
                     </div>
                 </ng-template>
                 <div>
