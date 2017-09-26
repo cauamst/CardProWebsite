@@ -48,12 +48,12 @@ a {
 }
 .accordion-margin{
     padding-left: 30px;
-    padding-bottom: 5px;
-    padding-top: 5px;
+    padding-bottom: 2px;
+    padding-top: 2px;
     font-size : 14px !important;
 }
 .accordion-icon {
-    margin-top: 5px;
+    margin-top: 2px;
 }
 .panel-title{
     text-transform: uppercase;
